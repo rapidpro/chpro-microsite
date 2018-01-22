@@ -11,11 +11,7 @@
     "eslint": "^4.14.0",
     "npm-run-all": "^4.1.2",
     "parcel-bundler": "https://github.com/parcel-bundler/parcel",
-    "post-load-plugins": "^0.0.16",
-    "posthtml": "^0.11.0",
-    "posthtml-extend": "^0.2.0",
-    "posthtml-include": "^1.1.0",
-    "posthtml-load-config": "^1.0.0"
+    "post-load-plugins": "^0.0.16"
   },
   "license": "UNLICENSED"
 }
