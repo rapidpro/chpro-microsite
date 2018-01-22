@@ -1,0 +1,38 @@
+{# Base template for the RapidPro for Health website #}
+{% load cms_tags %}
+{% load sekizai_tags %}
+{% load staticfiles %}
+{% load menu_tags %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>{% page_attribute 'page_title' %}</title>
+  {% render_block "css" %}
+  {% addtoblock 'css' %}
+  {% endaddtoblock %}
+</head>
+
+<body>
+{% cms_toolbar %}
+<header>
+</header>
+
+{% block base_content %}
+  <section>
+    {% placeholder 'content' %}
+  </section>
+{% endblock %}
+
+<footer>
+</footer>
+
+{% render_block 'js' %}
+{% addtoblock 'js' %}
+{% endaddtoblock %}
+
+</body>
+</html>

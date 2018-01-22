@@ -1,0 +1,17 @@
+[run]
+source = rapidpro_for_health
+branch = True
+omit =
+    *tests*
+    *migrations*
+    rapidpro_for_health/settings/*
+    rapidpro_for_health/wsgi.py
+    rapidpro_for_health/management/commands/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+
+[html]
+directory = /tmp/coverage_reports/rapidpro_for_health/

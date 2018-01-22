@@ -1,0 +1,47 @@
+#
+# Example Settings file for _local_ development.
+# This file must not be committed.
+#
+from .base import *  # pylint: disable=W0614,W0401
+
+DEBUG = True
+
+SITE_ID = int(os.environ.get('SITE_ID', 1))
+
+SECRET_KEY = 'totally secret'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rapidpro_for_health',
+        #'USER': '',
+        #'PASSWORD: '',
+    },
+}
+
+# Disable SSL Treatment for local development
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+HTTPS_LINKS = False
+
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+]
+
+INTERNAL_IPS = ['127.0.0.1']
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, '..', 'static'),
+    os.path.join(VAR_ROOT),
+]
+
+INSTALLED_APPS += [
+    'debug_toolbar',
+    #'django_extensions',
+]
+
+MIDDLEWARE += [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
