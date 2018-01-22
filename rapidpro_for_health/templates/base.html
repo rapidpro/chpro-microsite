@@ -13,6 +13,7 @@
   <title>{% page_attribute 'page_title' %}</title>
   {% render_block "css" %}
   {% addtoblock 'css' %}
+    <link rel="stylesheet" href="{% static 'all.css' %}">
   {% endaddtoblock %}
 </head>
 
@@ -23,8 +24,10 @@
 
 {% block base_content %}
   <section>
+  Hello! This is the base of all pages and soon will contain all the content!
     {% placeholder 'content' %}
   </section>
+  <section id="output"></section>
 {% endblock %}
 
 <footer>
@@ -32,6 +35,7 @@
 
 {% render_block 'js' %}
 {% addtoblock 'js' %}
+  <script src="{% static "all.js" %}"></script>
 {% endaddtoblock %}
 
 </body>

@@ -169,21 +169,21 @@ DJANGOCMS_LINK_USE_SELECT2 = True
 
 ROOT_URLCONF = 'rapidpro_for_health.urls'
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, '..', 'build'),
-)
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, 'client', 'dist')
+]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-
-STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(VAR_ROOT, 'static')
-MEDIA_ROOT = os.path.join(VAR_ROOT, 'uploads')
+STATIC_ROOT = os.path.join(PROJECT_DIR, '.data', 'static')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '.data', 'uploads')
 STATIC_CACHE_ROOT = os.path.join(VAR_ROOT, 'static_cache')
+
+STATIC_URL = '/static/'
 
 # ==============================================================================
 # Miscellaneous project settings
@@ -283,11 +283,3 @@ gettext = lambda s: s
 LANGUAGES = (
     ('en', gettext('English')),
 )
-
-# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-#
-# # Tell nose to measure coverage on the 'foo' and 'bar' apps
-# NOSE_ARGS = [
-#     '--with-coverage',
-#     '--cover-package=schedule',
-# ]

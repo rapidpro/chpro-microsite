@@ -1,9 +1,10 @@
 # Local Installation
 
-This is a guide to get the application running locally
-for development.
-
 ## Notes
+
+This guide is for installing the application for local development.
+
+To deploy the application for production, follow ...(ToDo)
 
 ### Make sure you have the correct python version
 
@@ -42,7 +43,26 @@ when working on the project.
 
 ## Build the static files
 
-ToDo: This will depend on the tools we choose to use.
+### Requirements
+
+This step requires you have installed NodeJS and NPM.
+Any new version should work, but the code has been tested with:
+
+ * Node: 9.4.0
+ * NPM: 5.6.0
+
+## Compiling
+
+Go to the client directory and install the dependencies:
+
+`cd rapidpro_for_health/client/; npm install`
+
+Compile the staticfiles:
+
+`parcel watch all.js`
+
+This will watch the files in the client directory and recompile them if
+there are changes. The entrypoint is `all.js`.
 
 ## Create a database.
 
