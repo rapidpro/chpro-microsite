@@ -1,12 +1,12 @@
 [run]
-source = rapidpro_for_health
+source = rh
 branch = True
 omit =
     *tests*
     *migrations*
-    rapidpro_for_health/settings/*
-    rapidpro_for_health/wsgi.py
-    rapidpro_for_health/management/commands/*
+    rh/settings/*
+    rh/wsgi.py
+    rh/management/commands/*
 
 [report]
 exclude_lines =
