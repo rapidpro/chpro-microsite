@@ -1,0 +1,6 @@
+{
+  "name": "rapidpro_for_health",
+  "scripts": {
+    "postinstall": "cd rapidpro_for_health/client/; yarn"
+  }
+}
