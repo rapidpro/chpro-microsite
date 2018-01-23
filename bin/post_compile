@@ -3,6 +3,10 @@
 #
 # Deployment script for Heroku instances.
 #
+# Note: Heroku needs to have specific buildpacks setup:
+#
+# heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs -a unicef-rapidpro-for-health
+#
 
 set -xeuf -o pipefail
 
