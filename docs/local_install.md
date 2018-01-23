@@ -102,4 +102,3 @@ Check the site at `http://localhost:8000`
 # Running the tests
 
 `./scripts/runtests.sh`
-
