@@ -92,7 +92,6 @@ INSTALLED_APPS = [
 
     # Third-Party
     'django_select2',
-    'djangocms_testing',
 
     # Da Subject Matter
     # 'rapidpro_for_health.apps.core',

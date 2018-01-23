@@ -34,6 +34,10 @@ PASSWORD_HASHERS = (
 )
 
 
+INSTALLED_APPS += [
+    'djangocms_testing',
+]
+
 # Disable Migrations if `DISABLE_MIGRATIONS=1` env variable is present
 class DisableMigrations(object):
 
