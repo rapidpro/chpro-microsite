@@ -5,7 +5,8 @@
 #
 # Note: Heroku needs to have specific buildpacks setup:
 #
-# heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs -a unicef-rapidpro-for-health
+# heroku buildpacks:add https://github.com/heroku/heroku-buildpack-python
+# heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs
 #
 
 set -xeuf -o pipefail
