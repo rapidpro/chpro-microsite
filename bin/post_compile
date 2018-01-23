@@ -6,7 +6,6 @@
 
 set -xeuf -o pipefail
 
-yarn
 manage.py migrate --database default --noinput
 
 # Cleanup client side scripts which got already compiled
