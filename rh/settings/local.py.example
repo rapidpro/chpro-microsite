@@ -13,7 +13,7 @@ SECRET_KEY = 'totally secret'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rapidpro_for_health',
+        'NAME': 'rh',
         #'USER': '',
         #'PASSWORD: '',
     },

@@ -9,7 +9,7 @@ from django.conf.global_settings import *  # pylint: disable=W0614,W0401
 
 import os
 import sys
-import rapidpro_for_health as project_module
+import rh as project_module
 
 # Set a specific folder containing the 'var' directory where static and media
 # files are uploaded later.
@@ -45,7 +45,7 @@ if not os.path.exists(VAR_ROOT):
 
 DEBUG = False
 
-WSGI_APPLICATION = 'rapidpro_for_health.wsgi.application'
+WSGI_APPLICATION = 'rh.wsgi.application'
 
 # Treat all incoming requests as SSL, redirect if necessary.
 SECURE_SSL_REDIRECT = True
@@ -94,7 +94,7 @@ INSTALLED_APPS = [
     'django_select2',
 
     # Da Subject Matter
-    # 'rapidpro_for_health.apps.core',
+    # 'rh.apps.core',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +119,7 @@ MIDDLEWARE = [
     'cms.middleware.toolbar.ToolbarMiddleware',
 ]
 
-ROOT_URLCONF = 'rapidpro_for_health.urls'
+ROOT_URLCONF = 'rh.urls'
 
 TEMPLATES = [
     {
@@ -166,7 +166,7 @@ DJANGOCMS_LINK_USE_SELECT2 = True
 # Project URLS and media settings
 # ==============================================================================
 
-ROOT_URLCONF = 'rapidpro_for_health.urls'
+ROOT_URLCONF = 'rh.urls'
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'client', 'dist')
@@ -216,7 +216,7 @@ logging.config.dictConfig({
         '': {'level': 'WARNING', 'handlers': ['console']},
 
         # This application
-        'rapidpro_for_health': {'level': 'INFO', 'handlers': ['console'], 'propagate': False},
+        'rh': {'level': 'INFO', 'handlers': ['console'], 'propagate': False},
 
         # Common Django logger
         # 'django.requests': {'level': 'DEBUG', 'handlers': ['console']},

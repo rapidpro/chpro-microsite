@@ -2,6 +2,8 @@
   "name": "rapidpro_for_health",
   "version": "0.1.0",
   "scripts": {
-    "postinstall": "cd rapidpro_for_health/client/; yarn"
+    "postinstall": "cd rh/client/; yarn",
+    "watch": "cd rh/client/; yarn watch",
+    "build": "cd rh/client/; yarn build"
   }
 }

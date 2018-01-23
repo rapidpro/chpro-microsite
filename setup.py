@@ -3,19 +3,19 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name='rapidpro_for_health',
+    name='rh',
     version='1.0',
     description='RapidPro for Health Website',
     long_description='',
     author='Nicolas Lara',
     author_email='nicolas@lincolnloop.com',
-    url='https://github.com/rapidpro/rapidpro_for_health/',
+    url='https://github.com/rapidpro/rh/',
     packages=find_packages(),
     scripts=[
         'scripts/manage.py'
     ],
     package_data={
-        'rapidpro_for_health': ['templates/*.*'],
+        'rh': ['templates/*.*'],
         'docs': ['*'],
         'client': ['*'],
     },

@@ -4,7 +4,7 @@ import sys
 import importlib
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rapidpro_for_health.settings.local")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rh.settings.local")
     settings = os.environ['DJANGO_SETTINGS_MODULE']
     try:
         importlib.import_module(settings)
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Error: {e}
            Can't import `{settings}` module.
     The settings file is missing or the file has syntax errors. Check the file
-    or create a `local.py` file in `rapidpro_for_health/settings/` using the example file aside.
+    or create a `local.py` file in `rh/settings/` using the example file aside.
             '''.format(e=str(e), settings=settings))
         sys.exit()
 

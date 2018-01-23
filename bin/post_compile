@@ -14,4 +14,4 @@ set -xeuf -o pipefail
 manage.py migrate --database default --noinput
 
 # Cleanup client side scripts which got already compiled
-rm -Rf rapidpro_for_health/client/node_modules/
+rm -Rf rh/client/node_modules/

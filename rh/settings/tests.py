@@ -3,7 +3,7 @@
 #
 from .base import *  # pylint: disable=W0614,W0401
 
-sys.stdout.write('Using test settings in rapidpro_for_health.settings.tests\n')
+sys.stdout.write('Using test settings in rh.settings.tests\n')
 
 DEBUG = False
 SITE_ID = 1
@@ -18,7 +18,7 @@ HTTPS_LINKS = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rapidpro_for_health',
+        'NAME': 'rh',
         #'USER': '',
         #'PASSWORD: '',
     },

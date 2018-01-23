@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "yarn run postinstall-parcel-github && yarn run build",
     "postinstall-parcel-github": "cd node_modules/parcel-bundler && yarn --production=false && yarn build",
-    "build": "parcel build ./all.js "
+    "build": "parcel build ./all.js ",
+    "watch": "parcel watch ./all.js "
   },
   "engines": {
     "yarn": "^1.4.x"

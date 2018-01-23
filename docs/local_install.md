@@ -39,35 +39,42 @@ when working on the project.
 
 ### Copy the local settings and modify as needed
 
-`cp rapidpro_for_health/settings/local.py.example rapidpro_for_health/settings/local.py`
+`cp rh/settings/local.py.example rh/settings/local.py`
 
 ## Build the static files
 
 ### Requirements
 
-This step requires you have installed NodeJS and NPM.
+This step requires you have installed NodeJS and yarn.
 Any new version should work, but the code has been tested with:
 
  * Node: 9.4.0
  * NPM: 5.6.0
+ * yarn: 1.4.0
 
 ## Compiling
 
-Go to the client directory and install the dependencies:
+Install the dependencies from the project's root:
 
-`cd rapidpro_for_health/client/; npm install`
+`yarn`
 
-Compile the staticfiles:
+This will install the dependencies and compile the staticfiles.
 
-`parcel watch all.js`
+To manually compile afterwards use:
+
+`yarn build`
+
+or:
+
+`yarn watch`
 
 This will watch the files in the client directory and recompile them if
-there are changes. The entrypoint is `all.js`.
+there are changes. The entrypoint is `rh/client/all.js`.
 
 ## Create a database.
 
 The default settings use postgresql and use the db name
-`rapidpro_for_health` through a local connection (without username or
+`rh` through a local connection (without username or
 password)
 
 ### Run the migrations
@@ -84,7 +91,7 @@ To create a super user run:
 
 To import a db:
 
-`psql -d rapidpro_for_health < rpfh_db_backup.sql`
+`psql -d rh < rpfh_db_backup.sql`
 
 ## Run the local server
 
