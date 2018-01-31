@@ -4,14 +4,13 @@
   "description": "RapidPro for Health site built with Django CMS",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "yarn run postinstall-parcel-github && yarn run build",
-    "postinstall-parcel-github": "cd node_modules/parcel-bundler && yarn --production=false && yarn build",
-    "build": "parcel build ./all.js ",
-    "watch": "parcel watch ./all.js "
+    "postinstall": "yarn run build",
+    "parcel": "parcel",
+    "build": "parcel build --public-url=/static/ ./all.js ",
+    "watch": "parcel watch --public-url=/static/ ./all.js "
   },
   "engines": {
     "yarn": "^1.4.x"
-    
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta.3",
@@ -19,13 +18,12 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
-    "parcel-bundler": "https://github.com/parcel-bundler/parcel",
+    "parcel-bundler": "^1.5.1",
     "yarn": "^1.4.x",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
     "post-load-plugins": "^0.0.16"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "license": "UNLICENSED"
 }
