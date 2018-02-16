@@ -20,14 +20,14 @@ easy-thumbnails = "==2.4.2"
 "e1839a8" = {path = ".", editable = true}
 dj-database-url = "==0.4.2"
 whitenoise = "==3.3.1"
-uwsgi = "==2.0.15"
+uwsgi = "==2.0.16"
+djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
+coverage = "*"
 
 
 [dev-packages]
 
 django-debug-toolbar = "*"
-djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
-coverage = "*"
 ipdb = "*"
 
 

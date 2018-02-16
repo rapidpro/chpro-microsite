@@ -94,7 +94,7 @@ INSTALLED_APPS = [
     'django_select2',
 
     # Da Subject Matter
-    # 'rh.apps.core',
+    'rh.apps.content',
 ]
 
 MIDDLEWARE = [
@@ -169,7 +169,7 @@ DJANGOCMS_LINK_USE_SELECT2 = True
 ROOT_URLCONF = 'rh.urls'
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'client', 'dist')
+    os.path.join(PROJECT_DIR, 'client', 'dist'),
 ]
 
 STATICFILES_FINDERS = (

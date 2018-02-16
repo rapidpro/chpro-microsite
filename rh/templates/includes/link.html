@@ -1,0 +1,10 @@
+{% with instance.get_link as link %}
+  {% if link %}
+    {% if instance.link_style == 'link' %}
+      <a href="{{ instance.get_link }}">{{ instance.link_text }}</a>
+    {% endif %}
+    {% if instance.link_style == 'button' %}
+      <button>{{ instance.link_text }}</button>
+    {% endif %}
+  {% endif %}
+{% endwith %}

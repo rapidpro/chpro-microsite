@@ -1,0 +1,6 @@
+{% load thumbnail %}
+<h1>{{ instance.title }}</h1>
+<div>
+  <p>{{ instance.text }}</p>
+  <img src="{% thumbnail instance.image "50x50" %}">
+</div>

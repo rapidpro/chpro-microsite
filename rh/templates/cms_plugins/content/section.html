@@ -1,0 +1,9 @@
+{% load cms_tags %}
+<div>
+  <h2>{{ instance.title }}</h2>
+  <p>{{ body|safe }}</p>
+  {% for plugin in instance.child_plugin_instances %}
+    {% render_plugin plugin %}
+  {% endfor %}
+  {% include 'includes/link.html' %}
+</div>
