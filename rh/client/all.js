@@ -1,8 +1,8 @@
 import './scss/core.scss';
 
-// import * as $ from 'jquery';
-import * as Foundation from 'foundation-sites';
-import './js/app';
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
 
-// initialize standalone plugins/widgets
-// $(document).foundation();
+import * as Foundation from 'foundation-sites';
+
+import './js/app';
