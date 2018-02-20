@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "postinstall": "cd rh/client/; yarn",
-    "parcel": "parcel",
+    "parcel": "cd rh/client/; yarn parcel",
     "watch": "cd rh/client/; yarn watch",
     "build": "cd rh/client/; yarn build"
   },

@@ -1,4 +1,4 @@
 // initialize standalone plugins/widgets
-import $ from "jquery";
+import $ from  './import-jquery';
 
 $(document).foundation();
