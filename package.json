@@ -6,8 +6,5 @@
     "parcel": "cd rh/client/; yarn parcel",
     "watch": "cd rh/client/; yarn watch",
     "build": "cd rh/client/; yarn build"
-  },
-  "dependencies": {
-    "foundation-sites": "^6.4.4-rc1"
   }
 }
