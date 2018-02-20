@@ -1,1 +1,4 @@
-console.log('This is my app');
+// initialize standalone plugins/widgets
+import $ from "jquery";
+
+$(document).foundation();
