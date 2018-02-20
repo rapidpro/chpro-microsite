@@ -10,7 +10,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
   <title>{% page_attribute 'page_title' %}</title>
+
   {% render_block "css" %}
   {% addtoblock 'css' %}
     <link rel="stylesheet" href="{% static 'all.css' %}">
@@ -19,18 +21,56 @@
 
 <body>
 {% cms_toolbar %}
-<header>
-</header>
 
-{% block base_content %}
-  <section>
-    {% placeholder 'content' %}
-  </section>
-  <section id="output"></section>
-{% endblock %}
+<div class="off-canvas-wrapper">
+  <div
+    class="off-canvas position-right"
+    id="offCanvas"
+    data-off-canvas>
+      <nav>
+        <ul class="vertical menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Functions</a></li>
+          <li><a href="#">Use Cases</a></li>
+          <li><a href="#">Examples</a></li>
+          <li><a href="#">Get Started</a></li>
+        </ul>
+      </nav>
+  </div>
+  <div class="off-canvas-content" data-off-canvas-content>
+    <header class="site-header">
 
-<footer>
-</footer>
+      <ul class="menu align-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Functions</a></li>
+        <li><a href="#">Use Cases</a></li>
+        <li><a href="#">Examples</a></li>
+        <li><a href="#">Get Started</a></li>
+      </ul>
+
+      {% comment %}
+      <button
+        type="button"
+        class="button"
+        data-toggle="offCanvas">Open Menu</button>
+      {% endcomment %}
+    </header>
+
+    <main class="site-main">
+      {% block base_content %}
+        {% placeholder 'content' %}
+
+        <section id="output"></section>
+      {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+    </footer>
+  </div>
+</div>
+
 
 {% render_block 'js' %}
 {% addtoblock 'js' %}
