@@ -1,5 +1,5 @@
 /*
-  SITE HEADER
+  SITE HEADER & NAVIGATION
 */
 
 .site-header {
@@ -8,14 +8,36 @@
 
   .menu {
     display: none;
+  }
 
+  .menu a {
+    margin: auto;
+    color: $body-font-color;
+  }
+}
+
+// Setup Navigation
+.site-header,
+.off-canvas {
+  a {
     font-family: $navigation-font-family;
     text-transform: uppercase;
   }
 }
 
+.off-canvas a {
+  color: white;
+}
+
+// Handle Responsiveness
 .site-header {
   @include breakpoint(large) {
+    padding-top: $global-margin * 2;
+    
+    .logo {
+      max-width: 180px;
+    }
+
     .menu {
       display: flex;
     }

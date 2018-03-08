@@ -1,0 +1,15 @@
+
+
+@mixin block($base: $global-margin) {
+  padding-top: $base * 2;
+  padding-bottom: $base * 2;
+
+  @include breakpoint(large) {
+    padding-top: $base * 3;
+    padding-bottom: $base * 3;
+  }
+}
+
+.block {
+  @include block;
+}

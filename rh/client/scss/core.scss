@@ -13,6 +13,14 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 
+// Fonts
+$body-font-family: 'Open Sans', sans-serif;
+$global-weight-bold: 700;
+$body-font-color: #141414;
+
+$header-font-family: 'Titillium Web', sans-serif;
+$header-font-weight: 700;
+
 // Palette
 
 /*
@@ -37,4 +45,6 @@ $navigation-font-family: $header-font-family;
 // ToC Imports
 @import 'layout/site-header';
 @import 'layout/site-footer';
-@import 'layout/off-canvas';
+
+@import 'components/blocks/block';
+@import 'components/blocks/hero';
