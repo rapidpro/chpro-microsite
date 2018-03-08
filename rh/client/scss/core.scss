@@ -1,7 +1,23 @@
-@import "../node_modules/foundation-sites/scss/foundation";
-
 // Enable Foundation's XY Grid:
 // https://foundation.zurb.com/sites/docs/xy-grid.html
 $xy-grid: true;
 
+/*
+  Configuration
+ */
+
+// Typography Config
+$body-font-family: 'Open Sans', sans-serif;
+
+$global-weight-normal: 400;
+$global-weight-bold: 700;
+
+$header-font-family: 'Titillium Web', sans-serif;
+$header-font-weight: 700;
+
+// Build our base
+@import "../node_modules/foundation-sites/scss/foundation";
+
 @include foundation-everything;
+
+// ToC Imports
