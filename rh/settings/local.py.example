@@ -25,6 +25,12 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 HTTPS_LINKS = False
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
