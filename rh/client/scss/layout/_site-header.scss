@@ -5,7 +5,7 @@
 .site-header {
   padding-top: $global-margin;
   padding-bottom: $global-margin;
-  
+
   .menu {
     display: none;
   }
@@ -15,7 +15,7 @@
 .site-header {
   @include breakpoint(large) {
     .menu {
-      display: block;
+      display: flex;
     }
   }
 }

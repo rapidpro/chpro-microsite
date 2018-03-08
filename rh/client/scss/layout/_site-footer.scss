@@ -1,7 +1,11 @@
 
 
 .site-footer {
-  padding-top:
+  padding-top: $global-margin;
   background: #393939;
+  color: white;
+}
+
+.site-footer a {
   color: white;
 }

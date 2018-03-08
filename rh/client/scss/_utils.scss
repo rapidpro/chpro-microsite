@@ -1,0 +1,16 @@
+
+
+/// Returns onyx or white depending on color argument. Useful for determining
+/// foreground color depending on background color.
+/// @param {Color} $color Reference color to check
+/// @return {Color} Color to use
+@function contrast-color($color) {
+  @if lightness($color) > 50 {
+    // Onyx is our darkest color used.
+    // Lighter backgorund, return dark color
+    @return $body-font-color;
+  } @else {
+    // Darker background, return light color
+    @return white; // TODO: Make configurable
+  }
+}

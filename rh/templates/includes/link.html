@@ -1,10 +1,11 @@
 {% with instance.get_link as link %}
   {% if link %}
     {% if instance.link_style == 'link' %}
+      {# TODO: Handle external attributes #}
       <a href="{{ instance.get_link }}">{{ instance.link_text }}</a>
     {% endif %}
     {% if instance.link_style == 'button' %}
-      <button>{{ instance.link_text }}</button>
+      <button class="button">{{ instance.link_text }}</button>
     {% endif %}
   {% endif %}
 {% endwith %}

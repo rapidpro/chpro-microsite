@@ -19,8 +19,18 @@ $foundation-palette: (
 );
 */
 
+// --
+
+$offcanvas-background: #444444;
+$offcanvas-shadow: none;
+
+@import "../node_modules/foundation-sites/scss/foundation";
+
 @include foundation-everything;
+
+@import 'utils';
 
 // ToC Imports
 @import 'layout/site-header';
 @import 'layout/site-footer';
+@import 'layout/off-canvas';

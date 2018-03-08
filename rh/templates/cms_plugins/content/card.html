@@ -1,5 +1,11 @@
-<div>
-  <h2>{{ instance.title }}</h2>
-  <p>{{ body|safe }}</p>
-  {% include 'includes/link.html' %}
+<section class="card">
+  <h3 class="card-title">{{ instance.title }}</h3>
+
+  <div class="card-content">
+    <p>{{ body|safe }}</p>
+  </div>
+
+  <div class="card-actions">
+    {% include 'includes/link.html' %}
+  </div>
 </div>

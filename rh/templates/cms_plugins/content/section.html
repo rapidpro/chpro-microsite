@@ -1,9 +1,21 @@
 {% load cms_tags %}
-<div>
-  <h2>{{ instance.title }}</h2>
-  <p>{{ body|safe }}</p>
-  {% for plugin in instance.child_plugin_instances %}
-    {% render_plugin plugin %}
-  {% endfor %}
-  {% include 'includes/link.html' %}
+
+<div class="block grid-container">
+  <div class="grid-x">
+    <header
+      class="block-header">
+      <h2 class="block-title">{{ instance.title }}</h2>
+      <p>{{ body|safe }}</p>
+    </header>
+
+    <div class="block-content">
+      {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+      {% endfor %}
+    </div>
+
+    <div class="block-actions">
+      <p>{% include 'includes/link.html' %}</p>
+    </div>
+  </div>
 </div>

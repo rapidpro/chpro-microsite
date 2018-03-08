@@ -1,6 +1,12 @@
 {% load thumbnail %}
-<h1>{{ instance.title }}</h1>
-<div>
-  <p>{{ body|safe }}</p>
-  <img src="{% thumbnail instance.image "50x50" %}">
+
+<div
+  class="hero"
+  role="banner">
+    <div class="grid-container">
+      <h1 class="hero-title">{{ instance.title }}</h1>
+      <p>{{ body|safe }}</p>
+      <img
+        src="{% thumbnail instance.image "50x50" %}">
+    </div>
 </div>
