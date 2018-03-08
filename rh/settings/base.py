@@ -170,6 +170,7 @@ ROOT_URLCONF = 'rh.urls'
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'client', 'dist'),
+    os.path.join(PROJECT_DIR, 'client', 'static'),
 ]
 
 STATICFILES_FINDERS = (

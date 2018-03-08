@@ -20,7 +20,6 @@ pip-delete-this-directory.txt
 
 *local.py
 var
-static/
 
 # dotenv
 .env
