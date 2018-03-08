@@ -8,9 +8,11 @@
 
   .menu {
     display: none;
+
+    font-family: $navigation-font-family;
+    text-transform: uppercase;
   }
 }
-
 
 .site-header {
   @include breakpoint(large) {

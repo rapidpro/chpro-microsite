@@ -1,3 +1,5 @@
+@import "../node_modules/foundation-sites/scss/foundation";
+
 // Enable Foundation's XY Grid:
 // https://foundation.zurb.com/sites/docs/xy-grid.html
 $xy-grid: true;
@@ -24,8 +26,10 @@ $foundation-palette: (
 $offcanvas-background: #444444;
 $offcanvas-shadow: none;
 
-@import "../node_modules/foundation-sites/scss/foundation";
+// Style primary and off-canvas navigation
+$navigation-font-family: $header-font-family;
 
+// Set Foundation up
 @include foundation-everything;
 
 @import 'utils';
