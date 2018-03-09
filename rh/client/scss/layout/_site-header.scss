@@ -6,6 +6,10 @@
   padding-top: $global-margin;
   padding-bottom: $global-margin;
 
+  .logo {
+    max-width: 120px;
+  }
+
   .menu {
     display: none;
   }
@@ -14,6 +18,10 @@
     margin: auto;
     color: $body-font-color;
   }
+}
+
+.off-canvas-toggler {
+  font-weight: $navigation-font-weight;
 }
 
 // Setup Navigation
@@ -32,6 +40,7 @@
 .site-header {
   @include breakpoint(large) {
     padding-top: $global-margin * 2;
+    padding-bottom: $global-margin * 2;
 
     .logo {
       max-width: 160px;

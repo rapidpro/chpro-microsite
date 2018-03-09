@@ -1,7 +1,12 @@
 %nav-item {
+  position: relative;
   font-family: $navigation-font-family;
   font-weight: $navigation-font-weight;
   text-transform: uppercase;
+
+  &[aria-current] {
+    color: $brand-color-primary;
+  }
 }
 
 /*

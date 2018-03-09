@@ -10,7 +10,6 @@ $breakpoints: (
   medium: 640px,
   large: 1024px,
   xlarge: 1200px,
-  xxlarge: 1440px,
 );
 
 // Fonts
@@ -22,16 +21,26 @@ $header-font-family: 'Titillium Web', sans-serif;
 $header-font-weight: 700;
 
 // Palette
+$brand-color-primary: #FF3333;
+$brand-color-secondary: #333333;
 
-/*
 $foundation-palette: (
-
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
 );
-*/
+
+//$light-gray
+//$medium-gray
+$dark-gray: #333333;
+//$black
+//$white
 
 // --
 
-$offcanvas-background: #444444;
+$offcanvas-background: $brand-color-secondary;
 $offcanvas-shadow: none;
 
 // Style primary and off-canvas navigation
@@ -42,6 +51,7 @@ $navigation-font-weight: $global-weight-bold;
 @include foundation-everything;
 
 @import 'utils';
+@import 'global';
 
 // ToC Imports
 @import 'components/blocks/block';

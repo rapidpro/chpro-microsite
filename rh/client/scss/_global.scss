@@ -1,0 +1,17 @@
+/*
+  GLOBALS
+*/
+
+
+// CMS shims
+.cms-toolbar-expanded {
+  $cms-nav-height: 52px;
+
+  #cms-top { // sass-lint:disable-line no-ids
+    margin-top: $cms-nav-height;
+  }
+
+  .off-canvas {
+    top: $cms-nav-height;
+  }
+}

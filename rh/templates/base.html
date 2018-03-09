@@ -42,30 +42,35 @@
   </div>
   <div class="off-canvas-content" data-off-canvas-content>
     <header class="site-header">
-      <div class="grid-x grid-padding-x">
-        <div class="cell small-9 large-4">
-          <img
-            src="{% static 'img/logo.svg' %}"
-            alt="RapidPro Health"
-            class="logo"
-            />
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="cell small-9 large-4">
+            <a href="/">
+              <img
+                src="{% static 'img/logo.svg' %}"
+                alt="RapidPro Health"
+                class="logo"
+                />
+            </a>
+          </div>
+
+          {# TODO: Pull from Django CMS menus? #}
+          <ul
+            class="menu align-right cell auto">
+            <li class="hide"><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Functions</a></li>
+            <li><a href="#">Use Cases</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Get Started</a></li>
+          </ul>
+
+          <button
+            type="button"
+            class="off-canvas-toggler cell small-3 hide-for-large"
+            data-toggle="offCanvas"
+            aria-hidden>Menu</button>
         </div>
-
-        {# TODO: Pull from Django CMS menus? #}
-        <ul
-          class="menu align-right cell auto">
-          <li class="hide"><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Functions</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Get Started</a></li>
-        </ul>
-
-        <button
-          type="button"
-          class="off-canvas-toggle hide-for-large"
-          data-toggle="offCanvas">Open Menu</button>
       </div>
     </header>
 
@@ -78,18 +83,21 @@
     </main>
 
     <footer class="site-footer">
-      <div class="grid-x grid-padding-x">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
 
-        {# TODO: Pull from Django CMS menus? #}
-        <ul class="menu align-right">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Functions</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Get Started</a></li>
-        </ul>
+          {# TODO: Pull from Django CMS menus? #}
+          <ul class="menu align-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Functions</a></li>
+            <li><a href="#">Use Cases</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Get Started</a></li>
+          </ul>
+        </div>
       </div>
+    </div>
     </footer>
   </div>
 </div>

@@ -1,17 +1,25 @@
 {% load thumbnail %}
 
 <div
-  class="hero"
+  class="hero{% if instance.image %} has-image{% endif %}"
   role="banner">
     <div class="grid-container">
-      <h1 class="hero-title">{{ instance.title }}</h1>
-      <div class="hero-content">
-        {{ body|safe }}
+      <header class="hero-header grid-x grid-padding-x">
+        <h1 class="hero-title cell small-12">{{ instance.title }}</h1>
+      </header>
+
+      <div class="grid-x grid-padding-x">
+        <div class="hero-content cell small-12">
+          {{ body|safe }}
+        </div>
+        {% if instance.image %}
+        <aside class="hero-sub-content">
+          {# TODO: Responsive #}
+          <img
+            src="{% thumbnail instance.image "500x500" %}"
+            alt="{{ instance.image.alt_text }}">
+        </aside>
+        {% endif %}
       </div>
-      {% if instance.image %}
-        {# TODO: Responsive. Add alt %}
-        <img
-          src="{% thumbnail instance.image "50x50" %}">
-      {% endif %}
-    </div>
+  </div>
 </div>
