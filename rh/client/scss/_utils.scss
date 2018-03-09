@@ -1,4 +1,19 @@
+%nav-item {
+  font-family: $navigation-font-family;
+  font-weight: $navigation-font-weight;
+  text-transform: uppercase;
+}
 
+/*
+  MIXINS
+*/
+
+/// Removes trailing space at the bottom of elements.
+@mixin bottomless {
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
 
 /// Returns onyx or white depending on color argument. Useful for determining
 /// foreground color depending on background color.

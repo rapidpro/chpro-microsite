@@ -36,6 +36,7 @@ $offcanvas-shadow: none;
 
 // Style primary and off-canvas navigation
 $navigation-font-family: $header-font-family;
+$navigation-font-weight: $global-weight-bold;
 
 // Set Foundation up
 @include foundation-everything;

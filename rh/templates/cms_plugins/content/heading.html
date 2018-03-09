@@ -5,8 +5,13 @@
   role="banner">
     <div class="grid-container">
       <h1 class="hero-title">{{ instance.title }}</h1>
-      <p>{{ body|safe }}</p>
-      <img
-        src="{% thumbnail instance.image "50x50" %}">
+      <div class="hero-content">
+        {{ body|safe }}
+      </div>
+      {% if instance.image %}
+        {# TODO: Responsive. Add alt %}
+        <img
+          src="{% thumbnail instance.image "50x50" %}">
+      {% endif %}
     </div>
 </div>

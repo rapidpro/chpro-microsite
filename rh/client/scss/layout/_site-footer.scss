@@ -1,4 +1,6 @@
-
+/*
+  SITE FOOTER
+*/
 
 .site-footer {
   @include block;
@@ -7,5 +9,6 @@
 }
 
 .site-footer a {
+  @extend %nav-item;
   color: white;
 }

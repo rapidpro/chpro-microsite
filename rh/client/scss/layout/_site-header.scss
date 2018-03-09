@@ -20,9 +20,7 @@
 .site-header,
 .off-canvas {
   a {
-    font-family: $navigation-font-family;
-    font-weight: $global-weight-bold;
-    text-transform: uppercase;
+    @extend %nav-item;
   }
 }
 

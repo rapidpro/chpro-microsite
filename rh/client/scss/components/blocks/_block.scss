@@ -1,5 +1,9 @@
+/*
+  BLOCKS
+*/
 
-
+// Blocks represent full-width sections of pages.
+// They should be self-contained.
 @mixin block($base: $global-margin) {
   padding-top: $base * 2;
   padding-bottom: $base * 2;
