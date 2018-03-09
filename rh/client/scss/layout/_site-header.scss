@@ -21,6 +21,7 @@
 .off-canvas {
   a {
     font-family: $navigation-font-family;
+    font-weight: $global-weight-bold;
     text-transform: uppercase;
   }
 }
@@ -33,9 +34,9 @@
 .site-header {
   @include breakpoint(large) {
     padding-top: $global-margin * 2;
-    
+
     .logo {
-      max-width: 180px;
+      max-width: 160px;
     }
 
     .menu {

@@ -43,8 +43,8 @@ $navigation-font-family: $header-font-family;
 @import 'utils';
 
 // ToC Imports
-@import 'layout/site-header';
-@import 'layout/site-footer';
-
 @import 'components/blocks/block';
 @import 'components/blocks/hero';
+
+@import 'layout/site-header';
+@import 'layout/site-footer';

@@ -1,7 +1,7 @@
 
 
 .site-footer {
-  padding-top: $global-margin;
+  @include block;
   background: #393939;
   color: white;
 }
