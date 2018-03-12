@@ -54,6 +54,8 @@ $navigation-font-weight: $global-weight-bold;
 @import 'global';
 
 // ToC Imports
+@import 'components/card';
+
 @import 'components/blocks/block';
 @import 'components/blocks/hero';
 

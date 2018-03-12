@@ -17,6 +17,7 @@
 }
 
 
+
 .container {
-  @include xy-grid-container;
+  @include container;
 }

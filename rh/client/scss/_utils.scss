@@ -20,6 +20,18 @@
   }
 }
 
+// TODO: Docs
+@mixin container {
+  @include xy-grid-container;
+  @include xy-grid;
+}
+
+// Collapse gutters on wrappers
+@mixin collapse-gutters($type: padding) {
+  #{$type}-right: 0;
+  #{$type}-left: 0;
+}
+
 /// Returns onyx or white depending on color argument. Useful for determining
 /// foreground color depending on background color.
 /// @param {Color} $color Reference color to check

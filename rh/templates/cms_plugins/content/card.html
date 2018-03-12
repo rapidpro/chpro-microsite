@@ -2,10 +2,10 @@
   <h3 class="card-title">{{ instance.title }}</h3>
 
   <div class="card-content">
-    <p>{{ body|safe }}</p>
+    {{ body|safe }}
   </div>
 
   <div class="card-actions">
     {% include 'includes/link.html' %}
   </div>
-</div>
+</section>
