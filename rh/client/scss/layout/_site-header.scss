@@ -6,6 +6,11 @@
   padding-top: $global-margin;
   padding-bottom: $global-margin;
 
+  .home-link {
+    display: block;
+    flex: 1 1 auto;
+  }
+
   .logo {
     max-width: 120px;
   }
@@ -20,19 +25,25 @@
   }
 }
 
+.site-header .container {
+  display: flex;
+}
+
 .off-canvas-toggler {
+  flex: 0 1 80px;
+  height: 50px;
   font-weight: $navigation-font-weight;
 }
 
 // Setup Navigation
 .site-header,
 .off-canvas {
-  a {
+  .menu a {
     @extend %nav-item;
   }
 }
 
-.off-canvas a {
+.off-canvas .menu a {
   color: white;
 }
 
@@ -48,6 +59,10 @@
 
     .menu {
       display: flex;
+    }
+
+    .off-canvas-toggler {
+      display: none;
     }
   }
 }

@@ -15,3 +15,8 @@
     top: $cms-nav-height;
   }
 }
+
+
+.container {
+  @include xy-grid-container;
+}
