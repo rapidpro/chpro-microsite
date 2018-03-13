@@ -3,7 +3,6 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from cms.models import Page
 from cms.models.fields import PageField
 from djangocms_link.validators import IntranetURLValidator
 from djangocms_text_ckeditor.cms_plugins import TextPlugin
@@ -80,6 +79,7 @@ class BlockMixin(AbstractText):
 
 
 class BlockPlugin(TextPlugin):
+
     # This is necessary because TextPlugin overrides the context.
     # Using {{ instance }} is consistent with the rest of the plugins
     def render(self, context, instance, placeholder):
