@@ -35,8 +35,8 @@ $foundation-palette: (
 //$light-gray
 //$medium-gray
 $dark-gray: #333333;
-//$black
-//$white
+$black: #191919;
+$white: #FFFFFF;
 
 // --
 
@@ -46,6 +46,10 @@ $offcanvas-shadow: none;
 // Style primary and off-canvas navigation
 $navigation-font-family: $header-font-family;
 $navigation-font-weight: $global-weight-bold;
+
+// Card styles
+$card-border: none;
+$card-padding: 0;
 
 // Set Foundation up
 @include foundation-everything;

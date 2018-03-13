@@ -20,13 +20,13 @@
   }
 }
 
-// TODO: Docs
+/// General wrapper for grid elements
 @mixin container {
   @include xy-grid-container;
   @include xy-grid;
 }
 
-// Collapse gutters on wrappers
+/// Collapses gutters on wrappers
 @mixin collapse-gutters($type: padding) {
   #{$type}-right: 0;
   #{$type}-left: 0;
@@ -38,8 +38,7 @@
 /// @return {Color} Color to use
 @function contrast-color($color) {
   @if lightness($color) > 50 {
-    // Onyx is our darkest color used.
-    // Lighter backgorund, return dark color
+    // Lighter background, return dark color
     @return $body-font-color;
   } @else {
     // Darker background, return light color

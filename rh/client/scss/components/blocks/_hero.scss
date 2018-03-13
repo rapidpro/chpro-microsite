@@ -4,21 +4,29 @@
 
 .hero {
   @include block;
-  background: #D9D9D9;
+  background: #61C0AC;
+  color: white;
+}
+
+.hero-header,
+.hero-content {
+  @include container;
 }
 
 .hero-header {
-  @include xy-grid;
-  @include xy-cell(full, $gutter-type: padding);
+  @include collapse-gutters;
 }
 
-.hero-title,
+.hero-header,
 .hero-content {
   text-align: center;
 }
 
-.hero-content {
-  //max-width: $global-width / 2;
+.hero-title {
+  @include xy-cell($gutter-type: padding);
+}
+
+.hero-content-primary {
   @include bottomless;
 }
 
@@ -26,5 +34,18 @@
 .hero.has-image {
   .hero-content {
     max-width: auto;
+  }
+}
+
+.hero {
+  @include breakpoint(large) {
+    @include container;
+    @include collapse-gutters;
+    justify-content: center;
+
+    .hero-header,
+    .hero-content {
+      @include xy-cell(7);
+    }
   }
 }

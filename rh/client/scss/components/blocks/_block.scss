@@ -22,35 +22,42 @@
 // throughout the site. They are boxes in which varied
 // content may be placed.
 
-.block-header {
+.block-header,
+.block-content {
   @include container;
+
+}
+
+.block-header {
   margin-bottom: $global-margin;
 }
 
-.block-content {
-  @include container;
-}
+@include breakpoint(medium) {
+  .block-content {
+    @include collapse-gutters;
+  }
 
-.block {
-  @include breakpoint(large) {
-    .block-header,
-    .block-content {
-      @include collapse-gutters;
-    }
-
-    .block-title {
-      @include xy-cell(auto);
-    }
-
-    .block-header-text {
-      @include xy-cell(6);
-    }
+  // Cards
+  .block-content > .card {
+    @include xy-cell(6);
   }
 }
 
-// Block w/Cards
-.block-content > .card {
-  @include breakpoint(medium) {
+@include breakpoint(large) {
+  .block-header {
+    @include collapse-gutters;
+  }
+  
+  .block-title {
+    @include xy-cell(auto);
+  }
+
+  .block-header-text {
     @include xy-cell(6);
+  }
+
+  // Cards
+  .block-content > .card {
+    @include xy-cell(4);
   }
 }

@@ -3,22 +3,22 @@
 <div
   class="hero{% if instance.image %} has-image{% endif %}"
   role="banner">
-    <div class="container">
-      <header class="hero-header">
-        <h1 class="hero-title">{{ instance.title }}</h1>
-      </header>
+  <header class="hero-header">
+    <h1 class="hero-title">{{ instance.title }}</h1>
+  </header>
 
-      <div class="hero-content">
-        {{ body|safe }}
-      </div>
+  <div class="hero-content">
+    <div class="hero-content-primary">
+      {{ body|safe }}
+    </div>
 
-      {% if instance.image %}
-      <aside class="hero-sub-content">
-        {# TODO: Responsive #}
-        <img
-          src="{% thumbnail instance.image "500x500" %}"
-          alt="{{ instance.image.alt_text }}">
-      </aside>
-      {% endif %}
+    {% if instance.image %}
+    <aside class="hero-content-secondary">
+      {# TODO: Responsive #}
+      <img
+        src="{% thumbnail instance.image "500x500" %}"
+        alt="{{ instance.image.alt_text }}">
+    </aside>
+    {% endif %}
   </div>
 </div>
