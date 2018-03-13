@@ -11,7 +11,7 @@ from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
 # ------------------------------------------------------------------------------
 # Models
 # ------------------------------------------------------------------------------
-class Heading(BlockMixin):
+class Hero(BlockMixin):
     STYLE_CHOICES = Choices(
         ('clean', 'Clean'),
     )
@@ -28,10 +28,10 @@ class Block(BlockMixin, Linkable):
 # ------------------------------------------------------------------------------
 # CMS Plugin/Admin
 # ------------------------------------------------------------------------------
-class HeadingPlugin(BlockPlugin):
-    name = 'Heading Plugin'
+class HeroPlugin(BlockPlugin):
+    name = 'Hero Plugin'
     module = 'Content'
-    model = Heading
+    model = Hero
     render_template = "cms_plugins/content/heading.html"
 
     fieldsets = (
@@ -72,6 +72,6 @@ class CardPlugin(BlockPlugin):
     )
 
 
-plugin_pool.register_plugin(HeadingPlugin)
+plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(SectionPlugin)
 plugin_pool.register_plugin(CardPlugin)
