@@ -29,14 +29,8 @@
     id="offCanvas"
     data-off-canvas>
       <nav>
-        {# TODO: Pull from Django CMS menus? #}
         <ul class="vertical menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Functions</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Get Started</a></li>
+          {% show_menu 1 1 0 1 "navigation/menu.html" %}
         </ul>
       </nav>
   </div>
@@ -51,15 +45,9 @@
             />
         </a>
         
-        {# TODO: Pull from Django CMS menus? #}
         <ul
           class="menu align-right">
-          <li class="hide"><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Functions</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Get Started</a></li>
+          {% show_menu 1 1 0 1 "navigation/menu.html" %}
         </ul>
 
         <button
@@ -82,14 +70,9 @@
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
 
-          {# TODO: Pull from Django CMS menus? #}
           <ul class="menu align-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Functions</a></li>
-            <li><a href="#">Use Cases</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Get Started</a></li>
+          {% show_menu 0 0 0 1 "navigation/menu.html" %}
+          {% show_menu 1 1 0 1 "navigation/menu.html" %}
           </ul>
         </div>
       </div>
