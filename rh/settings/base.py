@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     'django_select2',
 
     # Da Subject Matter
+    'rh.apps.meta',
     'rh.apps.content',
 ]
 

@@ -1,0 +1,14 @@
+{% load cms_tags %}
+
+{% for page in instance.get_published_child_pages %}
+<section class="card">
+  <h3 class="card-title">{{ page.get_title }}</h3>
+  <div class="card-content">
+    {{ page.description }}
+  </div>
+</section>
+{% endfor %}
+
+{% for plugin in instance.child_plugin_instances %}
+  {% render_plugin plugin %}
+{% endfor %}

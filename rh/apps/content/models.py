@@ -1,3 +1,5 @@
+from cms.models import CMSPlugin
+from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -30,6 +32,23 @@ class Block(BlockMixin, Linkable):
         super().clean()
         if self.get_link() and not self.link_text:
             raise ValidationError({'link_text':'When adding a Link, you need to provide a display text for the it'})
+
+
+class CardGrid(CMSPlugin):
+    root = PageField(blank=True, null=True)
+
+    def get_published_child_pages(self):
+        """
+        Returns all child pages of the selected root page which are
+        published.
+        :return:
+        """
+        if self.root:
+            return self.root.get_children().published()
+        return []
+
+    def __str__(self):
+        return str(self.root) or f'Manual Card Grid ({self.pk})'
 
 
 class IconCard(Block):
@@ -104,10 +123,11 @@ class SectionCardsPlugin(BlockPlugin):
     disable_child_plugins = False
 
 
-class StandaloneCardListPlugin(CMSPluginBase):
-    name = 'Standalone Card List'
+class CardGridPlugin(CMSPluginBase):
+    name = 'Card Grid'
     module = 'Content'
-    render_template = 'cms_plugins/content/render_children.html'
+    model = CardGrid
+    render_template = 'cms_plugins/content/card_grid.html'
     allow_children = True
     child_classes = (
         'CardPlugin',
@@ -135,5 +155,5 @@ plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
 plugin_pool.register_plugin(SectionTextPlugin)
 plugin_pool.register_plugin(SectionCardsPlugin)
-plugin_pool.register_plugin(StandaloneCardListPlugin)
+plugin_pool.register_plugin(CardGridPlugin)
 plugin_pool.register_plugin(CardPlugin)
