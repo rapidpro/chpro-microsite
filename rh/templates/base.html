@@ -44,7 +44,7 @@
             class="logo"
             />
         </a>
-        
+
         <ul
           class="menu align-right">
           {% show_menu 1 1 0 1 "navigation/menu.html" %}
@@ -69,7 +69,12 @@
     <footer class="site-footer">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-
+          <img
+            src="{% static 'img/logo-white.svg' %}"
+            alt="RapidPro Health"
+            class="logo"
+            />
+          {# TODO: Pull from Django CMS menus? #}
           <ul class="menu align-right">
           {% show_menu 0 0 0 1 "navigation/menu.html" %}
           {% show_menu 1 1 0 1 "navigation/menu.html" %}
