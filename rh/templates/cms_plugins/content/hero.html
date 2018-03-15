@@ -4,29 +4,30 @@
 <div
   class="hero{% if instance.image %} has-image{% endif %}"
   role="banner">
-  <header class="hero-header">
-    <h1 class="hero-title">{{ instance.title }}</h1>
-  </header>
+  <div class="container">
+    <header class="hero-header">
+      <h1 class="hero-title">{{ instance.title }}</h1>
+    </header>
 
-  <div class="hero-content">
-    <div class="hero-content-primary">
-      {{ body|safe }}
-    </div>
+    <div class="hero-content">
+      <div class="hero-content-primary">
+        {{ body|safe }}
+      </div>
 
-    {% if instance.image %}
-    <aside class="hero-content-secondary">
-      {# TODO: Responsive #}
-      <img
-        src="{% thumbnail instance.image "500x500" %}"
-        alt="{{ instance.image.alt_text }}">
-    </aside>
+      {% if instance.image %}
+      <aside class="hero-content-secondary">
+        {# TODO: Responsive #}
+        <img
+          src="{% thumbnail instance.image "500x500" %}"
+          alt="{{ instance.image.alt_text }}">
+      </aside>
+      {% endif %}
+
+    {% if not instance.get_plugin_class_instance.disable_child_plugins %}
+      {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+      {% endfor %}
     {% endif %}
-
-  {% if not instance.get_plugin_class_instance.disable_child_plugins %}
-    {% for plugin in instance.child_plugin_instances %}
-      {% render_plugin plugin %}
-    {% endfor %}
-  {% endif %}
-
+    </div>
   </div>
 </div>

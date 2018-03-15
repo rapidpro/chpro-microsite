@@ -6,15 +6,10 @@
   @include block;
   background: #61C0AC;
   color: white;
-}
 
-.hero-header,
-.hero-content {
-  @include container;
-}
-
-.hero-header {
-  @include collapse-gutters;
+  .container {
+    justify-content: center;
+  }
 }
 
 .hero-header,
@@ -39,9 +34,9 @@
 
 .hero {
   @include breakpoint(large) {
-    @include container;
-    @include collapse-gutters;
-    justify-content: center;
+    .container {
+      @include collapse-gutters;
+    }
 
     .hero-header,
     .hero-content {

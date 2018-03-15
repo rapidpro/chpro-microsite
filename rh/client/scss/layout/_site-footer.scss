@@ -12,3 +12,11 @@
   @extend %nav-item;
   color: white;
 }
+
+.site-footer {
+  @include breakpoint(large) {
+    .logo {
+      width: 210px;
+    }
+  }
+}
