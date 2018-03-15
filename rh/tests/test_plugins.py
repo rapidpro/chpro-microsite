@@ -19,5 +19,11 @@ class DSMPluginIntegrityTestCase(BaseTestCase, CMSPluginIntegrity):
 
         self.plugin_list = [
             ('TextPlugin', {}),
+            ('HeroPlugin', {}),
+            ('ComplexHeroPlugin', {}),
+            ('SectionTextPlugin', {}),
+            ('SectionCardsPlugin', {}),
+            ('StandaloneCardListPlugin', {}),
+            ('CardPlugin', {}),
         ]
 
