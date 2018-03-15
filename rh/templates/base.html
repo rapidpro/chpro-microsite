@@ -30,13 +30,13 @@
     data-off-canvas>
       <nav>
         <ul class="vertical menu">
-          {% show_menu 1 1 0 1 "navigation/menu.html" %}
+          {% show_menu 0 0 0 1 "navigation/menu.html" %}
         </ul>
       </nav>
   </div>
   <div class="off-canvas-content" data-off-canvas-content>
     <header class="site-header">
-      <div class="container">
+      <nav class="container">
         <a href="/" class="home-link">
           <img
             src="{% static 'img/logo.svg' %}"
@@ -47,7 +47,7 @@
 
         <ul
           class="menu align-right">
-          {% show_menu 1 1 0 1 "navigation/menu.html" %}
+          {% show_menu 0 0 0 1 "navigation/menu.html" %}
         </ul>
 
         <button
@@ -55,33 +55,44 @@
           class="off-canvas-toggler"
           data-toggle="offCanvas"
           aria-hidden>Menu</button>
-        </div>
+      </nav>
     </header>
 
     <main class="site-main">
       {% block base_content %}
         {% placeholder 'content' %}
-
-        <section id="output"></section>
       {% endblock %}
     </main>
 
     <footer class="site-footer">
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <img
-            src="{% static 'img/logo-white.svg' %}"
-            alt="RapidPro Health"
-            class="logo"
-            />
-          {# TODO: Pull from Django CMS menus? #}
-          <ul class="menu align-right">
+      <nav class="site-footer-primary">
+        <img
+          src="{% static 'img/logo-white.svg' %}"
+          alt="RapidPro Health"
+          class="logo"
+          />
+
+        <ul class="menu">
           {% show_menu 0 0 0 1 "navigation/menu.html" %}
-          {% show_menu 1 1 0 1 "navigation/menu.html" %}
-          </ul>
-        </div>
+        </ul>
+      </nav>
+
+      <div class="site-footer-content">
+        <p>RapidPro Health provides rich data for entities all over the world.</p>
+        <p><a href="mailto:info@rapidpro.com">info@rapidpro.com</a></p>
       </div>
-    </div>
+
+      <div class="site-footer-aux">
+        <nav>
+          <ul class="menu">
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/terms">Privacy Policy</a></li>
+            <li><a href="/terms">Support</a></li>
+          </ul>
+        </nav>
+
+        <small>Copyright &copy; UNICEF</small>
+      </div>
     </footer>
   </div>
 </div>

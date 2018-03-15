@@ -5,18 +5,61 @@
 .site-footer {
   @include block;
   background: #324955;
-  color: white;
+  color: $white;
+
+  .logo {
+    display: none;
+  }
+
+  a {
+    color: $white;
+  }
 }
 
-.site-footer a {
+.site-footer-primary a {
   @extend %nav-item;
-  color: white;
 }
 
-.site-footer {
-  @include breakpoint(large) {
-    .logo {
-      width: 210px;
-    }
+.site-footer-primary,
+.site-footer-content,
+.site-footer-aux {
+  @include container;
+}
+
+.site-footer-content {
+  // Override
+  display: block;
+}
+
+.site-footer .menu,
+.site-footer-aux {
+  flex-direction: column;
+  width: 100%;
+}
+
+.site-footer .menu a {
+  padding-left: 0;
+}
+
+
+
+@include breakpoint(large) {
+  .site-footer .logo {
+    display: block;
+    width: 210px;
+  }
+
+  .site-footer .menu,
+  .site-footer-aux {
+    flex-direction: row;
+  }
+
+  .site-footer-primary .menu {
+    justify-content: right;
+  }
+
+  // Re-add the padding to everything after the first child
+  .site-footer .menu a:first-child ~ a {
+    padding: $menu-simple-margin;
   }
 }

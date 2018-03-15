@@ -4,8 +4,9 @@
 
 .hero {
   @include block;
-  background: #61C0AC;
-  color: white;
+  background: #54A18F;
+  background-image: url(/static/img/topo-1.svg);
+  color: $white;
 
   .container {
     justify-content: center;
@@ -17,12 +18,16 @@
   text-align: center;
 }
 
-.hero-title {
-  @include xy-cell($gutter-type: padding);
+.hero-header {
+  margin-bottom: $global-margin * 2;
 }
 
 .hero-content-primary {
   @include bottomless;
+}
+
+.hero-title {
+  font-weight: $global-weight-normal;
 }
 
 // With Image
@@ -34,6 +39,10 @@
 
 .hero {
   @include breakpoint(large) {
+    $large-margin: $global-margin * 6;
+    padding-top: $large-margin;
+    padding-bottom: $large-margin;
+
     .container {
       @include collapse-gutters;
     }
