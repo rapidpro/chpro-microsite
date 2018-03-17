@@ -19,7 +19,7 @@
 }
 
 .hero-header {
-  margin-bottom: $global-margin * 2;
+  @include bottom-space(2);
 }
 
 .hero-content-primary {

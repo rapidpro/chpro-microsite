@@ -41,8 +41,23 @@
   padding-left: 0;
 }
 
+.site-footer-content,
+.site-footer-aux {
+  a {
+    @include reverse-link-effects;
+  }
+}
+
+.site-footer-aux * {
+  font-size: .8rem;
+}
 
 @include breakpoint(large) {
+  .site-footer-primary,
+  .site-footer-content {
+    @include bottom-space(2);
+  }
+
   .site-footer .logo {
     display: block;
     width: 210px;
@@ -55,12 +70,28 @@
 
   .site-footer-primary {
     .menu {
-      justify-content: right;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      align-items: center;
+      margin-left: map-get($grid-margin-gutters, medium);
+      width: auto;
     }
   }
 
+  .site-footer-aux {
+    justify-content: space-between;
+    align-items: center;
+  }
+
   // Re-add the padding to everything after the first child
-  .site-footer .menu a:first-child ~ a {
+  // or if we only have 1 of a type
+  .site-footer .menu a:first-child ~ a,
+  .site-footer .menu li:only-of-type a {
     padding: $menu-simple-margin;
+  }
+
+  // Ensure alignment of the menus
+  .site-footer .menu li:last-child a {
+    padding-right: 0;
   }
 }

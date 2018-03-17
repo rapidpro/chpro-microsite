@@ -13,6 +13,12 @@
   MIXINS
 */
 
+/// Keep spacing DRY
+/// @param {Number} $multiplier Multiplier to use for calculation
+@mixin bottom-space($multiplier: 1) {
+  margin-bottom: $global-margin * $multiplier;
+}
+
 /// Removes trailing space at the bottom of elements.
 @mixin bottomless {
   & > *:last-child {
@@ -42,6 +48,22 @@
     @return $body-font-color;
   } @else {
     // Darker background, return light color
-    @return white; // TODO: Make configurable
+    @return $white;
+  }
+}
+
+/// Reverse anchors. Makes anchors have no underline by default, but makes one
+/// appear on hover.
+@mixin reverse-link-effects {
+  &:not(.button) {
+    // none
+    text-decoration: $anchor-text-decoration-hover;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    // underline
+    text-decoration: $anchor-text-decoration;
   }
 }
