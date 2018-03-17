@@ -25,7 +25,6 @@
 .block-header,
 .block-content {
   @include container;
-
 }
 
 .block-header {
@@ -47,7 +46,7 @@
   .block-header {
     @include collapse-gutters;
   }
-  
+
   .block-title {
     @include xy-cell(auto);
   }

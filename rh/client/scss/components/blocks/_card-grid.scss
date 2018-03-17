@@ -1,0 +1,22 @@
+/*
+  CARD GRID
+*/
+
+.card-grid {
+  @include block;
+  @include container;
+
+  @include breakpoint(medium) {
+    @include collapse-gutters;
+
+    .card {
+      @include xy-cell(6);
+    }
+  }
+
+  @include breakpoint(large) {
+    .card {
+      @include xy-cell(4);
+    }
+  }
+}
