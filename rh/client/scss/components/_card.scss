@@ -5,3 +5,17 @@
 .card-title {
   font-size: 1.4rem;
 }
+
+.card-content {
+  @include bottomless;
+}
+
+.card-grid .card, // Special case
+.card.light {
+  padding: $global-margin;
+  background: #EAF0E6;
+
+  .icon {
+    color: #D44673;
+  }
+}

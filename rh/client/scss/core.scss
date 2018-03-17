@@ -1,4 +1,4 @@
-@import "../node_modules/foundation-sites/scss/foundation";
+
 
 // Enable Foundation's XY Grid:
 // https://foundation.zurb.com/sites/docs/xy-grid.html
@@ -12,17 +12,9 @@ $breakpoints: (
   xlarge: 1200px,
 );
 
-// Fonts
-$body-font-family: 'Open Sans', sans-serif;
-$global-weight-bold: 700;
-$body-font-color: #141414;
-
-$header-font-family: 'Titillium Web', sans-serif;
-$header-font-weight: 700;
-
 // Palette
 $brand-color-primary: #FF3333;
-$brand-color-secondary: #333333;
+$brand-color-secondary: #324955;
 
 $foundation-palette: (
   primary: #1779ba,
@@ -38,7 +30,15 @@ $dark-gray: #333333;
 $black: #191919;
 $white: #FFFFFF;
 
-// --
+// Fonts
+$body-font-family: 'Open Sans', sans-serif;
+$global-weight-bold: 700;
+$body-font-color: #324955;
+
+$header-font-family: 'Titillium Web', sans-serif;
+$header-font-weight: 700;
+
+// Layout
 
 $site-footer-color: #324955;
 
@@ -52,11 +52,18 @@ $offcanvas-shadow: none;
 $navigation-font-family: $header-font-family;
 $navigation-font-weight: $global-weight-bold;
 
+// Buttons
+$button-font-family: $header-font-family;
+$button-background: #D44673;
+$button-radius: 3px;
+//$button-palette: 
+
 // Card styles
 $card-border: none;
 $card-padding: 0;
 
 // Set Foundation up
+@import "../node_modules/foundation-sites/scss/foundation";
 @include foundation-everything;
 
 @import 'utils';
