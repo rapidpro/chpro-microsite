@@ -4,13 +4,18 @@
 
 .hero {
   @include block;
-  background: #54A18F;
   background-image: url(/static/img/topo-1.svg);
+  background-color: #54A18F;
   color: $white;
 
   .container {
     justify-content: center;
   }
+}
+
+.hero.dark {
+  background-image: url(/static/img/topo-2.svg);
+  background-color: #4B9196;
 }
 
 .hero-header,
