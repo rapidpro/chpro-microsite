@@ -4,7 +4,7 @@
 
 .site-footer {
   @include block;
-  background: #324955;
+  background: $site-footer-color;
   color: $white;
 
   .logo {
@@ -37,6 +37,11 @@
   width: 100%;
 }
 
+.site-footer .menu {
+  @include bottom-space;
+}
+
+// Helps with alignment since menu items have padding
 .site-footer .menu a {
   padding-left: 0;
 }
@@ -46,6 +51,26 @@
   a {
     @include reverse-link-effects;
   }
+}
+
+.site-footer-aux {
+  position: relative;
+
+  &:before {
+    @include bottom-space;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #597F82;
+    content: "";
+  }
+}
+
+.site-footer-aux .menu {
+  flex-direction: row;
 }
 
 .site-footer-aux * {
@@ -61,6 +86,10 @@
   .site-footer .logo {
     display: block;
     width: 210px;
+  }
+
+  .site-footer .menu {
+    margin-bottom: 0;
   }
 
   .site-footer .menu,
