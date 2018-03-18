@@ -2,12 +2,14 @@
 
 <div class="card-grid">
   {% for page in instance.get_published_child_pages %}
-  <section class="card">
-    <h3 class="card-title">{{ page.get_title }}</h3>
-    <div class="card-content">
-      {{ page.description }}
-    </div>
-  </section>
+    <section class="card">
+      <header class="card-header">
+        <h3 class="card-title">{{ page.get_title }}</h3>
+      </header>
+      <div class="card-content">
+        {{ page.description }}
+      </div>
+    </section>
   {% endfor %}
 
   {% for plugin in instance.child_plugin_instances %}

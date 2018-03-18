@@ -23,7 +23,8 @@
 // content may be placed.
 
 .block-header,
-.block-content {
+.block-content,
+.block-actions {
   @include container;
 }
 
@@ -34,6 +35,12 @@
 @include breakpoint(medium) {
   .block-content {
     @include collapse-gutters;
+    @include bottom-space;
+  }
+
+  .block-actions {
+    display: flex;
+    justify-content: center;
   }
 
   // Cards

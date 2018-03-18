@@ -2,12 +2,29 @@
   CARDS
   */
 
+.card-header {
+  @include bottom-space;
+  display: flex;
+  align-items: center;
+}
+
+.card-header .icon {
+  margin-right: $global-margin * 1.25;
+  width: 38px;
+  height: 38px;
+}
+
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.card-header .icon + .card-title {
+  margin-bottom: 0;
 }
 
 .card-content {
   @include bottomless;
+  font-size: .9rem;
 }
 
 .card-grid .card, // Special case
