@@ -16,11 +16,15 @@
   }
 }
 
+/// # Heading
+///
 /// Blocks are special, foundation-level components used
 /// throughout the site. They are boxes in which varied
 /// content may be placed.
 ///
 /// @group components
+/// @example njk
+///  {% include 'block.njk' %}
 .block {
   @include block;
 }

@@ -8,3 +8,7 @@ package:
 groups:
   undefined: General
   components: Components
+
+herman:
+  nunjucks:
+    templatepath: "scss/templates"
