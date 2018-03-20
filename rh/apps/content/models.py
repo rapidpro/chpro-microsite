@@ -86,6 +86,7 @@ class ComplexHeroPlugin(BlockPlugin):
     child_classes = (
         'CardPlugin',
     )
+    allow_children = True
     disable_child_plugins = False
 
     fieldsets = (
@@ -96,7 +97,7 @@ class ComplexHeroPlugin(BlockPlugin):
 
 
 class SectionTextPlugin(BlockPlugin):
-    name = 'Section + Text'
+    name = 'Section'
     module = 'Content'
     model = Block
     child_classes = (
@@ -115,6 +116,7 @@ class SectionCardsPlugin(BlockPlugin):
     module = 'Content'
     model = Block
     allow_children = True
+    disable_child_plugins = False
     child_classes = (
         'CardPlugin',
     )
@@ -123,7 +125,6 @@ class SectionCardsPlugin(BlockPlugin):
         BlockMixin._admin_fieldset,
         Linkable._admin_fieldset,
     )
-    disable_child_plugins = False
 
 
 class CardGridPlugin(CMSPluginBase):
@@ -138,7 +139,7 @@ class CardGridPlugin(CMSPluginBase):
 
 
 class CardPlugin(BlockPlugin):
-    name = 'Icon Card'
+    name = 'Card'
     module = 'Content'
     model = IconCard
     parent_classes = (

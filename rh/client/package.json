@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "yarn run build",
     "parcel": "parcel",
-    "build": "yarn run build_site; yarn run build_admin",
+    "build": "yarn run build_site",
     "watch": "yarn run watch_site",
     "build_site": "parcel build --public-url=/static/ ./all.js",
     "build_admin": "parcel build --public-url=/static/ ./admin.js",
