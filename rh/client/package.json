@@ -20,7 +20,9 @@
     "yarn": "^1.4.x",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
-    "post-load-plugins": "^0.0.16"
+    "post-load-plugins": "^0.0.16",
+    "sassdoc": "^2.5.0",
+    "sassdoc-theme-herman": "^2.0.0"
   },
   "devDependencies": {},
   "license": "UNLICENSED"
