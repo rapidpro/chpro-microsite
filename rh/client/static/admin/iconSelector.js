@@ -1,6 +1,3 @@
-var $ = require('jquery');
-require('select2');
-
 // Icon selector
 function applyIconSelector($elem){
   let selector = '.icon-selector';
@@ -35,5 +32,3 @@ function applyIconSelector($elem){
     }
   });
 }
-
-module.exports = applyIconSelector;
