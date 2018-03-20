@@ -14,14 +14,18 @@
   .logo {
     max-width: 120px;
   }
+}
 
-  .menu {
-    display: none;
-  }
+.site-header .menu {
+  display: none;
 
-  .menu a {
+  a {
     margin: auto;
     color: $body-font-color;
+  }
+
+  li:last-child a {
+    padding-right: 0;
   }
 }
 
