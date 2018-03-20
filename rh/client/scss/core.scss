@@ -8,7 +8,8 @@ $xy-grid: true;
 $breakpoints: (
   small: 0,
   medium: 640px,
-  large: 1024px,
+  large: 760px,
+  xlarge: 1024px,
 );
 
 $global-width: 1100px; // TODO: Verify with designs

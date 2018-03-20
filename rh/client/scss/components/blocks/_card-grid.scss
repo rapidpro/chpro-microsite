@@ -14,7 +14,7 @@
     }
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(xlarge) {
     .card {
       @include xy-cell(4);
     }

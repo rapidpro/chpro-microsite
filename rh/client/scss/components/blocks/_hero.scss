@@ -44,6 +44,10 @@
 
 .hero-content-primary {
   @include bottomless;
+
+  a {
+    color: $white;
+  }
 }
 
 .hero-title {
@@ -51,7 +55,7 @@
 }
 
 // With Image
-.hero.has-image {
+.hero.complex {
   img {
     border: 12px solid $body-background;
   }
@@ -74,7 +78,7 @@
   }
 
   &:before {
-    height: 20rem;
+    height: 12rem;
   }
 }
 
@@ -86,7 +90,7 @@
 
 
 .hero {
-  @include breakpoint(large) {
+  @include breakpoint(xlarge) {
     $large-margin: $global-margin * 6;
     padding-top: $large-margin;
     padding-bottom: $large-margin;
@@ -102,7 +106,7 @@
   }
 }
 
-.hero.has-image {
+.hero.complex {
   @include breakpoint(large) {
     .hero-header {
       @include bottom-space(3);
@@ -118,12 +122,22 @@
       @include xy-cell(auto);
       order: 1;
       margin-top: 0;
-      padding-top: 10rem;
+      padding-top: 5rem;
     }
 
     .hero-content-secondary {
       @include xy-cell(6);
       order: 2;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    &:before {
+      height: 20rem;
+    }
+
+    .hero-content-primary {
+      padding-top: 10rem;
     }
   }
 }

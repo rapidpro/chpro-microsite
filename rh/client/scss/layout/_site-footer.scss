@@ -77,7 +77,7 @@
   font-size: .8rem;
 }
 
-@include breakpoint(large) {
+@include breakpoint(xlarge) {
   .site-footer-primary,
   .site-footer-content {
     @include bottom-space(2);
