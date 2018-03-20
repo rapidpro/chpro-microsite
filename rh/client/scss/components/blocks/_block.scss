@@ -1,9 +1,11 @@
-/*
-  BLOCKS
-*/
-
-// Blocks represent full-width sections of pages.
-// They should be self-contained.
+///
+/// # Blocks
+///
+/// Blocks represent full-width sections of pages.
+/// They should be self-contained.
+///
+/// @param {Number} $base Margin to use for padding
+/// @group components
 @mixin block($base: $global-margin) {
   padding-top: $base * 3;
   padding-bottom: $base * 3;
@@ -14,13 +16,14 @@
   }
 }
 
+/// Blocks are special, foundation-level components used
+/// throughout the site. They are boxes in which varied
+/// content may be placed.
+///
+/// @group components
 .block {
   @include block;
 }
-
-// Blocks are special, foundation-level components used
-// throughout the site. They are boxes in which varied
-// content may be placed.
 
 .block-header,
 .block-content,
