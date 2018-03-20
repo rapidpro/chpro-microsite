@@ -37,7 +37,7 @@
 }
 
 .block-content {
-  margin-top: $global-margin;
+  margin-top: $global-margin * 2;
 }
 
 @include breakpoint(medium) {

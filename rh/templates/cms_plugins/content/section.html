@@ -18,7 +18,7 @@
 
 
   {% if not instance.get_plugin_class_instance.disable_child_plugins %}
-  {% if instance.child_plugin_instances.all %}
+  {% if instance.child_plugin_instances %}
   <div class="block-content">
     {% for plugin in instance.child_plugin_instances %}
       {% render_plugin plugin %}
