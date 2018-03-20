@@ -1,14 +1,3 @@
-%nav-item {
-  position: relative;
-  font-family: $navigation-font-family;
-  font-weight: $navigation-font-weight;
-  text-transform: uppercase;
-
-  &[aria-current] {
-    color: $brand-color-primary;
-  }
-}
-
 /*
   MIXINS
 */
@@ -65,5 +54,40 @@
   &:focus {
     // underline
     text-decoration: $anchor-text-decoration;
+  }
+}
+
+/*
+  PLACEHOLDERS
+*/
+
+%nav-item {
+  position: relative;
+  font-family: $navigation-font-family;
+  font-weight: $navigation-font-weight;
+  text-transform: uppercase;
+
+  &[aria-current] {
+    color: $brand-color-primary;
+  }
+}
+
+%heading-bar {
+  $bar-height: 4px;
+  $bottom-space: #{$global-margin} * 2;
+  position: relative;
+  // Add double margin to compensate for space between heading and bar
+  // but make sure we take bar height into consideration for good v rhythm.
+  margin-bottom: calc(#{$bar-height} + #{$bottom-space});
+
+  &:after {
+    position: relative;
+    bottom: $global-margin * -1;
+    left: 0;
+    display: block;
+    width: 3rem;
+    height: 4px;
+    background: $brand-color-primary;
+    content: "";
   }
 }
