@@ -1,0 +1,17 @@
+{% extends "admin/base_site.html" %}
+
+{% load staticfiles %}
+{% load icon_tags %}
+
+{% block footer %}
+  {{ block.super }}
+
+  {# Custom Admin Javascript #}
+  <script type="text/javascript">
+      {% get_uploaded_icon_list as custom_svg_icons %}
+      window.rh = window.rh ? window.rh : {};
+      window.rh.uploadedSvgIcons = {{ custom_svg_icons|safe }};
+  </script>
+  <script type="text/javascript" src="{% static 'admin.js' %}"></script>
+{% endblock %}
+

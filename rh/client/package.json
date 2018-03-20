@@ -6,21 +6,25 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "yarn run build",
     "parcel": "parcel",
-    "build": "parcel build --public-url=/static/ ./all.js",
-    "watch": "parcel watch --public-url=/static/ ./all.js"
+    "build": "yarn run build_site; yarn run build_admin",
+    "build_site": "parcel build --public-url=/static/ ./all.js",
+    "build_admin": "parcel build --public-url=/static/ ./admin.js",
+    "watch_site": "parcel watch --public-url=/static/ ./all.js",
+    "watch_admin": "parcel watch --public-url=/static/ ./admin.js"
   },
   "engines": {
     "yarn": "^1.4.x"
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
     "foundation-sites": "^6.4.4-rc1",
     "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.5.1",
-    "yarn": "^1.4.x",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^4.14.0",
-    "post-load-plugins": "^0.0.16"
+    "post-load-plugins": "^0.0.16",
+    "select2": "^4.0.6-rc.1",
+    "yarn": "^1.4.x"
   },
   "devDependencies": {},
   "license": "UNLICENSED"

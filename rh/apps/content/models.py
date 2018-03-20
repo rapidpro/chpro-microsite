@@ -15,6 +15,9 @@ from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
 # ------------------------------------------------------------------------------
 # Models
 # ------------------------------------------------------------------------------
+from rh.apps.icons.models import IconMixin
+
+
 class Hero(BlockMixin):
     STYLE_CHOICES = Choices(
         ('clean', 'Clean'),
@@ -51,8 +54,8 @@ class CardGrid(CMSPlugin):
         return str(self.root) or f'Manual Card Grid ({self.pk})'
 
 
-class IconCard(Block):
-    icon = FilerImageField(blank=True, null=True)
+class IconCard(Block, IconMixin):
+    pass
 
 
 # ------------------------------------------------------------------------------
@@ -143,9 +146,7 @@ class CardPlugin(BlockPlugin):
     )
     render_template = "cms_plugins/content/card.html"
     fieldsets = (
-        ('Icon', {
-            'fields': ['icon',],
-        }),
+        IconMixin._admin_fieldset,
         BlockMixin._admin_fieldset,
         Linkable._admin_fieldset,
     )

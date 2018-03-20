@@ -96,6 +96,7 @@ INSTALLED_APPS = [
     # Da Subject Matter
     'rh.apps.meta',
     'rh.apps.content',
+    'rh.apps.icons',
 ]
 
 MIDDLEWARE = [
