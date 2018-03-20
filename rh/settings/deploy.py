@@ -19,6 +19,7 @@ ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'client', 'dist'),
+    os.path.join(PROJECT_DIR, 'client', 'static'),
     os.path.join(VAR_ROOT),
 ]
 
