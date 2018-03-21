@@ -6,17 +6,17 @@
   @include block;
   @include container;
 
-  @include breakpoint(medium) {
-    @include collapse-gutters;
+  .card {
+    flex-grow: 0;
+  }
 
-    .card {
-      @include xy-cell(6);
-    }
+  @include breakpoint(medium) {
+    @include xy-grid-layout(2, '.card');
+    @include collapse-gutters;
   }
 
   @include breakpoint(xlarge) {
-    .card {
-      @include xy-cell(4);
-    }
+    @include xy-grid-layout(3, '.card');
+    @include collapse-gutters;
   }
 }
