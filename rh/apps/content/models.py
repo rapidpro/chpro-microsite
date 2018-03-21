@@ -103,6 +103,7 @@ class ComplexHeroPlugin(BlockPlugin):
         }),
     )
 
+
 class AccordionCardPlugin(BlockPlugin):
     name = 'Accordion Card'
     module = 'Content'
@@ -219,3 +220,5 @@ plugin_pool.register_plugin(SectionCardsPlugin)
 plugin_pool.register_plugin(CardGridPlugin)
 plugin_pool.register_plugin(CardPlugin)
 plugin_pool.register_plugin(ImageCardPlugin)
+plugin_pool.register_plugin(FeaturedAccordionPlugin)
+plugin_pool.register_plugin(AccordionCardPlugin)
