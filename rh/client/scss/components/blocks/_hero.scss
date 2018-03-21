@@ -1,11 +1,10 @@
 //
-// Hero Blocks
+// Hero
 //
 // Markup: components/hero.hbs
 //
 // Weight: 4
 //
-// .has-image  - Hero with accompanying image.
 // .dark       - Dark version
 //
 // Style guide: Components.hero
@@ -63,7 +62,18 @@
   font-weight: $global-weight-normal;
 }
 
-// With Image
+//
+// Hero (complex)
+//
+// Hero with image.
+//
+// Markup: components/hero-complex.hbs
+//
+// Weight: 4
+//
+// .dark       - Dark version
+//
+// Style guide: Components.hero-complex
 .hero.complex {
   img {
     border: 12px solid $body-background;
