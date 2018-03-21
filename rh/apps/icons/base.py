@@ -75,9 +75,12 @@ class IconChoiceField(forms.ChoiceField):
     Icon Choice field with a list of all choices
     """
     def __init__(self, *args, **kwargs):
+        choices = get_icon_choices()
+        if not kwargs.get('required', True):
+            choices.insert(0, ('', '---'))
         kwargs.update({
             'widget': forms.Select(attrs={'class': 'icon-selector'}),
-            'choices': get_icon_choices(),
+            'choices': choices,
         })
         super(IconChoiceField, self).__init__(*args, **kwargs)
 

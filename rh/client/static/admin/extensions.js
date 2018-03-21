@@ -2,7 +2,7 @@
  * Icon & Color select2 and WYSIWYG
  */
 (function($) {
-// Apply Icon Chooser and WYSIWYG to existing elements
+// Apply Icon Chooser to existing elements
 // TODO: The code below should only run if necessary
   applyIconSelector();
 

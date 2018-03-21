@@ -1,0 +1,24 @@
+{% spaceless %}
+
+{% load static from staticfiles %}
+{% load i18n %}
+{% load icon_tags %}
+
+{% if 'uploaded-svg-file' in icon_name %}
+  {% comment %}
+    Editor is using a custom icon. We wrap it in a span to
+    ensure we maintain our sizing.
+  {% endcomment %}
+
+  {% get_uploaded_icon icon_name as svg_icon %}
+  <span class="icon {{ icon_classes }}">{{ svg_icon.read|safe }}</span>
+{% else %}
+  {% comment %}
+    Editor is standard, pre-existing icon from the stock sprite system.
+  {% endcomment %}
+  <svg class="icon {{ icon_classes }}">
+    {% if title %}<title>{% trans title %}</title>{% endif %}
+    <use xlink:href="{% static "icons/sprite.svg" %}#{{ icon_name }}"></use>
+  </svg>
+{% endif %}
+{% endspaceless %}
