@@ -1,0 +1,13 @@
+{
+  "name": "chpro-kss",
+  "version": "0.0.9",
+  "description": "The kss-node builder for RapidPro Health.",
+  "main": "builder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "./node_modules/.bin/node-sass --output-style compressed kss-assets/kss.scss kss-assets/kss.css"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
+}
