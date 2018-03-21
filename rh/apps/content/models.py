@@ -103,6 +103,22 @@ class ComplexHeroPlugin(BlockPlugin):
         }),
     )
 
+class AccordionCardPlugin(BlockPlugin):
+    name = 'Accordion Card'
+    module = 'Content'
+    model = ImageCard
+    parent_classes = (
+        'FeaturedAccordionPlugin',
+    )
+    render_template = "cms_plugins/content/accordion_card.html"
+    fieldsets = (
+        ('Image', {
+            'fields': ('image',)
+        }),
+        BlockMixin._admin_fieldset,
+        Linkable._admin_fieldset,
+    )
+
 
 class FeaturedAccordionPlugin(BlockPlugin):
     name = 'Featured (Accordion)'
@@ -117,7 +133,7 @@ class FeaturedAccordionPlugin(BlockPlugin):
 
     fieldsets = (
         ('Content', {
-            'fields': BlockMixin._admin_fields + ('style'),
+            'fields': BlockMixin._admin_fields + ('style',),
         }),
     )
 
