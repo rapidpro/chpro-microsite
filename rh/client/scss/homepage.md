@@ -1,4 +1,4 @@
-RapidPro Health Style Guide v1
+RapidPro Health Style Guide
 ===============
 
 You can use this guide to develop new content for the website, rapidpro.com. This guide is by no means exhaustive but should cover the essentials for creating excellent looking content.

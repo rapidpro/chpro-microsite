@@ -15,18 +15,20 @@
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
-    <h1 class="kss-doc-title">{{options.title}}</h1>
+    <h1 class="kss-doc-title">
+      <img src="/rh/client/static/img/logo-white.svg" alt="RapidPro Health" class="logo" />
+      Style guide</h1>
   </header>
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="./">
+        <a class="kss-nav__menu-link {{#if isActive}}is-active{{/if}}" href="./">
           <span class="kss-nav__name">Overview</span><span class="kss-nav__ref">0</span>
         </a>
       </li>
     {{#each menu}}
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
+        <a class="kss-nav__menu-link {{#if isActive}}is-active{{/if}}" href="section-{{referenceURI}}.html">
           <span class="kss-nav__name">{{header}}</span><span class="kss-nav__ref">{{referenceNumber}}</span>
         </a>
         {{#if isActive}}

@@ -120,19 +120,18 @@
 
 #kss-node {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   background: #fff; }
   @media screen and (min-width: 769px) {
-    #kss-node {
-      padding: 0; }
-      #kss-node .kss-main,
-      #kss-node .kss-sidebar {
-        float: left;
-        margin-right: -100%;
-        box-sizing: border-box; } }
+    #kss-node .kss-main,
+    #kss-node .kss-sidebar {
+      float: left;
+      margin-right: -100%;
+      box-sizing: border-box; } }
   #kss-node .kss-main {
     width: 100%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 1rem; }
     @media screen and (min-width: 769px) {
       #kss-node .kss-main {
         width: 80%;
@@ -140,31 +139,48 @@
         padding: 0 20px 0 30px; } }
   #kss-node .kss-sidebar {
     border-bottom: 1px solid #ddd;
-    background-color: #EAF0E6; }
+    background-color: #334954; }
     @media screen and (min-width: 769px) {
       #kss-node .kss-sidebar {
         position: fixed;
         width: 20%;
         height: 100%;
         overflow: auto;
-        padding: 0 10px 0 20px;
         border-bottom: 0; } }
 
 #kss-node .kss-doc-title {
   margin: 0;
-  font-family: "Titillium Web", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Titillium Web", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: #5A7F81;
+  padding-right: 10px;
+  text-align: center;
+  font-size: 1em;
+  padding-top: 1rem; }
   @media screen and (min-width: 769px) {
     #kss-node .kss-doc-title {
-      font-size: 1.5em; } }
+      padding: 0; } }
+  #kss-node .kss-doc-title img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    margin-bottom: 1.25rem; }
 @media screen and (min-width: 769px) {
   #kss-node .kss-header,
   #kss-node .kss-nav {
     margin-top: 2em; } }
+@media screen and (min-width: 1024px) {
+  #kss-node .kss-header {
+    padding: 0 2rem; } }
 #kss-node .kss-nav__menu {
   margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   padding: 0;
   list-style-type: none; }
+  @media screen and (min-width: 769px) {
+    #kss-node .kss-nav__menu {
+      margin-bottom: 12px; } }
 #kss-node .kss-nav__menu-item {
   display: inline-block;
   padding-right: 24px; }
@@ -175,7 +191,13 @@
 #kss-node .kss-nav__menu-link {
   position: relative;
   display: inline-block;
-  margin: 0.5rem 0; }
+  color: #fff;
+  padding: 1rem;
+  display: block; }
+  @media screen and (min-width: 769px) {
+    #kss-node .kss-nav__menu-link {
+      padding: 0.5rem 2rem;
+      margin: 0.5rem 0; } }
   @media screen and (min-width: 769px) {
     #kss-node .kss-nav__menu-link:before {
       content: ' ';
@@ -188,15 +210,23 @@
     background-color: #000;
     width: 5px;
     transition: background-color .4s, width .6s; }
-  #kss-node .kss-nav__menu-link:hover .kss-nav__ref {
-    opacity: 0.5; }
+  #kss-node .kss-nav__menu-link.is-active {
+    color: #3BB097;
+    box-shadow: inset #DD544D 0px -5px 0px; }
+    @media screen and (min-width: 769px) {
+      #kss-node .kss-nav__menu-link.is-active {
+        box-shadow: inset #DD544D 5px 0px 0px; } }
+  #kss-node .kss-nav__menu-link:hover {
+    color: #DD544D; }
+    #kss-node .kss-nav__menu-link:hover .kss-nav__ref {
+      opacity: 0.5; }
 #kss-node .kss-nav__menu-child {
   display: none; }
   @media screen and (min-width: 769px) {
     #kss-node .kss-nav__menu-child {
       display: block;
       list-style-type: none;
-      background: #f5f8f3;
+      background: #3b5461;
       margin: 0 -10px 0 -19px;
       padding: 0 10px 0 20px; }
       #kss-node .kss-nav__menu-child li:first-child {
@@ -206,7 +236,7 @@
         margin-bottom: 10px;
         padding: 0 0 10px; } }
 #kss-node .kss-nav__ref {
-  color: #333;
+  color: #fff;
   font-size: 0.95rem;
   opacity: 0.25;
   margin-left: 0.75rem;
@@ -217,7 +247,7 @@
   font-family: "Titillium Web", "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #2E4047; }
+  opacity: 0.85; }
 
 #kss-node {
   /* SPAN elements with the classes below are added by prettyprint. */

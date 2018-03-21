@@ -2,6 +2,13 @@
   MIXINS
 */
 
+// Mixins
+//
+// Weight: 5
+//
+// Style guide: mixins
+
+
 /// Keep spacing DRY
 /// @param {Number} $multiplier Multiplier to use for calculation
 @mixin bottom-space($multiplier: 1) {

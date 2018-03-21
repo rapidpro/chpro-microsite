@@ -1,8 +1,9 @@
 {
-  "title": "RapidPro Health Style Guide v1",
+  "title": "RapidPro Health Style Guide",
   "source": "rh/client/scss",
   "builder": "docs/_templates/styleguide-template",
   "destination": "docs/styleguide",
+  "version": "0.0.9",
   "css": [
     "/rh/client/dist/all.css"
   ]
