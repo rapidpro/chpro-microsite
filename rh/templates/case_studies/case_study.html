@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block base_content %}
+  <h2>{{ object.country.name }}</h2>
+  <h1>{{ object.heading }}</h1>
+  Tags: {% for tag in object.tags.all %}<div>{{ tag }}</div>{% endfor %}
+
+  {% if object.featured_image %}
+    <aside class="hero-content-secondary">
+      <img
+        data-interchange="[{% thumbnail object.featured_image "200x500" %}, small],
+        [{% thumbnail object.featured_image "200x500" %}, medium]"
+        alt="{{ object.featured_image.alt_text }}">
+    </aside>
+  {% endif %}
+
+  {% render_placeholder object.main_content %}
+  {% render_placeholder object.stats_content %}
+  {% render_placeholder object.sidebar_content %}
+{% endblock %}

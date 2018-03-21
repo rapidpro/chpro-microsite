@@ -9,6 +9,8 @@ function applyIconSelector($elem){
   }
 
   $(selector).select2({
+    allowClear: true,
+    placeholder: "Search for an icon",
     templateResult: function(state) {
       if (!state.id) { return state.text; }
       let $state;

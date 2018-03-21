@@ -1,0 +1,27 @@
+{% load cms_tags %}
+{% load thumbnail %}
+
+<section class="card">
+  <header class="card-header">
+      {% if instance.image %}
+      <aside class="hero-content-secondary">
+        <img
+          data-interchange="[{% thumbnail instance.image "200x500" %}, small],
+          [{% thumbnail instance.image "200x500" %}, medium]"
+          alt="{{ instance.image.alt_text }}">
+      </aside>
+      {% endif %}
+
+    <h3 class="card-title">{{ instance.title }}</h3>
+  </header>
+
+  <div class="card-content">
+    {{ instance.body|safe }}
+  </div>
+
+  {% if instance.get_link %}
+  <div class="card-actions">
+    {% include 'includes/link.html' %}
+  </div>
+  {% endif %}
+</section>

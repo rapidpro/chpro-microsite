@@ -38,7 +38,10 @@ class Block(BlockMixin, Linkable):
 
 
 class CardGrid(CMSPlugin):
-    root = PageField(blank=True, null=True)
+    root = PageField(
+        blank=True, null=True,
+        help_text='Select a root page to list all of its children as cards. '
+                  'If this is left empty, you will have to manually add cards to the grid.')
 
     def get_published_child_pages(self):
         """
@@ -56,6 +59,10 @@ class CardGrid(CMSPlugin):
 
 class IconCard(Block, IconMixin):
     pass
+
+
+class ImageCard(Block):
+    image = FilerImageField(blank=True, null=True)
 
 
 # ------------------------------------------------------------------------------
@@ -85,6 +92,7 @@ class ComplexHeroPlugin(BlockPlugin):
     render_template = "cms_plugins/content/hero.html"
     child_classes = (
         'CardPlugin',
+        'ImageCardPlugin',
     )
     allow_children = True
     disable_child_plugins = False
@@ -96,7 +104,42 @@ class ComplexHeroPlugin(BlockPlugin):
     )
 
 
-class SectionTextPlugin(BlockPlugin):
+class AccordionCardPlugin(BlockPlugin):
+    name = 'Accordion Card'
+    module = 'Content'
+    model = ImageCard
+    parent_classes = (
+        'FeaturedAccordionPlugin',
+    )
+    render_template = "cms_plugins/content/accordion_card.html"
+    fieldsets = (
+        ('Image', {
+            'fields': ('image',)
+        }),
+        BlockMixin._admin_fieldset,
+        Linkable._admin_fieldset,
+    )
+
+
+class FeaturedAccordionPlugin(BlockPlugin):
+    name = 'Featured (Accordion)'
+    module = 'Content'
+    model = Hero
+    render_template = "cms_plugins/content/accordion.html"
+    child_classes = (
+        'AccordionCardPlugin',
+    )
+    allow_children = True
+    disable_child_plugins = False
+
+    fieldsets = (
+        ('Content', {
+            'fields': ('title', 'style',),
+        }),
+    )
+
+
+class SectionPlugin(BlockPlugin):
     name = 'Section'
     module = 'Content'
     model = Block
@@ -153,9 +196,29 @@ class CardPlugin(BlockPlugin):
     )
 
 
+class ImageCardPlugin(BlockPlugin):
+    name = 'Photo Card'
+    module = 'Content'
+    model = ImageCard
+    parent_classes = (
+        'ComplexHeroPlugin',
+    )
+    render_template = "cms_plugins/content/image_card.html"
+    fieldsets = (
+        ('Image', {
+            'fields': ('image',)
+        }),
+        BlockMixin._admin_fieldset,
+        Linkable._admin_fieldset,
+    )
+
+
 plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
-plugin_pool.register_plugin(SectionTextPlugin)
+plugin_pool.register_plugin(SectionPlugin)
 plugin_pool.register_plugin(SectionCardsPlugin)
 plugin_pool.register_plugin(CardGridPlugin)
 plugin_pool.register_plugin(CardPlugin)
+plugin_pool.register_plugin(ImageCardPlugin)
+plugin_pool.register_plugin(FeaturedAccordionPlugin)
+plugin_pool.register_plugin(AccordionCardPlugin)

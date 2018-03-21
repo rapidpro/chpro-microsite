@@ -3,8 +3,6 @@ The Icon Module displays one or more icon images accompanied by heading and body
 The module may optionally include an overarching heading above the icons, and each icon may
 include a call-to-action button that enables the user to navigate or take action.
 """
-from __future__ import unicode_literals
-
 from logging import getLogger
 
 from django.conf import settings
@@ -84,19 +82,6 @@ class IconMixin(models.Model):
     _admin_fieldset = ('Icon', {
         'fields': _admin_fields,
     })
-
-
-
-    @property
-    def icon_type(self):
-        if not self.svg_icon and not self.image_icon:
-            return None
-        return self.image_icon and 'image' or 'svg'
-
-    def clean(self):
-        if not self.svg_icon and not self.image_icon:
-            raise ValidationError('You need to select an SVG icon or upload '
-                                  'an Image icon')
 
     class Meta:
         abstract = True

@@ -92,11 +92,13 @@ INSTALLED_APPS = [
 
     # Third-Party
     'django_select2',
+    'tagulous',
 
     # Da Subject Matter
     'rh.apps.meta',
     'rh.apps.content',
     'rh.apps.icons',
+    'rh.apps.case_studies',
 ]
 
 MIDDLEWARE = [

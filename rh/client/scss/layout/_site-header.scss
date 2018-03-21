@@ -50,7 +50,7 @@
 
 // Handle Responsiveness
 .site-header {
-  @include breakpoint(large) {
+  @include breakpoint(xlarge) {
     padding-top: $global-margin * 2;
     padding-bottom: $global-margin * 2;
 

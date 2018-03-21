@@ -26,7 +26,7 @@ class Linkable(models.Model):
 
     url_validators = [IntranetURLValidator(intranet_host_re=HOSTNAME), ]
 
-    link_style = models.CharField(choices=LINK_STYLE_CHOICES, max_length=10, default=LINK_STYLE_CHOICES.link)
+    link_style = models.CharField(choices=LINK_STYLE_CHOICES, max_length=10, default=LINK_STYLE_CHOICES.button)
     link_text = models.CharField(_('Link Text'), max_length=64, blank=True)
     external_link = models.URLField(
         verbose_name=_('External link'),

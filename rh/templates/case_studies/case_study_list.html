@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block base_content %}
+  {% for case in  casestudy_list %}
+    <section>
+      <h2>{{ case.country.name }}</h2>
+      <h1>{{ case.heading }}</h1>
+      Tags: {% for tag in object.tags.all %}<div>{{ tag }}</div>{% endfor %}
+      {% if case.featured_image %}
+        <aside class="hero-content-secondary">
+          <img
+              data-interchange="[{% thumbnail case.featured_image "200x500" %}, small],
+        [{% thumbnail case.featured_image "200x500" %}, medium]"
+              alt="{{ case.featured_image.alt_text }}">
+        </aside>
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endblock %}

@@ -14,17 +14,17 @@
   @include block;
   @include container;
 
-  @include breakpoint(medium) {
-    @include collapse-gutters;
-
-    .card {
-      @include xy-cell(6);
-    }
+  .card {
+    flex-grow: 0;
   }
 
-  @include breakpoint(large) {
-    .card {
-      @include xy-cell(4);
-    }
+  @include breakpoint(medium) {
+    @include xy-grid-layout(2, '.card');
+    @include collapse-gutters;
+  }
+
+  @include breakpoint(xlarge) {
+    @include xy-grid-layout(3, '.card');
+    @include collapse-gutters;
   }
 }

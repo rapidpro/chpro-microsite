@@ -1,13 +1,6 @@
 <section class="card">
   <header class="card-header">
-    <svg
-      width="48" height="48" version="1.1"
-      viewBox="0 0 100 100"
-      class="icon"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="m49.949 38.398c-10.5 0-18.898 8.5-18.898 19s8.3984 18.898 18.898 18.898 18.898-8.6016 18.898-19c0.003906-10.496-8.3984-18.898-18.898-18.898zm9.9023 21.902h-6.9023v7h-6v-7h-6.8984v-6h6.8984v-6.8984h6v6.8984h6.8984v6z" fill="currentColor"/>
-      <path d="m83 24h-14.699v-5.1992c0-6.125-4.7188-11.301-10.301-11.301h-16c-5.582 0-10.301 5.1758-10.301 11.301v5.1992h-14.699c-6.6289 0-12 5.3711-12 12v41c0 6.6289 5.3711 12 12 12h66c6.6289 0 12-5.3711 12-12v-41c0-6.6289-5.3711-12-12-12zm-46.301-5.1992c0-3.3555 2.4766-6.3008 5.3008-6.3008h16c2.8242 0 5.3008 2.9453 5.3008 6.3008v5.1992h-26.602zm53.301 58.199c0 3.8594-3.1406 7-7 7h-66c-3.8594 0-7-3.1406-7-7v-41c0-3.8594 3.1406-7 7-7h66c3.8594 0 7 3.1406 7 7z" fill="currentColor"/>
-    </svg>
+    {% include 'includes/svg_icon.html' with icon_name=instance.svg_icon %}
     <h3 class="card-title">{{ instance.title }}</h3>
   </header>
 
@@ -15,7 +8,9 @@
     {{ instance.body|safe }}
   </div>
 
+  {% if instance.get_link %}
   <div class="card-actions">
     {% include 'includes/link.html' %}
   </div>
+  {% endif %}
 </section>
