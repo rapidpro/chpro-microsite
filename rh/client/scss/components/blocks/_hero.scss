@@ -1,6 +1,15 @@
-/*
-  HERO BLOCKS
-*/
+//
+// Hero Blocks
+//
+// Markup: components/hero.hbs
+//
+// Weight: 4
+//
+// .has-image  - Hero with accompanying image.
+// .dark       - Dark version
+//
+// Style guide: Components.hero
+//
 
 .hero {
   @include block;

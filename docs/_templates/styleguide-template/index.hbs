@@ -23,13 +23,13 @@
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link {{#if isActive}}is-active{{/if}}" href="./">
-          <span class="kss-nav__name">Overview</span><span class="kss-nav__ref">0</span>
+          <span class="kss-nav__name">Overview</span>
         </a>
       </li>
     {{#each menu}}
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link {{#if isActive}}is-active{{/if}}" href="section-{{referenceURI}}.html">
-          <span class="kss-nav__name">{{header}}</span><span class="kss-nav__ref">{{referenceNumber}}</span>
+          <span class="kss-nav__name">{{header}}</span>
         </a>
         {{#if isActive}}
           {{#if children}}
@@ -37,7 +37,7 @@
             {{#each children}}
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                  <span class="kss-nav__name">{{header}}</span><span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span>
+                  <span class="kss-nav__name">{{header}}</span>
                 </a>
               </li>
             {{/each}}
