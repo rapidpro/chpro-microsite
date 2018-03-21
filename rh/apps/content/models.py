@@ -127,14 +127,14 @@ class FeaturedAccordionPlugin(BlockPlugin):
     model = Hero
     render_template = "cms_plugins/content/accordion.html"
     child_classes = (
-        'CardPlugin',
+        'AccordionCardPlugin',
     )
     allow_children = True
     disable_child_plugins = False
 
     fieldsets = (
         ('Content', {
-            'fields': BlockMixin._admin_fields + ('style',),
+            'fields': ('title', 'style',),
         }),
     )
 
