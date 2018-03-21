@@ -11,20 +11,12 @@ $breakpoints: (
 
 $global-width: 1100px; // TODO: Verify with designs
 
+//
 // Colors
 //
 // The palette used includes brand colors, as well as colors by Foundation.
 //
-// Weight: 2
-//
-// Style guide: colors
 
-
-// Brand Colors
-//
-// Weight: 2.0
-//
-// Style guide: colors.primary
 $brand-color-primary: #FF3333;
 $brand-color-secondary: #324955;
 $dark-gray: #333333;
@@ -35,11 +27,6 @@ $mint: #EAF0E6;
 //$medium-gray
 
 
-// Foundation Colors
-//
-// Weight: 2.1
-//
-// Style guide: colors.foundation
 $foundation-palette: (
   primary: #1779ba,
   secondary: #597F82,

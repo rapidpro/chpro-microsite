@@ -45,5 +45,5 @@ ENV/
 # Coverage reports
 *.coverage
 
-docs/styleguide
-.sass-cache
+# Styleguide
+/rh/client/static/styleguide

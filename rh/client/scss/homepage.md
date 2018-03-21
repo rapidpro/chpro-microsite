@@ -23,7 +23,7 @@ This styleguide is built using [kss-node](https://github.com/kss-node/kss-node) 
 //
 // Some Markdown text describing what's going on. Try to leave good comments!
 //
-// Markup: ../../../../docs/styleguide/file_name.html
+// Markup: file_name.hbs
 //
 // Weight: [number]
 //
