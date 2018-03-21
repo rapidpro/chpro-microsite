@@ -162,7 +162,7 @@ class CardPlugin(BlockPlugin):
 
 
 class ImageCardPlugin(BlockPlugin):
-    name = 'Featured Card'
+    name = 'Photo Card'
     module = 'Content'
     model = ImageCard
     parent_classes = (
