@@ -15,7 +15,9 @@
     {{ instance.body|safe }}
   </div>
 
+  {% if instance.get_link %}
   <div class="card-actions">
     {% include 'includes/link.html' %}
   </div>
+  {% endif %}
 </section>

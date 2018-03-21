@@ -23,13 +23,11 @@
       </aside>
       {% endif %}
 
-    {% comment %}
-    {% if not instance.get_plugin_class_instance.disable_child_plugins %}
-      {% for plugin in instance.child_plugin_instances %}
-        {% render_plugin plugin %}
-      {% endfor %}
-    {% endif %}
-    {% endcomment %}
+      {% if not instance.get_plugin_class_instance.disable_child_plugins %}
+        {% for plugin in instance.child_plugin_instances %}
+          {% render_plugin plugin %}
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
