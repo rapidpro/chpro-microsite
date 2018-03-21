@@ -104,6 +104,24 @@ class ComplexHeroPlugin(BlockPlugin):
     )
 
 
+class FeaturedAccordionPlugin(BlockPlugin):
+    name = 'Featured (Accordion)'
+    module = 'Content'
+    model = Hero
+    render_template = "cms_plugins/content/accordion.html"
+    child_classes = (
+        'CardPlugin',
+    )
+    allow_children = True
+    disable_child_plugins = False
+
+    fieldsets = (
+        ('Content', {
+            'fields': BlockMixin._admin_fields + ('style'),
+        }),
+    )
+
+
 class SectionPlugin(BlockPlugin):
     name = 'Section'
     module = 'Content'
