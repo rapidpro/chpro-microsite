@@ -12,5 +12,5 @@
     applyIconSelector($row);              // SVG Icon dropdown
   });
 
-})(window.django.jQuery);
+})(window.django.jQuery || $);
 

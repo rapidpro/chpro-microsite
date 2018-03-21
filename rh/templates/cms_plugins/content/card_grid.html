@@ -3,11 +3,12 @@
 <div class="card-grid">
   {% for page in instance.get_published_child_pages %}
     <section class="card">
+    {% include 'includes/svg_icon.html' with icon_name=page.metaattributes.svg_icon %}
       <header class="card-header">
         <h3 class="card-title">{{ page.get_title }}</h3>
       </header>
       <div class="card-content">
-        {{ page.description }}
+        {{ page.metaattributes.description }}
       </div>
     </section>
   {% endfor %}
