@@ -103,5 +103,5 @@ Check the site at `http://localhost:8000`
 
 `./scripts/runtests.sh`
 
-# Generate the Styleguide
-`kss --config=kss-config.json`
+# Generate the [Styleguide](http://localhost:8000/static/styleguide/index.html)
+Run `yarn build-guide` from `rh/client/`
