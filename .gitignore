@@ -44,3 +44,6 @@ ENV/
 
 # Coverage reports
 *.coverage
+
+docs/styleguide
+.sass-cache
