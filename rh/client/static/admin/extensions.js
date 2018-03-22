@@ -4,6 +4,9 @@
 (function($) {
 // Apply Icon Chooser to existing elements
 // TODO: The code below should only run if necessary
+  if (!$){
+    return;
+  }
   applyIconSelector();
 
   // Apply fixes and editor setup whenever a new inline appears
@@ -12,5 +15,5 @@
     applyIconSelector($row);              // SVG Icon dropdown
   });
 
-})(window.django.jQuery || $);
+})(window.django && window.django.jQuery || window.jQuery);
 

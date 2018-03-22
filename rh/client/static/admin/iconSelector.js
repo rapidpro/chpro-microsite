@@ -13,9 +13,9 @@ function applyIconSelector($elem){
     placeholder: "Search for an icon",
     templateResult: function(state) {
       if (!state.id) { return state.text; }
-      let $state;
-      let icon;
-      const baseName = state.element.value.toLowerCase();
+      var $state;
+      var icon;
+      var baseName = state.element.value.toLowerCase();
 
       if (baseName.search('uploaded-svg-file') !== -1){
         icon = '<img class="icon icon-medium" src="'+window.rh.uploadedSvgIcons[baseName]+'"/>';

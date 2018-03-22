@@ -13,8 +13,22 @@
       window.rh.uploadedSvgIcons = {{ custom_svg_icons|safe }};
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script>
+  if (window.jQuery){
+    var window$ = window.jQuery;
+  }
+  if ( window.django ){
+    window.$ = window.jQuery = window.django.jQuery;
+  }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script type="text/javascript" src="{% static 'admin/iconSelector.js' %}"></script>
   <script type="text/javascript" src="{% static 'admin/extensions.js' %}"></script>
+  <script>
+  if( window$ ){
+    window.$ = window.jQuery = window$;
+  }
+  </script>
+
 {% endblock %}
 
