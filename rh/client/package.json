@@ -12,7 +12,7 @@
     "build_admin": "parcel build --public-url=/static/ ./admin.js",
     "watch_site": "parcel watch --public-url=/static/ ./all.js",
     "watch_admin": "parcel watch --public-url=/static/ ./admin.js",
-    "build-guide": "./node_modules/.bin/kss --config kss-config.json; node-sass static/styleguide/kss-assets/kss.scss static/styleguide/kss-assets/kss.css"
+    "build_guide": "./node_modules/.bin/kss --config kss-config.json; node-sass static/styleguide/kss-assets/kss.scss static/styleguide/kss-assets/kss.css"
   },
   "engines": {
     "yarn": "^1.4.x"
@@ -22,13 +22,14 @@
     "eslint": "^4.14.0",
     "foundation-sites": "^6.4.4-rc1",
     "jquery": "^3.2.1",
-    "kss": "^3.0.0-beta.18",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.5.1",
     "post-load-plugins": "^0.0.16",
     "select2": "^4.0.6-rc.1",
     "yarn": "^1.4.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "kss": "^3.0.0-beta.18"
+  },
   "license": "UNLICENSED"
 }
