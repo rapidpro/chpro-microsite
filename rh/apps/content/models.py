@@ -10,14 +10,12 @@ from filer.fields.image import FilerImageField
 from model_utils import Choices
 
 from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
+from rh.apps.icons.models import IconMixin
 
 
 # ------------------------------------------------------------------------------
 # Models
 # ------------------------------------------------------------------------------
-from rh.apps.icons.models import IconMixin
-
-
 class Hero(BlockMixin):
     STYLE_CHOICES = Choices(
         ('clean', 'Clean'),
@@ -61,7 +59,7 @@ class IconCard(Block, IconMixin):
     pass
 
 
-class ImageCard(Block):
+class PhotoCard(Block):
     image = FilerImageField(blank=True, null=True)
 
 
@@ -107,7 +105,7 @@ class ComplexHeroPlugin(BlockPlugin):
 class AccordionCardPlugin(BlockPlugin):
     name = 'Accordion Card'
     module = 'Content'
-    model = ImageCard
+    model = PhotoCard
     parent_classes = (
         'FeaturedAccordionPlugin',
     )
@@ -182,7 +180,7 @@ class CardGridPlugin(CMSPluginBase):
 
 
 class CardPlugin(BlockPlugin):
-    name = 'Card'
+    name = 'Icon Card'
     module = 'Content'
     model = IconCard
     parent_classes = (
@@ -199,7 +197,7 @@ class CardPlugin(BlockPlugin):
 class ImageCardPlugin(BlockPlugin):
     name = 'Photo Card'
     module = 'Content'
-    model = ImageCard
+    model = PhotoCard
     parent_classes = (
         'ComplexHeroPlugin',
     )
