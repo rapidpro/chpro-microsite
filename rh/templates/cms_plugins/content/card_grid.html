@@ -2,8 +2,9 @@
 
 <div class="card-grid">
   {% for page in instance.get_published_child_pages %}
+    <a href="{{ page.get_absolute_url }}">
     <section class="card">
-    {% include 'includes/svg_icon.html' with icon_name=page.metaattributes.svg_icon %}
+      {% include 'includes/svg_icon.html' with icon_name=page.metaattributes.svg_icon %}
       <header class="card-header">
         <h3 class="card-title">{{ page.get_title }}</h3>
       </header>
@@ -11,6 +12,7 @@
         {{ page.metaattributes.description }}
       </div>
     </section>
+    </a>
   {% endfor %}
 
   {% for plugin in instance.child_plugin_instances %}

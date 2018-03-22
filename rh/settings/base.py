@@ -149,7 +149,8 @@ TEMPLATES = [
 # Django CMS
 # ==============================================================================
 CMS_TEMPLATES = [
-    ('base.html', 'Home page template'),
+    ('base.html', 'Generic template'),
+    ('content.html', 'Content template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {
