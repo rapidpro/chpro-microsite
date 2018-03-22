@@ -6,6 +6,7 @@
 {% block base_content %}
   {% show_breadcrumb 1 %}
   <a href="{{ current_page.parent.get_absolute_url }}">back to {{ current_page.parent }}</a>
+  {{ current_page.metaattributes.svg_icon }}
   {% placeholder 'header' %}
   {% placeholder 'left_column' %}
   {% placeholder 'main_content' %}
