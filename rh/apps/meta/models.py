@@ -15,13 +15,11 @@ from rh.apps.icons.models import IconMixin
 # Models
 # ------------------------------------------------------------------------------
 
-class MetaAttributesAsPlugin(CMSPlugin):
-    class Meta:
-        verbose_name = 'Meta Attributes as Plugin'
-        verbose_name_plural = 'Meta Attributes as Plugin'
-
-
 class MetaAttributes(PageExtension, IconMixin):
+    lead = HTMLField(
+        max_length=256, blank=True, null=True,
+        help_text='Short description of the page. Used by the step list plugin.')
+
     description = HTMLField(blank=True, null=True)
 
     class Meta:

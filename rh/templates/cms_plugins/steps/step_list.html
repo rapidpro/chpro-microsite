@@ -1,0 +1,22 @@
+{% load cms_tags %}
+
+<div class="card-grid">
+<ul>
+  {% for page in instance.get_published_child_pages %}
+    <a href="{{ page.get_absolute_url }}">
+    <li class="card">
+      <h3>{{ forloop.counter }}</h3>
+      <header class="card-header">
+        <h3 class="card-title">{{ page.get_title }}</h3>
+      </header>
+      <div class="card-content">
+        {{ page.metaattributes.lead }}
+      </div>
+      <div class="card-content">
+        {{ page.metaattributes.description }}
+      </div>
+    </li>
+    </a>
+  {% endfor %}
+</ul>
+</div>

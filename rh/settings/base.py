@@ -99,6 +99,7 @@ INSTALLED_APPS = [
     'rh.apps.content',
     'rh.apps.icons',
     'rh.apps.case_studies',
+    'rh.apps.steps',
 ]
 
 MIDDLEWARE = [
