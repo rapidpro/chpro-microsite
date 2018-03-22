@@ -37,7 +37,6 @@ class CaseStudy(models.Model):
     def __str__(self):
         return self.heading
 
-
     def get_absolute_url(self):
         """
         Absolute URL for this object. Expects a given Application name

@@ -4,6 +4,8 @@
 {% load thumbnail %}
 
 {% block base_content %}
+  All tags for filtering: {{ tags }}
+
   {% for case in  casestudy_list %}
     <section>
       <h2>{{ case.country.name }}</h2>

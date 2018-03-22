@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.views.generic import DetailView, ListView
 
 from rh.apps.case_studies.models import CaseStudy
@@ -27,3 +28,9 @@ class CaseStudyListView(ListView):
             queryset = self.model.objects.filter(published=True)
 
         return queryset
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        qs = self.get_queryset()
+        ctx['tags'] = list(qs.values('tags__name').annotate(Count('id')).values_list('tags__name', flat=True))
+        return ctx
