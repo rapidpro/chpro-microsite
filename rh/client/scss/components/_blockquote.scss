@@ -7,28 +7,32 @@
 //
 
 .blockquote {
-  border: 0;
   margin: 0;
+  padding: $blockquote-padding;
+  padding-top: 3rem;
+  border: none;
+  background-image: url(/static/img/quote.svg);
   background-color: $color-mint;
-  padding: 3rem $blockquote-padding $blockquote-padding $blockquote-padding;
+  background-position: $blockquote-padding 0;
+  background-repeat: no-repeat;
 
   .icon {
     position: absolute;
-    margin-bottom: 0;
     top: 0;
+    margin-bottom: 0;
   }
 }
 
 .blockquote-content {
-  color: $color-navy-light;
   font-family: $header-font-family;
   font-size: 1.15rem;
-  line-height: 1.75rem;
+  line-height: 1.5;
+  color: $color-navy-light;
 }
 
 .blockquote-author {
   font-style: normal;
-  line-height: 1.70rem;
+  line-height: 1.7;
 
   &:before {
     content: "";
@@ -36,14 +40,16 @@
 }
 
 .blockquote-author-name {
+  display: block;
   margin: 0.25rem 0;
-  color: $color-navy;
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   font-weight: $global-weight-bold;
+  color: $color-navy;
 }
 
 .blockquote-author-title {
+  display: block;
   margin: 0;
+  font-size: 0.7rem;
   color: $color-navy;
-  font-size: 0.70rem;
 }
