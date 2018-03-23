@@ -14,7 +14,7 @@
 
   .icon {
     position: absolute;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     top: 0;
   }
 }
@@ -39,7 +39,7 @@
   margin: 0.25rem 0;
   color: $color-navy;
   font-size: 0.90rem;
-  font-weight: bold;
+  font-weight: $global-weight-bold;
 }
 
 .blockquote-author-title {
