@@ -1,0 +1,10 @@
+{
+  "title": "RapidPro Health Style Guide",
+  "source": "scss",
+  "builder": "../../docs/_templates/styleguide-template",
+  "destination": "static/styleguide",
+  "version": "0.0.9",
+  "css": [
+    "../all.css"
+  ]
+}

@@ -1,6 +1,14 @@
-/*
-  CARD GRID
-*/
+//
+// Card Grid
+//
+// The grid shows 3 cards at a time on desktop, and 2 cards at a time on mobile.
+//
+// Markup: components/card-grid.hbs
+//
+// Weight: 5
+//
+// Style guide: Components.card-grid
+//
 
 .card-grid {
   @include block;

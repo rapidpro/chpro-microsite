@@ -102,3 +102,8 @@ Check the site at `http://localhost:8000`
 # Running the tests
 
 `./scripts/runtests.sh`
+
+# Generate the [Styleguide](http://localhost:8000/static/styleguide/index.html)
+
+* Run `yarn build-guide` from `/chpro-microsite/rh/client/`
+* Visit at http://localhost:8000/static/styleguide/index.html

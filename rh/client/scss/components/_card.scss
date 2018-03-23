@@ -1,6 +1,16 @@
-/*
-  CARDS
-*/
+//
+// Cards
+//
+// To be used with .card-grid 
+//
+// Markup: components/card.hbs
+//
+// Weight: 5
+//
+// .light       - light version
+//
+// Style guide: Components.card
+//
 
 .card-header {
   @include bottom-space;

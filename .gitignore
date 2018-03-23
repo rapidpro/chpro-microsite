@@ -44,3 +44,6 @@ ENV/
 
 # Coverage reports
 *.coverage
+
+# Styleguide
+/rh/client/static/styleguide

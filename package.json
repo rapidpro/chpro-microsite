@@ -6,7 +6,8 @@
     "clean": "rm -Rf node_modules; rm -Rf rh/client/node_modules",
     "parcel": "cd rh/client/; yarn parcel",
     "watch": "cd rh/client/; yarn watch",
-    "build": "cd rh/client/; yarn build"
+    "build": "cd rh/client/; yarn build",
+    "build_guide": "cd rh/client/; yarn build_guide"
   },
   "dependencies": {
     "yarn": "^1.5.1"
