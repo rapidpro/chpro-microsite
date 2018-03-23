@@ -105,5 +105,5 @@ Check the site at `http://localhost:8000`
 
 # Generate the [Styleguide](http://localhost:8000/static/styleguide/index.html)
 
-* Run `yarn build-guide` from `/chpro-microsite/rh/client/`
+* Run `yarn build_guide` from `/chpro-microsite/rh/client/`
 * Visit at http://localhost:8000/static/styleguide/index.html
