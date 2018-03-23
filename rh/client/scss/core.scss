@@ -18,15 +18,20 @@ $global-width: 1100px; // TODO: Verify with designs
 // The palette used includes brand colors, as well as colors by Foundation.
 //
 
-$brand-color-primary: #FF3333;
-$brand-color-secondary: #324955;
 $dark-gray: #333333;
-$black: #191919;
-$white: #FFFFFF;
-$mint: #EAF0E6;
 //$light-gray
 //$medium-gray
+$black: #191919;
+$white: #FFFFFF;
 
+$color-mint: #EAF0E6;
+$color-navy: #324955;
+$color-navy-light: #597C82;
+$color-red: #FF3333;
+$color-pink: #D44673;
+
+$brand-color-primary: $color-red;
+$brand-color-secondary: $color-navy;
 
 $foundation-palette: (
   primary: #1779ba,
@@ -40,15 +45,16 @@ $foundation-palette: (
 // Fonts
 $body-font-family: 'Open Sans', sans-serif;
 $global-weight-bold: 700;
-$body-font-color: #324955;
+$global-weight-regular: 400;
+$body-font-color: $color-navy;
 
 $header-font-family: 'Titillium Web', sans-serif;
-$header-font-weight: 700;
+$header-font-weight: $global-weight-bold;
 $header-margin-bottom: 1rem;
 
 // Layout
 
-$site-footer-color: #324955;
+$site-footer-color: $color-navy;
 
 $anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
@@ -62,13 +68,16 @@ $navigation-font-weight: $global-weight-bold;
 
 // Buttons
 $button-font-family: $header-font-family;
-$button-background: #D44673;
+$button-background: $color-pink;
 $button-radius: 3px;
 //$button-palette:
 
 // Card styles
 $card-border: none;
 $card-padding: 1.5rem;
+
+// Blockquote styles
+$blockquote-padding: 1.70rem;
 
 // Set Foundation up
 @import "../node_modules/foundation-sites/scss/foundation";
@@ -78,6 +87,7 @@ $card-padding: 1.5rem;
 @import 'global';
 
 // ToC Imports
+@import 'components/blockquote';
 @import 'components/buttons';
 @import 'components/card';
 

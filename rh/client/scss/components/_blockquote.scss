@@ -1,0 +1,49 @@
+//
+// Blockquotes
+//
+// Markup: blockquote.hbs
+//
+// Style guide: Components.blockquote
+//
+
+.blockquote {
+  border: 0;
+  margin: 0;
+  background-color: $color-mint;
+  padding: 3rem $blockquote-padding $blockquote-padding $blockquote-padding;
+
+  .icon {
+    position: absolute;
+    margin-bottom: 0px;
+    top: 0;
+  }
+}
+
+.blockquote-content {
+  color: $color-navy-light;
+  font-family: $header-font-family;
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+}
+
+.blockquote-author {
+  font-style: normal;
+  line-height: 1.70rem;
+
+  &:before {
+    content: "";
+  }
+}
+
+.blockquote-author-name {
+  margin: 0.25rem 0;
+  color: $color-navy;
+  font-size: 0.90rem;
+  font-weight: bold;
+}
+
+.blockquote-author-title {
+  margin: 0;
+  color: $color-navy;
+  font-size: 0.70rem;
+}
