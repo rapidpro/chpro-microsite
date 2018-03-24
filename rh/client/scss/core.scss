@@ -18,9 +18,9 @@ $global-width: 1100px; // TODO: Verify with designs
 // The palette used includes brand colors, as well as colors by Foundation.
 //
 
-$dark-gray: #333333;
 //$light-gray
 //$medium-gray
+$dark-gray: #333333;
 $black: #191919;
 $white: #FFFFFF;
 
@@ -33,6 +33,7 @@ $color-pink: #D44673;
 $brand-color-primary: $color-red;
 $brand-color-secondary: $color-navy;
 
+/*
 $foundation-palette: (
   primary: #1779ba,
   secondary: #597F82,
@@ -40,7 +41,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-
+*/
 
 // Fonts
 $body-font-family: 'Open Sans', sans-serif;
