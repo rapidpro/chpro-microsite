@@ -66,6 +66,8 @@ rules:
         - float
         - order
         - flex
+        - flex-grow
+        - flex-shrink
         - flex-direction
         - flex-flow
         - justify-content

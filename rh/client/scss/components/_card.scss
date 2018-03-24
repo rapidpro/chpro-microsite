@@ -1,16 +1,21 @@
 //
 // Cards
 //
-// To be used with .card-grid 
+// To be used with .card-grid
 //
 // Markup: components/card.hbs
 //
 // Weight: 5
 //
 // .light       - light version
+// .dark        - dark version
 //
 // Style guide: Components.card
 //
+
+.card {
+  padding: $global-margin;
+}
 
 .card-header {
   @include bottom-space;
@@ -45,11 +50,31 @@
   }
 }
 
-.card-grid .card, // Special case
-.card.light {
-  padding: $global-margin;
-  background: #EAF0E6;
+// Photo Card
+.card.has-photo {
+  padding: 0;
 
+  .card-content,
+  .card-actions {
+    padding: $global-margin;
+  }
+}
+
+// Card Themes
+.card.light {
+  background: $color-yellow;
+
+  .icon {
+    color: #D44673;
+  }
+}
+
+.card.dark {
+  background: $color-beige;
+}
+
+.card.light,
+.card.dark {
   .icon {
     color: #D44673;
   }
