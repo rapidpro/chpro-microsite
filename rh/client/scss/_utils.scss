@@ -41,6 +41,12 @@
   }
 }
 
+/// Applies a treatment to images. Design aesthetic
+/// used throughout the interface.
+@mixin img-effect {
+  border: $img-effect;
+}
+
 /// Reverse anchors. Makes anchors have no underline by default, but makes one
 /// appear on hover.
 @mixin reverse-link-effects {

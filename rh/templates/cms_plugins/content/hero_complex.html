@@ -2,7 +2,7 @@
 {% load thumbnail %}
 
 <div
-  class="hero complex {% if not instance.get_plugin_class_instance.disable_child_plugins %}{% endif %}"
+  class="hero complex {% if not instance.get_plugin_class_instance.disable_child_plugins %}has-cards{% endif %}"
   role="banner">
   <div class="container">
     <header class="hero-header">
@@ -17,9 +17,9 @@
       {% if instance.image %}
       <aside class="hero-content-secondary">
         <img
-          data-interchange="[{% thumbnail instance.image "1280x960" %}, small],
-          [{% thumbnail instance.image "1000x750" %}, medium]"
-          alt="{{ instance.image.alt_text }}">
+          src="{% thumbnail instance.image "1000x750" %}"
+          alt="{{ instance.image.alt_text }}"
+          class="hero-img">
       </aside>
       {% endif %}
 

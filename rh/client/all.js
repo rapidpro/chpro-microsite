@@ -1,3 +1,3 @@
-import './scss/core.scss';
+import './scss/styles.scss';
 
 import './js/app';

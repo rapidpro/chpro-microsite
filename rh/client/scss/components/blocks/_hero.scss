@@ -75,10 +75,6 @@
 //
 // Style guide: Components.hero-complex
 .hero.complex {
-  img {
-    border: 12px solid $body-background;
-  }
-
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -101,12 +97,35 @@
   }
 }
 
+.hero-img {
+  @include img-effect;
+}
+
 // Dark Version
 .hero.dark:before {
   background-image: url(/static/img/topo-2.svg);
   background-color: #4B9196;
 }
 
+// Hero with Cards
+.hero-content-cards {
+  // Emulate dark cards
+  .card {
+    @include img-effect;
+    background: $color-beige;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+    color: $color-navy;
+  }
+
+  @include breakpoint(medium) {
+    @include container;
+    @include xy-grid-layout(3, '.card');
+    @include collapse-gutters;
+  }
+}
 
 .hero {
   @include breakpoint(xlarge) {
