@@ -55,13 +55,44 @@ h3 {
     margin-right: .4rem;
     width: 0;
     height: 0;
-    border-color: transparent currentColor transparent transparent;
-    border-style: solid;
-    border-width: .4em .7em .4em 0;
+    border-top: .4em solid transparent;
+    border-right: .7em solid currentColor;
+    border-bottom: .4em solid transparent;
     content: "";
   }
 }
 
 .icon {
   fill: currentColor;
+}
+
+
+// Layout Helpers
+.two-col {
+  @include breakpoint(large) {
+    .sidebar {
+      order: 0;
+      @include xy-cell(4);
+    }
+
+    .content {
+      order: 1;
+      @include xy-cell(7);
+      @include xy-cell-offset(1);
+    }
+  }
+}
+
+.subpage {
+  .site-main {
+    @include bottom-space(3);
+  }
+
+  .hero.has-icon {
+    @include bottom-space;
+
+    @include breakpoint(medium) {
+      @include bottom-space(4);
+    }
+  }
 }
