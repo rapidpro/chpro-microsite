@@ -226,8 +226,7 @@
         },
         "djangocms-testing": {
             "editable": true,
-            "git": "https://github.com/nicolaslara/djangocms_testing.git",
-            "ref": "c521e0349b75b624a1eb420a5e29beb8d17e1d1b"
+            "git": "https://github.com/nicolaslara/djangocms_testing.git"
         },
         "djangocms-text-ckeditor": {
             "hashes": [
@@ -391,11 +390,6 @@
                 "sha256:e863072cdf4c72eebf179342c94e6989c67185842d9997960b3e69290b2fa269"
             ],
             "version": "==3.12"
-        },
-        "rh": {
-            "editable": true,
-            "git": "git@github.com:lincolnloop/rapidpro_for_health.git",
-            "ref": "f3ac4f77a1c325b18fe33b6a345c9a5d14ac5644"
         },
         "s3transfer": {
             "hashes": [
