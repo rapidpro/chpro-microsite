@@ -69,9 +69,9 @@ h3 {
 
 // Layout Helpers
 .content-wsidebar {
-  @include collapse-gutters;
-
   @include breakpoint(large) {
+    @include collapse-gutters;
+
     .sidebar {
       order: 0;
       @include xy-cell(4);
