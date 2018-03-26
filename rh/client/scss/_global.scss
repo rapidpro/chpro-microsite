@@ -68,7 +68,9 @@ h3 {
 
 
 // Layout Helpers
-.two-col {
+.content-wsidebar {
+  @include collapse-gutters;
+
   @include breakpoint(large) {
     .sidebar {
       order: 0;
