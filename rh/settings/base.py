@@ -94,7 +94,7 @@ INSTALLED_APPS = [
     'django_select2',
     'tagulous',
 
-    # Da Subject Matter
+    # RapidPro Health
     'rh.apps.meta',
     'rh.apps.content',
     'rh.apps.icons',
