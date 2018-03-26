@@ -92,6 +92,7 @@ INSTALLED_APPS = [
 
     # Third-Party
     'django_select2',
+    'storages',
 
     # Da Subject Matter
     'rh.apps.meta',
