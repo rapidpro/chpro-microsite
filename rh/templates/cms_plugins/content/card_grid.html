@@ -7,16 +7,17 @@
   {# TODO: Whole card should be linkable #}
   {# TODO: Use template #}
   {% for page in instance.get_published_child_pages %}
-    <a href="{{ page.get_absolute_url }}">
-    <section class="card">
-      {% include 'includes/svg_icon.html' with icon_name=page.metaattributes.svg_icon %}
+
+    <a href="{{ page.get_absolute_url }}" class="card dark">
       <header class="card-header">
+        {% include 'includes/svg_icon.html' with icon_name=page.metaattributes.svg_icon %}
         <h3 class="card-title">{{ page.get_title }}</h3>
       </header>
+      {% if page.metaattributes.description %}
       <div class="card-content">
         {{ page.metaattributes.description }}
       </div>
-    </section>
+      {% endif %}
     </a>
   {% endfor %}
 

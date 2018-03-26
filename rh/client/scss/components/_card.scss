@@ -17,20 +17,23 @@
   padding: $global-margin;
 }
 
+a.card {
+  text-decoration: none;
+}
+
 .card-header {
-  @include bottom-space;
   display: flex;
   align-items: center;
 }
 
 .card-header .icon {
-  margin-right: $global-margin * 1.25;
-  width: 38px;
-  height: 38px;
+  margin-right: $global-margin * 1.5;
+  width: 32px;
+  height: 32px;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .card-header .icon + .card-title {
@@ -38,6 +41,7 @@
 }
 
 .card-content {
+  margin-top: $global-margin;
   @include bottomless;
   font-size: .9rem;
 }
@@ -86,6 +90,12 @@
 
 .card.light,
 .card.dark {
+  a,
+  .card-title,
+  .card-content {
+    color: $color-navy;
+  }
+
   .icon {
     color: $color-pink;
   }
