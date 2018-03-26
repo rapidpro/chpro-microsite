@@ -39,15 +39,15 @@ $body-background: $white;
 $brand-color-primary: $color-red;
 $brand-color-secondary: $color-navy;
 
-/*
+
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #597F82,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
+  primary: $color-pink,
+  secondary: $color-navy,
+  success: $color-mint,
+  warning: #FFAE00,
+  alert: #CC4B37,
 );
-*/
+
 
 // Typography
 $body-font-family: 'Open Sans', sans-serif;
@@ -55,9 +55,42 @@ $global-weight-bold: 700;
 $global-weight-regular: 400;
 $body-font-color: $color-navy;
 
+// Determines header sizing
+// https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
+$header-styles: (
+  'small': (
+    'h1': ('font-size': 28),
+    'h2': ('font-size': 24),
+    'h3': ('font-size': 23),
+    'h4': ('font-size': 22),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16)
+  ),
+  'medium': (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16)
+  ),
+  'large': (
+    'h1': ('font-size': 52),
+    'h2': ('font-size': 48),
+    'h3': ('font-size': 39),
+
+    // TODO: Need sizes
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16)
+  ),
+);
+
 $header-font-family: 'Titillium Web', sans-serif;
 $header-font-weight: $global-weight-bold;
 $header-margin-bottom: 1rem;
+
+
 
 // Layout
 $site-footer-color: $color-navy;
@@ -85,7 +118,7 @@ $card-padding: 1.5rem;
 $blockquote-padding: 1.7rem;
 
 // Image border effect
-$img-effect: 12px solid $body-background;
+$media-effect: 12px solid $body-background;
 
 @include foundation-everything;
 

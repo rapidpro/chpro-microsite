@@ -151,7 +151,7 @@ TEMPLATES = [
 # ==============================================================================
 CMS_TEMPLATES = [
     ('base.html', 'Generic template'),
-    ('content.html', 'Content template'),
+    ('subpage.html', 'Subpage template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {

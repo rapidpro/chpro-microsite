@@ -99,6 +99,7 @@ rules:
         - border-color
         - border-image
         - border-radius
+        - border-style
         - border-width
         - background
         - background-image

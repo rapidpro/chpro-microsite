@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+{% load menu_tags %}
+
+{% block body_classes %}auxpage{% endif %}
+
+{% block base_content %}
+  {% placeholder 'content' %}
+{% endblock %}

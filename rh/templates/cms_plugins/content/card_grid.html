@@ -1,6 +1,11 @@
 {% load cms_tags %}
 
 <div class="card-grid">
+  {% comment %}
+    When we're building from the page tree.
+  {% endcomment %}
+  {# TODO: Whole card should be linkable #}
+  {# TODO: Use template #}
   {% for page in instance.get_published_child_pages %}
     <a href="{{ page.get_absolute_url }}">
     <section class="card">
@@ -15,6 +20,9 @@
     </a>
   {% endfor %}
 
+  {% comment %}
+    When we're building manually
+  {% endcomment %}
   {% for plugin in instance.child_plugin_instances %}
     {% render_plugin plugin %}
   {% endfor %}

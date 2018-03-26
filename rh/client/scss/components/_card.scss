@@ -78,10 +78,6 @@
 // Card Themes
 .card.light {
   background: $color-yellow;
-
-  .icon {
-    color: #D44673;
-  }
 }
 
 .card.dark {
@@ -91,6 +87,6 @@
 .card.light,
 .card.dark {
   .icon {
-    color: #D44673;
+    color: $color-pink;
   }
 }

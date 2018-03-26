@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+{% load menu_tags %}
+
+{% block base_content %}
+  <div class="hero dark has-icon" role="banner">
+    <div class="container">
+      <header class="hero-header">
+        <a
+          href="{{ current_page.parent.get_absolute_url }}"
+          class="breadcrumb-back">Back to {{ current_page.parent }}</a>
+
+        <span class="subtitle">{{ current_page.parent }}:</span>
+        <h1 class="hero-title">Basic Hero Title</h1>
+
+        <aside
+          class="hero-icon"
+          aria-hidden="true">
+          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
+        </aside>
+      </header>
+
+
+    </div>
+  </div>
+
+
+  {% placeholder 'header' %}
+  <div class="container">
+    {% placeholder 'left_column' %}
+    {% placeholder 'main_content' %}
+  </div>
+{% endblock %}

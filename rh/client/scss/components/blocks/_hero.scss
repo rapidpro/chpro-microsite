@@ -98,7 +98,7 @@
 }
 
 .hero-img {
-  @include img-effect;
+  @include media-effect;
 }
 
 // Dark Version
@@ -111,7 +111,7 @@
 .hero-content-cards {
   // Emulate dark cards
   .card {
-    @include img-effect;
+    @include media-effect;
     background: $color-beige;
   }
 
@@ -127,6 +127,41 @@
   }
 }
 
+// Hero with Icon
+.hero.has-icon {
+  .hero-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .subtitle {
+    @extend h4; // sass-lint:disable-line placeholder-in-extend
+    display: block;
+    margin-top: $global-margin * 3;
+    margin-bottom: .1rem;
+    font-weight: $global-weight-normal;
+  }
+}
+
+.hero-icon {
+  display: none;
+  width: 120px;
+  height: 120px;
+  @include media-effect;
+  background: $color-beige;
+
+  .icon {
+    margin: auto;
+    width: 42px;
+    height: 42px;
+    color: $black;
+  }
+}
+
+// Breakpoints
 .hero {
   @include breakpoint(xlarge) {
     $large-margin: $global-margin * 6;
@@ -176,6 +211,30 @@
 
     .hero-content-primary {
       padding-top: 10rem;
+    }
+  }
+}
+
+.hero.has-icon {
+  @include breakpoint(medium) {
+    padding-top: $global-margin * 2;
+    padding-bottom: $global-margin;
+
+    .hero-header {
+      flex-flow: row wrap;
+    }
+
+    .subtitle {
+      width: 100%;
+    }
+
+    .hero-title {
+      flex: 1 1 auto;
+    }
+
+    .hero-icon {
+      display: inline-flex;
+      margin-bottom: $global-margin * -3;
     }
   }
 }

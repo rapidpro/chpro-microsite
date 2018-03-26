@@ -36,3 +36,32 @@ h3 {
     color: #597C82; // TODO: Config
   }
 }
+
+.breadcrumb-back {
+  position: relative;
+  font-size: .9rem;
+
+  @include reverse-link-effects;
+
+  &,
+  &:hover {
+    color: $black;
+  }
+
+  &:before {
+    position: relative;
+    top: .05em;
+    display: inline-block;
+    margin-right: .4rem;
+    width: 0;
+    height: 0;
+    border-color: transparent currentColor transparent transparent;
+    border-style: solid;
+    border-width: .4em .7em .4em 0;
+    content: "";
+  }
+}
+
+.icon {
+  fill: currentColor;
+}
