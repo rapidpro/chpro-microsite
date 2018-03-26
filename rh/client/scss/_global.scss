@@ -88,7 +88,7 @@ h3 {
     @include bottom-space(3);
   }
 
-  .hero.has-icon {
+  .subpage-hero {
     @include bottom-space;
 
     @include breakpoint(medium) {
