@@ -20,7 +20,7 @@ function applyIconSelector($elem){
       if (baseName.search('uploaded-svg-file') !== -1){
         icon = '<img class="icon icon-medium" src="'+window.rh.uploadedSvgIcons[baseName]+'"/>';
       } else {
-        icon = '<svg class="icon icon-medium"><use xlink:href="/static/icons/sprite.svg#'+baseName+'"></use></svg>';
+        icon = '<svg class="icon icon-medium"><use xlink:href="/static/img/sprite.svg#'+baseName+'"></use></svg>';
       }
 
       $state = $(
