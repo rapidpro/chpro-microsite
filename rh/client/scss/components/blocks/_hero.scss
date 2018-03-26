@@ -58,6 +58,7 @@
   font-weight: $global-weight-normal;
 }
 
+// TODO: Too complex
 .hero:not(.complex) .hero-content-primary a {
   color: $white;
 }
