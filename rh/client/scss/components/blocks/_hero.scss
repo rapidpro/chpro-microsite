@@ -52,14 +52,14 @@
 
 .hero-content-primary {
   @include bottomless;
-
-  a {
-    color: $white;
-  }
 }
 
 .hero-title {
   font-weight: $global-weight-normal;
+}
+
+.hero:not(.complex) .hero-content-primary a {
+  color: $white;
 }
 
 //
