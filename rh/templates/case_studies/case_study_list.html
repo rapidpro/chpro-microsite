@@ -14,24 +14,36 @@
   </div>
 </div>
 
+<div class="case-study-search">
+  <div class="case-study-search-filters">
+    All tags for filtering:
+    {{ tags }}
+  </div>
 
-
-
-  All tags for filtering: {{ tags }}
-
-  {% for case in casestudy_list %}
-    <section>
-      <h2>{{ case.country.name }}</h2>
-      <h1>{{ case.heading }}</h1>
-      Tags: {% for tag in object.tags.all %}<div>{{ tag }}</div>{% endfor %}
-      {% if case.featured_image %}
-        <aside class="hero-content-secondary">
+  <div class="case-study-search-results">
+    <div class="card-grid">
+      {% for case in casestudy_list %}
+      <article class="card has-img">
+        <header class="card-header">
           <img
-              data-interchange="[{% thumbnail case.featured_image "200x500" %}, small],
-        [{% thumbnail case.featured_image "200x500" %}, medium]"
-              alt="{{ case.featured_image.alt_text }}">
-        </aside>
-      {% endif %}
-    </section>
-  {% endfor %}
+            src="{% thumbnail instance.image 1000x750 %}"
+            alt="{{ instance.image.alt_text }}"
+            class="card-img">
+
+            <span class="subtitle">{{ case.country.name }}</span>
+            <h1 class="card-title">{{ case.heading }}</h1>
+        </header>
+
+        <div class="card-content">
+          Tags: {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
+        </div>
+
+        <div class="card-actions">
+          <a href="{{ case.get_absolute_url }}">View Case Study</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}
