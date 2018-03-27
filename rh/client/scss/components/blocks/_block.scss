@@ -36,6 +36,7 @@
   @include bottomless;
 }
 
+.block-actions,
 .block-content {
   margin-top: $global-margin * 2;
 }

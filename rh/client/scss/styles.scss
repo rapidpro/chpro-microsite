@@ -39,7 +39,6 @@ $body-background: $white;
 $brand-color-primary: $color-red;
 $brand-color-secondary: $color-navy;
 
-
 $foundation-palette: (
   primary: $color-pink,
   secondary: $color-navy,
@@ -74,16 +73,6 @@ $header-styles: (
     'h5': ('font-size': 20),
     'h6': ('font-size': 16)
   ),
-  'large': (
-    'h1': ('font-size': 52),
-    'h2': ('font-size': 48),
-    'h3': ('font-size': 39),
-
-    // TODO: Need sizes
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16)
-  ),
 );
 
 $header-font-family: 'Titillium Web', sans-serif;
@@ -108,6 +97,7 @@ $navigation-font-weight: $global-weight-bold;
 // Buttons
 $button-font-family: $header-font-family;
 $button-background: $color-pink;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-radius: 3px;
 
 // Card styles
