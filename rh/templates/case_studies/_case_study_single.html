@@ -1,0 +1,21 @@
+{% load thumbnail %}
+
+<article class="card has-img">
+  <header class="card-header">
+    <img
+      src="{% thumbnail case.featured_image 1000x750 %}"
+      alt="{{ case.featured_image.alt_text }}"
+      class="card-img">
+
+      <span class="card-subtitle">{{ case.country.name }}</span>
+      <h1 class="card-title">{{ case.heading }}</h1>
+  </header>
+
+  <div class="card-content">
+    {% for tag in case.tags.all %}<span>{{ tag }}</span>{% endfor %}
+  </div>
+
+  <div class="card-actions">
+    <a href="{{ case.get_absolute_url }}" class="button small">View Case Study</a>
+  </div>
+</article>

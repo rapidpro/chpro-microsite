@@ -31,6 +31,7 @@
       </aside>
       {% endif %}
     </div>
+
     <div class="hero-sub-content">
       {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
     </div>
@@ -39,10 +40,9 @@
 
 <div class="container content-wsidebar sidebar-right">
   <div class="content rich-text">
-
-
     {% render_placeholder object.main_content %}
   </div>
+
   <div class="sidebar rich-text">
     <aside>
       {% render_placeholder object.stats_content %}

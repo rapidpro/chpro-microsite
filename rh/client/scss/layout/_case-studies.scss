@@ -1,0 +1,50 @@
+/*
+  CASE STUDIES
+*/
+
+.case-study-search {
+  @include block;
+  @include container;
+}
+
+.case-study-search-filters {
+  @include xy-cell(3);
+}
+
+.case-study-search-results {
+  @include xy-cell(9);
+
+  .card-grid {
+    padding-top: 0;
+  }
+}
+
+.case-study-similar-examples {
+  @include block;
+  @include topographic-background($color-yellow, "topo-3.svg");
+  background: $color-beige;
+
+  .container {
+    @include xy-grid-container(62rem);
+  }
+
+  .block-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $color-navy-light;
+  }
+
+  .card-grid {
+    padding-top: 3rem;
+    padding-bottom: 0;
+
+    @include breakpoint(xlarge) {
+      @include xy-grid-layout(4, '.card');
+      @include collapse-gutters;
+    }
+  }
+
+  .card-grid .card {
+    background: $color-white;
+  }
+}

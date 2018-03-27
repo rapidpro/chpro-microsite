@@ -77,11 +77,12 @@ a.card {
   .card-actions,
   .card-title,
   .card-subtitle {
-    padding: 0 $global-margin;
+    padding: 0 1.25rem;
   }
 
   .card-title {
     margin-bottom: 0;
+    min-height: 3rem;
     font-weight: 600;
     color: $color-navy-light;
   }
@@ -99,7 +100,7 @@ a.card {
   }
 
   .card-actions {
-    margin-top: $global-margin / 2;
+    margin-top: 0.75rem;
   }
 }
 

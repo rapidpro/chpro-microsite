@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load cms_tags %}
-{% load thumbnail %}
 
 {% block base_content %}
 <div
@@ -16,32 +15,29 @@
 
 <div class="case-study-search">
   <div class="case-study-search-filters">
-    All tags for filtering:
-    {{ tags }}
+    <h5>Filter by</h5>
+
+    {% for tag in tags %}
+      {{ tag }}<br />
+    {% endfor %}
   </div>
 
   <div class="case-study-search-results">
     <div class="card-grid">
       {% for case in casestudy_list %}
-      <article class="card has-img">
-        <header class="card-header">
-          <img
-            src="{% thumbnail instance.image 1000x750 %}"
-            alt="{{ instance.image.alt_text }}"
-            class="card-img">
+        {% include 'case_studies/_case_study_single.html' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-            <span class="card-subtitle">{{ case.country.name }}</span>
-            <h1 class="card-title">{{ case.heading }}</h1>
-        </header>
+<div class="case-study-similar-examples">
+  <div class="container">
+    <h5 class="block-header">View similar examples</h5>
 
-        <div class="card-content">
-          {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
-        </div>
-
-        <div class="card-actions">
-          <a href="{{ case.get_absolute_url }}">View Case Study</a>
-        </div>
-      </article>
+    <div class="card-grid">
+      {% for case in casestudy_list %}
+        {% include 'case_studies/_case_study_single.html' %}
       {% endfor %}
     </div>
   </div>
