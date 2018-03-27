@@ -30,12 +30,12 @@
             alt="{{ instance.image.alt_text }}"
             class="card-img">
 
-            <span class="subtitle">{{ case.country.name }}</span>
+            <span class="card-subtitle">{{ case.country.name }}</span>
             <h1 class="card-title">{{ case.heading }}</h1>
         </header>
 
         <div class="card-content">
-          Tags: {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
+          {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
         </div>
 
         <div class="card-actions">

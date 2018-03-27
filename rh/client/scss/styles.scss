@@ -26,7 +26,6 @@ $color-black: #191919;
 $color-white: #FFFFFF;
 $color-dark-gray: #333333;
 
-$color-mint: #EAF0E6;
 $color-navy: #324955;
 $color-navy-light: #597C82;
 $color-red: #FF3333;
@@ -43,7 +42,7 @@ $brand-color-secondary: $color-navy;
 $foundation-palette: (
   primary: $color-pink,
   secondary: $color-navy,
-  success: $color-mint,
+  success: $color-yellow,
   warning: #FFAE00,
   alert: #CC4B37,
 );
@@ -110,7 +109,7 @@ $blockquote-padding: 1.7rem;
 
 // Steps
 $step-number-size: 140px;
- 
+
 // Image border effect
 $media-effect: 12px solid $body-background;
 

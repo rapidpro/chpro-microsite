@@ -36,6 +36,11 @@ a.card {
   font-size: 1.3rem;
 }
 
+.card-subtitle {
+  font-family: $header-font-family;
+  text-transform: uppercase;
+}
+
 .card-header .icon + .card-title {
   margin-bottom: 0;
 }
@@ -70,12 +75,31 @@ a.card {
 
   .card-content,
   .card-actions,
-  .card-title {
+  .card-title,
+  .card-subtitle {
     padding: 0 $global-margin;
   }
 
   .card-title {
     margin-bottom: 0;
+    font-weight: 600;
+    color: $color-navy-light;
+  }
+
+  .card-subtitle {
+    margin-bottom: $global-margin / 2;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $color-navy;
+  }
+
+  .card-content {
+    font-size: 0.75rem;
+    color: $color-navy;
+  }
+
+  .card-actions {
+    margin-top: $global-margin / 2;
   }
 }
 
