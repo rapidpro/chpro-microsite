@@ -4,20 +4,51 @@
 {% load thumbnail %}
 
 {% block base_content %}
-  <h2>{{ object.country.name }}</h2>
-  <h1>{{ object.heading }}</h1>
-  Tags: {% for tag in object.tags.all %}<div>{{ tag }}</div>{% endfor %}
+<div
+  class="hero complex dark"
+  role="banner">
+  <div class="container">
+    <header class="hero-header">
+      <a
+        href="/case-studies"
+        class="breadcrumb-back">Back to <span class="breadcrumb-parent">Case Studies</span></a>
 
-  {% if object.featured_image %}
-    <aside class="hero-content-secondary">
-      <img
-        data-interchange="[{% thumbnail object.featured_image "200x500" %}, small],
-        [{% thumbnail object.featured_image "200x500" %}, medium]"
-        alt="{{ object.featured_image.alt_text }}">
+      <span class="subtitle">{{ object.country.name }}</span>
+      <h1 class="hero-title">{{ object.heading }}</h1>
+    </header>
+
+    <div class="hero-content">
+      <div class="hero-content-primary rich-text">
+        {{ body|safe }}
+      </div>
+
+      {% if instance.image %}
+      <aside class="hero-content-secondary">
+        <img
+          src="{% thumbnail instance.image 1000x750 crop %}"
+          alt="{{ instance.image.alt_text }}"
+          class="hero-img">
+      </aside>
+      {% endif %}
+    </div>
+    <div class="hero-sub-content">
+      {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="container content-wsidebar sidebar-right">
+  <div class="content rich-text">
+
+
+    {% render_placeholder object.main_content %}
+  </div>
+  <div class="sidebar rich-text">
+    <aside>
+      {% render_placeholder object.stats_content %}
     </aside>
-  {% endif %}
 
-  {% render_placeholder object.main_content %}
-  {% render_placeholder object.stats_content %}
-  {% render_placeholder object.sidebar_content %}
+    {% render_placeholder object.sidebar_content %}
+  </div>
+</div>
 {% endblock %}

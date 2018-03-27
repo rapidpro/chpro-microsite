@@ -15,16 +15,18 @@
   }
 }
 
-/// General wrapper for grid elements
-@mixin container {
-  @include xy-grid-container;
-  @include xy-grid;
-}
+
 
 /// Collapses gutters on wrappers
 @mixin collapse-gutters($type: padding) {
   #{$type}-right: 0;
   #{$type}-left: 0;
+}
+
+/// General wrapper for grid elements
+@mixin container {
+  @include xy-grid-container;
+  @include xy-grid;
 }
 
 /// Returns onyx or white depending on color argument. Useful for determining
@@ -39,6 +41,12 @@
     // Darker background, return light color
     @return $color-white;
   }
+}
+
+/// Applies a treatment to images. Design aesthetic
+/// used throughout the interface.
+@mixin media-effect {
+  border: $media-effect;
 }
 
 /// Reverse anchors. Makes anchors have no underline by default, but makes one

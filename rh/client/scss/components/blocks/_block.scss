@@ -36,6 +36,7 @@
   @include bottomless;
 }
 
+.block-actions,
 .block-content {
   margin-top: $global-margin * 2;
 }
@@ -54,6 +55,7 @@
   // Cards
   .block-content > .card {
     @include xy-cell(6);
+    flex-grow: 0;
   }
 }
 
@@ -68,10 +70,5 @@
 
   .block-header-text {
     @include xy-cell(6);
-  }
-
-  // Cards
-  .block-content > .card {
-    @include xy-cell(4);
   }
 }

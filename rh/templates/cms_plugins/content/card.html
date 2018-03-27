@@ -4,9 +4,11 @@
     <h3 class="card-title">{{ instance.title }}</h3>
   </header>
 
+  {% if instance.body %}
   <div class="card-content">
     {{ instance.body|safe }}
   </div>
+  {% endif %}
 
   {% if instance.get_link %}
   <div class="card-actions">

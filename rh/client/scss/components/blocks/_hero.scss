@@ -50,14 +50,15 @@
 
 .hero-content-primary {
   @include bottomless;
-
-  a {
-    color: $color-white;
-  }
 }
 
 .hero-title {
   font-weight: $global-weight-normal;
+}
+
+// TODO: Too complex
+.hero:not(.complex) .hero-content-primary a {
+  color: $white;
 }
 
 //
@@ -71,10 +72,6 @@
 //
 // Style guide: Components.hero.complex
 .hero.complex {
-  img {
-    border: 12px solid $body-background;
-  }
-
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -97,13 +94,71 @@
   }
 }
 
+.hero-img {
+  @include media-effect;
+}
+
 // Dark Version
 .hero.dark:before {
   background-image: url(/static/img/topo-2.svg);
   background-color: #4B9196;
 }
 
+// Hero with Cards
+.hero-content-cards {
+  // Emulate dark cards
+  .card {
+    @include media-effect;
+    background: $color-beige;
+  }
 
+  .card-title {
+    font-size: 1.6rem;
+    color: $color-navy;
+  }
+
+  @include breakpoint(medium) {
+    @include container;
+    @include xy-grid-layout(3, '.card');
+    @include collapse-gutters;
+  }
+}
+
+// Hero with Icon
+.hero.has-icon {
+  .hero-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .subtitle {
+    @extend h4; // sass-lint:disable-line placeholder-in-extend
+    display: block;
+    margin-top: $global-margin * 3;
+    margin-bottom: .1rem;
+    font-weight: $global-weight-normal;
+  }
+}
+
+.hero-icon {
+  display: none;
+  width: 140px;
+  height: 140px;
+  @include media-effect;
+  background: $color-beige;
+
+  .icon {
+    margin: auto;
+    width: 44px;
+    height: 44px;
+    color: $black;
+  }
+}
+
+// Breakpoints
 .hero {
   @include breakpoint(xlarge) {
     $large-margin: $global-margin * 6;
@@ -153,6 +208,30 @@
 
     .hero-content-primary {
       padding-top: 10rem;
+    }
+  }
+}
+
+.hero.has-icon {
+  @include breakpoint(medium) {
+    padding-top: $global-margin * 2;
+    padding-bottom: $global-margin;
+
+    .hero-header {
+      flex-flow: row wrap;
+    }
+
+    .subtitle {
+      width: 100%;
+    }
+
+    .hero-title {
+      flex: 1 1 auto;
+    }
+
+    .hero-icon {
+      display: inline-flex;
+      margin-bottom: $global-margin * -3;
     }
   }
 }

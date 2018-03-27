@@ -5,7 +5,9 @@
       <a href="{{ instance.get_link }}">{{ instance.link_text }}</a>
     {% endif %}
     {% if instance.link_style == 'button' %}
-      <button class="button">{{ instance.link_text }}</button>
+      <a
+        href="{{ instance.get_link }}"
+        class="button">{{ instance.link_text }}</a>
     {% endif %}
   {% endif %}
 {% endwith %}

@@ -6,24 +6,32 @@
 // Markup: components/card.hbs
 //
 // .light       - light version
+// .dark        - dark version
 //
 // Style guide: Components.card
 //
 
+.card {
+  padding: $global-margin;
+}
+
+a.card {
+  text-decoration: none;
+}
+
 .card-header {
-  @include bottom-space;
   display: flex;
   align-items: center;
 }
 
 .card-header .icon {
-  margin-right: $global-margin * 1.25;
-  width: 38px;
-  height: 38px;
+  margin-right: $global-margin * 1.5;
+  width: 44px;
+  height: 44px;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .card-header .icon + .card-title {
@@ -31,6 +39,7 @@
 }
 
 .card-content {
+  margin-top: $global-margin;
   @include bottomless;
   font-size: .9rem;
 }
@@ -43,12 +52,49 @@
   }
 }
 
-.card-grid .card, // Special case
+// Image Card
+.card.has-img {
+  padding: 0 0 $global-margin;
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-img {
+    order: 0;
+    margin-bottom: $global-margin;
+  }
+
+  .card-content,
+  .card-actions,
+  .card-title {
+    padding: 0 $global-margin;
+  }
+
+  .card-title {
+    margin-bottom: 0;
+  }
+}
+
+// Card Themes
 .card.light {
-  padding: $global-margin;
-  background: #EAF0E6;
+  background: $color-yellow;
+}
+
+.card.dark {
+  background: $color-beige;
+}
+
+.card.light,
+.card.dark {
+  a,
+  .card-title,
+  .card-content {
+    color: $color-navy;
+  }
 
   .icon {
-    color: #D44673;
+    color: $color-pink;
   }
 }

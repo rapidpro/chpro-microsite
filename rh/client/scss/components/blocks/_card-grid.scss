@@ -14,6 +14,7 @@
 
   .card {
     flex-grow: 0;
+    background: $color-yellow;
   }
 
   @include breakpoint(medium) {

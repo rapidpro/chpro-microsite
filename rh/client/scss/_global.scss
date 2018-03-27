@@ -36,3 +36,81 @@ h3 {
     color: #597C82; // TODO: Config
   }
 }
+
+.breadcrumb-back {
+  position: relative;
+  font-size: .9rem;
+
+  @include reverse-link-effects;
+
+  &,
+  &:hover {
+    color: $black;
+  }
+
+  &:before {
+    position: relative;
+    top: .05em;
+    display: inline-block;
+    margin-right: .4rem;
+    width: 0;
+    height: 0;
+    border-top: .4em solid transparent;
+    border-right: .7em solid currentColor;
+    border-bottom: .4em solid transparent;
+    content: "";
+  }
+}
+
+.breadcrumb-parent {
+  text-transform: uppercase;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+
+// Layout Helpers
+.content-wsidebar {
+  @include breakpoint(large) {
+    @include collapse-gutters;
+
+    .sidebar {
+      order: 0;
+      @include xy-cell(4);
+    }
+
+    .content {
+      order: 1;
+      @include xy-cell(7);
+      @include xy-cell-offset(1);
+    }
+  }
+
+  &.sidebar-right {
+    @include breakpoint(large) {
+      .content {
+        order: 0;
+      }
+
+      .sidebar {
+        order: 1;
+      }
+    }
+  }
+}
+
+.subpage {
+  .site-main {
+    @include bottom-space(3);
+  }
+
+  .subpage-hero {
+    @include bottom-space;
+
+    @include breakpoint(medium) {
+      @include bottom-space(4);
+    }
+  }
+}

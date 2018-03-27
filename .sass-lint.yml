@@ -66,6 +66,8 @@ rules:
         - float
         - order
         - flex
+        - flex-grow
+        - flex-shrink
         - flex-direction
         - flex-flow
         - justify-content
@@ -97,6 +99,7 @@ rules:
         - border-color
         - border-image
         - border-radius
+        - border-style
         - border-width
         - background
         - background-image

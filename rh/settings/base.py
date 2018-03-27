@@ -92,9 +92,10 @@ INSTALLED_APPS = [
 
     # Third-Party
     'django_select2',
+    'storages',
     'tagulous',
 
-    # Da Subject Matter
+    # RapidPro Health
     'rh.apps.meta',
     'rh.apps.content',
     'rh.apps.icons',
@@ -151,7 +152,7 @@ TEMPLATES = [
 # ==============================================================================
 CMS_TEMPLATES = [
     ('base.html', 'Generic template'),
-    ('content.html', 'Content template'),
+    ('subpage.html', 'Subpage template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {
