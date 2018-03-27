@@ -16,15 +16,14 @@
     </div>
   </header>
 
-
   {% if not instance.get_plugin_class_instance.disable_child_plugins %}
-  {% if instance.child_plugin_instances %}
-  <div class="block-content">
-    {% for plugin in instance.child_plugin_instances %}
-      {% render_plugin plugin %}
-    {% endfor %}
-  </div>
-  {% endif %}
+    {% if instance.child_plugin_instances %}
+    <div class="block-content">
+      {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+      {% endfor %}
+    </div>
+    {% endif %}
   {% endif %}
 
   {% if instance.get_link %}
