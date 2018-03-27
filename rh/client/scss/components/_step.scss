@@ -1,0 +1,42 @@
+//
+// Step
+//
+// Markup: step.hbs
+//
+// Style guide: Components.step
+//
+
+.step {
+  padding: 2.5rem;
+  background-color: $color-mint;
+}
+
+// TODO: Vendor prefix flexbox for browser compatibilty
+.step-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: $step-number-size;
+  height: $step-number-size;
+  background-color: $color-teal;
+  font-family: $header-font-family;
+  font-size: 3.25rem;
+  color: $color-white;
+  letter-spacing: -0.15rem;
+}
+
+.step-title {
+  font-size: 1.75rem;
+}
+
+.step-subtitle {
+  font-family: $header-font-family;
+  font-size: 1.25rem;
+  color: $color-navy-light;
+}
+
+.step-content {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}

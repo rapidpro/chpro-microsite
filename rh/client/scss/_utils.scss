@@ -37,7 +37,7 @@
     @return $body-font-color;
   } @else {
     // Darker background, return light color
-    @return $white;
+    @return $color-white;
   }
 }
 

@@ -18,17 +18,18 @@ $global-width: 1100px; // TODO: Verify with designs
 // The palette used includes brand colors, as well as colors by Foundation.
 //
 
-$dark-gray: #333333;
 //$light-gray
 //$medium-gray
-$black: #191919;
-$white: #FFFFFF;
+$color-black: #191919;
+$color-white: #FFFFFF;
+$color-dark-gray: #333333;
 
 $color-mint: #EAF0E6;
 $color-navy: #324955;
 $color-navy-light: #597C82;
 $color-red: #FF3333;
 $color-pink: #D44673;
+$color-teal: #4EBEA6;
 
 $brand-color-primary: $color-red;
 $brand-color-secondary: $color-navy;
@@ -79,6 +80,9 @@ $card-padding: 1.5rem;
 // Blockquote styles
 $blockquote-padding: 1.7rem;
 
+// Steps
+$step-number-size: 140px;
+
 // Set Foundation up
 @import "../node_modules/foundation-sites/scss/foundation";
 @include foundation-everything;
@@ -90,6 +94,7 @@ $blockquote-padding: 1.7rem;
 @import 'components/blockquote';
 @import 'components/buttons';
 @import 'components/card';
+@import 'components/step';
 
 @import 'components/blocks/block';
 @import 'components/blocks/hero';

@@ -3,8 +3,6 @@
 //
 // Markup: components/hero.hbs
 //
-// Weight: 4
-//
 // .dark       - Dark version
 //
 // Style guide: Components.hero
@@ -13,7 +11,7 @@
 .hero {
   @include block;
   position: relative;
-  color: $white;
+  color: $color-white;
 
   .container {
     justify-content: center;
@@ -54,7 +52,7 @@
   @include bottomless;
 
   a {
-    color: $white;
+    color: $color-white;
   }
 }
 
@@ -69,11 +67,9 @@
 //
 // Markup: components/hero-complex.hbs
 //
-// Weight: 4
-//
 // .dark       - Dark version
 //
-// Style guide: Components.hero-complex
+// Style guide: Components.hero.complex
 .hero.complex {
   img {
     border: 12px solid $body-background;
