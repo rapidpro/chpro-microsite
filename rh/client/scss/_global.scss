@@ -83,6 +83,18 @@ h3 {
       @include xy-cell-offset(1);
     }
   }
+
+  &.sidebar-right {
+    @include breakpoint(large) {
+      .content {
+        order: 0;
+      }
+
+      .sidebar {
+        order: 1;
+      }
+    }
+  }
 }
 
 .subpage {
