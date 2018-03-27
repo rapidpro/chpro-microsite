@@ -8,7 +8,7 @@
         <a href="{{ instance.get_link }}">
       {% endif %}
       <img
-        src="{% thumbnail instance.image "1000x750" %}"
+        src="{% thumbnail instance.image 1000x750 %}"
         alt="{{ instance.image.alt_text }}"
         class="card-img">
       {% if instance.get_link %}
