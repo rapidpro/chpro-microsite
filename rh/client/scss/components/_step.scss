@@ -7,12 +7,25 @@
 //
 
 .step {
-  padding: 2.5rem;
-  background-color: $color-yellow;
+  display: grid;
+  grid-template-columns: 80px auto auto;
+  grid-template-rows: 25px auto auto;
 }
 
-// TODO: Vendor prefix flexbox for browser compatibilty
+// TODO: Vendor prefix flexbox and CSS Grid for browser compatibilty
+.step-wrapper {
+  @include xy-grid;
+  z-index: 2;
+  padding: 2rem 2.5rem 2rem 5rem;
+  background-color: $color-yellow;
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
 .step-number {
+  z-index: 3;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -26,11 +39,25 @@
   letter-spacing: -0.15rem;
 }
 
+.step-col {
+  @include xy-cell(6);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .step-title {
+  width: 100%;
   font-size: 1.75rem;
 }
 
 .step-subtitle {
+  min-height: 5.75rem;
   font-family: $header-font-family;
   font-size: 1.25rem;
   color: $color-navy-light;

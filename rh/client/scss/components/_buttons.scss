@@ -1,12 +1,13 @@
 //
 // Buttons
 //
-// Markup: button.hbs
+// Markup: components/button.hbs
 //
 // .tiny       - Tiny button
 // .small      - Small button
 // .large      - Large version
 // .expanded   - Expanded
+// .icon       - Icon button
 //
 // Style guide: Base.button
 //
@@ -17,4 +18,19 @@
   font-weight: $global-weight-bold;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.button.icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  color: $color-white;
+  cursor: pointer;
 }
