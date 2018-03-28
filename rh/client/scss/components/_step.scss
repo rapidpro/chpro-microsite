@@ -24,14 +24,14 @@
   grid-row-end: span 3;
 }
 
-.step-number {
+.step-label {
   z-index: 3;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  width: $step-number-size;
-  height: $step-number-size;
+  width: $step-label-size;
+  height: $step-label-size;
   background-color: $color-teal;
   font-family: $header-font-family;
   font-size: 3.25rem;
@@ -42,11 +42,11 @@
 .step-col {
   @include xy-cell(6);
 
-  &:first-child {
+  &:first-of-type {
     margin-left: 0;
   }
 
-  &:last-child {
+  &:last-of-type {
     margin-right: 0;
   }
 }
@@ -66,4 +66,41 @@
 .step-content {
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+
+//
+// Step Detail
+//
+// Markup: step-detail.hbs
+//
+// Use `.has-detail` class.
+//
+// Style guide: Components.step-detail
+//
+
+.step.has-detail {
+  .step-label {
+    padding: 45px;
+  }
+
+  .step-col:last-of-type {
+    @include xy-cell(5);
+    @include xy-cell-offset(1);
+  }
+
+  .step-subtitle {
+    margin-top: 2rem;
+    min-height: auto;
+    font-weight: 600;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .button {
+    font-family: $body-font-family;
+    font-weight: 400;
+    text-align: left;
+  }
 }
