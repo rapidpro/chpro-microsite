@@ -4,7 +4,14 @@ from django.views.generic import DetailView, ListView
 from rh.apps.case_studies.models import CaseStudy
 
 
-class CaseStudyView(DetailView):
+class CurrentPageMixin:
+
+    def get_context_data(self, **kwargs):
+        kwargs['current_page'] = self.request.current_page
+        return super().get_context_data(**kwargs)
+
+
+class CaseStudyView(CurrentPageMixin, DetailView):
     template_name = 'case_studies/case_study.html'
     model = CaseStudy
 
@@ -17,7 +24,7 @@ class CaseStudyView(DetailView):
         return queryset
 
 
-class CaseStudyListView(ListView):
+class CaseStudyListView(CurrentPageMixin, ListView):
     template_name = 'case_studies/case_study_list.html'
     model = CaseStudy
 

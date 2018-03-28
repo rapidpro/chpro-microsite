@@ -26,6 +26,14 @@ class Hero(BlockMixin):
 
 
 class Block(BlockMixin, Linkable):
+    STYLE_CHOICES = Choices(
+        ('default', 'White'),
+        ('light', 'Light'),
+        ('dark', 'Dark'),
+    )
+    style = models.CharField(
+        choices=STYLE_CHOICES, max_length=32, default=STYLE_CHOICES.default)
+
     def __str__(self):
         return self.title
 
@@ -147,6 +155,7 @@ class SectionPlugin(BlockPlugin):
     )
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
+        ('Style', {'fields': ('style',)}),
         BlockMixin._admin_fieldset,
         Linkable._admin_fieldset,
     )
