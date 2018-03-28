@@ -2,6 +2,9 @@
   GLOBALS
 */
 
+// Generate basic block themes
+@include generate-block-themes;
+
 
 // CMS shims
 .cms-toolbar-expanded {

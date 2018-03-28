@@ -47,6 +47,12 @@ $foundation-palette: (
   alert: #CC4B37,
 );
 
+$palette: (
+  default: $color-white,
+  light: $color-yellow,
+  dark: $color-beige,
+);
+
 
 // Typography
 $body-font-family: 'Open Sans', sans-serif;

@@ -15,7 +15,16 @@
   }
 }
 
-
+/// Sets up basic background/foreground and link theme support for block
+/// (full-width) elements.
+/// @param {Map} $colors The map of colors to run through
+@mixin generate-block-themes($colors: $palette) {
+  @each $name, $color in $palette {
+    .theme-#{$name} {
+      background-color: $color;
+    }
+  }
+}
 
 /// Collapses gutters on wrappers
 @mixin collapse-gutters($type: padding) {
