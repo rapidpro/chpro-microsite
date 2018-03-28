@@ -9,9 +9,10 @@
   role="banner">
   <div class="container">
     <header class="hero-header">
+      {# current_page is actually the parent page containing this apphook #}
       <a
-        href="/case-studies"
-        class="breadcrumb-back">Back to <span class="breadcrumb-parent">Case Studies</span></a>
+        href="{{ current_page.get_absolute_url }}"
+        class="breadcrumb-back">Back to <span class="breadcrumb-parent">{{ current_page }}</span></a>
 
       <span class="subtitle">{{ object.country.name }}</span>
       <h1 class="hero-title">{{ object.heading }}</h1>
