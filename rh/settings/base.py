@@ -121,7 +121,8 @@ MIDDLEWARE = [
     # Django CMS
     'cms.middleware.utils.ApphookReloadMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
+    # 'cms.middleware.page.CurrentPageMiddleware',
+    'rh.middleware.BetterCurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
 ]
 
