@@ -155,8 +155,8 @@ class SectionPlugin(BlockPlugin):
     )
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
-        ('Style', {'fields': ('style',)}),
         BlockMixin._admin_fieldset,
+        ('Style', {'fields': ('style',)}),
         Linkable._admin_fieldset,
     )
 
