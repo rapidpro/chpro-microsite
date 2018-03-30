@@ -28,6 +28,7 @@
     "select2": "^4.0.6-rc.1",
     "autoprefixer": "^8.2.0",
     "postcss-modules": "^1.1.0",
+    "svg-sprite": "^1.4.0",
     "yarn": "^1.4.x"
   },
   "devDependencies": {
