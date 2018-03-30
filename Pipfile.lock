@@ -26,10 +26,10 @@
         },
         "botocore": {
             "hashes": [
-                "sha256:254803eaca91bf28fa277641039bc06d335faa638862b54454170600a9ed0b5c",
-                "sha256:380272df75f6ee23a18c6b87ab3ad31b91f3c8bf17cc5d0d733a0a0ee72c2c3b"
+                "sha256:637820dd036d0d1c90f0008f423233536705a3eac80eb555fb8b0f02d1a0cc9d",
+                "sha256:cb8a4218cbbac1244b6ef8f12143d35e08f1ec613b154cb59bde6fb752d513d4"
             ],
-            "version": "==1.9.18"
+            "version": "==1.9.20"
         },
         "cmsplugin-filer": {
             "hashes": [
@@ -196,7 +196,7 @@
         "django-tagulous": {
             "editable": true,
             "git": "https://github.com/radiac/django-tagulous.git",
-            "ref": "30e89aebe5d423ca3a04a7bfc74162f2b49d9167"
+            "ref": "feature/django-1_11"
         },
         "django-treebeard": {
             "hashes": [
@@ -226,8 +226,7 @@
         },
         "djangocms-testing": {
             "editable": true,
-            "git": "https://github.com/nicolaslara/djangocms_testing.git",
-            "ref": "c521e0349b75b624a1eb420a5e29beb8d17e1d1b"
+            "git": "https://github.com/nicolaslara/djangocms_testing.git"
         },
         "djangocms-text-ckeditor": {
             "hashes": [
@@ -387,11 +386,6 @@
                 "sha256:e863072cdf4c72eebf179342c94e6989c67185842d9997960b3e69290b2fa269"
             ],
             "version": "==3.12"
-        },
-        "rh": {
-            "editable": true,
-            "git": "git@github.com:rapidpro/chpro-microsite.git",
-            "ref": "d417ed1532412a948a151f010d3594c592696487"
         },
         "s3transfer": {
             "hashes": [
