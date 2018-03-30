@@ -7,7 +7,8 @@
     "parcel": "cd rh/client/; yarn parcel",
     "watch": "cd rh/client/; yarn watch",
     "build": "cd rh/client/; yarn build",
-    "build_guide": "cd rh/client/; yarn build_guide"
+    "build_guide": "cd rh/client/; yarn build_guide",
+    "check_browserlist": "cd rh/client/; npx browserslist"
   },
   "dependencies": {
     "yarn": "^1.5.1"

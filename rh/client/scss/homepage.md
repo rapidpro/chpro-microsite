@@ -5,6 +5,9 @@ You can use this guide to develop new content for the website, rapidpro.com. Thi
 
 As of March 2018, this guide is a work in progress.
 
+## Browser Support
+
+Vendor prefixes happen with autoprefixer and Parcel. To see a list of browsers the project is supporting, run `yarn check_browserlist`. Update this list in the file `/rh/client/.browserlistrc`.
 
 
 #### External Documentation
@@ -12,6 +15,7 @@ As of March 2018, this guide is a work in progress.
 * [kss-node](https://github.com/kss-node/kss-node) - The generator for this style guide
 * [KSS](http://warpspire.com/kss/) - The specification for comments
 * [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax) - Usable in comments
+* [Browserlist documentation](https://www.npmjs.com/package/browserslist) - Autoprefixer queries
 
 
 

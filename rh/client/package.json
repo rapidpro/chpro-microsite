@@ -26,6 +26,8 @@
     "parcel-bundler": "^1.5.1",
     "post-load-plugins": "^0.0.16",
     "select2": "^4.0.6-rc.1",
+    "autoprefixer": "^8.2.0",
+    "postcss-modules": "^1.1.0",
     "yarn": "^1.4.x"
   },
   "devDependencies": {
