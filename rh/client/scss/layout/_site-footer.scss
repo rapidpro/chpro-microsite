@@ -41,9 +41,8 @@
   @include bottom-space;
 }
 
-// Helps with alignment since menu items have padding
 .site-footer .menu a {
-  padding-left: 0;
+  font-weight: 400;
 }
 
 .site-footer-content,

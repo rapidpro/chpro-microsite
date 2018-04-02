@@ -39,9 +39,20 @@
 // Setup Navigation
 .site-header,
 .off-canvas {
+  .menu li {
+    padding: 0 1rem;
+  }
+
   .menu a {
     @extend %nav-item;
+    padding-right: 0;
+    padding-left: 0;
+    color: $color-black;
   }
+}
+
+.site-header .menu a[aria-current] {
+  border-bottom: 3px solid $color-pink;
 }
 
 .off-canvas .menu a {

@@ -105,11 +105,13 @@
 %nav-item {
   position: relative;
   font-family: $navigation-font-family;
+  font-size: 0.875rem;
   font-weight: $navigation-font-weight;
   text-transform: uppercase;
+  letter-spacing: 0.045rem;
 
   &[aria-current] {
-    color: $brand-color-primary;
+    color: $color-pink;
   }
 }
 
