@@ -122,11 +122,13 @@ $media-effect: 12px solid $body-background;
 @include foundation-everything;
 
 @import 'utils';
-@import 'global';
 
 // ToC Imports
+@import 'base/global';
+@import 'base/typography';
+@import 'base/buttons';
+
 @import 'components/blockquote';
-@import 'components/buttons';
 @import 'components/card';
 @import 'components/step';
 
