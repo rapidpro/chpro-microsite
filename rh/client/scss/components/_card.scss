@@ -14,7 +14,7 @@
 //
 
 .card {
-  padding: $global-margin;
+  padding: 1.25rem;
 }
 
 a.card {
@@ -28,6 +28,7 @@ a.card {
 
 .card-header .icon {
   margin-right: $global-margin * 1.5;
+  padding: 4px;
   width: 44px;
   height: 44px;
 }
@@ -82,7 +83,6 @@ a.card {
 
   .card-title {
     margin-bottom: 0;
-    min-height: 3rem;
     font-weight: 600;
     color: $color-navy-light;
   }
@@ -95,8 +95,11 @@ a.card {
   }
 
   .card-content {
-    font-size: 0.75rem;
     color: $color-navy;
+  }
+
+  .card-content span {
+    font-size: 0.75rem;
   }
 
   .card-actions {
@@ -131,6 +134,10 @@ a.card {
   .card-title,
   .card-content {
     color: $color-navy;
+  }
+
+  .card-title {
+    color: $color-navy-light;
   }
 
   .icon {
