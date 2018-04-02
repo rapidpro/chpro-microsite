@@ -107,3 +107,7 @@ Check the site at `http://localhost:8000`
 
 * Run `yarn build_guide` from `/chpro-microsite/rh/client/`
 * Visit at http://localhost:8000/static/styleguide/index.html
+
+# Generate sprites
+
+* Run `yarn build_sprite`. This will read from the icons in  `/rh/client/static/icons` and generate an svg sprite file.
