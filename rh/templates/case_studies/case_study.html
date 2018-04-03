@@ -60,8 +60,8 @@
     <h5 class="block-header">View similar examples</h5>
 
     <div class="card-grid">
-      {% for case in casestudy_list %}
-        {% include 'includes/case_study_card.html' %}
+      {% for case in similar_case_studies %}
+        {% include 'case_studies/includes/case_study_card.html' %}
       {% endfor %}
     </div>
   </div>

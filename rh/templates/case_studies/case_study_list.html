@@ -24,8 +24,8 @@
 
   <div class="case-study-search-results">
     <div class="card-grid">
-      {% for case in similar_case_studies %}
-        {% include 'includes/case_study_card.html' %}
+      {% for case in casestudy_list %}
+        {% include 'case_studies/includes/case_study_card.html' %}
       {% endfor %}
     </div>
   </div>
