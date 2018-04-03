@@ -77,6 +77,13 @@ class BlockMixin(AbstractText):
     class Meta:
         abstract = True
 
+    def clean_plugins(self):
+        """
+        Don't remove any plugins.
+        """
+        # AbstractText removes child plugins that aren't in the text
+        # itself. We don't want to do this.
+
 
 class BlockPlugin(TextPlugin):
 
