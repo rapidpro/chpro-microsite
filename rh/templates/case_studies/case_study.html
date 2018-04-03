@@ -52,4 +52,16 @@
     {% render_placeholder object.sidebar_content %}
   </div>
 </div>
+
+<div class="case-study-similar-examples">
+  <div class="container">
+    <h5 class="block-header">View similar examples</h5>
+
+    <div class="card-grid">
+      {% for case in casestudy_list %}
+        {% include 'includes/case_study_card.html' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}

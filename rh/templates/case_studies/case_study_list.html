@@ -22,24 +22,14 @@
     {% endfor %}
   </div>
 
+  {% if similar_case_studies %}
   <div class="case-study-search-results">
     <div class="card-grid">
-      {% for case in casestudy_list %}
-        {% include 'case_studies/_case_study_single.html' %}
+      {% for case in similar_case_studies %}
+        {% include 'includes/case_study_card.html' %}
       {% endfor %}
     </div>
   </div>
-</div>
-
-<div class="case-study-similar-examples">
-  <div class="container">
-    <h5 class="block-header">View similar examples</h5>
-
-    <div class="card-grid">
-      {% for case in casestudy_list %}
-        {% include 'case_studies/_case_study_single.html' %}
-      {% endfor %}
-    </div>
-  </div>
+  {% endif %}
 </div>
 {% endblock %}

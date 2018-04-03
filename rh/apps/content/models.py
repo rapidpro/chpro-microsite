@@ -173,6 +173,7 @@ class SectionCardsPlugin(BlockPlugin):
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
         BlockMixin._admin_fieldset,
+        ('Style', {'fields': ('style',)}),
         Linkable._admin_fieldset,
     )
 
