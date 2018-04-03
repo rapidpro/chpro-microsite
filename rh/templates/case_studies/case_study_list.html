@@ -17,8 +17,8 @@
   <div class="case-study-search-filters">
     <h5>Filter by</h5>
 
-    {% for tag in tags %}
-      {{ tag }}<br />
+    {% for use_case in use_cases %}
+      <a href="?{{ use_case.url }}"><input type=checkbox disabled{% if use_case.selected %} checked{% endif %}> {{ use_case }}</a><br />
     {% endfor %}
   </div>
 
