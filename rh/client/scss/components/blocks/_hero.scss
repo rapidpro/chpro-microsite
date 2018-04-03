@@ -196,6 +196,18 @@
   }
 }
 
+/*
+.hero.has-cards {
+  .hero-content-primary {
+    order: 0;
+  }
+
+  .hero-content-cards {
+    order: 1;
+  }
+}
+*/
+
 .hero.has-icon {
   @include breakpoint(medium) {
     padding-top: $global-margin * 2;

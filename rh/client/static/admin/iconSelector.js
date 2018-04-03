@@ -18,9 +18,9 @@ function applyIconSelector($elem){
       var baseName = state.element.value.toLowerCase();
 
       if (baseName.search('uploaded-svg-file') !== -1){
-        icon = '<img class="icon icon-medium" src="'+window.rh.uploadedSvgIcons[baseName]+'"/>';
+        icon = '<img class="icon" src="'+window.rh.uploadedSvgIcons[baseName]+'"/>';
       } else {
-        icon = '<svg class="icon icon-medium"><use xlink:href="/static/img/sprite.svg#'+baseName+'"></use></svg>';
+        icon = '<svg class="icon"><use xlink:href="/static/img/sprite.svg#'+baseName+'"></use></svg>';
       }
 
       $state = $(

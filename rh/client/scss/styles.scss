@@ -139,3 +139,7 @@ $media-effect: 12px solid $body-background;
 @import 'layout/case-studies';
 @import 'layout/site-header';
 @import 'layout/site-footer';
+
+// Admin specific styles
+// If these grow to big, move to own file
+@import 'admin';
