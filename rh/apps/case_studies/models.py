@@ -81,3 +81,10 @@ class CaseStudy(models.Model):
 
     def get_cms_change_url(self):
         return '{}?edit'.format(self.get_absolute_url())
+
+    def similar(self, count=4, only_published=True):
+        qs = CaseStudy.objects.exclude(pk=self.pk)
+        if only_published:
+            qs = qs.filter(published=True)
+        qs = qs.filter(use_cases__in=self.use_cases.all())
+        return qs.order_by('?')[:count]

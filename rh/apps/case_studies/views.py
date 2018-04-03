@@ -24,6 +24,10 @@ class CaseStudyView(CurrentPageMixin, DetailView):
 
         return queryset
 
+    def get_context_data(self, **kwargs):
+        kwargs['similar_case_studies'] = self.object.similar()
+        return super().get_context_data(**kwargs)
+
 
 class CaseStudyListView(CurrentPageMixin, ListView):
     template_name = 'case_studies/case_study_list.html'
