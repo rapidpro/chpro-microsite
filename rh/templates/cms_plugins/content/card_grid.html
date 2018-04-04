@@ -23,8 +23,10 @@
 
   {% comment %}
     When we're building manually
+  For some reason, instance.child_plugin_instances is not working for
+  nested rendering...
   {% endcomment %}
-  {% for plugin in instance.child_plugin_instances %}
+    {% for plugin in instance.get_children %}
     {% render_plugin plugin %}
   {% endfor %}
 </div>
