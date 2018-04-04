@@ -93,7 +93,6 @@ INSTALLED_APPS = [
     # Third-Party
     'django_select2',
     'storages',
-    'tagulous',
 
     # RapidPro Health
     'rh.apps.meta',

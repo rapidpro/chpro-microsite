@@ -51,6 +51,5 @@ class CaseStudyListView(CurrentPageMixin, ListView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         qs = self.get_queryset()
-        ctx['tags'] = list(qs.values('tags__name').annotate(Count('id')).values_list('tags__name', flat=True))
         ctx['use_cases'] = list(get_use_cases(self.request))
         return ctx

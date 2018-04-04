@@ -1,5 +1,3 @@
-import tagulous
-
 from django.contrib import admin
 from django.http import HttpResponseRedirect
 
@@ -9,7 +7,7 @@ from .models import CaseStudy
 
 
 class CaseStudyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
-    change_form_template ='admin/case_study_change_form.html'
+    change_form_template = 'admin/case_study_change_form.html'
 
     def response_post_save_add(self, request, obj):
         """
@@ -30,4 +28,4 @@ class CaseStudyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
         return super().response_post_save_add(request, obj)
 
 
-tagulous.admin.register(CaseStudy, CaseStudyAdmin)
+admin.register(CaseStudy, CaseStudyAdmin)

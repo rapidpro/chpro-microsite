@@ -5,7 +5,6 @@ from cms.models import PlaceholderField, Title
 from filer.fields.image import FilerImageField
 
 from django_countries.fields import CountryField
-from tagulous.models import TagField
 from autoslug import AutoSlugField
 
 from rh.apps.content.models import IconCard
@@ -59,8 +58,6 @@ class CaseStudy(models.Model):
 
     published = models.BooleanField('Published', default=False,
         help_text='Indicates if this Case Study is pubilc or still a draft.')
-
-    tags = TagField(verbose_name='Tags', blank=True)
 
     use_cases = models.ManyToManyField(
         IconCard, limit_choices_to=use_case_choices)
