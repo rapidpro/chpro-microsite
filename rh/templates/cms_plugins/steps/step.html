@@ -1,4 +1,23 @@
-{{ instance.title }}
-{{ instance.body|safe }}
 {{ instance.step_links.all }}
 {{ instance.step_files.all }}
+
+<section class="step has-detail">
+  <span class="step-label">
+    {% include 'includes/svg_icon.html' with icon_name="connect" %}
+  </span>
+
+  <div class="step-wrapper">
+    <h2 class="step-title">{{ instance.title }}</h2>
+
+    <div class="step-col">
+      <div class="step-content">
+        {{ instance.body|safe }}
+      </div>
+    </div>
+
+    <div class="step-col">
+      <p class="step-subtitle">Tools</p>
+      <p class="step-subtitle">Examples</p>
+    </div>
+  </div>
+</section>

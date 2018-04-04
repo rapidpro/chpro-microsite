@@ -20,7 +20,6 @@
   justify-content: center;
   align-items: center;
   padding: 0;
-
   width: $step-label-size;
   height: $step-label-size;
   background-color: $color-teal;
@@ -75,13 +74,9 @@
 //
 
 .step.has-detail {
-  .step-label {
-    padding: 45px;
-  }
-
-  .step-col:last-of-type {
-    @include xy-cell(5);
-    @include xy-cell-offset(1);
+  .step-label .icon {
+    width: 50px;
+    height: 50px;
   }
 
   .step-subtitle {
@@ -102,7 +97,7 @@
   }
 }
 
-@include breakpoint(xlarge) {
+@include breakpoint(large) {
   .step {
     display: grid;
     grid-template-columns: 80px auto auto;
@@ -142,5 +137,10 @@
 
   .step-button.button {
     margin-top: -1rem;
+  }
+
+  .step.has-detail .step-col:last-of-type {
+    @include xy-cell(5);
+    @include xy-cell-offset(1);
   }
 }
