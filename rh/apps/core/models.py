@@ -84,6 +84,13 @@ class BlockMixin(AbstractText):
         # AbstractText removes child plugins that aren't in the text
         # itself. We don't want to do this.
 
+    def unbound_child_plugin_instances(self):
+        """
+        Return a list of child plugins that aren't referenced in the
+        text itself.
+        """
+        ids = self._get_inline_plugin_ids()
+        return self.cmsplugin_set.exclude(pk__in=ids)
 
 class BlockPlugin(TextPlugin):
 
