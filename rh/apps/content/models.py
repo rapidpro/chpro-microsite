@@ -83,6 +83,7 @@ class HeroPlugin(BlockPlugin):
         'LinkPlugin',
         'FilerImagePlugin',
     )
+    include_in_wysiwyg = []
 
     fieldsets = (
         ('Content', {
@@ -100,6 +101,7 @@ class ComplexHeroPlugin(BlockPlugin):
         'CardPlugin',
         'ImageCardPlugin',
     )
+    include_in_wysiwyg = []
     allow_children = True
     disable_child_plugins = False
 
@@ -153,6 +155,7 @@ class SectionPlugin(BlockPlugin):
         'LinkPlugin',
         'FilerImagePlugin',
     )
+    include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin']
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
         BlockMixin._admin_fieldset,

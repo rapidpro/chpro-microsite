@@ -92,7 +92,11 @@ class BlockMixin(AbstractText):
         ids = self._get_inline_plugin_ids()
         return self.cmsplugin_set.exclude(pk__in=ids)
 
+
 class BlockPlugin(TextPlugin):
+    #: a list of plugins to include in the wysiwyg plugin dropdown
+    #: (leave as None to allow all, or set to ``[]`` to allow nothing).
+    include_in_wysiwyg = None
 
     # This is necessary because TextPlugin overrides the context.
     # Using {{ instance }} is consistent with the rest of the plugins
@@ -100,3 +104,13 @@ class BlockPlugin(TextPlugin):
         ctx = super(BlockPlugin, self).render(context, instance, placeholder)
         ctx['instance'] = ctx['object']
         return ctx
+
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        if self.include_in_wysiwyg is not None:
+            widget = form.base_fields['body'].widget
+            widget.installed_plugins = [
+                plugin for plugin in widget.installed_plugins
+                if plugin['value'] in self.include_in_wysiwyg
+            ]
+        return form
