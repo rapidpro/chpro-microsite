@@ -1,12 +1,7 @@
-from django.db import models
-from django.contrib import admin
-
-from cms.models import CMSPlugin
-from cms.plugin_base import CMSPluginBase
-from cms.plugin_pool import plugin_pool
 from cms.extensions import PageExtension
 from cms.extensions.extension_pool import extension_pool
 
+from filer.fields.image import FilerImageField
 from djangocms_text_ckeditor.fields import HTMLField
 from rh.apps.icons.models import IconMixin
 
@@ -16,6 +11,8 @@ from rh.apps.icons.models import IconMixin
 # ------------------------------------------------------------------------------
 
 class MetaAttributes(PageExtension, IconMixin):
+    image = FilerImageField(blank=True, null=True)
+
     lead = HTMLField(
         max_length=256, blank=True, null=True,
         help_text='Short description of the page. Used by the step list plugin.')
