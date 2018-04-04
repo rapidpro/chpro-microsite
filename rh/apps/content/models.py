@@ -60,7 +60,7 @@ class CardGrid(CMSPlugin):
         return []
 
     def __str__(self):
-        return str(self.root) or f'Manual Card Grid ({self.pk})'
+        return str(self.root) if self.root else f'Manual Card Grid ({self.pk})'
 
 
 class IconCard(Block, IconMixin):
