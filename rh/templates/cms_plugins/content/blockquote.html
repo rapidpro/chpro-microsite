@@ -1,0 +1,15 @@
+<blockquote class="blockquote">
+  <p class="blockquote-content">
+    {{ instance.body|safe }}
+  </p>
+  <cite class="blockquote-author">
+    <span class="blockquote-author-name">
+      {{ instance.author }}
+    </span>
+    {% if instance.author_title %}
+    <span class="blockquote-author-title">
+      {{ instance.author_title }}
+    </span>
+    {% endif %}
+  </cite>
+</blockquote>

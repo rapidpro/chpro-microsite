@@ -7,6 +7,7 @@ from django.utils.text import Truncator
 
 from cms.plugin_pool import plugin_pool
 
+from djangocms_text_ckeditor.models import AbstractText
 from filer.fields.image import FilerImageField
 from model_utils import Choices
 
@@ -77,6 +78,14 @@ class RawHTML(CMSPlugin):
 
     def __str__(self):
         return Truncator(self.html).chars(20, html=True)
+
+
+class BlockQuote(AbstractText):
+    author = models.CharField(max_length=100)
+    author_title = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.author
 
 
 # ------------------------------------------------------------------------------
@@ -166,9 +175,10 @@ class SectionPlugin(BlockPlugin):
         'FilerImagePlugin',
         'CardGridPlugin',
         'TextPlugin',
+        'BlockQuotePlugin',
         'RawHTMLPlugin',
     )
-    include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin']
+    include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin', 'BlockQuotePlugin']
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
         BlockMixin._admin_fieldset,
@@ -226,8 +236,14 @@ class RawHTMLPlugin(CMSPluginBase):
     model = RawHTML
 
     render_template = "cms_plugins/content/raw_html.html"
-    # def get_render_template(self, *args, **kwargs):
-    #     return Template('')
+
+
+class BlockQuotePlugin(BlockPlugin):
+    name = 'Quote'
+    module = 'Content'
+    model = BlockQuote
+
+    render_template = "cms_plugins/content/blockquote.html"
 
 
 plugin_pool.register_plugin(HeroPlugin)
@@ -239,3 +255,4 @@ plugin_pool.register_plugin(ImageCardPlugin)
 plugin_pool.register_plugin(FeaturedAccordionPlugin)
 plugin_pool.register_plugin(AccordionCardPlugin)
 plugin_pool.register_plugin(RawHTMLPlugin)
+plugin_pool.register_plugin(BlockQuotePlugin)
