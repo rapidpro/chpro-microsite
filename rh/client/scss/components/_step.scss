@@ -8,6 +8,7 @@
 
 .step {
   display: grid;
+  margin: 20px 0;
   grid-template-columns: 80px auto auto;
   grid-template-rows: 25px auto auto;
 }
@@ -56,11 +57,24 @@
   font-size: 1.75rem;
 }
 
+.step-title a {
+  text-decoration: none;
+  color: $color-navy;
+
+  &:hover {
+    color: darken($color-navy-light, 10%);
+  }
+}
+
 .step-subtitle {
   min-height: 5.75rem;
   font-family: $header-font-family;
   font-size: 1.25rem;
   color: $color-navy-light;
+
+  p {
+    line-height: 1.4;
+  }
 }
 
 .step-content {
