@@ -1,18 +1,34 @@
+{% if link %}
+<a href="{{ link }}" class="card dark">
+{% else %}
 <section class="card">
+{% endif %}
   <header class="card-header">
-    {% include 'includes/svg_icon.html' with icon_name=instance.svg_icon %}
-    <h3 class="card-title">{{ instance.title }}</h3>
+    {% with fallback=instance.svg_icon %}
+    {% include 'includes/svg_icon.html' with icon_name=icon_name|default:fallback %}
+    {% endwith %}
+    {% with fallback=instance.title %}
+    <h3 class="card-title">{{ title|default:fallback }}</h3>
+    {% endwith %}
   </header>
 
-  {% if instance.body %}
+  {% with fallback=instance.body|safe %}
+  {% with description=description|default:fallback %}
+  {% if description %}
   <div class="card-content">
-    {{ instance.body|safe }}
+    {{ description }}
   </div>
   {% endif %}
+  {% endwith %}
+  {% endwith %}
 
   {% if instance.get_link %}
   <div class="card-actions">
     {% include 'includes/link.html' %}
   </div>
   {% endif %}
+{% if not link %}
 </section>
+{% else %}
+</a>
+{% endif %}
