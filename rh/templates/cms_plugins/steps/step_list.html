@@ -13,10 +13,6 @@
 
     <div class="step-col">
       <div class="step-subtitle">{{ page.metaattributes.lead }}</div>
-
-      <a href="{{ page.get_absolute_url }}" class="button icon">
-        {% include 'includes/svg_icon.html' with icon_name="forward-button" %}
-      </a>
     </div>
 
     <div class="step-col">
@@ -24,6 +20,10 @@
         {{ page.metaattributes.description }}
       </div>
     </div>
+
+    <a href="{{ page.get_absolute_url }}" class="button icon step-button">
+      {% include 'includes/svg_icon.html' with icon_name="forward-button" %}
+    </a>
   </div>
 </section>
 {% endfor %}

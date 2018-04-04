@@ -7,30 +7,20 @@
 //
 
 .step {
-  display: grid;
   margin: 20px 0;
-  grid-template-columns: 80px auto auto;
-  grid-template-rows: 25px auto auto;
 }
 
-// TODO: Vendor prefix flexbox and CSS Grid for browser compatibilty
 .step-wrapper {
-  @include xy-grid;
-  z-index: 2;
-  padding: 2rem 2.5rem 2rem 5rem;
+  padding: 2rem;
   background-color: $color-yellow;
-  grid-column-start: 2;
-  grid-column-end: span 3;
-  grid-row-start: 2;
-  grid-row-end: span 3;
 }
 
 .step-label {
-  z-index: 3;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0;
+
   width: $step-label-size;
   height: $step-label-size;
   background-color: $color-teal;
@@ -38,18 +28,6 @@
   font-size: 3.25rem;
   color: $color-white;
   letter-spacing: -0.15rem;
-}
-
-.step-col {
-  @include xy-cell(6);
-
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
 }
 
 .step-title {
@@ -67,7 +45,7 @@
 }
 
 .step-subtitle {
-  min-height: 5.75rem;
+  margin-bottom: 1rem;
   font-family: $header-font-family;
   font-size: 1.25rem;
   color: $color-navy-light;
@@ -80,6 +58,10 @@
 .step-content {
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+
+.step-button.button {
+  margin-top: 1rem;
 }
 
 //
@@ -117,5 +99,48 @@
     font-weight: 400;
     text-align: left;
     text-transform: none;
+  }
+}
+
+@include breakpoint(xlarge) {
+  .step {
+    display: grid;
+    grid-template-columns: 80px auto auto;
+    grid-template-rows: 25px 115px auto auto;
+  }
+
+  .step-wrapper {
+    @include xy-grid;
+    padding: 2rem 2.5rem 2rem 5rem;
+    grid-template-rows: 25px auto auto;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 2;
+    grid-row-end: span 3;
+  }
+
+  .step-label {
+    z-index: 3;
+  }
+
+  .step-col {
+    @include xy-cell(6);
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .step-content,
+  .step-subtitle {
+    min-height: 5.75rem;
+  }
+
+  .step-button.button {
+    margin-top: -1rem;
   }
 }
