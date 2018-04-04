@@ -110,4 +110,6 @@ Check the site at `http://localhost:8000`
 
 # Generate sprites
 
+* Install `svg-sprite`: run `yarn global add svg-sprite`
+
 * Run `yarn build_sprite`. This will read from the icons in  `/rh/client/static/icons` and generate an svg sprite file.
