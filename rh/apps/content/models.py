@@ -151,28 +151,15 @@ class SectionPlugin(BlockPlugin):
     name = 'Section'
     module = 'Content'
     model = Block
-    child_classes = (
-        'LinkPlugin',
-        'FilerImagePlugin',
-    )
-    include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin']
-    render_template = "cms_plugins/content/section.html"
-    fieldsets = (
-        BlockMixin._admin_fieldset,
-        ('Style', {'fields': ('style',)}),
-        Linkable._admin_fieldset,
-    )
-
-
-class SectionCardsPlugin(BlockPlugin):
-    name = 'Section + Cards'
-    module = 'Content'
-    model = Block
     allow_children = True
     disable_child_plugins = False
     child_classes = (
-        'CardPlugin',
+        'LinkPlugin',
+        'FilerImagePlugin',
+        'CardGridPlugin',
+        'TextPlugin',
     )
+    include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin']
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
         BlockMixin._admin_fieldset,
@@ -227,7 +214,6 @@ class ImageCardPlugin(BlockPlugin):
 plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
 plugin_pool.register_plugin(SectionPlugin)
-plugin_pool.register_plugin(SectionCardsPlugin)
 plugin_pool.register_plugin(CardGridPlugin)
 plugin_pool.register_plugin(CardPlugin)
 plugin_pool.register_plugin(ImageCardPlugin)
