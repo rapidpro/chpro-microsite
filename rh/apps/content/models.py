@@ -3,6 +3,7 @@ from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.text import Truncator
 
 from cms.plugin_pool import plugin_pool
 
@@ -69,6 +70,13 @@ class IconCard(Block, IconMixin):
 
 class PhotoCard(Block):
     image = FilerImageField(blank=True, null=True)
+
+
+class RawHTML(CMSPlugin):
+    html = models.TextField()
+
+    def __str__(self):
+        return Truncator(self.html).chars(20, html=True)
 
 
 # ------------------------------------------------------------------------------
@@ -158,6 +166,7 @@ class SectionPlugin(BlockPlugin):
         'FilerImagePlugin',
         'CardGridPlugin',
         'TextPlugin',
+        'RawHTMLPlugin',
     )
     include_in_wysiwyg = ['LinkPlugin', 'FilerImagePlugin']
     render_template = "cms_plugins/content/section.html"
@@ -211,6 +220,16 @@ class ImageCardPlugin(BlockPlugin):
     )
 
 
+class RawHTMLPlugin(CMSPluginBase):
+    name = 'Raw HTML'
+    module = 'Content'
+    model = RawHTML
+
+    render_template = "cms_plugins/content/raw_html.html"
+    # def get_render_template(self, *args, **kwargs):
+    #     return Template('')
+
+
 plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
 plugin_pool.register_plugin(SectionPlugin)
@@ -219,3 +238,4 @@ plugin_pool.register_plugin(CardPlugin)
 plugin_pool.register_plugin(ImageCardPlugin)
 plugin_pool.register_plugin(FeaturedAccordionPlugin)
 plugin_pool.register_plugin(AccordionCardPlugin)
+plugin_pool.register_plugin(RawHTMLPlugin)
