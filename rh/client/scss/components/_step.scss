@@ -7,7 +7,8 @@
 //
 
 .step {
-  margin: 20px 0;
+  margin: $global-margin 0;
+  width: 100%; // TODO: Can maybe remove once we drop grid
 }
 
 .step-wrapper {
@@ -20,9 +21,12 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+
   width: $step-label-size;
   height: $step-label-size;
+
   background-color: $color-teal;
+
   font-family: $header-font-family;
   font-size: 3.25rem;
   color: $color-white;
