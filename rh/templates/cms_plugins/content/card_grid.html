@@ -5,7 +5,7 @@
     When we're building from the page tree.
   {% endcomment %}
   {% for page in instance.get_published_child_pages %}
-    {% include "cms_plugins/content/card.html" with instance=page icon_name=page.metaattributes.svg_icon link=page.get_absolute_url description=page.metaattributes.description title=page.get_title %}
+    {% include "cms_plugins/content/card.html" with instance=page icon_name=page.metaattributes.svg_icon link=page.get_absolute_url description=page.metaattributes.description title=page.get_title card_class="dark" %}
   {% endfor %}
 
   {% comment %}

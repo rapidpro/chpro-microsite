@@ -1,7 +1,8 @@
+<section class="card {{ card_class }}">
+{% with fallback=instance.get_link %}
+{% with link=link|default:fallback %}
 {% if link %}
-<a href="{{ link }}" class="card dark">
-{% else %}
-<section class="card">
+<a href="{{ link }}">
 {% endif %}
   <header class="card-header">
     {% with fallback=instance.svg_icon %}
@@ -21,14 +22,9 @@
   {% endif %}
   {% endwith %}
   {% endwith %}
-
-  {% if instance.get_link %}
-  <div class="card-actions">
-    {% include 'includes/link.html' %}
-  </div>
-  {% endif %}
-{% if not link %}
-</section>
-{% else %}
+{% if link %}
 </a>
 {% endif %}
+{% endwith %}
+{% endwith %}
+</section>
