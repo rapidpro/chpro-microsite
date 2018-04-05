@@ -40,7 +40,16 @@ def use_case_choices():
 
 
 class CaseStudy(models.Model):
-    country = CountryField()
+    REGIONS = (
+        ('americas', 'The Americas and Caribbean'),
+        ('europe-asia-c', 'Europe and Central Asia'),
+        ('pacific-asia-e', 'East Asia and the Pacific'),
+        ('africa-e-s', 'Eastern and Southern Africa'),
+        ('middle-east-africa', 'Middle East and North Africa'),
+        ('asia-s', 'South Asia'),
+        ('africa-w-c', 'West and Central Africa'),
+    )
+    region = models.CharField(max_length=20, choices=REGIONS)
     heading = models.CharField(max_length=128)
     slug = AutoSlugField(populate_from='heading', unique=True, max_length=128)
     featured_image = FilerImageField(verbose_name='Featured Image', blank=True,
