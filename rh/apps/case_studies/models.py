@@ -4,7 +4,6 @@ from django.db import models
 from cms.models import PlaceholderField, Title
 from filer.fields.image import FilerImageField
 
-from django_countries.fields import CountryField
 from autoslug import AutoSlugField
 
 from rh.apps.content.models import IconCard
