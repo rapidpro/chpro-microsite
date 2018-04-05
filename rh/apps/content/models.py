@@ -43,7 +43,7 @@ class Section(BlockMixin, Linkable, StyleMixin):
     image = FilerImageField(blank=True, null=True)
 
 
-class CardGrid(CMSPlugin):   # StyleMixin
+class CardGrid(CMSPlugin, StyleMixin):
     root = PageField(
         blank=True, null=True,
         help_text='Select a root page to list all of its children as cards. '

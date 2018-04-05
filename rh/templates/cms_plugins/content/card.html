@@ -1,3 +1,5 @@
+{% with fallback=instance.get_parent.content_cardgrid.style %}
+{% with card_class=card_class|default:fallback %}
 <section class="card {{ card_class }}">
 {% with fallback=instance.get_link %}
 {% with link=link|default:fallback %}
@@ -28,3 +30,5 @@
 {% endwith %}
 {% endwith %}
 </section>
+{% endwith %}
+{% endwith %}
