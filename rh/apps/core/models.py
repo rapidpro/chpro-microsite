@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
 
 from cms.models.fields import PageField
 from djangocms_link.validators import IntranetURLValidator
@@ -62,6 +63,12 @@ class Linkable(models.Model):
         'fields': _admin_fields
     })
 
+    def clean(self):
+        super().clean()
+        if self.get_link() and not self.link_text:
+            raise ValidationError(
+                {'link_text': 'When adding a Link, you need provide a display text for it'})
+
     class Meta:
         abstract = True
 
@@ -76,6 +83,9 @@ class BlockMixin(AbstractText):
 
     class Meta:
         abstract = True
+
+    def __str__(self):
+        return self.title
 
     def clean_plugins(self):
         """

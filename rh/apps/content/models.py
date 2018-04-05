@@ -1,7 +1,6 @@
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
-from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.text import Truncator
 
@@ -13,6 +12,19 @@ from model_utils import Choices
 
 from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
 from rh.apps.icons.models import IconMixin
+
+
+class StyleMixin(models.Model):
+    STYLE_CHOICES = Choices(
+        ('default', 'White'),
+        ('light', 'Light'),
+        ('dark', 'Dark'),
+    )
+    style = models.CharField(
+        choices=STYLE_CHOICES, max_length=32, default=STYLE_CHOICES.default)
+
+    class Meta:
+        abstract = True
 
 
 # ------------------------------------------------------------------------------
@@ -27,25 +39,12 @@ class Hero(BlockMixin):
     style = models.CharField(choices=STYLE_CHOICES, max_length=32, default=STYLE_CHOICES.clean)
 
 
-class Block(BlockMixin, Linkable):
-    STYLE_CHOICES = Choices(
-        ('default', 'White'),
-        ('light', 'Light'),
-        ('dark', 'Dark'),
-    )
-    style = models.CharField(
-        choices=STYLE_CHOICES, max_length=32, default=STYLE_CHOICES.default)
-
-    def __str__(self):
-        return self.title
-
-    def clean(self):
-        super().clean()
-        if self.get_link() and not self.link_text:
-            raise ValidationError({'link_text':'When adding a Link, you need to provide a display text for the it'})
+class Section(BlockMixin, Linkable, StyleMixin):
+    pass
+    # image = FilerImageField(blank=True, null=True)
 
 
-class CardGrid(CMSPlugin):
+class CardGrid(CMSPlugin):   # StyleMixin
     root = PageField(
         blank=True, null=True,
         help_text='Select a root page to list all of its children as cards. '
@@ -65,11 +64,11 @@ class CardGrid(CMSPlugin):
         return str(self.root) if self.root else f'Manual Card Grid ({self.pk})'
 
 
-class IconCard(Block, IconMixin):
+class IconCard(BlockMixin, Linkable, IconMixin):
     pass
 
 
-class PhotoCard(Block):
+class PhotoCard(BlockMixin, Linkable):
     image = FilerImageField(blank=True, null=True)
 
 
@@ -167,7 +166,7 @@ class FeaturedAccordionPlugin(BlockPlugin):
 class SectionPlugin(BlockPlugin):
     name = 'Section'
     module = 'Content'
-    model = Block
+    model = Section
     allow_children = True
     disable_child_plugins = False
     child_classes = (

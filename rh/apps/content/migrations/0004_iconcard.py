@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='IconCard',
             fields=[
-                ('block_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='content.Block')),
+                ('block_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.DO_NOTHING, parent_link=True, primary_key=True, serialize=False, to='content.Block')),
                 ('icon', filer.fields.image.FilerImageField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.FILER_IMAGE_MODEL)),
             ],
             options={
