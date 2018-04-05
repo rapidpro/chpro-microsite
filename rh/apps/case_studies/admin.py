@@ -28,4 +28,4 @@ class CaseStudyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
         return super().response_post_save_add(request, obj)
 
 
-admin.register(CaseStudy, CaseStudyAdmin)
+admin.site.register(CaseStudy, CaseStudyAdmin)
