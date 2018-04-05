@@ -7,8 +7,8 @@
 //
 
 .step {
+  @include xy-cell(12);
   margin: $global-margin 0;
-  width: 100%; // TODO: Can maybe remove once we drop grid
 }
 
 .step-wrapper {
