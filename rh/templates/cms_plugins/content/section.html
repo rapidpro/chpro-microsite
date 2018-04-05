@@ -1,15 +1,20 @@
 {% load cms_tags %}
+{% load thumbnail %}
 
 <div class="block theme-{{ instance.style }}">
   <header
-    class="block-header">
-    <h2 class="block-title">{{ instance.title }}</h2>
+  class="block-header">
+  <h2 class="block-title">{{ instance.title }}</h2>
 
-    {% comment %}
-    <div class="block-header-lead">
-      {# TODO: Support Image #}
-    </div>
-    {% endcomment %}
+  {% if instance.image %}
+  <div class="block-header-lead">
+    {% with img=instance.image %}
+      <img
+      src="{% thumbnail img 300x300 crop %}"
+      alt="{{ img.alt_text }}">
+    {% endwith %}
+  </div>
+  {% endif %}
 
     <div class="block-header-text">
     {{ body|safe }}

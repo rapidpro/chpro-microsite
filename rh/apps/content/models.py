@@ -40,8 +40,7 @@ class Hero(BlockMixin):
 
 
 class Section(BlockMixin, Linkable, StyleMixin):
-    pass
-    # image = FilerImageField(blank=True, null=True)
+    image = FilerImageField(blank=True, null=True)
 
 
 class CardGrid(CMSPlugin):   # StyleMixin
@@ -181,7 +180,7 @@ class SectionPlugin(BlockPlugin):
     render_template = "cms_plugins/content/section.html"
     fieldsets = (
         BlockMixin._admin_fieldset,
-        ('Style', {'fields': ('style',)}),
+        ('Section', {'fields': ('style', 'image')}),
         Linkable._admin_fieldset,
     )
 
