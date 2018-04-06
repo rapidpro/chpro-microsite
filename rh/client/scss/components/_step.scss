@@ -11,12 +11,14 @@
   margin: $global-margin 0;
 }
 
-.step-wrapper {
+.step-wrapper-inner {
+  @include xy-grid;
   padding: 2rem;
   background-color: $color-yellow;
 }
 
 .step-label {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +50,7 @@
 }
 
 .step-subtitle {
-  margin-bottom: 1rem;
+  margin-bottom: $global-margin;
   font-family: $header-font-family;
   font-size: 1.25rem;
   color: $color-navy-light;
@@ -64,7 +66,7 @@
 }
 
 .step-button.button {
-  margin-top: 1rem;
+  margin-top: $global-margin;
 }
 
 //
@@ -84,7 +86,7 @@
   }
 
   .step-subtitle {
-    margin-top: 2rem;
+    margin-top: $global-margin * 2;
     min-height: auto;
     font-weight: 600;
 
@@ -102,26 +104,23 @@
 }
 
 @include breakpoint(large) {
-  .step {
-    display: grid;
-    grid-template-columns: 80px auto auto;
-    grid-template-rows: 25px 115px auto auto;
+  .step-wrapper {
+    z-index: 2;
+    margin-top: -$step-label-size;
+    padding-top: 25px;
+    padding-left: 80px;
   }
 
-  .step-wrapper {
-    @include xy-grid;
+  .step-wrapper-inner {
     padding: 2rem 2.5rem 2rem 5rem;
-    grid-template-rows: 25px auto auto;
-    grid-column-start: 2;
-    grid-column-end: span 3;
-    grid-row-start: 2;
-    grid-row-end: span 3;
   }
 
   .step-label {
     z-index: 3;
   }
+}
 
+@include breakpoint(xlarge) {
   .step-col {
     @include xy-cell(6);
 
@@ -134,17 +133,17 @@
     }
   }
 
+  .step.has-detail .step-col:last-of-type {
+    @include xy-cell(5);
+    @include xy-cell-offset(1);
+  }
+
   .step-content,
   .step-subtitle {
     min-height: 5.75rem;
   }
 
   .step-button.button {
-    margin-top: -1rem;
-  }
-
-  .step.has-detail .step-col:last-of-type {
-    @include xy-cell(5);
-    @include xy-cell-offset(1);
+    margin-top: -$global-margin;
   }
 }

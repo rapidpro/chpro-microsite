@@ -7,25 +7,27 @@
       <span class="step-label">{{ forloop.counter|stringformat:"02d" }}</span>
 
       <div class="step-wrapper">
-        <h2 class="step-title">
-          <a href="{{ page.get_absolute_url }}">
-            {{ page.get_title }}
-          </a>
-        </h2>
+        <div class="step-wrapper-inner">
+          <h2 class="step-title">
+            <a href="{{ page.get_absolute_url }}">
+              {{ page.get_title }}
+            </a>
+          </h2>
 
-        <div class="step-col">
-          <div class="step-subtitle">{{ page.metaattributes.lead }}</div>
-        </div>
-
-        <div class="step-col">
-          <div class="step-content">
-            {{ page.metaattributes.description }}
+          <div class="step-col">
+            <div class="step-subtitle">{{ page.metaattributes.lead }}</div>
           </div>
-        </div>
 
-        <a href="{{ page.get_absolute_url }}" class="button icon step-button">
-          {% include 'includes/svg_icon.html' with icon_name="forward-button" %}
-        </a>
+          <div class="step-col">
+            <div class="step-content">
+              {{ page.metaattributes.description }}
+            </div>
+          </div>
+
+          <a href="{{ page.get_absolute_url }}" class="button icon step-button">
+            {% include 'includes/svg_icon.html' with icon_name="forward-button" %}
+          </a>
+        </div>
       </div>
     </section>
     {% endfor %}

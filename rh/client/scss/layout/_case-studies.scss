@@ -19,6 +19,12 @@
   }
 }
 
+.case-study-search-heading {
+  font-family: $body-font-family;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+}
+
 .case-study-similar-examples {
   @include block;
   @include topographic-background($color-yellow, "topo-3.svg");

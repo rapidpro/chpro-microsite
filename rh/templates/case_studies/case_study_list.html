@@ -15,7 +15,7 @@
 
 <div class="case-study-search">
   <div class="case-study-search-filters">
-    <h5>Filter by</h5>
+    <h5 class="case-study-search-heading">Filter by</h5>
 
     {% for use_case in use_cases %}
       <a href="?{{ use_case.url }}"><input type=checkbox disabled{% if use_case.selected %} checked{% endif %}> {{ use_case }}</a><br />

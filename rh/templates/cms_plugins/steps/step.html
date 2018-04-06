@@ -7,17 +7,19 @@
   </span>
 
   <div class="step-wrapper">
-    <h2 class="step-title">{{ instance.title }}</h2>
+    <div class="step-wrapper-inner">
+      <h2 class="step-title">{{ instance.title }}</h2>
 
-    <div class="step-col">
-      <div class="step-content">
-        {{ instance.body|safe }}
+      <div class="step-col">
+        <div class="step-content">
+          {{ instance.body|safe }}
+        </div>
       </div>
-    </div>
 
-    <div class="step-col">
-      <p class="step-subtitle">Tools</p>
-      <p class="step-subtitle">Examples</p>
+      <div class="step-col">
+        <p class="step-subtitle">Tools</p>
+        <p class="step-subtitle">Examples</p>
+      </div>
     </div>
   </div>
 </section>
