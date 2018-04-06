@@ -7,22 +7,16 @@
   @include container;
 }
 
-.case-study-search-filters {
-  @include xy-cell(3);
-}
-
-.case-study-search-results {
-  @include xy-cell(9);
-
-  .card-grid {
-    padding-top: 0;
-  }
-}
-
 .case-study-search-heading {
   font-family: $body-font-family;
   font-size: 0.6875rem;
   text-transform: uppercase;
+}
+
+.case-study-search .card {
+  .card-title {
+    min-height: 3.125rem;
+  }
 }
 
 .case-study-similar-examples {
@@ -51,5 +45,19 @@
 
   .card-grid .card {
     background: $color-white;
+  }
+}
+
+@include breakpoint(large) {
+  .case-study-search-filters {
+    @include xy-cell(3);
+  }
+
+  .case-study-search-results {
+    @include xy-cell(9);
+
+    .card-grid {
+      padding-top: 0;
+    }
   }
 }

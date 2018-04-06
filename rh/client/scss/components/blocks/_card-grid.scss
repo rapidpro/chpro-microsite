@@ -16,10 +16,6 @@
     flex-grow: 0;
   }
 
-  .card.minimal {
-    background: $white;
-  }
-
   @include breakpoint(medium) {
     @include xy-grid-layout(2, '.card');
     @include collapse-gutters;

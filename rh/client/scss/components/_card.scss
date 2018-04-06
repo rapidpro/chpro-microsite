@@ -37,6 +37,10 @@
   font-size: 1.3rem;
 }
 
+.card-title > a {
+  text-decoration: none;
+}
+
 .card-subtitle {
   font-family: $header-font-family;
   text-transform: uppercase;
@@ -89,7 +93,7 @@
 
   .card-subtitle {
     margin-bottom: $global-margin / 2;
-    font-size: 0.9375rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: $color-navy;
   }
@@ -103,7 +107,7 @@
   }
 
   .card-actions {
-    margin-top: 0.75rem;
+    margin-top: $global-margin;
   }
 }
 
@@ -130,13 +134,13 @@
 
 .card.light,
 .card.dark {
-  a,
-  .card-title,
+  > a,
   .card-content {
     color: $color-navy;
   }
 
-  .card-title {
+  .card-title,
+  .card-title > a {
     color: $color-navy-light;
   }
 

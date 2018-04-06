@@ -52,7 +52,7 @@ class CaseStudy(models.Model):
     heading = models.CharField(max_length=128)
     slug = AutoSlugField(populate_from='heading', unique=True, max_length=128)
     featured_image = FilerImageField(verbose_name='Featured Image', blank=True,
-                                     null=True, related_name='+',  on_delete=models.SET_NULL)
+                                     null=True, related_name='+', on_delete=models.SET_NULL)
 
     main_content = PlaceholderField(slotname='case_study_main_content',
                                     related_name='main_case_study',
