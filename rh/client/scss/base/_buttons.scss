@@ -7,6 +7,7 @@
 // .small      - Small button
 // .large      - Large version
 // .expanded   - Expanded
+// .yellow     - Yellow Button
 // .icon       - Icon button
 //
 // Style guide: Base.button
@@ -14,10 +15,17 @@
 
 
 .button {
-  border-bottom: 3px solid #9F3156;
+  box-shadow: inset 0 -2px 0 #9F3156;
+  border: none;
   font-weight: $global-weight-bold;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.button.yellow {
+  box-shadow: none;
+  background-color: $color-yellow;
+  color: $color-navy-light;
 }
 
 .button.icon {
