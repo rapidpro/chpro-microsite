@@ -7,13 +7,24 @@
   if (!$){
     return;
   }
+  
   applyIconSelector();
 
   // Apply fixes and editor setup whenever a new inline appears
   $(document).on('formset:added', function(event, $row) {
     // TODO: Icon, color, WYSIWG should only run if necessary
-    applyIconSelector($row);              // SVG Icon dropdown
+    applyIconSelector($row); // SVG Icon dropdown
   });
 
-})(window.django && window.django.jQuery || window.jQuery);
+  if(typeof(CKEDITOR) !== 'undefined') {
+    CKEDITOR.stylesSet.add('rhstyles', [
+      {
+        name: 'Lead Paragraph',
+        element: 'p',
+        attributes: { 'class': 'lead' }
+      },
+    ]);
+  }
 
+
+})(window.django && window.django.jQuery || window.jQuery);
