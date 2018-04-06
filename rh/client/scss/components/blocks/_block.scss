@@ -42,6 +42,10 @@
   @include bottom-space;
 }
 
+.block-header-lead {
+  margin-bottom: $global-margin;
+}
+
 .block-header-text {
   @include bottomless;
 }
@@ -50,6 +54,7 @@
 .block-content {
   margin-top: $global-margin * 2;
 }
+
 
 @include breakpoint(medium) {
   .block-content {
@@ -63,9 +68,16 @@
   }
 
   // Cards
-  .block-content > .card {
-    @include xy-cell(6);
-    flex-grow: 0;
+  .block-content .card-grid {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    width: 100%;
+
+    > .card {
+      @include xy-cell(6);
+      flex-grow: 0;
+    }
   }
 }
 
@@ -81,8 +93,9 @@
 
   .block-header-lead {
     @include xy-cell(5);
+    margin-bottom: 0;
   }
-  
+
   .block-header-text {
     @include xy-cell(6);
   }

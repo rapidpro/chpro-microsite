@@ -5,13 +5,13 @@
     When we're building from the page tree.
   {% endcomment %}
   {% for page in instance.get_published_child_pages %}
-    {% include "cms_plugins/content/card.html" with instance=page icon_name=page.metaattributes.svg_icon link=page.get_absolute_url description=page.metaattributes.description title=page.get_title card_class="instance.style" %}
+    {% include "cms_plugins/content/card.html" with instance=page icon_name=page.metaattributes.svg_icon link=page.get_absolute_url description=page.metaattributes.description title=page.get_title card_class=instance.style %}
   {% endfor %}
 
   {% comment %}
     When we're building manually
-  For some reason, instance.child_plugin_instances is not working for
-  nested rendering...
+    For some reason, instance.child_plugin_instances is not working for
+    nested rendering...
   {% endcomment %}
     {% for plugin in instance.get_children %}
     {% render_plugin plugin %}
