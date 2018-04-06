@@ -72,12 +72,17 @@
 @include breakpoint(xlarge) {
   .block-header {
     @include collapse-gutters;
+    justify-content: space-between;
   }
 
   .block-title {
-    @include xy-cell(auto);
+    @include xy-cell(100%);
   }
 
+  .block-header-lead {
+    @include xy-cell(5);
+  }
+  
   .block-header-text {
     @include xy-cell(6);
   }
