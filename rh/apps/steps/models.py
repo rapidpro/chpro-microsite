@@ -56,12 +56,12 @@ class Step(BlockMixin):
             associated_item.save()
 
 
-class StepLink(Linkable):
+class StepLink(CMSPlugin, Linkable):
     category = models.CharField(choices=Step.CATEGORY_CHOICES, max_length=32)
     step = models.ForeignKey(Step, related_name='step_links')
 
 
-class StepFile(models.Model):
+class StepFile(CMSPlugin):
     category = models.CharField(choices=Step.CATEGORY_CHOICES, max_length=32)
     file = FilerFileField()
     step = models.ForeignKey(Step, related_name='step_files')
@@ -79,6 +79,7 @@ class StepListPlugin(CMSPluginBase):
 
 class StepLinkInline(StackedInline):
     model = StepLink
+    fk_name = 'step'
     min_num = 0
     max_num = 5
     extra = 0
@@ -89,12 +90,12 @@ class StepLinkInline(StackedInline):
         Linkable._admin_fieldset,
     )
 
-
 class StepFileInline(StackedInline):
+    model = StepFile
+    fk_name = 'step'
     min_num = 0
     max_num = 5
     extra = 0
-    model = StepFile
 
 
 class StepPlugin(BlockPlugin):
