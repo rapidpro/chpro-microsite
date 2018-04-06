@@ -107,8 +107,8 @@
   .step-wrapper {
     z-index: 2;
     margin-top: -$step-label-size;
-    padding-top: 25px;
-    padding-left: 80px;
+    padding-top: $step-vertical-offset;
+    padding-left: $step-horizontal-offset;
   }
 
   .step-wrapper-inner {
