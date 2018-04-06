@@ -5,7 +5,7 @@
 
 {% block base_content %}
 <div
-  class="hero complex dark"
+  class="hero complex dark{% if instance.image %} has-img{% endif %}"
   role="banner">
   <div class="container">
     <header class="hero-header">

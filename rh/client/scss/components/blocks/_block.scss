@@ -88,15 +88,21 @@
   }
 
   .block-title {
-    @include xy-cell(100%);
-  }
-
-  .block-header-lead {
-    @include xy-cell(5);
-    margin-bottom: 0;
+    @include xy-cell(6);
   }
 
   .block-header-text {
     @include xy-cell(6);
+  }
+
+  .block.has-img {
+    .block-title {
+      @include xy-cell(100%);
+    }
+
+    .block-header-lead {
+      @include xy-cell(5);
+      margin-bottom: 0;
+    }
   }
 }
