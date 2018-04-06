@@ -7,27 +7,61 @@
 //
 
 .step-pagination {
-  @include xy-cell(12);
+  @include xy-cell($size: full, $gutters: 0);
   @include xy-grid;
-  @include collapse-gutters($type: margin);
-  justify-content: space-between;
 }
 
 .pagination-buttons {
-  @include xy-cell(8);
-  @include collapse-gutters($type: margin);
-  padding-left: $step-horizontal-offset;
+  @include xy-cell($size: full, $gutters: 0);
 
   .button {
-    @include xy-cell(6);
+    @include xy-cell($size: 6, $gutters: $global-margin);
   }
 
   .button:first-child {
-    @include collapse-gutters($type: margin);
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .button:last-child {
+    margin-right: 0;
+    margin-left: $global-margin * 2;
   }
 }
 
 .pagination-back {
-  @include xy-cell(3);
-  @include collapse-gutters($type: margin);
+  @include xy-cell($size: full, $gutters: 0);
+
+  .button {
+    text-transform: none;
+  }
+}
+
+@include breakpoint(medium) {
+  .pagination-buttons {
+    @include xy-cell($size: 8, $gutters: 0);
+
+    .button:last-child {
+      margin-left: $global-margin;
+    }
+  }
+
+  .step-pagination {
+    justify-content: space-between;
+  }
+
+  .pagination-back {
+    @include xy-cell($size: 4);
+    margin-right: 0;
+  }
+}
+
+@include breakpoint(xlarge) {
+  .pagination-back {
+    @include xy-cell($size: 3, $gutters: 0);
+  }
+
+  .pagination-buttons {
+    padding-left: $step-horizontal-offset;
+  }
 }
