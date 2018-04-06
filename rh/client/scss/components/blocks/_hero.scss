@@ -40,11 +40,6 @@
   font-weight: $global-weight-normal;
 }
 
-// TODO: Too complex
-.hero:not(.complex) .hero-content-primary a {
-  color: $white;
-}
-
 //
 // Hero (complex)
 //
@@ -90,6 +85,8 @@
 
 // Hero with Cards
 .hero-content-cards {
+  @include collapse-gutters;
+
   // Emulate dark cards
   .card {
     @include media-effect;
@@ -142,6 +139,30 @@
   }
 }
 
+// Hero with cards
+.hero.has-cards {
+  &:before {
+    height: 100%;
+  }
+
+  .hero-content-primary {
+    order: 0;
+    @include bottom-space(2);
+  }
+
+  .hero-content-cards {
+    order: 1;
+  }
+}
+
+.hero:not(.complex),
+.hero.has-cards {
+  .hero-content-primary,
+  .hero-content-primary a {
+    color: $color-white;
+  }
+}
+
 // Breakpoints
 .hero {
   @include breakpoint(xlarge) {
@@ -162,10 +183,6 @@
 
 .hero.complex {
   @include breakpoint(large) {
-    .hero-header {
-      @include bottom-space(3);
-    }
-
     .hero-content {
       @include container;
       @include collapse-gutters;
@@ -196,18 +213,6 @@
   }
 }
 
-/*
-.hero.has-cards {
-  .hero-content-primary {
-    order: 0;
-  }
-
-  .hero-content-cards {
-    order: 1;
-  }
-}
-*/
-
 .hero.has-icon {
   @include breakpoint(medium) {
     padding-top: $global-margin * 2;
@@ -228,6 +233,32 @@
     .hero-icon {
       display: inline-flex;
       margin-bottom: $global-margin * -3;
+    }
+  }
+}
+
+.hero.has-cards {
+  @include breakpoint(medium) {
+    &:before {
+      height: calc(100% - 10vw);
+    }
+
+    .hero-content {
+      flex-flow: row wrap;
+    }
+
+    .hero-content-primary {
+      flex: 0 1 54%; // NOTE: Approximately xy-cell(7)
+      margin-right: auto;
+      margin-left: auto;
+      @include collapse-gutters;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    .hero-content-cards {
+      @include xy-cell(100%);
+      @include collapse-gutters;
     }
   }
 }
