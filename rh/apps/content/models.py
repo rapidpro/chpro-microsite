@@ -40,6 +40,7 @@ class Hero(BlockMixin):
 
 
 class Section(BlockMixin, Linkable, StyleMixin):
+    name = 'Section (Block)'
     image = FilerImageField(blank=True, null=True)
 
 

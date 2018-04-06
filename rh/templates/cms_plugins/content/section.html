@@ -9,8 +9,8 @@
   {% if instance.image %}
   <div class="block-header-lead">
     {% with img=instance.image %}
-      <img
-      src="{% thumbnail img 300x300 crop %}"
+    <img
+      src="{% thumbnail img 1000x750 crop %}"
       alt="{{ img.alt_text }}">
     {% endwith %}
   </div>
