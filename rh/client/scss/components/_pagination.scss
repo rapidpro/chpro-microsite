@@ -1,0 +1,33 @@
+//
+// Pagination
+//
+// Markup: pagination.hbs
+//
+// Style guide: Components.pagination
+//
+
+.step-pagination {
+  @include xy-cell(12);
+  @include xy-grid;
+  @include collapse-gutters($type: margin);
+  justify-content: space-between;
+}
+
+.pagination-buttons {
+  @include xy-cell(8);
+  @include collapse-gutters($type: margin);
+  padding-left: $step-horizontal-offset;
+
+  .button {
+    @include xy-cell(6);
+  }
+
+  .button:first-child {
+    @include collapse-gutters($type: margin);
+  }
+}
+
+.pagination-back {
+  @include xy-cell(3);
+  @include collapse-gutters($type: margin);
+}

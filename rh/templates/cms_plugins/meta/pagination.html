@@ -1,23 +1,33 @@
-<section>
-{% if prev %}
-  <div><a href="{{ prev.get_absolute_url }}">
-    {% if prev_num and instance.show_numbers %}
-    <span class="num">{{ prev_num|stringformat:"02d" }}.</span>
+<div class="container">
+  <section class="step-pagination">
+    <div class="pagination-buttons">
+      {% if prev %}
+        <a href="{{ prev.get_absolute_url }}" class="button">
+          {% if prev_num and instance.show_numbers %}
+            <span class="num">{{ prev_num|stringformat:"02d" }}.</span>
+          {% endif %}
+
+          {{ prev }}
+        </a>
+      {% endif %}
+
+      {% if next %}
+        <a href="{{ next.get_absolute_url }}" class="button">
+          {% if next_num and instance.show_numbers %}
+            <span class="num">{{ next_num|stringformat:"02d" }}.</span>
+          {% endif %}
+
+          {{ next }}
+        </a>
+      {% endif %}
+    </div>
+
+    {% with parent=instance.page.get_parent %}
+    {% if parent %}
+    <div class="pagination-back">
+      <a href="{{ parent.get_absolute_url }}" class="button expanded yellow">Back to {{ parent }}</a>
+    </div>
     {% endif %}
-    {{ prev }}
-  </a></div>
-  {% endif %}
-  {% if next %}
-  <div><a href="{{ next.get_absolute_url }}">
-  {% if next_num and instance.show_numbers %}
-  <span class="num">{{ next_num|stringformat:"02d" }}.</span>
-  {% endif %}
-  {{ next }}
-  </a></div>
-{% endif %}
-{% with parent=instance.page.get_parent %}
-{% if parent %}
-  <div><a href="{{ parent.get_absolute_url }}">{{ parent }}</a></div>
-{% endif %}
-{% endwith %}
-</section>
+    {% endwith %}
+  </section>
+</div>
