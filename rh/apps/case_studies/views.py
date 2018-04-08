@@ -41,10 +41,8 @@ class CaseStudyListView(CurrentPageMixin, ListView):
         use_cases = self.request.GET.getlist('filter')
         if use_cases:
             filter = Q()
-            for use_case in use_cases:
-                if not use_case.isdigit():
-                    continue
-                filter |= Q(use_cases=use_case)
+            for slug in use_cases:
+                filter |= Q(use_cases__slug=slug)
             queryset = queryset.filter(filter)
         return queryset
 

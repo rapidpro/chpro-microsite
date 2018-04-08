@@ -9,6 +9,7 @@ from filer.fields.file import FilerFileField
 from model_utils import Choices
 
 from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
+from rh.apps.icons.models import IconMixin
 
 
 # ------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ class StepList(CMSPlugin):
         return str(self.root)
 
 
-class Step(BlockMixin):
+class Step(BlockMixin, IconMixin):
     CATEGORY_CHOICES = Choices(
         ('tools', 'Tools'),
         ('examples', 'Examples'),
@@ -90,6 +91,7 @@ class StepLinkInline(StackedInline):
         Linkable._admin_fieldset,
     )
 
+
 class StepFileInline(StackedInline):
     model = StepFile
     fk_name = 'step'
@@ -107,7 +109,7 @@ class StepPlugin(BlockPlugin):
 
     fieldsets = (
         ('Content', {
-            'fields': BlockMixin._admin_fields,
+            'fields': ('svg_icon',) + BlockMixin._admin_fields,
         }),
     )
 

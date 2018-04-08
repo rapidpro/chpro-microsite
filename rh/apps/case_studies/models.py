@@ -22,12 +22,14 @@ def get_use_cases(request=None):
     filters = request.GET.getlist('filter') if request else None
     for child in card_grid.get_children():
         iconcard = child.get_plugin_instance()[0]
-        if isinstance(iconcard, IconCard):
+        if isinstance(iconcard, IconCard) and iconcard.slug:
             if filters is not None:
                 iconf = filters[:]
-                pk = str(iconcard.pk)
-                iconcard.selected = pk in iconf
-                iconf.remove(pk) if iconcard.selected else iconf.append(pk)
+                iconcard.selected = iconcard.slug in iconf
+                if iconcard.selected:
+                    iconf.remove(iconcard.slug)
+                else:
+                    iconf.append(iconcard.slug)
                 qd = request.GET.copy()
                 qd.setlist('filter', iconf)
                 iconcard.url = qd.urlencode()
