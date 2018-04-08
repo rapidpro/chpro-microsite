@@ -240,7 +240,8 @@
 .hero.has-cards {
   @include breakpoint(medium) {
     &:before {
-      height: calc(100% - 10vw);
+      height: calc(100% - 45vw);
+      min-height: 450px;
     }
 
     .hero-content {
