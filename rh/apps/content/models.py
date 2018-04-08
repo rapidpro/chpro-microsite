@@ -1,3 +1,4 @@
+import copy
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
@@ -65,7 +66,7 @@ class CardGrid(CMSPlugin, StyleMixin):
 
 
 class IconCard(BlockMixin, Linkable, IconMixin):
-    pass
+    slug = models.SlugField(blank=True)
 
 
 class PhotoCard(BlockMixin, Linkable):
@@ -207,7 +208,7 @@ class CardPlugin(BlockPlugin):
     render_template = "cms_plugins/content/card.html"
     fieldsets = (
         IconMixin._admin_fieldset,
-        BlockMixin._admin_fieldset,
+        ('Content', {'fields': ('title', 'slug', 'body')}),
         Linkable._admin_fieldset,
     )
 
