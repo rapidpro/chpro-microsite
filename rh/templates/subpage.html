@@ -16,11 +16,19 @@
         <span class="subtitle">{{ current_page.parent }}:</span>
         <h1 class="hero-title">{% page_attribute page_title %}</h1>
 
-        <aside
-          class="hero-icon"
-          aria-hidden="true">
-          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
-        </aside>
+        {% if current_page.metaattributes.svg_icon %}
+          <aside
+            class="hero-icon"
+            aria-hidden="true">
+            {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
+          </aside>
+        {% elif current_page.metaattributes.image %}
+          <aside
+            class="hero-img"
+            aria-hidden="true">
+
+          </aside>
+        {% endif %}
       </header>
     </div>
   </div>
