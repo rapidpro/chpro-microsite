@@ -1,0 +1,9 @@
+<a href="{{ file.file }}" class="button expanded">
+  {{ file.category }} {{ forloop.counter }}
+
+  {% if file.category == "tools" %}
+    {% include 'includes/svg_icon.html' with icon_name="download" %}
+  {% else %}
+    {% include 'includes/svg_icon.html' with icon_name="external-link" %}
+  {% endif %}
+</a>
