@@ -20,6 +20,10 @@
     {% for use_case in use_cases %}
       <a href="?{{ use_case.url }}"><input type=checkbox disabled{% if use_case.selected %} checked{% endif %}> {{ use_case }}</a><br />
     {% endfor %}
+    <hr>
+    {% for region in regions %}
+      <a href="?{{ region.url }}"><input type=checkbox disabled{% if region.selected %} checked{% endif %}> {{ region.name }}</a><br />
+    {% endfor %}
   </div>
 
   <div class="case-study-search-results">

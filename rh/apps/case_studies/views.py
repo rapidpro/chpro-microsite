@@ -38,15 +38,43 @@ class CaseStudyListView(CurrentPageMixin, ListView):
             queryset = self.model.objects.all()
         else:
             queryset = self.model.objects.filter(published=True)
+
         use_cases = self.request.GET.getlist('filter')
         if use_cases:
             filter = Q()
             for slug in use_cases:
                 filter |= Q(use_cases__title_set__slug=slug)
             queryset = queryset.filter(filter)
+
+        regions = self.request.GET.getlist('regions')
+        if regions:
+            filter = Q()
+            for slug in regions:
+                filter |= Q(region=slug)
+            queryset = queryset.filter(filter)
+
         return queryset
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
+
         ctx['use_cases'] = list(get_use_cases(self.request))
+
+        regions = []
+        for slug, name in self.model.REGIONS:
+            regions_q = self.request.GET.getlist('regions')
+            qd = self.request.GET.copy()
+            selected = slug in regions_q
+            if selected:
+                regions_q.remove(slug)
+            else:
+                regions_q.append(slug)
+            qd.setlist('regions', regions_q)
+            regions.append({
+                'name': name,
+                'url': qd.urlencode(),
+                'selected': selected,
+            })
+        ctx['regions'] = regions
+
         return ctx

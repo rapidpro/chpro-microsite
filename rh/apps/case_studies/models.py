@@ -6,8 +6,6 @@ from filer.fields.image import FilerImageField
 
 from autoslug import AutoSlugField
 
-from rh.apps.content.models import IconCard
-
 
 def get_use_cases(request=None):
     """
