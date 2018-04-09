@@ -6,8 +6,10 @@
 // .tiny         - Tiny button
 // .small        - Small button
 // .large        - Large version
+// .hollow       - Hollow button
 // .expanded     - Expanded
 // .yellow       - Yellow Button
+// .primary      - Primary Button
 // .button-icon  - Icon button
 //
 // Style guide: Base.button
@@ -24,7 +26,6 @@
 
 .button.yellow {
   box-shadow: none;
-  background-color: $color-yellow;
   color: $color-navy-light;
 }
 

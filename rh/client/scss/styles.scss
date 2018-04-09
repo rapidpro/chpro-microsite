@@ -53,6 +53,9 @@ $palette: (
   dark: $color-beige,
 );
 
+$button-palette: map-merge($foundation-palette, (
+    yellow: $color-yellow
+));
 
 // Typography
 $body-font-family: 'Open Sans', sans-serif;
