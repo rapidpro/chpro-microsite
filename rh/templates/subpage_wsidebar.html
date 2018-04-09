@@ -8,9 +8,14 @@
 {% block base_content %}
   {% include "includes/subpage_hero.html" %}
 
-  <div class="container">
+  {% placeholder 'header' %}
+
+  <div class="container content-wsidebar">
     <div class="content rich-text">
       {% placeholder 'main_content' %}
+    </div>
+    <div class="sidebar rich-text">
+      {% placeholder 'sidebar' %}
     </div>
   </div>
 {% endblock %}

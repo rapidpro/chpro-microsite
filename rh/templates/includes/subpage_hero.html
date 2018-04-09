@@ -1,0 +1,28 @@
+{% load cms_tags %}
+
+<div class="hero subpage-hero dark {% if current_page.metaattributes.svg_icon %}has-icon{% elif current_page.metaattributes.image %}has-img{% endif %}" role="banner">
+  <div class="container">
+    <header class="hero-header">
+      <a
+        href="{{ current_page.parent.get_absolute_url }}"
+        class="breadcrumb-back">Back to {{ current_page.parent }}</a>
+
+      <span class="subtitle">{{ current_page.parent }}:</span>
+      <h1 class="hero-title">{% page_attribute page_title %}</h1>
+
+      {% if current_page.metaattributes.svg_icon %}
+        <aside
+          class="hero-icon"
+          aria-hidden="true">
+          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
+        </aside>
+      {% elif current_page.metaattributes.image %}
+        <aside
+          class="hero-img"
+          aria-hidden="true">
+
+        </aside>
+      {% endif %}
+    </header>
+  </div>
+</div>

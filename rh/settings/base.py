@@ -151,8 +151,9 @@ TEMPLATES = [
 # Django CMS
 # ==============================================================================
 CMS_TEMPLATES = [
-    ('base.html', 'Generic template'),
-    ('subpage.html', 'Subpage template'),
+    ('base.html', 'Generic Template'),
+    ('subpage.html', 'Subpage Template'),
+    ('subpage_wsidebar.html', 'Subpage w/Sidebar Template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {
