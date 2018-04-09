@@ -173,7 +173,34 @@
   @include xy-cell($size: full, $gutters: 0);
 
   .button {
+    position: relative;
+    padding: 1rem 1.5rem;
     width: 100%;
+  }
+
+  .button .icon {
+    position: absolute;
+    top: 2px;
+    height: 100%;
+  }
+
+  .button.prev {
+    padding-left: 2rem;
+    text-align: right;
+  }
+
+  .button.prev .icon {
+    left: 5px;
+    transform: scaleX(-1);
+  }
+
+  .button.next {
+    padding-right: 2rem;
+    text-align: left;
+  }
+
+  .button.next .icon {
+    right: 5px;
   }
 }
 
