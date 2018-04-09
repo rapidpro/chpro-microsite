@@ -32,6 +32,7 @@ class CaseStudyView(CurrentPageMixin, DetailView):
 class CaseStudyListView(CurrentPageMixin, ListView):
     template_name = 'case_studies/case_study_list.html'
     model = CaseStudy
+    paginate_by = 9
 
     def get_queryset(self):
         if self.request.user.is_staff:
