@@ -42,12 +42,11 @@ class CaseStudyListView(CurrentPageMixin, ListView):
         if use_cases:
             filter = Q()
             for slug in use_cases:
-                filter |= Q(use_cases__slug=slug)
+                filter |= Q(use_cases__title_set__slug=slug)
             queryset = queryset.filter(filter)
         return queryset
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        qs = self.get_queryset()
         ctx['use_cases'] = list(get_use_cases(self.request))
         return ctx

@@ -1,7 +1,7 @@
 from django.urls import reverse
 from django.db import models
 
-from cms.models import PlaceholderField, Title
+from cms.models import PlaceholderField, Title, Page
 from filer.fields.image import FilerImageField
 
 from autoslug import AutoSlugField
@@ -13,27 +13,25 @@ def get_use_cases(request=None):
     """
     Get all use cases.
 
-    Return an iterable of icon cards that are found in the first
+    Return an iterable of pages that are found in the first
     CardGridPlugin on the page with the slug "use-cases".
     """
-    page = Title.objects.public().get(slug='use-cases').page
-    plugins = page.placeholders.all()[0].get_plugins()
-    card_grid = plugins.filter(plugin_type='CardGridPlugin')[0]
-    filters = request.GET.getlist('filter') if request else None
-    for child in card_grid.get_children():
-        iconcard = child.get_plugin_instance()[0]
-        if isinstance(iconcard, IconCard) and iconcard.slug:
-            if filters is not None:
-                iconf = filters[:]
-                iconcard.selected = iconcard.slug in iconf
-                if iconcard.selected:
-                    iconf.remove(iconcard.slug)
-                else:
-                    iconf.append(iconcard.slug)
-                qd = request.GET.copy()
-                qd.setlist('filter', iconf)
-                iconcard.url = qd.urlencode()
-            yield iconcard
+    obj = Title.objects.public().get(slug='use-cases').page
+    if request:
+        filters = request.GET.getlist('filter')
+    for child in obj.get_children():
+        if request:
+            slug = child.get_slug()
+            iconf = filters[:]
+            child.selected = slug in iconf
+            if child.selected:
+                iconf.remove(slug)
+            else:
+                iconf.append(slug)
+            qd = request.GET.copy()
+            qd.setlist('filter', iconf)
+            child.url = qd.urlencode()
+        yield child
 
 
 def use_case_choices():
@@ -70,7 +68,7 @@ class CaseStudy(models.Model):
         help_text='Indicates if this Case Study is pubilc or still a draft.')
 
     use_cases = models.ManyToManyField(
-        IconCard, limit_choices_to=use_case_choices)
+        Page, limit_choices_to=use_case_choices)
 
     class Meta:
         verbose_name_plural = 'Case Studies'
