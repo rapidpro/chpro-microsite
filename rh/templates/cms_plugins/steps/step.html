@@ -1,6 +1,3 @@
-{{ instance.step_links.all }}
-{{ instance.step_files.all }}
-
 <section class="step has-detail">
   <span class="step-label">
     {% include 'includes/svg_icon.html' with icon_name="connect" %}
@@ -17,8 +14,11 @@
       </div>
 
       <div class="step-col">
-        <p class="step-subtitle">Tools</p>
-        <p class="step-subtitle">Examples</p>
+        {% with files=instance.step_files.all links=instance.step_links.all %}
+        <h3 class="step-subtitle">Tools</h3>
+
+        <h3 class="step-subtitle">Examples</h3>
+        {% endwith %}
       </div>
     </div>
   </div>
