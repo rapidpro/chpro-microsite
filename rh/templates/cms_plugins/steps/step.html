@@ -20,13 +20,13 @@
 
         {% for link in links %}
         {% if link.category == "tools" %}
-          {% include 'includes/link.html' with instance=link %}
+          {% include 'includes/link.html' with instance=link button_class="expanded" %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "tools" %}
-          <a href="{{ file.file }}" class="button">{{ file.category }} {{ forloop.counter }}</a>
+          <a href="{{ file.file }}" class="button expanded">{{ file.category }} {{ forloop.counter }}</a>
         {% endif %}
         {% endfor %}
 
@@ -34,13 +34,13 @@
 
         {% for link in links %}
         {% if link.category == "examples" %}
-          {% include 'includes/link.html' with instance=link %}
+          {% include 'includes/link.html' with instance=link button_class="expanded" %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "examples" %}
-          <a href="{{ file.file }}" class="button">{{ file.category }} {{ forloop.counter }}</a>
+          <a href="{{ file.file }}" class="button expanded">{{ file.category }} {{ forloop.counter }}</a>
         {% endif %}
         {% endfor %}
 
