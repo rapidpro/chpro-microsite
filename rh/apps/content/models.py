@@ -113,7 +113,7 @@ class ComplexHeroPlugin(BlockPlugin):
     name = 'Hero (Complex)'
     module = 'Content'
     model = Hero
-    render_template = "cms_plugins/content/hero_complex.html"
+    render_template = "cms_plugins/content/hero.html"
     child_classes = (
         'CardPlugin',
         'ImageCardPlugin',
