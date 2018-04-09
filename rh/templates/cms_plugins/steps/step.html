@@ -1,6 +1,6 @@
 <section class="step has-detail">
   <span class="step-label">
-    {% include 'includes/svg_icon.html' with icon_name="connect" %}
+    {% include 'includes/svg_icon.html' with icon_name=instance.svg_icon %}
   </span>
 
   <div class="step-wrapper">
@@ -15,9 +15,35 @@
 
       <div class="step-col">
         {% with files=instance.step_files.all links=instance.step_links.all %}
+
         <h3 class="step-subtitle">Tools</h3>
 
+        {% for link in links %}
+        {% if link.category == "tools" %}
+          {% include 'includes/link.html' with instance=link %}
+        {% endif %}
+        {% endfor %}
+
+        {% for file in files %}
+        {% if file.category == "tools" %}
+          <a href="{{ file.file }}" class="button">{{ file.category }} {{ forloop.counter }}</a>
+        {% endif %}
+        {% endfor %}
+
         <h3 class="step-subtitle">Examples</h3>
+
+        {% for link in links %}
+        {% if link.category == "examples" %}
+          {% include 'includes/link.html' with instance=link %}
+        {% endif %}
+        {% endfor %}
+
+        {% for file in files %}
+        {% if file.category == "examples" %}
+          <a href="{{ file.file }}" class="button">{{ file.category }} {{ forloop.counter }}</a>
+        {% endif %}
+        {% endfor %}
+
         {% endwith %}
       </div>
     </div>
