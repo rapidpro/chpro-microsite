@@ -214,6 +214,10 @@
 }
 
 .subpage-hero {
+  .hero-header {
+    @include xy-cell(100%);
+  }
+
   @include breakpoint(medium) {
     padding-top: $global-margin * 2;
     padding-bottom: $global-margin;
@@ -228,6 +232,13 @@
 
     .hero-title {
       flex: 1 1 auto;
+    }
+
+    // We have an image
+    // Override complex's styles
+    &.complex .hero-content-secondary {
+      @include xy-cell(5);
+      transform: translateY(-40px);
     }
   }
 }

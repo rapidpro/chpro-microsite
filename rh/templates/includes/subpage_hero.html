@@ -1,7 +1,7 @@
 {% load cms_tags %}
 {% load thumbnail %}
 
-<div class="hero subpage-hero dark {% if current_page.metaattributes.svg_icon %}has-icon{% elif current_page.metaattributes.image %}has-img{% endif %}" role="banner">
+<div class="hero subpage-hero dark {% if current_page.metaattributes.image %}complex has-img{% elif current_page.metaattributes.svg_icon %}complex has-icon{% endif %}" role="banner">
   <div class="container">
     <header class="hero-header">
       <a
@@ -11,20 +11,20 @@
       <span class="subtitle">{{ current_page.parent }}:</span>
       <h1 class="hero-title">{% page_attribute page_title %}</h1>
 
-      {% if current_page.metaattributes.svg_icon %}
-        <aside
-          class="hero-icon"
-          aria-hidden="true">
-          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
-        </aside>
-      {% elif current_page.metaattributes.image %}
+      {% if current_page.metaattributes.image %}
         <aside
           class="hero-content-secondary"
           aria-hidden="true">
             <img
-              src="{% thumbnail instance.image 1000x750 crop %}"
-              alt="{{ instance.image.alt_text }}"
+              src="{% thumbnail current_page.metaattributes.image 1000x750 crop %}"
+              alt="{{ current_page.metaattributes.image.alt_text }}"
               class="hero-img">
+        </aside>
+      {% elif current_page.metaattributes.svg_icon %}
+        <aside
+          class="hero-icon"
+          aria-hidden="true">
+          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
         </aside>
       {% endif %}
     </header>
