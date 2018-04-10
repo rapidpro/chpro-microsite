@@ -52,6 +52,10 @@
       {% endfor %}
     </ul>
     {% endif %}
+
+    {% if is_filtered %}
+      <a href="{{ current_page.get_absolute_url }}" class="button small yellow">Clear all filters</a>
+    {% endif %}
   </div>
 
   <div class="case-study-search-results">

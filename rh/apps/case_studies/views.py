@@ -60,6 +60,7 @@ class CaseStudyListView(CurrentPageMixin, ListView):
         ctx = super().get_context_data(**kwargs)
 
         ctx['use_cases'] = list(get_use_cases(self.request))
+        ctx['is_filtered'] = False
 
         regions = []
         for slug, name in self.model.REGIONS:
@@ -68,6 +69,7 @@ class CaseStudyListView(CurrentPageMixin, ListView):
             selected = slug in regions_q
             if selected:
                 regions_q.remove(slug)
+                ctx['is_filtered'] = True
             else:
                 regions_q.append(slug)
             qd.setlist('regions', regions_q)
