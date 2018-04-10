@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load cms_tags %}
+{% load staticfiles %}
 
 {% block base_content %}
 <div
@@ -15,15 +15,43 @@
 
 <div class="case-study-search">
   <div class="case-study-search-filters">
-    <h5 class="case-study-search-heading">Filter by</h5>
+    {% if use_cases %}
+    <h5 class="case-study-search-heading">Filter by Use Case</h5>
 
-    {% for use_case in use_cases %}
-      <a href="?{{ use_case.url }}"><input type=checkbox disabled{% if use_case.selected %} checked{% endif %}> {{ use_case }}</a><br />
-    {% endfor %}
-    <hr>
-    {% for region in regions %}
-      <a href="?{{ region.url }}"><input type=checkbox disabled{% if region.selected %} checked{% endif %}> {{ region.name }}</a><br />
-    {% endfor %}
+    <ul class="case-study-search-list">
+      {% for use_case in use_cases %}
+      <li id="uc_{{ use_case|slugify }}"
+          class="case-study-search-item"
+          data-link="?{{ use_case.url }}">
+        <input
+          id="{{ use_case|slugify }}"
+          type="checkbox" {% if use_case.selected %} checked{% endif %} />
+        <label
+          for="{{ use_case|slugify }}"
+          class="case-study-search-label">{{ use_case }}</label>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if regions %}
+    <h5 class="case-study-search-heading">Filter by Region</h5>
+
+    <ul class="case-study-search-list">
+      {% for region in regions %}
+      <li id="r_{{ region.name|slugify }}"
+          class="case-study-search-item"
+          data-link="?{{ region.url }}">
+        <input
+          id="{{ region.name|slugify }}"
+          type="checkbox" {% if region.selected %} checked{% endif %} />
+        <label
+          for="{{ region.name|slugify }}"
+          class="case-study-search-label">{{ region.name }}</label>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   </div>
 
   <div class="case-study-search-results">
@@ -50,3 +78,25 @@
   </div>
 </div>
 {% endblock %}
+
+{% block js %}
+  {{ block.super }}
+
+  {% if regions %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      {% for region in regions %}
+        $('#r_{{ region.name|slugify }}').click(function () {
+          window.location.href = $('#r_{{ region.name|slugify }}').data('link');
+        });
+      {% endfor %}
+
+      {% for use_case in use_cases %}
+        $('#uc_{{ use_case|slugify }}').click(function () {
+          window.location.href = $('#uc_{{ use_case|slugify }}').data('link');
+        });
+      {% endfor %}
+    });
+  </script>
+  {% endif %}
+{% endblock js %}

@@ -48,6 +48,26 @@
   }
 }
 
+.case-study-search-list {
+  margin-bottom: $global-margin * 1.5;
+  margin-left: 0;
+}
+
+.case-study-search-item {
+  font-size: 0.875rem;
+  list-style-type: none;
+}
+
+.case-study-search-link {
+  display: block;
+  text-decoration: none;
+  color: $color-navy;
+
+  input[type='checkbox'] {
+    margin-right: $global-margin / 2;
+  }
+}
+
 @include breakpoint(large) {
   .case-study-search-filters {
     @include xy-cell(3);
