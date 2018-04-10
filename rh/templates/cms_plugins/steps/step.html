@@ -16,33 +16,41 @@
       <div class="step-col">
         {% with files=instance.step_files.all links=instance.step_links.all %}
 
-        <h3 class="step-subtitle">Tools</h3>
+        {% with section='tools' %}
 
         {% for link in links %}
         {% if link.category == "tools" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
           {% include 'cms_plugins/steps/_step_link.html' %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "tools" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
           {% include 'cms_plugins/steps/_step_file.html' %}
         {% endif %}
         {% endfor %}
 
-        <h3 class="step-subtitle">Examples</h3>
+        {% endwith %}
+
+        {% with section='examples' %}
 
         {% for link in links %}
         {% if link.category == "examples" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
           {% include 'cms_plugins/steps/_step_link.html' %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "examples" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
           {% include 'cms_plugins/steps/_step_file.html' %}
         {% endif %}
         {% endfor %}
+
+        {% endwith %}
 
         {% endwith %}
       </div>
