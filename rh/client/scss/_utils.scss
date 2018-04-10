@@ -18,6 +18,7 @@
 /// Sets up basic background/foreground and link theme support for block
 /// (full-width) elements.
 /// @param {Map} $colors The map of colors to run through
+// TODO: May be unnecessary
 @mixin generate-block-themes($colors: $palette) {
   @each $name, $color in $palette {
     .theme-#{$name} {

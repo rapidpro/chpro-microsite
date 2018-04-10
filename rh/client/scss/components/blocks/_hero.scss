@@ -105,8 +105,8 @@
   }
 }
 
-// Hero with Icon
-.hero.has-icon {
+// Heroes on subpages
+.subpage-hero {
   .hero-header {
     display: flex;
     flex-direction: column;
@@ -176,7 +176,7 @@
 
     .hero-header,
     .hero-content {
-      @include xy-cell(7);
+      @include xy-cell(8);
     }
   }
 }
@@ -213,7 +213,7 @@
   }
 }
 
-.hero.has-icon {
+.subpage-hero {
   @include breakpoint(medium) {
     padding-top: $global-margin * 2;
     padding-bottom: $global-margin;
@@ -229,7 +229,11 @@
     .hero-title {
       flex: 1 1 auto;
     }
+  }
+}
 
+.hero.has-icon {
+  @include breakpoint(medium) {
     .hero-icon {
       display: inline-flex;
       margin-bottom: $global-margin * -3;
@@ -258,7 +262,7 @@
     }
 
     .hero-content-cards {
-      @include xy-cell(100%);
+      @include xy-grid-layout(2, '.card');
       @include collapse-gutters;
     }
   }
