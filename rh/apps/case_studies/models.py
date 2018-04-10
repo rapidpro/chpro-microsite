@@ -35,7 +35,6 @@ def get_use_cases(request=None):
 def use_case_choices():
     return {'pk__in': [case.pk for case in get_use_cases()]}
 
-
 class CaseStudy(models.Model):
     REGIONS = (
         ('americas', 'The Americas and Caribbean'),
@@ -64,6 +63,8 @@ class CaseStudy(models.Model):
 
     published = models.BooleanField('Published', default=False,
         help_text='Indicates if this Case Study is pubilc or still a draft.')
+
+    last_modified = models.DateTimeField(auto_now=True)
 
     use_cases = models.ManyToManyField(
         Page, limit_choices_to=use_case_choices)

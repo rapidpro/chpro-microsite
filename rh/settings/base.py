@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'djangocms_admin_style',  # Needed by Django CMS before the admin
     'django.contrib.admin',
     'django.contrib.redirects',

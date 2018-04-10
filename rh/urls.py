@@ -2,15 +2,20 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from . import sitemaps
 
 
 urlpatterns = [
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {
+        'cmspages': sitemaps.CMSSitemap,
+        'case-studies': sitemaps.CaseStudySitemap,
+    }}),
     url(r'^admin/', admin.site.urls),
     url(r'^select2/', include('django_select2.urls')),
 
     # Django CMS
     url(r'^', include('cms.urls')),
-
 ]
 
 
