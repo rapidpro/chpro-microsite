@@ -14,43 +14,51 @@
 </div>
 
 <div class="case-study-search">
-  <div class="case-study-search-filters">
+  <div class="case-study-search-filters" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     {% if use_cases %}
-    <h5 class="case-study-search-heading">Filter by Use Case</h5>
+    <div class="case-study-search-wrapper" data-accordion-item>
+      <a href="#" class="case-study-search-heading">
+        Filter by Use Case
+      </a>
 
-    <ul class="case-study-search-list">
-      {% for use_case in use_cases %}
-      <li id="uc_{{ use_case|slugify }}"
-          class="case-study-search-item"
-          data-link="?{{ use_case.url }}">
-        <input
-          id="{{ use_case|slugify }}"
-          type="checkbox" {% if use_case.selected %} checked{% endif %} />
-        <label
-          for="{{ use_case|slugify }}"
-          class="case-study-search-label">{{ use_case }}</label>
-      </li>
-      {% endfor %}
-    </ul>
+      <ul class="case-study-search-list" data-tab-content>
+        {% for use_case in use_cases %}
+        <li id="uc_{{ use_case|slugify }}"
+            class="case-study-search-item"
+            data-link="?{{ use_case.url }}">
+          <input
+            id="{{ use_case|slugify }}"
+            type="checkbox" {% if use_case.selected %} checked{% endif %} />
+          <label
+            for="{{ use_case|slugify }}"
+            class="case-study-search-label">{{ use_case }}</label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
     {% endif %}
 
     {% if regions %}
-    <h5 class="case-study-search-heading">Filter by Region</h5>
+    <div class="case-study-search-wrapper" data-accordion-item>
+      <a href="#" class="case-study-search-heading">
+        Filter by Region
+      </a>
 
-    <ul class="case-study-search-list">
-      {% for region in regions %}
-      <li id="r_{{ region.name|slugify }}"
-          class="case-study-search-item"
-          data-link="?{{ region.url }}">
-        <input
-          id="{{ region.name|slugify }}"
-          type="checkbox" {% if region.selected %} checked{% endif %} />
-        <label
-          for="{{ region.name|slugify }}"
-          class="case-study-search-label">{{ region.name }}</label>
-      </li>
-      {% endfor %}
-    </ul>
+      <ul class="case-study-search-list accordion-content" data-tab-content>
+        {% for region in regions %}
+        <li id="r_{{ region.name|slugify }}"
+            class="case-study-search-item"
+            data-link="?{{ region.url }}">
+          <input
+            id="{{ region.name|slugify }}"
+            type="checkbox" {% if region.selected %} checked{% endif %} />
+          <label
+            for="{{ region.name|slugify }}"
+            class="case-study-search-label">{{ region.name }}</label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
     {% endif %}
 
     {% if is_filtered %}
