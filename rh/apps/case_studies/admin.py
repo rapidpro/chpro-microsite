@@ -7,6 +7,8 @@ from .models import CaseStudy
 
 
 class CaseStudyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
+    list_display = ['heading', 'region', 'published']
+    list_filter = ['region', 'published']
     change_form_template = 'admin/case_study_change_form.html'
 
     def response_post_save_add(self, request, obj):
