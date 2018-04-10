@@ -1,4 +1,5 @@
 {% load cms_tags %}
+{% load thumbnail %}
 
 <div class="hero subpage-hero dark {% if current_page.metaattributes.svg_icon %}has-icon{% elif current_page.metaattributes.image %}has-img{% endif %}" role="banner">
   <div class="container">
@@ -18,9 +19,12 @@
         </aside>
       {% elif current_page.metaattributes.image %}
         <aside
-          class="hero-img"
+          class="hero-content-secondary"
           aria-hidden="true">
-
+            <img
+              src="{% thumbnail instance.image 1000x750 crop %}"
+              alt="{{ instance.image.alt_text }}"
+              class="hero-img">
         </aside>
       {% endif %}
     </header>
