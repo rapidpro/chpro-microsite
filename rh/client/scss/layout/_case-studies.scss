@@ -55,17 +55,16 @@
 
 .case-study-search-item {
   font-size: 0.875rem;
+  color: $color-navy;
   list-style-type: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.case-study-search-link {
-  display: block;
-  text-decoration: none;
+.case-study-search-item label {
   color: $color-navy;
-
-  input[type='checkbox'] {
-    margin-right: $global-margin / 2;
-  }
 }
 
 @include breakpoint(large) {
