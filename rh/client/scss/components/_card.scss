@@ -16,6 +16,7 @@
 .card {
   margin-bottom: $global-margin * 1.25;
   padding: 1.25rem;
+  text-align: left;
 }
 
 .card > a {
@@ -55,7 +56,6 @@
   margin-top: $global-margin;
   @include bottomless;
   font-size: .9rem;
-  text-align: left;
 }
 
 .card-actions {
