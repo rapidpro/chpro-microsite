@@ -54,6 +54,7 @@
   margin-top: $global-margin;
   @include bottomless;
   font-size: .9rem;
+  text-align: left;
 }
 
 .card-actions {
