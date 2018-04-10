@@ -15,9 +15,9 @@
       </h1>
   </header>
 
-  {% if case.tags %}
+  {% if case.use_cases.all %}
   <div class="card-content">
-    {% for tag in case.tags.all %}<span>{{ tag }}</span>{% endfor %}
+    {% for tag in case.use_cases.all %}<span>{{ tag }}</span>{% if not forloop.last %},&nbsp;{% endif %}{% endfor %}
   </div>
   {% endif %}
 
