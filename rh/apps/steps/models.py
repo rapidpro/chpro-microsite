@@ -64,6 +64,7 @@ class StepLink(CMSPlugin, Linkable):
 
 class StepFile(CMSPlugin):
     category = models.CharField(choices=Step.CATEGORY_CHOICES, max_length=32)
+    link_text = models.CharField(max_length=100)
     file = FilerFileField()
     step = models.ForeignKey(Step, related_name='step_files')
 
