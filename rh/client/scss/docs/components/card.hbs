@@ -20,6 +20,46 @@
         <a href="#" class="button">Learn More</a>
       </div>
     </section>
+
+    <header class="card-header">
+      <img
+        src="{% thumbnail case.featured_image 1000x750 %}"
+        alt="{{ case.featured_image.alt_text }}"
+        class="card-img">
+        <span class="card-subtitle">{{ case.get_region_display }}</span>
+
+        <h1 class="card-title">
+          <a href="{{ case.get_absolute_url }}">
+            {{ case.heading }}
+          </a>
+        </h1>
+    </header>
+    <section class="card light {{modifier_class}}">
+      <header class="card-header">
+        <a href="#">
+          <img
+            src="https://ll-unicef-rph.s3.amazonaws.com/filer_public_thumbnails/filer_public/f5/29/f529c041-861f-4795-9b90-1b527797dfec/_unicef_uni41366_estey.jpg__1000x750_q85_crop_subsampling-2.jpg"
+            alt="Image Alt Text"
+            class="card-img">
+        </a>
+
+        <span class="card-subtitle">Nicaragua</span>
+        <h1 class="card-title">
+          <a href="#">
+            mVaccination
+          </a>
+        </h1>
+      </header>
+
+      <div class="card-content">
+        <p>Through adaptation of generic functions of RapidPro, RapidPro Health provides a suite of functions for enhancing communication and action in health interventions.</p>
+        <span>Immunisation</span>
+      </div>
+
+      <div class="card-actions">
+        <a href="#" class="button">Learn More</a>
+      </div>
+    </section>
   </div>
 {{else}}
   <section class="card {{modifier_class}}">

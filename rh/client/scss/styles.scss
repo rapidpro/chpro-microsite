@@ -32,7 +32,8 @@ $color-red: #FF3333;
 $color-pink: #D44673;
 $color-teal: #53BDA6;
 
-$color-beige: #DCE4D7;
+$color-beige:  #DCE4D7;
+$color-beige-dark: #9FB9B4;
 $color-yellow: #EAF0E6;
 
 $body-background: $white;
@@ -59,9 +60,14 @@ $button-palette: map-merge($foundation-palette, (
 
 // Typography
 $body-font-family: 'Open Sans', sans-serif;
+$body-font-color: $color-navy;
+
 $global-weight-bold: 700;
 $global-weight-regular: 400;
-$body-font-color: $color-navy;
+
+$header-font-family: 'Titillium Web', sans-serif;
+$header-font-weight: $global-weight-bold;
+$header-margin-bottom: 1rem;
 
 // Determines header sizing
 // https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
@@ -84,12 +90,6 @@ $header-styles: (
   ),
 );
 
-$header-font-family: 'Titillium Web', sans-serif;
-$header-font-weight: $global-weight-bold;
-$header-margin-bottom: 1rem;
-
-
-
 // Layout
 $site-footer-color: $color-navy;
 
@@ -108,6 +108,24 @@ $button-font-family: $header-font-family;
 $button-background: $color-pink;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-radius: 3px;
+
+// Forms
+$input-border: 1px solid #B6C9C5;
+$input-border-focus: 1px solid $color-beige-dark;
+$input-background: #FAFBF9;
+$input-color: $color-navy;
+$input-font-size: 0.875rem;
+$input-shadow: none;
+$input-shadow-focus: none;
+$input-placeholder-color: #B6C9C5;
+$input-padding: 0.8rem 0.65rem;
+$helptext-color: $color-dark-gray;
+$helptext-font-size: 0.6875rem;
+$helptext-font-style: normal;
+$form-label-color: $color-navy-light;
+$form-label-font-size: 0.75rem;
+$form-label-line-height: 2.25;
+$input-font-family: $body-font-family;
 
 // Card styles
 $card-border: none;
@@ -132,6 +150,7 @@ $media-effect: 12px solid $body-background;
 @import 'base/global';
 @import 'base/typography';
 @import 'base/buttons';
+@import 'base/forms';
 
 @import 'components/blockquote';
 @import 'components/card';
@@ -143,5 +162,6 @@ $media-effect: 12px solid $body-background;
 
 @import 'layout/case-studies';
 @import 'layout/case-study-detail';
+@import 'layout/case-study-filter';
 @import 'layout/site-header';
 @import 'layout/site-footer';
