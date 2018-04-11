@@ -72,3 +72,17 @@
     border-bottom: none;
   }
 }
+
+@include breakpoint(large) {
+  .case-study-search-filters {
+    @include xy-cell(3);
+  }
+
+  .case-study-search-results {
+    @include xy-cell(9);
+
+    .card-grid {
+      padding-top: 0;
+    }
+  }
+}
