@@ -237,7 +237,7 @@
     // We have an image
     // Override complex's styles
     &.complex .hero-content-secondary {
-      @include xy-cell(5);
+      @include xy-cell(4);
       transform: translateY(-40px);
     }
   }

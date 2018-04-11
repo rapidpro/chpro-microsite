@@ -81,8 +81,7 @@
 
     .content {
       order: 1;
-      @include xy-cell(7);
-      @include xy-cell-offset(1);
+      @include xy-cell(8);
     }
   }
 
@@ -104,6 +103,7 @@
     @include bottom-space(3);
   }
 
+  // TODO: Move to hero file (?)
   .subpage-hero {
     @include bottom-space;
 

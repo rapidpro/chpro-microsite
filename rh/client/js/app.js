@@ -6,7 +6,7 @@ import 'foundation-sites';
 $(document).ready(() => {
   $(document).foundation();
 
-  if ($(".case-study-search-filters").length ){
+  if ($('.case-study-search-filters').length > 0){
     if (Foundation.MediaQuery.atLeast('medium')) {
       $('.case-study-search-filters').foundation('down', $('.case-study-search-list'), false);
     }

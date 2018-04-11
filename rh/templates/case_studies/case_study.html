@@ -5,7 +5,7 @@
 
 {% block base_content %}
 <div
-  class="hero complex dark{% if instance.image %} has-img{% endif %}"
+  class="hero complex subpage-hero dark has-img"
   role="banner">
   <div class="container">
     <header class="hero-header">
@@ -23,18 +23,18 @@
         {{ body|safe }}
       </div>
 
-      {% if instance.image %}
+      {% if object.featured_image %}
       <aside class="hero-content-secondary">
         <img
-          src="{% thumbnail instance.image 1000x750 crop %}"
-          alt="{{ instance.image.alt_text }}"
+          src="{% thumbnail object.featured_image 1000x750 crop %}"
+          alt="{{ object.featured_image.alt_text }}"
           class="hero-img">
       </aside>
       {% endif %}
     </div>
 
     <div class="hero-sub-content">
-      {% for tag in object.tags.all %}<span>{{ tag }}</span>{% endfor %}
+      {% for tag in object.use_cases.all %}<span>{{ tag }}</span>{% endfor %}
     </div>
   </div>
 </div>
@@ -57,7 +57,7 @@
 {% if similar_case_studies %}
 <div class="case-study-similar-examples">
   <div class="container">
-    <h5 class="block-header">View similar examples</h5>
+    <h3 class="block-header">More Case Studies</h3>
 
     <div class="card-grid">
       {% for case in similar_case_studies %}
