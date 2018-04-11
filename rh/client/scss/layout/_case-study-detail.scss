@@ -1,0 +1,22 @@
+
+
+.stats-content {
+  padding: $global-margin;
+  background: $color-beige;
+}
+
+.stat {
+  display: inline-block;
+  margin-right: .5rem;
+  padding: .5em;
+  background: $color-white;
+  font-size: 1.5rem;
+  font-weight: $global-weight-bold;
+  color: $color-pink;
+}
+
+.case-study-page {
+  .content-wsidebar {
+    @include bottom-space(3);
+  }
+}

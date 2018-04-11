@@ -51,6 +51,9 @@ class CaseStudy(models.Model):
     featured_image = FilerImageField(verbose_name='Featured Image', blank=True,
                                      null=True, related_name='+', on_delete=models.SET_NULL)
 
+    lead_content = PlaceholderField(slotname='case_study_lead_content',
+                                    related_name='lead_case_study',
+                                    verbose_name='Case Study Lead Content')
     main_content = PlaceholderField(slotname='case_study_main_content',
                                     related_name='main_case_study',
                                     verbose_name='Case Study Main Content')

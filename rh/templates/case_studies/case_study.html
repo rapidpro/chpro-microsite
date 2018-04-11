@@ -3,6 +3,8 @@
 {% load cms_tags %}
 {% load thumbnail %}
 
+{% block body_classes %}case-study-page{% endblock %}
+
 {% block base_content %}
 <div
   class="hero complex subpage-hero dark has-img"
@@ -39,17 +41,23 @@
   </div>
 </div>
 
+<div class="container">
+  {% render_placeholder object.lead_content %}
+</div>
+
 <div class="container content-wsidebar sidebar-right">
   <div class="content rich-text">
     {% render_placeholder object.main_content %}
   </div>
 
   <div class="sidebar rich-text">
-    <aside>
+    <aside class="stats-content">
       {% render_placeholder object.stats_content %}
     </aside>
 
-    {% render_placeholder object.sidebar_content %}
+    <aside>
+      {% render_placeholder object.sidebar_content %}
+    </aside>
   </div>
 </div>
 
@@ -57,7 +65,7 @@
 {% if similar_case_studies %}
 <div class="case-study-similar-examples">
   <div class="container">
-    <h3 class="block-header">More Case Studies</h3>
+    <h3 class="block-header">Similar Case Studies</h3>
 
     <div class="card-grid">
       {% for case in similar_case_studies %}
