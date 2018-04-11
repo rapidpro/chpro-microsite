@@ -155,6 +155,8 @@ CMS_TEMPLATES = [
     ('base.html', 'Generic Template'),
     ('subpage.html', 'Subpage Template'),
     ('subpage_wsidebar.html', 'Subpage w/Sidebar Template'),
+    ('simple.html', 'Simple Content Template'),
+    ('simple_wsidebar.html', 'Simple Content w/Sidebar Template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {

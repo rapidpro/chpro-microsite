@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load menu_tags %}
+
+{% block body_classes %}simple-content-wsidebar{% endblock %}
+
+{% block base_content %}
+  <div class="hero subpage-hero dark" role="banner">
+    <div class="container">
+      <header class="hero-header">
+        <h1 class="hero-title">{% page_attribute page_title %}</h1>
+      </header>
+    </div>
+  </div>
+
+  <div class="block container content-wsidebar sidebar-right">
+    <div class="content rich-text">
+      {% placeholder 'main_content' %}
+    </div>
+    <div class="sidebar rich-text">
+      {% placeholder 'sidebar' %}
+    </div>
+  </div>
+{% endblock %}
