@@ -51,6 +51,14 @@
 //
 // Style guide: Components.hero.complex
 .hero.complex {
+  .container {
+    max-width: 64rem;
+  }
+
+  .hero-header {
+    @include bottom-space(4);
+  }
+
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -205,11 +213,11 @@
 
   @include breakpoint(xlarge) {
     &:before {
-      height: 20rem;
+      height: 16.88rem;
     }
 
     .hero-content-primary {
-      padding-top: 10rem;
+      padding-top: 6.5rem;
     }
   }
 }
@@ -260,7 +268,7 @@
     &:before {
       height: 14rem;
     }
-    
+
     .hero-icon {
       display: inline-flex;
       margin-bottom: $global-margin * -3;
