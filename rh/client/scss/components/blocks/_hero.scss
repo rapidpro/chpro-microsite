@@ -251,7 +251,15 @@
 }
 
 .hero.has-icon {
+  &:before {
+    height: 14rem;
+  }
+
   @include breakpoint(medium) {
+    &:before {
+      height: 14rem;
+    }
+    
     .hero-icon {
       display: inline-flex;
       margin-bottom: $global-margin * -3;
