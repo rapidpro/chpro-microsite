@@ -105,6 +105,7 @@
   }
 
   .card-content span {
+    display: inline-block;
     font-size: 0.75rem;
   }
 
@@ -149,4 +150,31 @@
   .icon {
     color: $color-pink;
   }
+}
+
+// Hover Styles
+.card:not(.has-img) {
+  transition: all 0.25s ease-in-out;
+}
+
+.card:not(.has-img):hover {
+  box-shadow: inset 0 0 0 3px $color-beige;
+  transform: scale(1.005);
+}
+
+.card.light:not(.has-img):hover,
+.card.dark:not(.has-img):hover {
+  box-shadow: inset 0 0 0 3px $color-beige-dark;
+}
+
+.card:not(.has-img):active,
+.card:not(.has-img):focus {
+  box-shadow: inset 0 0 0 3px $color-beige;
+}
+
+.card.light:not(.has-img):active,
+.card.dark:not(.has-img):focus,
+.card.light:not(.has-img):active,
+.card.dark:not(.has-img):active {
+  box-shadow: inset 0 0 0 3px $color-beige-dark;
 }
