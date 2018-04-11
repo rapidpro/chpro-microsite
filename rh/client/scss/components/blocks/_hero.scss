@@ -51,10 +51,6 @@
 //
 // Style guide: Components.hero.complex
 .hero.complex {
-  .container {
-    max-width: 64rem;
-  }
-
   .hero-header {
     @include bottom-space(4);
   }

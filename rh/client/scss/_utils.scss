@@ -35,7 +35,7 @@
 
 /// General wrapper for grid elements
 @mixin container {
-  @include xy-grid-container;
+  @include xy-grid-container($global-width);
   @include xy-grid;
 }
 
