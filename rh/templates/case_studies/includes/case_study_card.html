@@ -18,7 +18,7 @@
   </header>
 
   {% if case.use_cases.all %}
-  <div class="card-content">{{tag.get_absolute_url}}
+  <div class="card-content">
     {% for tag in case.use_cases.all %}<span>{{ tag }}</span>{% if not forloop.last %},&nbsp;{% endif %}{% endfor %}
   </div>
   {% endif %}
