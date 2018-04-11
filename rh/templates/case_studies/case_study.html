@@ -16,13 +16,19 @@
         href="{{ current_page.get_absolute_url }}"
         class="breadcrumb-back">Back to <span class="breadcrumb-parent">{{ current_page }}</span></a>
 
-      <span class="subtitle">{{ object.country.name }}</span>
+      <span class="subtitle">{{ object.get_region_display }}</span>
       <h1 class="hero-title">{{ object.heading }}</h1>
     </header>
 
     <div class="hero-content">
       <div class="hero-content-primary rich-text">
-        {{ body|safe }}
+        <p class="taglist">
+          {% for tag in object.use_cases.all %}
+          <span>{{ tag }}</span> {% if not forloop.last %}/{% endif %}
+          {% endfor %}
+        </p>
+
+        {% render_placeholder object.lead_content %}
       </div>
 
       {% if object.featured_image %}
@@ -34,15 +40,7 @@
       </aside>
       {% endif %}
     </div>
-
-    <div class="hero-sub-content">
-      {% for tag in object.use_cases.all %}<span>{{ tag }}</span>{% endfor %}
-    </div>
   </div>
-</div>
-
-<div class="container">
-  {% render_placeholder object.lead_content %}
 </div>
 
 <div class="container content-wsidebar sidebar-right">
@@ -55,7 +53,7 @@
       {% render_placeholder object.stats_content %}
     </aside>
 
-    <aside>
+    <aside class="related-content">
       {% render_placeholder object.sidebar_content %}
     </aside>
   </div>

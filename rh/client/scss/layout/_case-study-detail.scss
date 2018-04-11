@@ -1,7 +1,10 @@
 
+.stats-content,
+.related-content {
+  padding: $global-margin * 1.5;
+}
 
 .stats-content {
-  padding: $global-margin;
   background: $color-beige;
 }
 
@@ -16,6 +19,14 @@
 }
 
 .case-study-page {
+  .taglist {
+    @include bottom-space(2);
+  }
+
+  .stats-content {
+    @include bottom-space(2);
+  }
+
   .content-wsidebar {
     @include bottom-space(3);
   }

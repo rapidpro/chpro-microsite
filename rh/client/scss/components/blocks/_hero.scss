@@ -234,11 +234,18 @@
       flex: 1 1 auto;
     }
 
+    // TODO: Refactor
+    &.complex .hero-content-primary {
+      @include collapse-gutters(margin);
+    }
+
+    // TODO: Refactor
     // We have an image
     // Override complex's styles
     &.complex .hero-content-secondary {
-      @include xy-cell(4);
-      transform: translateY(-40px);
+      @include xy-cell(5);
+      @include collapse-gutters(margin);
+      margin-top: -120px;
     }
   }
 }
