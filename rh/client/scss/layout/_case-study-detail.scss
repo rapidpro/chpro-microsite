@@ -19,6 +19,10 @@
 }
 
 .case-study-page {
+  .subpage-hero {
+    @include bottom-space(3);
+  }
+  
   .taglist {
     @include bottom-space(2);
   }
