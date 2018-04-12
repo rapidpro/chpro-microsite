@@ -6,7 +6,7 @@
     <header class="hero-header">
       <a
         href="{{ current_page.parent.get_absolute_url }}"
-        class="breadcrumb-back">Back to {{ current_page.parent }}</a>
+        class="breadcrumb-back">Back to <span class="breadcrumb-parent">{{ current_page.parent }}</span></a>
 
       <span class="subtitle">{{ current_page.parent }}:</span>
       <h1 class="hero-title">{% page_attribute page_title %}</h1>
