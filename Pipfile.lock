@@ -384,11 +384,6 @@
             ],
             "version": "==3.12"
         },
-        "rh": {
-            "editable": true,
-            "git": "git@github.com:rapidpro/chpro-microsite.git",
-            "ref": "767e573ce8599ac542f9fe9fd1c12b35ad8ff64f"
-        },
         "s3transfer": {
             "hashes": [
                 "sha256:90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1",
