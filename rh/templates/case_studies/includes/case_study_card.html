@@ -8,7 +8,9 @@
         alt="{{ case.featured_image.alt_text }}"
         class="card-img" />
     </a>
-    <span class="card-subtitle">{{ case.get_region_display }}</span>
+    {% if case.countries %}
+    <span class="card-subtitle">{% for country in case.countries %}{% if not forloop.first %}, {% endif %}{{ country.name }}{% endfor %}</span>
+    {% endif %}
 
     <h1 class="card-title">
       <a href="{{ case.get_absolute_url }}">

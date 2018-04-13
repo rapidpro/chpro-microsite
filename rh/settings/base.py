@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     'sekizai',
     'filer',
     'easy_thumbnails',
+    'django_countries',
 
     # Plugins
     'djangocms_text_ckeditor',

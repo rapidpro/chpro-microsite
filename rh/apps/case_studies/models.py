@@ -3,6 +3,7 @@ from django.db import models
 
 from cms.models import PlaceholderField, Title, Page
 from filer.fields.image import FilerImageField
+from django_countries.fields import CountryField
 
 from autoslug import AutoSlugField
 
@@ -35,6 +36,7 @@ def get_use_cases(request=None):
 def use_case_choices():
     return {'pk__in': [case.pk for case in get_use_cases()]}
 
+
 class CaseStudy(models.Model):
     REGIONS = (
         ('americas', 'The Americas and Caribbean'),
@@ -46,6 +48,7 @@ class CaseStudy(models.Model):
         ('africa-w-c', 'West and Central Africa'),
     )
     region = models.CharField(max_length=20, choices=REGIONS)
+    countries = CountryField(multiple=True)
     heading = models.CharField(max_length=128)
     slug = AutoSlugField(populate_from='heading', unique=True, max_length=128)
     featured_image = FilerImageField(verbose_name='Featured Image', blank=True,
