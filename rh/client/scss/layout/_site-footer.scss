@@ -42,6 +42,8 @@
 }
 
 .site-footer .menu a {
+  padding-right: 0;
+  padding-left: 0;
   font-weight: 400;
 }
 
@@ -91,6 +93,10 @@
     margin-bottom: 0;
   }
 
+  .site-footer .menu a {
+    padding: 0.7rem;
+  }
+
   .site-footer .menu,
   .site-footer-aux {
     flex-direction: row;
@@ -127,5 +133,9 @@
 @include breakpoint(xlarge) {
   .site-footer .logo {
     width: 210px;
+  }
+
+  .site-footer .menu a {
+    padding: 0.7rem 1rem;
   }
 }
