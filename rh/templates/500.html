@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body_classes %}simple-content{% endblock %}
+
+{% block base_content %}
+  <div class="hero subpage-hero dark" role="banner">
+    <div class="container">
+      <header class="hero-header">
+        <h1 class="hero-title">Server error.</h1>
+      </header>
+    </div>
+  </div>
+
+  <div class="container block">
+    <div class="cell text-center">
+      {% include 'includes/svg_icon.html' with icon_name="box-important" %}<br />
+
+      <p class="lead">The server encountered an unexpected condition which prevented it from fulfilling the request.</p>
+      <p><a href="/">Return to the homepage</a>.</p>
+    </div>
+  </div>
+{% endblock %}

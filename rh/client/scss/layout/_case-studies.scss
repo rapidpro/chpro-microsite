@@ -5,6 +5,7 @@
 .case-study-search {
   @include block;
   @include container;
+  padding: 0;
 }
 
 .case-study-search .card {
