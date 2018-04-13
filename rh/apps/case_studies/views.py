@@ -60,16 +60,17 @@ class CaseStudyListView(CurrentPageMixin, ListView):
         ctx = super().get_context_data(**kwargs)
 
         ctx['use_cases'] = list(get_use_cases(self.request))
-        ctx['is_filtered'] = False
+        use_cases_filtered = getattr(self.request, 'use_cases_filtered', None)
 
         regions = []
+        regions_filtered = False
         for slug, name in self.model.REGIONS:
             regions_q = self.request.GET.getlist('regions')
             qd = self.request.GET.copy()
             selected = slug in regions_q
             if selected:
                 regions_q.remove(slug)
-                ctx['is_filtered'] = True
+                regions_filtered = True
             else:
                 regions_q.append(slug)
             qd.setlist('regions', regions_q)
@@ -79,5 +80,9 @@ class CaseStudyListView(CurrentPageMixin, ListView):
                 'selected': selected,
             })
         ctx['regions'] = regions
+
+        ctx['use_cases_filtered'] = use_cases_filtered
+        ctx['regions_filtered'] = regions_filtered
+        ctx['is_filtered'] = use_cases_filtered or regions_filtered
 
         return ctx

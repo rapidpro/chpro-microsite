@@ -25,6 +25,7 @@ def get_use_cases(request=None):
             child.selected = slug in iconf
             if child.selected:
                 iconf.remove(slug)
+                request.use_cases_filtered = True
             else:
                 iconf.append(slug)
             qd = request.GET.copy()
