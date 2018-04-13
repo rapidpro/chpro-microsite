@@ -13,6 +13,8 @@
   @include accordion-content;
   margin-bottom: 0;
   margin-left: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .case-study-search-wrapper {
@@ -30,6 +32,8 @@
 }
 
 .case-study-search-item {
+  display: flex;
+  padding: 0.6rem 0;
   font-size: 0.875rem;
   color: $color-navy;
   list-style-type: none;
@@ -43,12 +47,30 @@
   color: $color-navy;
 }
 
+.case-study-search-item [type='checkbox'] {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.case-study-search-item [type='checkbox'] + label {
+  display: block;
+  line-height: 1.5;
+}
+
 @include breakpoint(medium) {
+  .case-study-search-list {
+    margin-bottom: $global-margin * 1.5;
+    padding: 0;
+    border: none;
+  }
+
+  .case-study-search-filters {
+    padding: 0;
+  }
+
   .is-active > .case-study-search-heading,
   .case-study-search-heading {
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0 0 .5rem 0;
     border: none;
 
     &:before {
@@ -59,12 +81,6 @@
       background-color: white;
       color: $color-black;
     }
-  }
-
-  .case-study-search-list {
-    margin-bottom: $global-margin * 1.5;
-    padding: 0;
-    border: none;
   }
 
   :last-child:not(.is-active) > .case-study-search-heading,
