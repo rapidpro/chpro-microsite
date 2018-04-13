@@ -8,6 +8,7 @@
         alt="{{ case.featured_image.alt_text }}"
         class="card-img" />
     </a>
+
     {% if case.countries %}
     <span class="card-subtitle">{% for country in case.countries %}{% if not forloop.first %}, {% endif %}{{ country.name }}{% endfor %}</span>
     {% endif %}
@@ -19,13 +20,15 @@
     </h1>
   </header>
 
-  {% if case.use_cases.all %}
-  <div class="card-content">
-    {% for tag in case.use_cases.all %}<span>{{ tag }}</span>{% if not forloop.last %},&nbsp;{% endif %}{% endfor %}
-  </div>
-  {% endif %}
+  <div class="card-footer">
+    {% if case.use_cases.all %}
+    <div class="card-content">
+      {% for tag in case.use_cases.all %}<span>{{ tag }}</span>{% if not forloop.last %},&nbsp;{% endif %}{% endfor %}
+    </div>
+    {% endif %}
 
-  <div class="card-actions">
-    <a href="{{ case.get_absolute_url }}" class="button small">View Case Study</a>
+    <div class="card-actions">
+      <a href="{{ case.get_absolute_url }}" class="button small">View Case Study</a>
+    </div>
   </div>
 </article>
