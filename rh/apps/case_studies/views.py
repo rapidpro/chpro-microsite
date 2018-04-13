@@ -35,10 +35,7 @@ class CaseStudyListView(CurrentPageMixin, ListView):
     paginate_by = 9
 
     def get_queryset(self):
-        if self.request.user.is_staff:
-            queryset = self.model.objects.all()
-        else:
-            queryset = self.model.objects.filter(published=True)
+        queryset = self.model.objects.filter(published=True)
 
         use_cases = self.request.GET.getlist('filter')
         if use_cases:
