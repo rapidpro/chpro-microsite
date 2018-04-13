@@ -181,6 +181,10 @@
 
     .hero-header,
     .hero-content {
+      @include xy-cell(10);
+    }
+
+    .hero-content-primary {
       @include xy-cell(8);
     }
   }
