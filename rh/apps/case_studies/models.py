@@ -94,8 +94,14 @@ class CaseStudy(models.Model):
         return '{}?edit'.format(self.get_absolute_url())
 
     def similar(self, count=4, only_published=True):
-        qs = CaseStudy.objects.exclude(pk=self.pk)
+        qs = CaseStudy.objects.exclude(pk=self.pk).order_by('?')
         if only_published:
             qs = qs.filter(published=True)
-        qs = qs.filter(use_cases__in=self.use_cases.all())
-        return qs.order_by('?')[:count]
+        qs = qs
+        similar_cases = list(
+            qs.filter(use_cases__in=self.use_cases.all())[:count])
+        remaining = count - len(similar_cases)
+        if remaining > 0:
+            similar_cases.extend(list(
+                qs.exclude(pk__in=[case.pk for case in similar_cases])))
+        return similar_cases
