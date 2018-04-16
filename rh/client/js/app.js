@@ -17,4 +17,14 @@ $(document).ready(() => {
       }
     });
   }
+
+  //$('.featured-accordion').foundation('selectTab', 'card');
+  $('.featured-accordion').on('change.zf.tabs', function() {
+     if ($('#card1:visible').length) {
+         console.log('Tab 1 panel shown.');
+     }
+     if ($('#card2:visible').length) {
+         console.log('Tab 2 panel shown.');
+     }
+  });
 });

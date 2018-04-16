@@ -1,0 +1,43 @@
+.featured-accordion {
+  @include media-effect;
+  @include xy-grid;
+}
+
+.featured-accordion-content {
+  @include tabs-content;
+  @include tabs-content-vertical;
+}
+
+.featured-accordion-panel {
+  padding: 0;
+}
+
+.featured-accordion-image {
+
+}
+
+.featured-accordion-cards {
+  @include tabs-container-vertical;
+  @include tabs-container;
+
+  .card {
+    margin: 0;
+    width: 100%;
+  }
+
+  .tabs-title > a:hover,
+  .tabs-title > a:focus,
+  .tabs-title > a[aria-selected='true'] {
+    background: transparent;
+  }
+}
+
+@include breakpoint(large) {
+  .featured-accordion-content {
+    @include xy-cell($size: 6, $gutters: 0);
+  }
+
+  .featured-accordion-cards {
+    @include xy-cell($size: 6, $gutters: 0);
+  }
+}

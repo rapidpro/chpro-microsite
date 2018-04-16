@@ -1,27 +1,20 @@
 {% load cms_tags %}
 {% load thumbnail %}
 
-<section class="card">
-  <header class="card-header">
-      {% if instance.image %}
-      <aside class="hero-content-secondary">
-        <img
-          data-interchange="[{% thumbnail instance.image "200x500" %}, small],
-          [{% thumbnail instance.image "200x500" %}, medium]"
-          alt="{{ instance.image.alt_text }}">
-      </aside>
-      {% endif %}
+<li class="tabs-title card light {% if forloop.first %}is-active{% endif %}" {% if forloop.first %}aria-selected="true"{% endif %}>
+  <a data-tabs-target="card{{ forloop.counter }}" href="#card{{ forloop.counter }}">
+    <header class="card-header">
+      <h3 class="card-title">{{ instance.title }}</h3>
+    </header>
 
-    <h3 class="card-title">{{ instance.title }}</h3>
-  </header>
+    <div class="card-content">
+      content
+    </div>
 
-  <div class="card-content">
-    {{ instance.body|safe }}
-  </div>
-
-  {% if instance.get_link %}
-  <div class="card-actions">
-    {% include 'includes/link.html' %}
-  </div>
-  {% endif %}
-</section>
+    {% if instance.get_link %}
+    <div class="card-actions">
+      {% include 'includes/link.html' %}
+    </div>
+    {% endif %}
+  </a>
+</li>
