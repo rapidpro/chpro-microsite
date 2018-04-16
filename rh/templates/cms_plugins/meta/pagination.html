@@ -3,7 +3,9 @@
     <div class="pagination-buttons">
       {% spaceless %}
       {% if prev %}
-        <a href="{{ prev.get_absolute_url }}" class="button">
+        <a href="{{ prev.get_absolute_url }}" class="button prev">
+          {% include 'includes/svg_icon.html' with icon_name="chevron" %}
+
           {% if prev_num and instance.show_numbers %}
             <span class="num">{{ prev_num|stringformat:"02d" }}.</span>
           {% endif %}
@@ -13,12 +15,14 @@
       {% endif %}
 
       {% if next %}
-        <a href="{{ next.get_absolute_url }}" class="button">
+        <a href="{{ next.get_absolute_url }}" class="button next">
           {% if next_num and instance.show_numbers %}
             <span class="num">{{ next_num|stringformat:"02d" }}.</span>
           {% endif %}
 
           {{ next }}
+
+          {% include 'includes/svg_icon.html' with icon_name="chevron" %}
         </a>
       {% endif %}
       {% endspaceless %}

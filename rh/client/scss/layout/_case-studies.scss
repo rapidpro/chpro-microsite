@@ -5,25 +5,23 @@
 .case-study-search {
   @include block;
   @include container;
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.case-study-search-filters {
-  @include xy-cell(3);
-}
+.case-study-search .card {
+  .card-title {
+    min-height: 3.125rem;
+  }
 
-.case-study-search-results {
-  @include xy-cell(9);
-
-  .card-grid {
-    padding-top: 0;
+  .card-footer {
+    margin-top: auto;
   }
 }
 
-.case-study-search-heading {
-  font-family: $body-font-family;
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-}
+//
+// Case Study Similar Examples
+//
 
 .case-study-similar-examples {
   @include block;

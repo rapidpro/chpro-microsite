@@ -16,7 +16,11 @@
       {% endif %}
     {% endif %}
 
-    <h3 class="card-title">{{ instance.title }}</h3>
+    <h3 class="card-title">
+      <a href="{{ instance.get_link }}">
+        {{ instance.title }}
+      </a>
+    </h3>
   </header>
 
   <div class="card-content">

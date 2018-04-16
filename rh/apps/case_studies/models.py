@@ -1,37 +1,37 @@
 from django.urls import reverse
 from django.db import models
 
-from cms.models import PlaceholderField, Title
+from cms.models import PlaceholderField, Title, Page
 from filer.fields.image import FilerImageField
+from django_countries.fields import CountryField
 
 from autoslug import AutoSlugField
-
-from rh.apps.content.models import IconCard
 
 
 def get_use_cases(request=None):
     """
     Get all use cases.
 
-    Return an iterable of icon cards that are found in the first
+    Return an iterable of pages that are found in the first
     CardGridPlugin on the page with the slug "use-cases".
     """
-    page = Title.objects.public().get(slug='use-cases').page
-    plugins = page.placeholders.all()[0].get_plugins()
-    card_grid = plugins.filter(plugin_type='CardGridPlugin')[0]
-    filters = request.GET.getlist('filter') if request else None
-    for child in card_grid.get_children():
-        iconcard = child.get_plugin_instance()[0]
-        if isinstance(iconcard, IconCard):
-            if filters is not None:
-                iconf = filters[:]
-                pk = str(iconcard.pk)
-                iconcard.selected = pk in iconf
-                iconf.remove(pk) if iconcard.selected else iconf.append(pk)
-                qd = request.GET.copy()
-                qd.setlist('filter', iconf)
-                iconcard.url = qd.urlencode()
-            yield iconcard
+    obj = Title.objects.public().get(slug='use-cases').page
+    if request:
+        filters = request.GET.getlist('filter')
+    for child in obj.get_children():
+        if request:
+            slug = child.get_slug()
+            iconf = filters[:]
+            child.selected = slug in iconf
+            if child.selected:
+                iconf.remove(slug)
+                request.use_cases_filtered = True
+            else:
+                iconf.append(slug)
+            qd = request.GET.copy()
+            qd.setlist('filter', iconf)
+            child.url = qd.urlencode()
+        yield child
 
 
 def use_case_choices():
@@ -49,11 +49,15 @@ class CaseStudy(models.Model):
         ('africa-w-c', 'West and Central Africa'),
     )
     region = models.CharField(max_length=20, choices=REGIONS)
+    countries = CountryField(multiple=True)
     heading = models.CharField(max_length=128)
     slug = AutoSlugField(populate_from='heading', unique=True, max_length=128)
     featured_image = FilerImageField(verbose_name='Featured Image', blank=True,
-                                     null=True, related_name='+',  on_delete=models.SET_NULL)
+                                     null=True, related_name='+', on_delete=models.SET_NULL)
 
+    lead_content = PlaceholderField(slotname='case_study_lead_content',
+                                    related_name='lead_case_study',
+                                    verbose_name='Case Study Lead Content')
     main_content = PlaceholderField(slotname='case_study_main_content',
                                     related_name='main_case_study',
                                     verbose_name='Case Study Main Content')
@@ -67,8 +71,10 @@ class CaseStudy(models.Model):
     published = models.BooleanField('Published', default=False,
         help_text='Indicates if this Case Study is pubilc or still a draft.')
 
+    last_modified = models.DateTimeField(auto_now=True)
+
     use_cases = models.ManyToManyField(
-        IconCard, limit_choices_to=use_case_choices)
+        Page, limit_choices_to=use_case_choices)
 
     class Meta:
         verbose_name_plural = 'Case Studies'
@@ -88,8 +94,14 @@ class CaseStudy(models.Model):
         return '{}?edit'.format(self.get_absolute_url())
 
     def similar(self, count=4, only_published=True):
-        qs = CaseStudy.objects.exclude(pk=self.pk)
+        qs = CaseStudy.objects.exclude(pk=self.pk).order_by('?')
         if only_published:
             qs = qs.filter(published=True)
-        qs = qs.filter(use_cases__in=self.use_cases.all())
-        return qs.order_by('?')[:count]
+        qs = qs
+        similar_cases = list(
+            qs.filter(use_cases__in=self.use_cases.all())[:count])
+        remaining = count - len(similar_cases)
+        if remaining > 0:
+            similar_cases.extend(list(
+                qs.exclude(pk__in=[case.pk for case in similar_cases])))
+        return similar_cases

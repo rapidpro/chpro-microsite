@@ -6,33 +6,11 @@
 {% block body_classes %}subpage{% endblock %}
 
 {% block base_content %}
-  <div class="hero subpage-hero dark {% if current_page.metaattributes.svg_icon %}has-icon{% elif current_page.metaattributes.image %}has-img{% endif %}" role="banner">
-    <div class="container">
-      <header class="hero-header">
-        <a
-          href="{{ current_page.parent.get_absolute_url }}"
-          class="breadcrumb-back">Back to {{ current_page.parent }}</a>
+  {% include "includes/subpage_hero.html" %}
 
-        <span class="subtitle">{{ current_page.parent }}:</span>
-        <h1 class="hero-title">{% page_attribute page_title %}</h1>
-
-        <aside
-          class="hero-icon"
-          aria-hidden="true">
-          {% include 'includes/svg_icon.html' with icon_name=current_page.metaattributes.svg_icon %}
-        </aside>
-      </header>
-    </div>
-  </div>
-
-  {% placeholder 'header' %}
-
-  <div class="container content-wsidebar">
+  <div class="container">
     <div class="content rich-text">
       {% placeholder 'main_content' %}
-    </div>
-    <div class="sidebar rich-text">
-      {% placeholder 'sidebar' %}
     </div>
   </div>
 {% endblock %}

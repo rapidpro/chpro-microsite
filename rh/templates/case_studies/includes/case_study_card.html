@@ -1,21 +1,34 @@
 {% load thumbnail %}
 
-<article class="card has-img">
+<article class="card light has-img">
   <header class="card-header">
-    <img
-      src="{% thumbnail case.featured_image 1000x750 %}"
-      alt="{{ case.featured_image.alt_text }}"
-      class="card-img">
+    <a href="{{ case.get_absolute_url }}">
+      <img
+        src="{% thumbnail case.featured_image 1000x750 %}"
+        alt="{{ case.featured_image.alt_text }}"
+        class="card-img" />
+    </a>
 
-      <span class="card-subtitle">{{ case.country.name }}</span>
-      <h1 class="card-title">{{ case.heading }}</h1>
+    {% if case.countries %}
+    <span class="card-subtitle">{% for country in case.countries %}{% if not forloop.first %}, {% endif %}{{ country.name }}{% endfor %}</span>
+    {% endif %}
+
+    <h1 class="card-title">
+      <a href="{{ case.get_absolute_url }}">
+        {{ case.heading }}
+      </a>
+    </h1>
   </header>
 
-  <div class="card-content">
-    {% for tag in case.tags.all %}<span>{{ tag }}</span>{% endfor %}
-  </div>
+  <div class="card-footer">
+    {% if case.use_cases.all %}
+    <div class="card-content">
+      {% for tag in case.use_cases.all %}<span>{{ tag }}</span>{% if not forloop.last %},&nbsp;{% endif %}{% endfor %}
+    </div>
+    {% endif %}
 
-  <div class="card-actions">
-    <a href="{{ case.get_absolute_url }}" class="button small">View Case Study</a>
+    <div class="card-actions">
+      <a href="{{ case.get_absolute_url }}" class="button small">View Case Study</a>
+    </div>
   </div>
 </article>

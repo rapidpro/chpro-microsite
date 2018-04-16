@@ -18,6 +18,7 @@
 /// Sets up basic background/foreground and link theme support for block
 /// (full-width) elements.
 /// @param {Map} $colors The map of colors to run through
+// TODO: May be unnecessary
 @mixin generate-block-themes($colors: $palette) {
   @each $name, $color in $palette {
     .theme-#{$name} {
@@ -34,7 +35,7 @@
 
 /// General wrapper for grid elements
 @mixin container {
-  @include xy-grid-container;
+  @include xy-grid-container($global-width);
   @include xy-grid;
 }
 
@@ -117,7 +118,7 @@
 
 %heading-bar {
   $bar-height: 4px;
-  $bottom-space: #{$global-margin} * 2;
+  $bottom-space: #{$global-margin} * 3.125;
   position: relative;
   // Add double margin to compensate for space between heading and bar
   // but make sure we take bar height into consideration for good v rhythm.
@@ -125,11 +126,11 @@
 
   &:after {
     position: relative;
-    bottom: $global-margin * -1;
+    bottom: $global-margin * -2;
     left: 0;
     display: block;
-    width: 3rem;
-    height: 4px;
+    width: 1.685rem;
+    height: 3px;
     background: $brand-color-primary;
     content: "";
   }

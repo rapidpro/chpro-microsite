@@ -1,3 +1,4 @@
+import copy
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
@@ -65,7 +66,7 @@ class CardGrid(CMSPlugin, StyleMixin):
 
 
 class IconCard(BlockMixin, Linkable, IconMixin):
-    pass
+    slug = models.SlugField(blank=True)
 
 
 class PhotoCard(BlockMixin, Linkable):
@@ -90,29 +91,12 @@ class BlockQuote(AbstractText):
 # ------------------------------------------------------------------------------
 # CMS Plugin/Admin
 # ------------------------------------------------------------------------------
-class HeroPlugin(BlockPlugin):
-    name = 'Hero (Simple)'
+
+class ComplexHeroPlugin(BlockPlugin):
+    name = 'Hero'
     module = 'Content'
     model = Hero
     render_template = "cms_plugins/content/hero.html"
-    child_classes = (
-        'LinkPlugin',
-        'FilerImagePlugin',
-    )
-    include_in_wysiwyg = []
-
-    fieldsets = (
-        ('Content', {
-            'fields': BlockMixin._admin_fields,
-        }),
-    )
-
-
-class ComplexHeroPlugin(BlockPlugin):
-    name = 'Hero (Complex)'
-    module = 'Content'
-    model = Hero
-    render_template = "cms_plugins/content/hero_complex.html"
     child_classes = (
         'CardPlugin',
         'ImageCardPlugin',
@@ -207,7 +191,7 @@ class CardPlugin(BlockPlugin):
     render_template = "cms_plugins/content/card.html"
     fieldsets = (
         IconMixin._admin_fieldset,
-        BlockMixin._admin_fieldset,
+        ('Content', {'fields': ('title', 'slug', 'body')}),
         Linkable._admin_fieldset,
     )
 
@@ -245,7 +229,6 @@ class BlockQuotePlugin(BlockPlugin):
     render_template = "cms_plugins/content/blockquote.html"
 
 
-plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
 plugin_pool.register_plugin(SectionPlugin)
 plugin_pool.register_plugin(CardGridPlugin)

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load cms_tags %}
+{% load staticfiles %}
 
 {% block base_content %}
 <div
@@ -14,12 +14,56 @@
 </div>
 
 <div class="case-study-search">
-  <div class="case-study-search-filters">
-    <h5 class="case-study-search-heading">Filter by</h5>
+  <div class="case-study-search-filters" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+    {% if use_cases %}
+    <div class="case-study-search-wrapper" data-accordion-item>
+      <a href="#" class="case-study-search-heading">
+        Filter by Use Case
+      </a>
 
-    {% for use_case in use_cases %}
-      <a href="?{{ use_case.url }}"><input type=checkbox disabled{% if use_case.selected %} checked{% endif %}> {{ use_case }}</a><br />
-    {% endfor %}
+      <ul class="case-study-search-list" data-tab-content>
+        {% for use_case in use_cases %}
+        <li id="uc_{{ use_case|slugify }}"
+            class="case-study-search-item"
+            data-link="?{{ use_case.url }}">
+          <input
+            id="{{ use_case|slugify }}"
+            type="checkbox" {% if use_case.selected %} checked{% endif %} />
+          <label
+            for="{{ use_case|slugify }}"
+            class="case-study-search-label">{{ use_case }}</label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if regions %}
+    <div class="case-study-search-wrapper" data-accordion-item>
+      <a href="#" class="case-study-search-heading">
+        Filter by Region
+      </a>
+
+      <ul class="case-study-search-list accordion-content" data-tab-content>
+        {% for region in regions %}
+        <li id="r_{{ region.name|slugify }}"
+            class="case-study-search-item"
+            data-link="?{{ region.url }}">
+          <input
+            id="{{ region.name|slugify }}"
+            type="checkbox" {% if region.selected %} checked{% endif %} />
+          <label
+            for="{{ region.name|slugify }}"
+            class="case-study-search-label">{{ region.name }}</label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if is_filtered %}
+      <a href="{{ current_page.get_absolute_url }}" class="button small yellow">Clear all filters</a>
+    {% endif %}
   </div>
 
   <div class="case-study-search-results">
@@ -28,6 +72,43 @@
         {% include 'case_studies/includes/case_study_card.html' %}
       {% endfor %}
     </div>
+    {% if is_paginated %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="page-current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
+
+{% block js %}
+  {{ block.super }}
+
+  {% if regions %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      {% for region in regions %}
+        $('#r_{{ region.name|slugify }}').click(function () {
+          window.location.href = $('#r_{{ region.name|slugify }}').data('link');
+        });
+      {% endfor %}
+
+      {% for use_case in use_cases %}
+        $('#uc_{{ use_case|slugify }}').click(function () {
+          window.location.href = $('#uc_{{ use_case|slugify }}').data('link');
+        });
+      {% endfor %}
+    });
+  </script>
+  {% endif %}
+{% endblock js %}

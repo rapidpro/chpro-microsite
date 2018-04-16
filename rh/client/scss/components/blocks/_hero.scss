@@ -51,6 +51,10 @@
 //
 // Style guide: Components.hero.complex
 .hero.complex {
+  .hero-header {
+    @include bottom-space(4);
+  }
+
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -93,6 +97,7 @@
     background: $color-beige;
   }
 
+  .card-title > a,
   .card-title {
     font-size: 1.6rem;
     color: $color-navy;
@@ -105,8 +110,8 @@
   }
 }
 
-// Hero with Icon
-.hero.has-icon {
+// Heroes on subpages
+.subpage-hero {
   .hero-header {
     display: flex;
     flex-direction: column;
@@ -176,7 +181,11 @@
 
     .hero-header,
     .hero-content {
-      @include xy-cell(7);
+      @include xy-cell(10);
+    }
+
+    .hero-content-primary {
+      @include xy-cell(8);
     }
   }
 }
@@ -204,16 +213,20 @@
 
   @include breakpoint(xlarge) {
     &:before {
-      height: 20rem;
+      height: 16.88rem;
     }
 
     .hero-content-primary {
-      padding-top: 10rem;
+      padding-top: 6.5rem;
     }
   }
 }
 
-.hero.has-icon {
+.subpage-hero {
+  .hero-header {
+    @include xy-cell(100%);
+  }
+
   @include breakpoint(medium) {
     padding-top: $global-margin * 2;
     padding-bottom: $global-margin;
@@ -230,6 +243,32 @@
       flex: 1 1 auto;
     }
 
+    // TODO: Refactor
+    &.complex .hero-content-primary {
+      @include collapse-gutters(margin);
+    }
+
+    // TODO: Refactor
+    // We have an image
+    // Override complex's styles
+    &.complex .hero-content-secondary {
+      @include xy-cell(5);
+      @include collapse-gutters(margin);
+      margin-top: -120px;
+    }
+  }
+}
+
+.hero.has-icon {
+  &:before {
+    height: 14rem;
+  }
+
+  @include breakpoint(medium) {
+    &:before {
+      height: 14rem;
+    }
+
     .hero-icon {
       display: inline-flex;
       margin-bottom: $global-margin * -3;
@@ -240,7 +279,8 @@
 .hero.has-cards {
   @include breakpoint(medium) {
     &:before {
-      height: calc(100% - 10vw);
+      height: calc(100% - 45vw);
+      min-height: 450px;
     }
 
     .hero-content {
@@ -257,7 +297,7 @@
     }
 
     .hero-content-cards {
-      @include xy-cell(100%);
+      @include xy-grid-layout(2, '.card');
       @include collapse-gutters;
     }
   }

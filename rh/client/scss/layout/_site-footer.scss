@@ -42,6 +42,8 @@
 }
 
 .site-footer .menu a {
+  padding-right: 0;
+  padding-left: 0;
   font-weight: 400;
 }
 
@@ -72,11 +74,15 @@
   flex-direction: row;
 }
 
+.site-footer-aux .menu a {
+  padding: 0.7rem;
+}
+
 .site-footer-aux * {
   font-size: .8rem;
 }
 
-@include breakpoint(xlarge) {
+@include breakpoint(large) {
   .site-footer-primary,
   .site-footer-content {
     @include bottom-space(2);
@@ -84,11 +90,15 @@
 
   .site-footer .logo {
     display: block;
-    width: 210px;
+    width: 180px;
   }
 
   .site-footer .menu {
     margin-bottom: 0;
+  }
+
+  .site-footer .menu a {
+    padding: 0.7rem;
   }
 
   .site-footer .menu,
@@ -121,5 +131,15 @@
   // Ensure alignment of the menus
   .site-footer .menu li:last-child a {
     padding-right: 0;
+  }
+}
+
+@include breakpoint(xlarge) {
+  .site-footer .logo {
+    width: 210px;
+  }
+
+  .site-footer .menu a {
+    padding: 0.7rem 1rem;
   }
 }

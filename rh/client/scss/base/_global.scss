@@ -68,6 +68,9 @@
   fill: currentColor;
 }
 
+.taglist {
+  font-size: .9rem;
+}
 
 // Layout Helpers
 .content-wsidebar {
@@ -81,8 +84,7 @@
 
     .content {
       order: 1;
-      @include xy-cell(7);
-      @include xy-cell-offset(1);
+      @include xy-cell(8);
     }
   }
 
@@ -104,6 +106,7 @@
     @include bottom-space(3);
   }
 
+  // TODO: Move to hero file (?)
   .subpage-hero {
     @include bottom-space;
 
@@ -111,4 +114,15 @@
       @include bottom-space(4);
     }
   }
+}
+
+.simple-content,
+.simple-content-wsidebar {
+  .subpage-hero {
+    padding-top: 12rem;
+  }
+}
+
+.site-main > .img-responsive {
+  width: 100%;
 }

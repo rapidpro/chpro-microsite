@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'djangocms_admin_style',  # Needed by Django CMS before the admin
     'django.contrib.admin',
     'django.contrib.redirects',
@@ -84,6 +85,7 @@ INSTALLED_APPS = [
     'sekizai',
     'filer',
     'easy_thumbnails',
+    'django_countries',
 
     # Plugins
     'djangocms_text_ckeditor',
@@ -151,8 +153,11 @@ TEMPLATES = [
 # Django CMS
 # ==============================================================================
 CMS_TEMPLATES = [
-    ('base.html', 'Generic template'),
-    ('subpage.html', 'Subpage template'),
+    ('base.html', 'Generic Template'),
+    ('subpage.html', 'Subpage Template'),
+    ('subpage_wsidebar.html', 'Subpage w/Sidebar Template'),
+    ('simple.html', 'Simple Content Template'),
+    ('simple_wsidebar.html', 'Simple Content w/Sidebar Template'),
 ]
 
 CMS_PLACEHOLDER_CONF = {

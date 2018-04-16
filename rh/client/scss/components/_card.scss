@@ -7,18 +7,21 @@
 //
 // .light       - Light version
 // .dark        - Dark version
-// .has-img     - With image
+// .has-img     - Photo Card
 // .minimal     - With a boxed icon
 //
 // Style guide: Components.card
 //
 
 .card {
+  margin-bottom: $global-margin * 1.25;
   padding: 1.25rem;
+  text-align: left;
 }
 
 .card > a {
   text-decoration: none;
+  color: $color-black;
 }
 
 .card-header {
@@ -35,6 +38,10 @@
 
 .card-title {
   font-size: 1.3rem;
+}
+
+.card-title > a {
+  text-decoration: none;
 }
 
 .card-subtitle {
@@ -89,7 +96,7 @@
 
   .card-subtitle {
     margin-bottom: $global-margin / 2;
-    font-size: 0.9375rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: $color-navy;
   }
@@ -99,11 +106,12 @@
   }
 
   .card-content span {
+    display: inline-block;
     font-size: 0.75rem;
   }
 
   .card-actions {
-    margin-top: 0.75rem;
+    margin-top: $global-margin;
   }
 }
 
@@ -130,17 +138,44 @@
 
 .card.light,
 .card.dark {
-  a,
-  .card-title,
+  > a,
   .card-content {
     color: $color-navy;
   }
 
-  .card-title {
+  .card-title,
+  .card-title > a {
     color: $color-navy-light;
   }
 
   .icon {
     color: $color-pink;
   }
+}
+
+// Hover Styles
+.card:not(.has-img) {
+  transition: all 0.25s ease-in-out;
+}
+
+.card:not(.has-img):hover {
+  box-shadow: inset 0 0 0 3px $color-beige;
+  transform: scale(1.005);
+}
+
+.card.light:not(.has-img):hover,
+.card.dark:not(.has-img):hover {
+  box-shadow: inset 0 0 0 3px $color-beige-dark;
+}
+
+.card:not(.has-img):active,
+.card:not(.has-img):focus {
+  box-shadow: inset 0 0 0 3px $color-beige;
+}
+
+.card.light:not(.has-img):active,
+.card.dark:not(.has-img):focus,
+.card.light:not(.has-img):active,
+.card.dark:not(.has-img):active {
+  box-shadow: inset 0 0 0 3px $color-beige-dark;
 }

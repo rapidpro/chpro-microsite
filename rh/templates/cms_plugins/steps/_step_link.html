@@ -1,0 +1,18 @@
+{% if link.get_link %}
+  {% if link.link_style == 'link' %}
+    <a href="{{ link.get_link }}">{{ link.link_text }}</a>
+  {% endif %}
+
+  {% if link.link_style == 'button' %}
+    <a
+      href="{{ link.get_link }}"
+      class="button expanded">{{ link.link_text }}
+
+      {% if link.category == "tools" %}
+        {% include 'includes/svg_icon.html' with icon_name="download" %}
+      {% else %}
+        {% include 'includes/svg_icon.html' with icon_name="external-link" %}
+      {% endif %}
+    </a>
+  {% endif %}
+{% endif %}

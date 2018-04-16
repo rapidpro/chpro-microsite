@@ -23,6 +23,7 @@ uwsgi = "==2.0.16"
 djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
 coverage = "*"
 django-autoslug = "*"
+django-countries = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"

@@ -1,9 +1,6 @@
-{{ instance.step_links.all }}
-{{ instance.step_files.all }}
-
 <section class="step has-detail">
   <span class="step-label">
-    {% include 'includes/svg_icon.html' with icon_name="connect" %}
+    {% include 'includes/svg_icon.html' with icon_name=instance.svg_icon %}
   </span>
 
   <div class="step-wrapper">
@@ -17,8 +14,45 @@
       </div>
 
       <div class="step-col">
-        <p class="step-subtitle">Tools</p>
-        <p class="step-subtitle">Examples</p>
+        {% with files=instance.step_files.all links=instance.step_links.all %}
+
+        {% with section='tools' %}
+
+        {% for link in links %}
+        {% if link.category == "tools" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
+          {% include 'cms_plugins/steps/_step_link.html' %}
+        {% endif %}
+        {% endfor %}
+
+        {% for file in files %}
+        {% if file.category == "tools" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
+          {% include 'cms_plugins/steps/_step_file.html' %}
+        {% endif %}
+        {% endfor %}
+
+        {% endwith %}
+
+        {% with section='examples' %}
+
+        {% for link in links %}
+        {% if link.category == "examples" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
+          {% include 'cms_plugins/steps/_step_link.html' %}
+        {% endif %}
+        {% endfor %}
+
+        {% for file in files %}
+        {% if file.category == "examples" %}
+          {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
+          {% include 'cms_plugins/steps/_step_file.html' %}
+        {% endif %}
+        {% endfor %}
+
+        {% endwith %}
+
+        {% endwith %}
       </div>
     </div>
   </div>

@@ -76,7 +76,7 @@
 //
 // Use `.has-detail` class.
 //
-// Style guide: Components.step-detail
+// Style guide: Components.step.detail
 //
 
 .step.has-detail {
@@ -96,10 +96,18 @@
   }
 
   .button {
+    position: relative;
+    padding: 1rem;
+    padding-right: 2.5rem;
     font-family: $body-font-family;
-    font-weight: 400;
     text-align: left;
     text-transform: none;
+  }
+
+  .button .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 }
 
@@ -145,5 +153,101 @@
 
   .step-button.button {
     margin-top: -$global-margin;
+  }
+}
+
+//
+// Step Pagination
+//
+// Markup: step-pagination.hbs
+//
+// Style guide: Components.step.pagination
+//
+
+.step-pagination {
+  @include xy-cell($size: full, $gutters: 0);
+  @include xy-grid;
+}
+
+.pagination-buttons {
+  @include xy-cell($size: full, $gutters: 0);
+
+  .button {
+    position: relative;
+    padding: 1rem 1.5rem;
+    width: 100%;
+  }
+
+  .button .icon {
+    position: absolute;
+    top: 2px;
+    height: 100%;
+  }
+
+  .button.prev {
+    padding-left: 2rem;
+    text-align: right;
+  }
+
+  .button.prev .icon {
+    left: 5px;
+    transform: scaleX(-1);
+  }
+
+  .button.next {
+    padding-right: 2rem;
+    text-align: left;
+  }
+
+  .button.next .icon {
+    right: 5px;
+  }
+}
+
+.pagination-back {
+  @include xy-cell($size: full, $gutters: 0);
+
+  .button {
+    text-transform: none;
+  }
+}
+
+@include breakpoint(medium) {
+  .pagination-buttons {
+    @include xy-cell($size: 8, $gutters: 0);
+
+    .button {
+      @include xy-cell($size: 6, $gutters: $global-margin);
+    }
+
+    .button:first-child {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .button:last-child {
+      margin-left: $global-margin;
+    }
+  }
+
+  .step-pagination {
+    justify-content: space-between;
+  }
+
+  .pagination-back {
+    @include xy-cell($size: 4);
+    margin-right: 0;
+  }
+}
+
+@include breakpoint(large) {
+  .pagination-buttons {
+    padding-left: $step-horizontal-offset;
+  }
+}
+
+@include breakpoint(xlarge) {
+  .pagination-back {
+    @include xy-cell($size: 3, $gutters: 0);
   }
 }
