@@ -1,6 +1,16 @@
+.featured-accordion-container {
+  @include block;
+  @include topographic-background($color-beige-dark, "topo-3.svg");
+
+  .block-header {
+    color: white;
+  }
+}
+
 .featured-accordion {
   @include media-effect;
   @include xy-grid;
+  margin-top: $global-margin * 2;
   width: 100%;
 }
 
@@ -24,6 +34,10 @@
 
   .card:last-child {
     border: none;
+  }
+
+  .card:hover {
+    cursor: pointer;
   }
 
   .card > a {
@@ -59,6 +73,10 @@
   .tabs-title > a[aria-selected='true'] {
     background: transparent;
   }
+}
+
+.featured-accordion-cta {
+  margin: 3rem auto 0 auto;
 }
 
 @include breakpoint(medium) {

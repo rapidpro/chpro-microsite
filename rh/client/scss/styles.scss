@@ -158,12 +158,12 @@ $media-effect: 12px solid $body-background;
 @import 'components/blockquote';
 @import 'components/card';
 @import 'components/step';
-@import 'components/accordion';
 
 @import 'components/blocks/block';
 @import 'components/blocks/hero';
 @import 'components/blocks/card-grid';
 
+@import 'layout/featured-accordion';
 @import 'layout/case-studies';
 @import 'layout/case-study-detail';
 @import 'layout/case-study-filter';
