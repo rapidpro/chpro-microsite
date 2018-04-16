@@ -41,7 +41,7 @@
       {# Probably a sidebar #}
       <img
         class="img img-responsive"
-        src="{% thumbnail instance.image crop %}"
+        src="{% thumbnail instance.image 1000x750 crop %}"
         alt="{% if instance.alt %}{{ instance.alt }}{% endif %}">
     {% endif %}
   {% else %}
