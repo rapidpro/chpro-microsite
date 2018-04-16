@@ -1,6 +1,7 @@
 {# Base template for the RapidPro for Health website #}
-{% load cms_tags %}
 {% load staticfiles %}
+{% load cms_tags %}
+{% load sekizai_tags %}
 {% load menu_tags %}
 {% load i18n %}
 
@@ -12,6 +13,7 @@
 
   <title>{% page_attribute 'page_title' %}</title>
 
+  {% render_block "css" %}
   {% block extrahead %}
     <link rel="stylesheet" href="{% static 'all.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Titillium+Web:400,600,700" rel="stylesheet">
@@ -95,10 +97,9 @@
   </div>
 </div>
 
-
 {% block js %}
   <script src="{% static "all.js" %}"></script>
 {% endblock js %}
-
+{% render_block 'js' %}
 </body>
 </html>
