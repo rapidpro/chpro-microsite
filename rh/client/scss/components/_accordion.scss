@@ -1,28 +1,57 @@
 .featured-accordion {
   @include media-effect;
   @include xy-grid;
+  width: 100%;
 }
 
 .featured-accordion-content {
   @include tabs-content;
   @include tabs-content-vertical;
-}
-
-.featured-accordion-panel {
-  padding: 0;
-}
-
-.featured-accordion-image {
-
+  display: none;
+  border: none;
 }
 
 .featured-accordion-cards {
   @include tabs-container-vertical;
   @include tabs-container;
+  border: none;
 
   .card {
     margin: 0;
     width: 100%;
+    border-bottom: 1px solid $color-beige-dark;
+  }
+
+  .card:last-child {
+    border: none;
+  }
+
+  .card > a {
+    padding: 0;
+  }
+
+  .card p {
+    font-size: 0.9375rem;
+  }
+
+  .card-toggle,
+  .card-img {
+    display: none;
+    transition: all 0.5s;
+  }
+
+  .card.is-active .card-toggle,
+  .card.is-active .card-img {
+    display: block;
+  }
+
+  .card.light .card-title {
+    font-size: 1.25rem;
+    color: $color-navy;
+  }
+
+  .card-actions {
+    margin-top: $global-margin * 3;
   }
 
   .tabs-title > a:hover,
@@ -32,12 +61,36 @@
   }
 }
 
-@include breakpoint(large) {
+@include breakpoint(medium) {
   .featured-accordion-content {
-    @include xy-cell($size: 6, $gutters: 0);
+    @include xy-cell($size: 7, $gutters: 0);
+    position: relative;
+    display: block;
   }
 
   .featured-accordion-cards {
-    @include xy-cell($size: 6, $gutters: 0);
+    @include xy-cell($size: 5, $gutters: 0);
+
+    .card {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .card.is-active .card-img,
+    .card-img {
+      display: none;
+    }
+  }
+
+  .featured-accordion-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

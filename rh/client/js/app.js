@@ -6,6 +6,7 @@ import 'foundation-sites';
 $(document).ready(() => {
   $(document).foundation();
 
+  // Case study filters
   if ($('.case-study-search-filters').length > 0){
     if (Foundation.MediaQuery.atLeast('medium')) {
       $('.case-study-search-filters').foundation('down', $('.case-study-search-list'), false);
@@ -18,13 +19,10 @@ $(document).ready(() => {
     });
   }
 
-  //$('.featured-accordion').foundation('selectTab', 'card');
-  $('.featured-accordion').on('change.zf.tabs', function() {
-     if ($('#card1:visible').length) {
-         console.log('Tab 1 panel shown.');
-     }
-     if ($('#card2:visible').length) {
-         console.log('Tab 2 panel shown.');
-     }
-  });
+  // Featured accordion
+  if ($('.featured-accordion').length > 0){
+    $('.featured-accordion-cards .card').click(function(event) {
+      event.preventDefault();
+    });
+  }
 });

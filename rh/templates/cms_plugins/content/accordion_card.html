@@ -1,14 +1,23 @@
 {% load cms_tags %}
 {% load thumbnail %}
 
-<li class="tabs-title card light {% if forloop.first %}is-active{% endif %}" {% if forloop.first %}aria-selected="true"{% endif %}>
+<li class="tabs-title card light has-img {% if forloop.first %}is-active{% endif %}" {% if forloop.first %}aria-selected="true"{% endif %}>
   <a data-tabs-target="card{{ forloop.counter }}" href="#card{{ forloop.counter }}">
     <header class="card-header">
+      {% if instance.image %}
+      <img data-interchange="[{% thumbnail instance.image "1000x750" %}, small],
+           [{% thumbnail instance.image "1000x750" %}, medium]"
+           alt="{{ instance.image.alt_text }}"
+           class="card-img" />
+      {% endif %}
+
       <h3 class="card-title">{{ instance.title }}</h3>
     </header>
+  </a>
 
+  <div class="card-toggle">
     <div class="card-content">
-      content
+      {{ instance.body|safe }}
     </div>
 
     {% if instance.get_link %}
@@ -16,5 +25,5 @@
       {% include 'includes/link.html' %}
     </div>
     {% endif %}
-  </a>
+  </div>
 </li>
