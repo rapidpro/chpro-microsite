@@ -91,26 +91,9 @@ class BlockQuote(AbstractText):
 # ------------------------------------------------------------------------------
 # CMS Plugin/Admin
 # ------------------------------------------------------------------------------
-class HeroPlugin(BlockPlugin):
-    name = 'Hero (Simple)'
-    module = 'Content'
-    model = Hero
-    render_template = "cms_plugins/content/hero.html"
-    child_classes = (
-        'LinkPlugin',
-        'FilerImagePlugin',
-    )
-    include_in_wysiwyg = []
-
-    fieldsets = (
-        ('Content', {
-            'fields': BlockMixin._admin_fields,
-        }),
-    )
-
 
 class ComplexHeroPlugin(BlockPlugin):
-    name = 'Hero (Complex)'
+    name = 'Hero'
     module = 'Content'
     model = Hero
     render_template = "cms_plugins/content/hero.html"
@@ -246,7 +229,6 @@ class BlockQuotePlugin(BlockPlugin):
     render_template = "cms_plugins/content/blockquote.html"
 
 
-plugin_pool.register_plugin(HeroPlugin)
 plugin_pool.register_plugin(ComplexHeroPlugin)
 plugin_pool.register_plugin(SectionPlugin)
 plugin_pool.register_plugin(CardGridPlugin)
