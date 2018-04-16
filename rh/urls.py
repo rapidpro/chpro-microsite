@@ -3,10 +3,13 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
+from django.views.defaults import page_not_found, server_error
 from . import sitemaps
 
 
 urlpatterns = [
+    url(r'^404/$', page_not_found, kwargs={'exception': ''}),
+    url(r'^500/$', server_error),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': {
         'cmspages': sitemaps.CMSSitemap,
         'case-studies': sitemaps.CaseStudySitemap,
