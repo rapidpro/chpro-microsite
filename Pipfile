@@ -1,14 +1,17 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+
 [packages]
+
 "e1839a8" = {path = ".", editable = true}
 django = "==1.11.7"
-"psycopg2" = "<2.8"
+"psycopg2" = "==2.7.1"
 django-model-utils = "==3.0.0"
-django-cms = "<3.5"
+django-cms = "==3.4.5"
 django-filer = "==1.3"
 djangocms-text-ckeditor = "==3.5.0"
 cmsplugin-filer = "==1.1.3"
@@ -22,12 +25,14 @@ whitenoise = "==3.3.1"
 uwsgi = "==2.0.16"
 djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
 coverage = "*"
-django-autoslug = "*"
-django-countries = "*"
+
 
 [dev-packages]
+
 django-debug-toolbar = "*"
 ipdb = "*"
 
+
 [requires]
+
 python_version = "3.6"
