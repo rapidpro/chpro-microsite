@@ -1,1 +1,3 @@
+#!/bin/bash
+set -euf -o pipefail
 pip install "pip<10"
