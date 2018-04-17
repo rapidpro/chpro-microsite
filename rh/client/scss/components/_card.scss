@@ -62,9 +62,14 @@
 .card-actions {
   margin-top: $global-margin;
 
-  * {
+  a,
+  button {
     margin-bottom: 0;
   }
+}
+
+.card-footer {
+  margin-top: auto;
 }
 
 // Image/Photo Card

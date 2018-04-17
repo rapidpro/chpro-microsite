@@ -27,12 +27,13 @@
   border: none;
 
   .card {
+    position: relative;
     margin: 0;
     width: 100%;
-    border-bottom: 1px solid $color-beige-dark;
+    border-top: 1px solid $color-beige-dark;
   }
 
-  .card:last-child {
+  .card:first-child {
     border: none;
   }
 
@@ -48,6 +49,16 @@
     font-size: 0.9375rem;
   }
 
+  .card.light .card-title {
+    padding: 0;
+    font-size: 1.25rem;
+    color: $color-navy;
+  }
+
+  .card.has-img .card-actions {
+    margin-top: $global-margin * 3;
+  }
+
   .card-toggle,
   .card-img {
     display: none;
@@ -59,13 +70,17 @@
     display: block;
   }
 
-  .card.light .card-title {
-    font-size: 1.25rem;
-    color: $color-navy;
+  .card.is-active {
+    overflow: visible;
   }
 
-  .card-actions {
-    margin-top: $global-margin * 3;
+  .card:not(.is-active) .card-title {
+    display: block;
+    width: 100%;
+    background-image: url(/static/img/accordion-plus.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .tabs-title > a:hover,
@@ -77,6 +92,27 @@
 
 .featured-accordion-cta {
   margin: 3rem auto 0 auto;
+}
+
+@include breakpoint(small down) {
+  .featured-accordion-cards {
+    .card:not(.is-active) {
+      padding: 2rem 1.5rem;
+    }
+
+    .card.is-active {
+      padding-bottom: 2rem;
+      border-top: none;
+    }
+
+    .card.is-active .card-img {
+      margin-bottom: 2rem;
+    }
+
+    .card.is-active .card-title {
+      padding-left: 1.5rem;
+    }
+  }
 }
 
 @include breakpoint(medium) {
@@ -97,6 +133,18 @@
     .card-img {
       display: none;
     }
+
+    .card.is-active:before {
+      position: absolute;
+      top: $card-arrow-size;
+      left: -$card-arrow-size;
+      width: 0;
+      height: 0;
+      border-top: $card-arrow-size solid transparent;
+      border-right: $card-arrow-size solid $color-yellow;
+      border-bottom: $card-arrow-size solid transparent;
+      content: "";
+    }
   }
 
   .featured-accordion-panel {
@@ -106,7 +154,6 @@
     bottom: 0;
     left: 0;
     padding: 0;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
