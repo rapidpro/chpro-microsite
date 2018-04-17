@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "116c969d5285c6e7b3dc05d70760412dc4eeaca0a43fe96ce55fecb98475c82f"
+            "sha256": "9a1057b87d5d1a55bbf12f8a7a32910094a03bf3156a842a461352d218443d8a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -104,6 +104,14 @@
             ],
             "version": "==1.0.2"
         },
+        "django-autoslug": {
+            "hashes": [
+                "sha256:790efc84246ad8b7106d94e79bff8eb14b94616e8765235784483832899bb40a",
+                "sha256:d466a68e87d076f0d0d6ffe51ff70fa22ae4ca2f7717d769feb6265ef68c50f8"
+            ],
+            "index": "pypi",
+            "version": "==1.9.3"
+        },
         "django-classy-tags": {
             "hashes": [
                 "sha256:792f9161d0e22d55b4fab6fc297bab8ab072ffaa3075b227613a6d8473624db8",
@@ -184,6 +192,11 @@
             ],
             "index": "pypi",
             "version": "==1.6.5"
+        },
+        "django-tagulous": {
+            "editable": true,
+            "git": "https://github.com/radiac/django-tagulous.git",
+            "ref": "feature/django-1_11"
         },
         "django-treebeard": {
             "hashes": [

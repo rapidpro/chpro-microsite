@@ -26,6 +26,9 @@ uwsgi = "==2.0.16"
 djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
 coverage = "*"
 django-countries = "*"
+django-autoslug = "*"
+django-tagulous = {ref = "feature/django-1_11", git = "https://github.com/radiac/django-tagulous.git", editable = true}
+
 
 
 [dev-packages]
