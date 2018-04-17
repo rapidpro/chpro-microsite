@@ -1,5 +1,5 @@
 /**
- * Icon & Color select2 and WYSIWYG
+ * Icon select2 and WYSIWYG
  */
 (function($) {
 // Apply Icon Chooser to existing elements
@@ -7,7 +7,7 @@
   if (!$){
     return;
   }
-  
+
   applyIconSelector();
 
   // Apply fixes and editor setup whenever a new inline appears
@@ -17,14 +17,24 @@
   });
 
   if(typeof(CKEDITOR) !== 'undefined') {
-    CKEDITOR.stylesSet.add('rhstyles', [
-      {
-        name: 'Lead Paragraph',
-        element: 'p',
-        attributes: { 'class': 'lead' }
-      },
-    ]);
+    CKEDITOR.editorConfig = function(config) {
+      config.skin = 'icy_orange';
+      config.contentsCss = [
+        '/static/css/styles.css'  // Is there a way to not hardcode this?
+      ];
+
+      config.stylesSet.add('default', [
+        {
+          name: 'Lead Paragraph',
+          element: 'p',
+          attributes: { 'class': 'lead' }
+        },
+        {
+          name: 'Stat',
+          element: 'span',
+          attributes: { 'class': 'stat' }
+        }
+      ]);
+    }
   }
-
-
 })(window.django && window.django.jQuery || window.jQuery);
