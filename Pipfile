@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"e1839a8" = {path = ".", editable = true}
+rh = {path = ".", editable = true}
 django = "<1.12"
 "psycopg2" = "<2.8"
 django-model-utils = "==3.0.0"
@@ -20,12 +20,12 @@ django-storages = "==1.6.5"
 boto3 = "==1.6.16"
 whitenoise = "==3.3.1"
 uwsgi = "<2.1"
-djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
-coverage = "*"
 django-autoslug = "*"
 django-countries = "*"
 
 [dev-packages]
+coverage = "*"
+djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
 django-debug-toolbar = "*"
 ipdb = "*"
 
