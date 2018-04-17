@@ -145,6 +145,9 @@ $step-vertical-offset: 25px;
 // Image border effect
 $media-effect: 12px solid $body-background;
 
+// Accordion
+$card-arrow-size: 1.5rem;
+
 @import 'foundation';
 
 @import 'utils';
@@ -163,6 +166,7 @@ $media-effect: 12px solid $body-background;
 @import 'components/blocks/hero';
 @import 'components/blocks/card-grid';
 
+@import 'layout/featured-accordion';
 @import 'layout/case-studies';
 @import 'layout/case-study-detail';
 @import 'layout/case-study-filter';

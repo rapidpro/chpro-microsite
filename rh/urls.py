@@ -3,9 +3,9 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.views.defaults import page_not_found, server_error
+from django.views.defaults import page_not_found
 from . import sitemaps
-
+from .views import server_error
 
 urlpatterns = [
     url(r'^404/$', page_not_found, kwargs={'exception': ''}),
@@ -21,7 +21,6 @@ urlpatterns = [
     url(r'^', include('cms.urls')),
 ]
 
-
 if settings.DEBUG:  # pragma: no cover
     try:
         import debug_toolbar
@@ -32,3 +31,6 @@ if settings.DEBUG:  # pragma: no cover
         print('DEBUG is set to True, and debug_toolbar is not installed. Skipping.')
 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Custom 500 error view.
+handler500 = server_error

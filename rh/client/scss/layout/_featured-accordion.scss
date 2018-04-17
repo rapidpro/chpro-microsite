@@ -1,0 +1,161 @@
+.featured-accordion-container {
+  @include block;
+  @include topographic-background($color-beige-dark, "topo-3.svg");
+
+  .block-header {
+    color: white;
+  }
+}
+
+.featured-accordion {
+  @include media-effect;
+  @include xy-grid;
+  margin-top: $global-margin * 2;
+  width: 100%;
+}
+
+.featured-accordion-content {
+  @include tabs-content;
+  @include tabs-content-vertical;
+  display: none;
+  border: none;
+}
+
+.featured-accordion-cards {
+  @include tabs-container-vertical;
+  @include tabs-container;
+  border: none;
+
+  .card {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid $color-beige-dark;
+  }
+
+  .card:first-child {
+    border: none;
+  }
+
+  .card:hover {
+    cursor: pointer;
+  }
+
+  .card > a {
+    padding: 0;
+  }
+
+  .card p {
+    font-size: 0.9375rem;
+  }
+
+  .card.light .card-title {
+    padding: 0;
+    font-size: 1.25rem;
+    color: $color-navy;
+  }
+
+  .card.has-img .card-actions {
+    margin-top: $global-margin * 3;
+  }
+
+  .card-toggle,
+  .card-img {
+    display: none;
+    transition: all 0.5s;
+  }
+
+  .card.is-active .card-toggle,
+  .card.is-active .card-img {
+    display: block;
+  }
+
+  .card.is-active {
+    overflow: visible;
+  }
+
+  .card:not(.is-active) .card-title {
+    display: block;
+    width: 100%;
+    background-image: url(/static/img/accordion-plus.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .tabs-title > a:hover,
+  .tabs-title > a:focus,
+  .tabs-title > a[aria-selected='true'] {
+    background: transparent;
+  }
+}
+
+.featured-accordion-cta {
+  margin: 3rem auto 0 auto;
+}
+
+@include breakpoint(small down) {
+  .featured-accordion-cards {
+    .card:not(.is-active) {
+      padding: 2rem 1.5rem;
+    }
+
+    .card.is-active {
+      padding-bottom: 2rem;
+      border-top: none;
+    }
+
+    .card.is-active .card-img {
+      margin-bottom: 2rem;
+    }
+
+    .card.is-active .card-title {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .featured-accordion-content {
+    @include xy-cell($size: 7, $gutters: 0);
+    position: relative;
+    display: block;
+  }
+
+  .featured-accordion-cards {
+    @include xy-cell($size: 5, $gutters: 0);
+
+    .card {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .card.is-active .card-img,
+    .card-img {
+      display: none;
+    }
+
+    .card.is-active:before {
+      position: absolute;
+      top: $card-arrow-size;
+      left: -$card-arrow-size;
+      width: 0;
+      height: 0;
+      border-top: $card-arrow-size solid transparent;
+      border-right: $card-arrow-size solid $color-yellow;
+      border-bottom: $card-arrow-size solid transparent;
+      content: "";
+    }
+  }
+
+  .featured-accordion-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

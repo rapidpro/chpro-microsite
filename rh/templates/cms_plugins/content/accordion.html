@@ -1,11 +1,31 @@
 {% load cms_tags %}
+{% load thumbnail %}
 
-  {% if not instance.get_plugin_class_instance.disable_child_plugins %}
-  {% if instance.child_plugin_instances %}
-  <div class="block-content">
-    {% for plugin in instance.child_plugin_instances %}
-      {% render_plugin plugin %}
-    {% endfor %}
+<div class="featured-accordion-container">
+  <div class="container">
+    <h2 class="block-header">{{ instance.title }}</h2>
+
+    {% if not instance.get_plugin_class_instance.disable_child_plugins %}
+    {% if instance.child_plugin_instances %}
+    <div class="featured-accordion">
+      <div class="featured-accordion-content" data-tabs-content="featuredAccordion">
+        {% for plugin in instance.child_plugin_instances %}
+        <div class="tabs-panel featured-accordion-panel {% if forloop.first %}is-active{% endif %}"
+             id="card{{ forloop.counter }}"
+             style="background-image: url('{% thumbnail plugin.image "1000x750" %}');">
+        </div>
+        {% endfor %}
+      </div>
+
+      <ul class="featured-accordion-cards" data-tabs id="featuredAccordion">
+      {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <a href="/case-studies" class="button featured-accordion-cta">View More Case Studies</a>
   </div>
-  {% endif %}
-  {% endif %}
+</div>
