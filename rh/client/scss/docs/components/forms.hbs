@@ -1,19 +1,27 @@
 <form>
-  <div class="cell">
-    <label>First Name *
-      <input type="text" placeholder="Text Input" required>
-    </label>
-  </div>
-  <div class="cell">
-    <label>Last Name
-      <input type="text" placeholder="It's a bird, it's a plane... it's a form!">
-    </label>
-  </div>
-  <div class="cell">
-    <label>Textarea
-      <textarea rows="5"></textarea>
-    </label>
-  </div>
+  <p>
+    <label>First Name *</label>
+    <input type="text" placeholder="Text Input" required>
+  </p>
+
+  <p>
+    <label>Last Name</label>
+    <input type="text" placeholder="It's a bird, it's a plane... it's a form!">
+  </p>
+
+  <p>
+    <label>Textarea</label>
+    <textarea rows="5"></textarea>
+  </p>
+
+  <p>
+    <label for="id_country">Country:</label>
+    <select name="country" id="id_country">
+      <option value="" selected="">---------</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+    </select>
+  </p>
 
   <p class="help-text" id="passwordHelpText">Your password must have at least 10 characters, a number, and an Emoji.</p>
 </form>

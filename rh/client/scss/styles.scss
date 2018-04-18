@@ -111,6 +111,7 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-radius: 3px;
 
 // Forms
+$input-font-family: $body-font-family;
 $input-border: 1px solid #B6C9C5;
 $input-border-focus: 1px solid $color-beige-dark;
 $input-background: #FAFBF9;
@@ -118,7 +119,7 @@ $input-color: $color-navy;
 $input-font-size: 0.875rem;
 $input-shadow: none;
 $input-shadow-focus: none;
-$input-placeholder-color: #B6C9C5;
+$input-placeholder-color: $input-border;
 $input-padding: 0.8rem 0.65rem;
 
 $helptext-color: $color-dark-gray;
@@ -128,7 +129,10 @@ $helptext-font-style: normal;
 $form-label-color: $color-navy-light;
 $form-label-font-size: 0.75rem;
 $form-label-line-height: 2.25;
-$input-font-family: $body-font-family;
+
+$select-background: $input-background;
+$select-triangle-color: $color-beige-dark;
+
 
 // Card styles
 $card-border: none;
