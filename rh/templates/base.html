@@ -1,8 +1,10 @@
 {# Base template for the RapidPro for Health website #}
 {% load staticfiles %}
+{% load thumbnail %}
 {% load cms_tags %}
 {% load sekizai_tags %}
 {% load menu_tags %}
+{% load util_tags %}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -13,10 +15,26 @@
 
   <title>{% page_attribute 'page_title' %}</title>
 
+  {# Facebook #}
+  <meta name="og:site_name" content="RapidPro Health by UNICEF">
+  <meta name="og:url" property="og:url" content="{% get_full_url request %}"/>
+  <meta name="og:title" property="og:title" content="{% page_attribute 'page_title' %} | RapidPro Health by UNICEF"/>
+  {% if current_page.metaattributes.description %}
+  <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description }}"/>
+  {% endif %}
+  {% if current_page.metaattributes.image %}
+  <meta name="og:image" property="og:image" content="{% get_full_url request %}{% thumbnail current_page.metaattributes.image 1000x750 crop %}"/>
+  {% endif %}
+
+  {# Twitter #}
+  <meta name="twitter:site" content="RapidPro Health by UNICEF">
+  <meta name="twitter:title" content="{% page_attribute 'page_title' %} | RapidPro Health by UNICEF">
+  <meta name="twitter:url" content="{% get_full_url request %}"/>
+
   {% render_block "css" %}
   {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'all.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Titillium+Web:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'all.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Titillium+Web:400,600,700" rel="stylesheet">
   {% endblock %}
 </head>
 

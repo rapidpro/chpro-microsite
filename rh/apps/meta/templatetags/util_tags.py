@@ -14,8 +14,10 @@ def get_full_url(request, url=None):
     scheme = settings.HTTPS_LINKS and 'https' or 'http'
     host = request.META['HTTP_HOST']
 
+    # removes trailing slash
     if not url:
-        url = request.path
+        url = request.path[:-1]
+    # adds slash if you enter a url manually
     else:
         url = '/' + str(url)
 
