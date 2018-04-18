@@ -18,6 +18,7 @@ from . import forms
 class StyleMixin(models.Model):
     STYLE_CHOICES = Choices(
         ('default', 'White'),
+        ('minimal', 'Minimal'),
         ('light', 'Light'),
         ('dark', 'Dark'),
     )
