@@ -81,7 +81,7 @@
     background-image: url(/static/img/accordion-plus.svg);
     background-position: right;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 20px;
   }
 
   .tabs-title > a:hover,
@@ -136,7 +136,7 @@
     }
 
     .card.light .card-title {
-      padding: 0 1.25rem;
+      padding: 0 1.5rem 0 1.25rem;
     }
 
     .card.is-active:before {
