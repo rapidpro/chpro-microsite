@@ -314,6 +314,10 @@
             ],
             "version": "==2018.4"
         },
+        "rh": {
+            "editable": true,
+            "path": "."
+        },
         "s3transfer": {
             "hashes": [
                 "sha256:90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1",
