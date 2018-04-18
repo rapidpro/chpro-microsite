@@ -42,8 +42,9 @@ ENV/
 # Databse Dumps
 *.db
 
-# Coverage reports
+# Tests/Coverage reports
 *.coverage
+.pytest_cache
 
 # Styleguide
 /rh/client/static/styleguide
