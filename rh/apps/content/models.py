@@ -1,4 +1,3 @@
-import copy
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
 from cms.plugin_base import CMSPluginBase
@@ -13,6 +12,7 @@ from model_utils import Choices
 
 from rh.apps.core.models import BlockMixin, Linkable, BlockPlugin
 from rh.apps.icons.models import IconMixin
+from . import forms
 
 
 class StyleMixin(models.Model):
@@ -228,6 +228,18 @@ class BlockQuotePlugin(BlockPlugin):
     model = BlockQuote
 
     render_template = "cms_plugins/content/blockquote.html"
+
+
+@plugin_pool.register_plugin
+class ContactFormPlugin(CMSPluginBase):
+    model = CMSPlugin
+    render_template = "cms_plugins/content/contact_form.html"
+    cache = False
+
+    def render(self, *args, **kwargs):
+        context = super().render(*args, **kwargs)
+        context['form'] = forms.ContactForm()
+        return context
 
 
 plugin_pool.register_plugin(ComplexHeroPlugin)

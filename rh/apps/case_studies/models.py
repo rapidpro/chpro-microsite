@@ -15,7 +15,10 @@ def get_use_cases(request=None):
     Return an iterable of pages that are found in the first
     CardGridPlugin on the page with the slug "use-cases".
     """
-    obj = Title.objects.public().get(slug='use-cases').page
+    try:
+        obj = Title.objects.public().get(slug='use-cases').page
+    except Title.DoesNotExist:
+        return
     if request:
         filters = request.GET.getlist('filter')
     for child in obj.get_children():
