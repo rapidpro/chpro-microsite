@@ -31,7 +31,7 @@ class StyleMixin(models.Model):
 # ------------------------------------------------------------------------------
 # Models
 # ------------------------------------------------------------------------------
-class Hero(BlockMixin):
+class Hero(BlockMixin, Linkable):
     STYLE_CHOICES = Choices(
         ('clean', 'Clean'),
     )
@@ -144,6 +144,7 @@ class FeaturedAccordionPlugin(BlockPlugin):
         ('Content', {
             'fields': ('title', 'style',),
         }),
+        Linkable._admin_fieldset,
     )
 
 
