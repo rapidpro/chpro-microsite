@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dcda75b7e0a7f4b6adf1b8abc913b0f74da4c34afb8d9b575c6031023adde935"
+            "sha256": "f20ef39376c3009fed45c5126765dc12502f732c9b75794ab59ca07bd25444d0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -150,6 +150,11 @@
             ],
             "index": "pypi",
             "version": "==1.6.5"
+        },
+        "django-tagulous": {
+            "editable": true,
+            "git": "https://github.com/radiac/django-tagulous.git",
+            "ref": "feature/django-1_11"
         },
         "django-treebeard": {
             "hashes": [
@@ -351,6 +356,14 @@
         }
     },
     "develop": {
+        "appnope": {
+            "hashes": [
+                "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
+                "sha256:8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71"
+            ],
+            "markers": "sys_platform == 'darwin'",
+            "version": "==0.1.0"
+        },
         "backcall": {
             "hashes": [
                 "sha256:38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4",
