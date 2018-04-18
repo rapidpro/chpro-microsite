@@ -3,7 +3,7 @@
   @include topographic-background($color-beige-dark, "topo-3.svg");
 
   .block-header {
-    color: white;
+    color: $color-white;
   }
 }
 
@@ -12,6 +12,7 @@
   @include xy-grid;
   margin-top: $global-margin * 2;
   width: 100%;
+  background: $color-white;
 }
 
 .featured-accordion-content {
@@ -132,6 +133,10 @@
     .card.is-active .card-img,
     .card-img {
       display: none;
+    }
+
+    .card.light .card-title {
+      padding: 0 1.25rem;
     }
 
     .card.is-active:before {
