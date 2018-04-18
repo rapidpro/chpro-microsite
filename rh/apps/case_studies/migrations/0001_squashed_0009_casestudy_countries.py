@@ -36,10 +36,10 @@ class Migration(migrations.Migration):
                 ('sidebar_content', cms.models.fields.PlaceholderField(editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='sidebar_case_study', slotname='case_study_sidebar_content', to='cms.Placeholder', verbose_name='Case Study Sidebar Content')),
                 ('stats_content', cms.models.fields.PlaceholderField(editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='stats_case_study', slotname='case_study_stats_content', to='cms.Placeholder', verbose_name='Case Study Stats Content')),
                 ('use_cases', models.ManyToManyField(to='cms.Page')),
-                ('region', models.CharField(choices=[('americas', 'The Americas and Caribbean'), ('europe-asia-c', 'Europe and Central Asia'), ('pacific-asia-e', 'East Asia and the Pacific'), ('africa-e-s', 'Eastern and Southern Africa'), ('middle-east-africa', 'Middle East and North Africa'), ('asia-s', 'South Asia'), ('africa-w-c', 'West and Central Africa')], default='', max_length=20)),
+                ('region', models.CharField(choices=[('americas', 'The Americas and Caribbean'), ('europe-asia-c', 'Europe and Central Asia'), ('pacific-asia-e', 'East Asia and the Pacific'), ('africa-e-s', 'Eastern and Southern Africa'), ('middle-east-africa', 'Middle East and North Africa'), ('asia-s', 'South Asia'), ('africa-w-c', 'West and Central Africa')], max_length=20)),
                 ('last_modified', models.DateTimeField(auto_now=True)),
                 ('lead_content', cms.models.fields.PlaceholderField(editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='lead_case_study', slotname='case_study_lead_content', to='cms.Placeholder', verbose_name='Case Study Lead Content')),
-                ('countries', django_countries.fields.CountryField(default='', max_length=746, multiple=True)),
+                ('countries', django_countries.fields.CountryField(max_length=746, multiple=True)),
             ],
             options={
                 'verbose_name_plural': 'Case Studies',
