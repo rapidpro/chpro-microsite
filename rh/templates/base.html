@@ -20,7 +20,7 @@
   <meta name="og:url" property="og:url" content="{% get_full_url request %}"/>
   <meta name="og:title" property="og:title" content="{% page_attribute 'page_title' %} | RapidPro Health by UNICEF"/>
   {% if current_page.metaattributes.description %}
-  <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description }}"/>
+  <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description|striptags }}"/>
   {% endif %}
   {% if current_page.metaattributes.image %}
   <meta name="og:image" property="og:image" content="{% get_full_url request %}{% thumbnail current_page.metaattributes.image 1000x750 crop %}"/>
