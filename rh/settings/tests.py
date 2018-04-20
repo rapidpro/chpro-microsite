@@ -1,6 +1,7 @@
 #
 # Test Specific settings.
 #
+import dj_database_url
 from .base import *  # pylint: disable=W0614,W0401
 
 sys.stdout.write('Using test settings in rh.settings.tests\n')
@@ -16,12 +17,7 @@ CSRF_COOKIE_SECURE = False
 HTTPS_LINKS = False
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rh',
-        #'USER': '',
-        #'PASSWORD: '',
-    },
+    'default': dj_database_url.config(default='postgres://localhost/rh')
 }
 
 # Static Export

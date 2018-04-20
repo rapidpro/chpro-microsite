@@ -101,7 +101,7 @@ Check the site at `http://localhost:8000`
 
 # Running the tests
 
-`./scripts/runtests.sh`
+`pytest`
 
 # Generate the [Styleguide](http://localhost:8000/static/styleguide/index.html)
 
