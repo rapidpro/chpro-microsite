@@ -12,7 +12,7 @@ def get_full_url(request, url=None):
     """
 
     scheme = settings.HTTPS_LINKS and 'https' or 'http'
-    host = request.META['HTTP_HOST']
+    host = request.META.get('HTTP_HOST', 'defaulthost.com')
 
     # removes trailing slash
     if not url:
