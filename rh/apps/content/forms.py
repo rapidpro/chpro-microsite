@@ -4,12 +4,12 @@ from rh.apps.case_studies.models import get_use_cases
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField()
+    name = forms.CharField(label_suffix="*", widget=forms.TextInput(attrs={'placeholder': 'Please enter your full name...'}))
     institution = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Please enter the name of your institution...'}))
     country = CountryField(blank=True).formfield()
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Please enter your email address...'}))
+    email = forms.EmailField(label_suffix="*", widget=forms.TextInput(attrs={'placeholder': 'Please enter your email address...'}))
     project_scope = forms.ChoiceField(required=False)
-    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Any other comments?'}))
+    message = forms.CharField(label_suffix="*", widget=forms.Textarea(attrs={'placeholder': 'Any other comments?'}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -17,4 +17,5 @@ class ContactForm(forms.Form):
         use_cases = [('', '--------')] + list(zip(use_cases, use_cases))
         self.fields['project_scope'].choices = use_cases
         self.fields['name'].label = "Full name"
+        self.fields['email'].label = "Email address"
         self.label_suffix = ''
