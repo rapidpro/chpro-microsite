@@ -23,7 +23,7 @@
   <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description|striptags }}"/>
   {% endif %}
   {% if current_page.metaattributes.image %}
-  <meta name="og:image" property="og:image" content="{% get_full_url request %}{% thumbnail current_page.metaattributes.image 1000x750 crop %}"/>
+  <meta name="og:image" property="og:image" content="{% get_full_host request %}{% thumbnail current_page.metaattributes.image 2000x1500 crop %}"/>
   {% endif %}
 
   {# Twitter #}
