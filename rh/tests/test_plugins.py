@@ -20,9 +20,16 @@ class DSMPluginIntegrityTestCase(BaseTestCase, CMSPluginIntegrity):
         self.plugin_list = [
             ('TextPlugin', {}),
             ('ComplexHeroPlugin', {}),
-            ('SectionTextPlugin', {}),
-            ('SectionCardsPlugin', {}),
-            ('StandaloneCardListPlugin', {}),
+            ('SectionPlugin', {}),
+            ('CardGridPlugin', {}),
             ('CardPlugin', {}),
+            ('ImageCardPlugin', {}),
+            ('FeaturedAccordionPlugin', {}),
+            ('AccordionCardPlugin', {}),
+            ('RawHTMLPlugin', {}),
+            ('BlockQuotePlugin', {}),
+            ('PaginationPlugin', {}),
+            ('StepListPlugin', {'root': self.homepage}),
+            ('StepPlugin', {}),
         ]
 
