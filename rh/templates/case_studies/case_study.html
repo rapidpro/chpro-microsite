@@ -31,18 +31,22 @@
   </div>
 </div>
 
-<div class="container content-wsidebar sidebar-right">
-  <div class="content rich-text">
-    <div class="hero-content-primary">
-      {% render_placeholder object.lead_content %}
-    </div>
-
+<div class="container content-wsidebar">
+  <div class="content">
     <p class="taglist">
       {% for tag in object.use_cases.all %}
       <span>{{ tag }}</span> {% if not forloop.last %}/{% endif %}
       {% endfor %}
     </p>
 
+    <div class="lead">
+      {% render_placeholder object.lead_content %}
+    </div>
+  </div>
+</div>
+
+<div class="container content-wsidebar sidebar-right">
+  <div class="content rich-text">
     {% render_placeholder object.main_content %}
   </div>
 
@@ -56,7 +60,6 @@
     </aside>
   </div>
 </div>
-
 
 {% if similar_case_studies %}
 <div class="case-study-similar-examples">
