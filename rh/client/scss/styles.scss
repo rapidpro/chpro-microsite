@@ -21,6 +21,7 @@ $global-width: 64rem; // TODO: Verify with designs
 $color-black: #191919;
 $color-white: #FFFFFF;
 $color-dark-gray: #333333;
+$color-gray: #666666;
 
 $color-navy: #324955;
 $color-navy-light: #597C82;
@@ -172,5 +173,6 @@ $card-arrow-size: 1.5rem;
 @import 'layout/case-study-detail';
 @import 'layout/case-study-filter';
 @import 'layout/featured-accordion';
+@import 'layout/helpers';
 @import 'layout/site-header';
 @import 'layout/site-footer';
