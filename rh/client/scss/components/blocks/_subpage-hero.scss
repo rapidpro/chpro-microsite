@@ -1,0 +1,127 @@
+//
+// Subpage Hero
+//
+// Heroes on subpages
+//
+// Markup: components/subpage-hero.hbs
+//
+// .has-icon  - With icon
+//
+// Style guide: Components.hero.subpage
+
+$subpage-position-offset: 3rem;
+$subpage-hero-height: 16rem;
+
+.subpage-hero {
+  @include topographic-background($color-teal-dark, "topo-2.svg");
+  position: relative;
+  padding: 2rem 0;
+  color: $color-white;
+
+  .container {
+    justify-content: space-between;
+  }
+}
+
+.subpage-hero.has-img,
+.subpage-hero.has-icon {
+  margin-bottom: $subpage-position-offset;
+}
+
+.subpage-hero-header {
+  display: flex;
+  align-content: flex-end;
+  padding-bottom: $global-margin * 2;
+  flex-wrap: wrap;
+
+  > * {
+    flex: 1 100%;
+  }
+
+  .hero-title {
+    align-self: flex-end;
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    display: block;
+    margin-top: $global-margin * 3;
+    margin-bottom: .1rem;
+    font-family: $header-font-family;
+    font-size: 1.25rem;
+    font-weight: $global-weight-bold;
+  }
+}
+
+.subpage-hero-content {
+  text-align: right;
+}
+
+.hero-icon {
+  display: none;
+  width: 140px;
+  height: 140px;
+  @include media-effect;
+  background: $color-beige;
+
+  .icon {
+    margin: auto;
+    width: 44px;
+    height: 44px;
+    color: $black;
+  }
+}
+
+@include breakpoint(medium) {
+  .subpage-hero {
+    padding: 0;
+
+    .container {
+      min-height: $subpage-hero-height;
+    }
+  }
+
+  .subpage-hero.has-icon {
+    &:before {
+      min-height: $subpage-hero-height;
+    }
+
+    .hero-icon {
+      display: inline-flex;
+    }
+
+    .subpage-hero-content {
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: -$subpage-position-offset;
+      margin-top: 0;
+    }
+  }
+
+  .subpage-hero-header {
+    @include xy-cell($size: 50%, $gutters: 0);
+    position: relative;
+    padding-top: $global-margin * 2;
+    padding-bottom: $global-margin;
+
+    .breadcrumb-back {
+      position: absolute;
+    }
+  }
+
+  .subpage-hero-content {
+    @include xy-cell($size: 45%, $gutters: 0);
+    position: relative;
+    top: $subpage-position-offset;
+    margin-top: $global-margin * 2;
+  }
+}
+
+@include breakpoint(large) {
+  .subpage-hero-header {
+    .hero-title {
+      font-size: 3.25rem;
+    }
+  }
+}

@@ -13,25 +13,23 @@ $breakpoints: (
   xlarge: 1024px,
 );
 
-
 $global-width: 64rem; // TODO: Verify with designs
 
 // Colors
 //
 // The palette used includes brand colors, as well as colors by Foundation.
-//
-
-//$light-gray
-//$medium-gray
 $color-black: #191919;
 $color-white: #FFFFFF;
 $color-dark-gray: #333333;
 
 $color-navy: #324955;
 $color-navy-light: #597C82;
+
 $color-red: #FF3333;
 $color-pink: #D44673;
+
 $color-teal: #53BDA6;
+$color-teal-dark: #4B9196;
 
 $color-beige:  #DCE4D7;
 $color-beige-dark: #9FB9B4;
@@ -133,7 +131,6 @@ $form-label-line-height: 2.25;
 $select-background: $input-background;
 $select-triangle-color: $color-beige-dark;
 
-
 // Card styles
 $card-border: none;
 $card-padding: 1.5rem;
@@ -153,26 +150,27 @@ $media-effect: 12px solid $body-background;
 $card-arrow-size: 1.5rem;
 
 @import 'foundation';
-
 @import 'utils';
 
 // ToC Imports
 @import 'base/global';
-@import 'base/typography';
 @import 'base/buttons';
 @import 'base/forms';
+@import 'base/typography';
 
 @import 'components/blockquote';
+@import 'components/breadcrumb';
 @import 'components/card';
 @import 'components/step';
 
 @import 'components/blocks/block';
-@import 'components/blocks/hero';
 @import 'components/blocks/card-grid';
+@import 'components/blocks/hero';
+@import 'components/blocks/subpage-hero';
 
-@import 'layout/featured-accordion';
 @import 'layout/case-studies';
 @import 'layout/case-study-detail';
 @import 'layout/case-study-filter';
+@import 'layout/featured-accordion';
 @import 'layout/site-header';
 @import 'layout/site-footer';

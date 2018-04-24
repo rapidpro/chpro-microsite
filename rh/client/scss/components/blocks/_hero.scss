@@ -4,6 +4,7 @@
 // Markup: components/hero.hbs
 //
 // .dark       - Dark version
+// .has-cards  - With cards
 //
 // Style guide: Components.hero
 //
@@ -84,7 +85,7 @@
 // Dark Version
 .hero.dark:before {
   background-image: url(/static/img/topo-2.svg);
-  background-color: #4B9196;
+  background-color: $color-teal-dark;
 }
 
 // Hero with Cards
@@ -107,40 +108,6 @@
     @include container;
     @include xy-grid-layout(3, '.card');
     @include collapse-gutters;
-  }
-}
-
-// Heroes on subpages
-.subpage-hero {
-  .hero-header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: left;
-  }
-
-  .subtitle {
-    @extend h4; // sass-lint:disable-line placeholder-in-extend
-    display: block;
-    margin-top: $global-margin * 3;
-    margin-bottom: .1rem;
-    font-weight: $global-weight-normal;
-  }
-}
-
-.hero-icon {
-  display: none;
-  width: 140px;
-  height: 140px;
-  @include media-effect;
-  background: $color-beige;
-
-  .icon {
-    margin: auto;
-    width: 44px;
-    height: 44px;
-    color: $black;
   }
 }
 
@@ -168,7 +135,7 @@
   }
 }
 
-// Breakpoints
+// Hero Breakpoints
 .hero {
   @include breakpoint(xlarge) {
     $large-margin: $global-margin * 6;
@@ -218,60 +185,6 @@
 
     .hero-content-primary {
       padding-top: 6.5rem;
-    }
-  }
-}
-
-.subpage-hero {
-  .hero-header {
-    @include xy-cell(100%);
-  }
-
-  @include breakpoint(medium) {
-    padding-top: $global-margin * 2;
-    padding-bottom: $global-margin;
-
-    .hero-header {
-      flex-flow: row wrap;
-    }
-
-    .subtitle {
-      width: 100%;
-    }
-
-    .hero-title {
-      flex: 1 1 auto;
-    }
-
-    // TODO: Refactor
-    &.complex .hero-content-primary {
-      @include collapse-gutters(margin);
-    }
-
-    // TODO: Refactor
-    // We have an image
-    // Override complex's styles
-    &.complex .hero-content-secondary {
-      @include xy-cell(5);
-      @include collapse-gutters(margin);
-      margin-top: -120px;
-    }
-  }
-}
-
-.hero.has-icon {
-  &:before {
-    height: 14rem;
-  }
-
-  @include breakpoint(medium) {
-    &:before {
-      height: 14rem;
-    }
-
-    .hero-icon {
-      display: inline-flex;
-      margin-bottom: $global-margin * -3;
     }
   }
 }
