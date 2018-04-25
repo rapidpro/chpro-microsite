@@ -1,7 +1,33 @@
+// Layout Globals
 .container {
   @include container;
 }
 
+// Affixes footer to bottom
+.off-canvas-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: 100%;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
+// Simple CMS Pages
 .content-wsidebar {
   @include breakpoint(large) {
     @include collapse-gutters;
