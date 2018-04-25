@@ -23,9 +23,9 @@
   <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description|striptags }}"/>
   {% endif %}
   {% if current_page.metaattributes.image %}
-  <meta name="og:image" property="og:image" content="{% get_full_host request %}{% thumbnail current_page.metaattributes.image 2000x1500 crop %}"/>
+  <meta name="og:image" property="og:image" content="{% thumbnail current_page.metaattributes.image 2000x1500 crop %}"/>
   {% elif object.featured_image %}
-  <meta name="og:image" property="og:image" content="{% get_full_host request %}{% thumbnail object.featured_image 2000x1500 crop %}"/>
+  <meta name="og:image" property="og:image" content="{% thumbnail object.featured_image 2000x1500 crop %}"/>
   {% endif %}
 
   {# Twitter #}
