@@ -95,7 +95,7 @@
   }
 
   .case-study-search-results {
-    @include xy-cell(9);
+    @include xy-cell($size: 9, $gutters: 1rem);
 
     .card-grid {
       padding-top: 0;
