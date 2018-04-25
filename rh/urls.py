@@ -15,7 +15,7 @@ urlpatterns = [
         'cmspages': sitemaps.CMSSitemap,
         'case-studies': sitemaps.CaseStudySitemap,
     }}),
-    url(r'^contact_form/', contact_form, name='contact_form'),
+    url(r'^send_contact_form/', contact_form, name='contact_form'),
     url(r'^admin/', admin.site.urls),
     url(r'^select2/', include('django_select2.urls')),
 
