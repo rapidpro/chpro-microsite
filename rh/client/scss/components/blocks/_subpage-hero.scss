@@ -31,7 +31,7 @@ $subpage-hero-height: 16rem;
 .subpage-hero-header {
   display: flex;
   align-content: flex-end;
-  padding-bottom: $global-margin * 2;
+  padding-bottom: $global-padding * 2;
   flex-wrap: wrap;
 
   > * {
@@ -102,12 +102,12 @@ $subpage-hero-height: 16rem;
   .subpage-hero-header {
     @include xy-cell($size: 50%, $gutters: 0);
     position: relative;
-    padding-top: $global-margin * 2;
-    padding-bottom: $global-margin;
+    padding-top: $global-padding * 2;
+    padding-bottom: $global-padding;
 
     .breadcrumb-back {
       position: absolute;
-      top: $global-margin * 2;
+      top: $global-position * 2;
     }
   }
 

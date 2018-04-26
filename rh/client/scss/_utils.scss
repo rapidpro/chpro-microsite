@@ -106,7 +106,7 @@
 %nav-item {
   position: relative;
   font-family: $navigation-font-family;
-  font-size: 0.875rem;
+  font-size: $small-font-size;
   font-weight: $navigation-font-weight;
   text-transform: uppercase;
   letter-spacing: 0.045rem;
@@ -126,7 +126,7 @@
 
   &:after {
     position: relative;
-    bottom: $global-margin * -2;
+    bottom: $global-position * -2;
     left: 0;
     display: block;
     width: 1.685rem;

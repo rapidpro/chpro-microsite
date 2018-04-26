@@ -97,7 +97,7 @@
 
   .button {
     position: relative;
-    padding: 1rem;
+    padding: $global-padding;
     padding-right: 2.5rem;
     font-family: $body-font-family;
     text-align: left;
@@ -174,7 +174,7 @@
 
   .button {
     position: relative;
-    padding: 1rem 1.5rem;
+    padding: $global-padding 1.5rem;
     width: 100%;
   }
 
