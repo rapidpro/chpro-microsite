@@ -30,6 +30,11 @@
   }
 }
 
+.imglink,
+.imginline {
+  margin-bottom: $global-margin;
+}
+
 .icon {
   fill: currentColor;
 }
