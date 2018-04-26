@@ -71,8 +71,6 @@ $header-margin-bottom: 1rem;
 
 $small-font-size: 0.875rem; // 14px
 
-$anchor-color: $color-navy;
-$anchor-color-hover: darken($color-navy, 10%);
 
 // Determines header sizing
 // https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
@@ -98,8 +96,10 @@ $header-styles: (
 // Layout
 $site-footer-color: $color-navy;
 
-$anchor-text-decoration: underline;
+$anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
+$anchor-color: $color-navy;
+$anchor-color-hover: $color-navy-light;
 
 $offcanvas-background: $brand-color-secondary;
 $offcanvas-shadow: none;
