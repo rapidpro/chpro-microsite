@@ -24,5 +24,9 @@ $(document).ready(() => {
     $('.featured-accordion-cards .card').click(function(event) {
       event.preventDefault();
     });
+
+    $('.featured-accordion .card-actions a').click(function(event) {
+      window.location.href = $(this).attr('href');
+    });
   }
 });
