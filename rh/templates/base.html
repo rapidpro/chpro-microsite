@@ -23,7 +23,6 @@
   <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description|striptags }}"/>
   {% endif %}
 
-  {% if current_page.metaattributes.image or object.featured_image %}
   <meta name="og:image" property="og:image"
     {% if current_page.metaattributes.image %}
     content="{% thumbnail current_page.metaattributes.image 2000x1500 crop %}"
