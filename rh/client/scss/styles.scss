@@ -69,6 +69,11 @@ $header-font-family: 'Titillium Web', sans-serif;
 $header-font-weight: $global-weight-bold;
 $header-margin-bottom: 1rem;
 
+$small-font-size: 0.875rem; // 14px
+
+$anchor-color: $color-navy;
+$anchor-color-hover: darken($color-navy, 10%);
+
 // Determines header sizing
 // https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
 $header-styles: (
@@ -115,7 +120,7 @@ $input-border: 1px solid #B6C9C5;
 $input-border-focus: 1px solid $color-beige-dark;
 $input-background: #FAFBF9;
 $input-color: $color-navy;
-$input-font-size: 0.875rem;
+$input-font-size: $small-font-size;
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-placeholder-color: #B6C9C5;
@@ -137,7 +142,13 @@ $card-border: none;
 $card-padding: 1.5rem;
 
 // Blockquote styles
+$blockquote-color: $color-navy-light;
 $blockquote-padding: 1.7rem;
+$blockquote-border: none;
+
+$cite-pseudo-content: "";
+$cite-color: $color-navy;
+$cite-font-size: 0.9rem;
 
 // Steps
 $step-label-size: 140px;
