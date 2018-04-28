@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <title>{% page_attribute 'page_title' %}</title>
+  <title>{% block head_title %}{% page_attribute 'page_title' %}{% endblock %} | RapidPro Health</title>
 
   {# Facebook #}
   <meta name="og:site_name" content="RapidPro Health by UNICEF">
