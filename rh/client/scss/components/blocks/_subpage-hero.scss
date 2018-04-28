@@ -14,12 +14,15 @@ $subpage-hero-height: 16rem;
 
 .subpage-hero {
   @include topographic-background($color-teal-dark, "topo-2.svg");
-  position: relative;
   padding: 2rem 0;
   color: $color-white;
 
   .container {
     justify-content: space-between;
+  }
+
+  &:before {
+    height: calc(100% - 200px);
   }
 }
 
@@ -78,6 +81,10 @@ $subpage-hero-height: 16rem;
 
     .container {
       min-height: $subpage-hero-height;
+    }
+
+    &:before {
+      height: 100%;
     }
   }
 
