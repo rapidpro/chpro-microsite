@@ -29,6 +29,10 @@ $subpage-hero-height: 16rem;
 .subpage-hero.has-img,
 .subpage-hero.has-icon {
   margin-bottom: $subpage-position-offset;
+
+  &:before {
+    height: 100%;
+  }
 }
 
 .subpage-hero-header {
