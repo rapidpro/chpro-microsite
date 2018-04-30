@@ -17,7 +17,7 @@ CSRF_COOKIE_SECURE = False
 HTTPS_LINKS = False
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost/rh')
+    'default': dj_database_url.config(default='postgres:///rh')
 }
 
 # Static Export
@@ -48,3 +48,7 @@ DISABLE_MIGRATIONS = os.environ.get('DISABLE_MIGRATIONS', '0')
 if DISABLE_MIGRATIONS == '1':
     sys.stdout.write('Django DB Migrations disabled!\n')
     MIGRATION_MODULES = DisableMigrations()
+
+MOMMY_CUSTOM_FIELDS_GEN = {
+    'autoslug.fields.AutoSlugField': 'model_mommy.random_gen.gen_slug',
+}
