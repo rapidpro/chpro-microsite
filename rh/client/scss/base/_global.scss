@@ -30,11 +30,12 @@
   }
 
   a {
-    border-bottom: 3px solid $color-beige-dark;
+    box-shadow: 0 2px 0 $color-beige-dark;
+    transition: all 0.25s ease;
   }
 
   a:hover {
-    border-bottom: none;
+    box-shadow: 0 6px 0 white;
   }
 
   li {
