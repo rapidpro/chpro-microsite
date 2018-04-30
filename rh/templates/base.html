@@ -1,8 +1,10 @@
 {# Base template for the RapidPro for Health website #}
 {% load staticfiles %}
+{% load thumbnail %}
 {% load cms_tags %}
 {% load sekizai_tags %}
 {% load menu_tags %}
+{% load util_tags %}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -11,12 +13,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <title>{% page_attribute 'page_title' %}</title>
+  <title>{% block head_title %}{% page_attribute 'page_title' %}{% endblock %} | RapidPro Health</title>
+
+  {# Facebook #}
+  <meta name="og:site_name" content="RapidPro Health by UNICEF">
+  <meta name="og:url" property="og:url" content="{% get_full_url request %}"/>
+  <meta name="og:title" property="og:title" content="{% page_attribute 'page_title' %} | RapidPro Health by UNICEF"/>
+  {% if current_page.metaattributes.description %}
+  <meta name="og:description" property="og:description" content="{{ current_page.metaattributes.description|striptags }}"/>
+  {% endif %}
+
+  <meta name="og:image" property="og:image"
+    {% if current_page.metaattributes.image %}
+    content="{% thumbnail current_page.metaattributes.image 2000x1500 crop %}"
+    {% elif object.featured_image %}
+    content="{% thumbnail object.featured_image 2000x1500 crop %}"
+    {% else %}
+    content="{% static 'img/rph-og-image.jpg' %}"
+    {% endif %} />
+
+  {# Twitter #}
+  <meta name="twitter:site" content="RapidPro Health by UNICEF">
+  <meta name="twitter:title" content="{% page_attribute 'page_title' %} | RapidPro Health by UNICEF">
+  <meta name="twitter:url" content="{% get_full_url request %}"/>
+
+  {# Icons #}
+  <link rel="shortcut icon" href="{% static 'meta/favicon.ico' %}" type="image/x-icon"/>
+  <link rel="icon" href="{% static 'meta/favicon.ico' %}" type="image/x-icon"/>
+
+  <link rel="apple-touch-icon" href="{% static 'meta/apple-touch-icon-152x152.png' %}"/>
+
+  <meta name="msapplication-TileColor" content="#D34975"/>
+  <meta name="msapplication-TileImage" content="{% static 'meta/metro-white-144.png' %}"/>
 
   {% render_block "css" %}
   {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'all.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Titillium+Web:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'all.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Titillium+Web:400,600,700" rel="stylesheet">
   {% endblock %}
 </head>
 

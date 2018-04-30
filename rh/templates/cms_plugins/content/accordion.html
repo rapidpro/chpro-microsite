@@ -26,6 +26,8 @@
     {% endif %}
     {% endif %}
 
-    <a href="/case-studies" class="button featured-accordion-cta">View More Case Studies</a>
+    {% if instance.link_text %}
+    <a href="{{ instance.get_link }}" class="button featured-accordion-cta">{{ instance.link_text }}</a>
+    {% endif %}
   </div>
 </div>

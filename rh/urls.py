@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.views.defaults import page_not_found
+from rh.apps.content.views import contact_form
 from . import sitemaps
 from .views import server_error
 
@@ -14,6 +15,7 @@ urlpatterns = [
         'cmspages': sitemaps.CMSSitemap,
         'case-studies': sitemaps.CaseStudySitemap,
     }}),
+    url(r'^send_contact_form/', contact_form, name='contact_form'),
     url(r'^admin/', admin.site.urls),
     url(r'^select2/', include('django_select2.urls')),
 

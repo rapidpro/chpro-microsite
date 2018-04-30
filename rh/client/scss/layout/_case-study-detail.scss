@@ -1,7 +1,6 @@
-
 .stats-content,
 .related-content {
-  padding: $global-margin * 1.5;
+  padding: $global-padding * 1.5;
 }
 
 .stats-content {
@@ -18,13 +17,15 @@
   color: $color-pink;
 }
 
+.taglist {
+  @include bottom-space(2);
+  font-size: $small-font-size;
+  color: $color-gray;
+}
+
 .case-study-page {
   .subpage-hero {
-    @include bottom-space(3);
-  }
-
-  .taglist {
-    @include bottom-space(2);
+    @include bottom-space(1);
   }
 
   .stats-content {

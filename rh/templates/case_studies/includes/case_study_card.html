@@ -4,7 +4,7 @@
   <header class="card-header">
     <a href="{{ case.get_absolute_url }}">
       <img
-        src="{% thumbnail case.featured_image 1000x750 %}"
+        src="{% thumbnail case.featured_image 500x375 crop %}"
         alt="{{ case.featured_image.alt_text }}"
         class="card-img" />
     </a>

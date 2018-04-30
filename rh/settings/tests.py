@@ -1,6 +1,7 @@
 #
 # Test Specific settings.
 #
+import dj_database_url
 from .base import *  # pylint: disable=W0614,W0401
 
 sys.stdout.write('Using test settings in rh.settings.tests\n')
@@ -16,12 +17,7 @@ CSRF_COOKIE_SECURE = False
 HTTPS_LINKS = False
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rh',
-        #'USER': '',
-        #'PASSWORD: '',
-    },
+    'default': dj_database_url.config(default='postgres:///rh')
 }
 
 # Static Export
@@ -52,3 +48,7 @@ DISABLE_MIGRATIONS = os.environ.get('DISABLE_MIGRATIONS', '0')
 if DISABLE_MIGRATIONS == '1':
     sys.stdout.write('Django DB Migrations disabled!\n')
     MIGRATION_MODULES = DisableMigrations()
+
+MOMMY_CUSTOM_FIELDS_GEN = {
+    'autoslug.fields.AutoSlugField': 'model_mommy.random_gen.gen_slug',
+}

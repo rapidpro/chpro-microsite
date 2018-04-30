@@ -1,0 +1,72 @@
+// Layout Globals
+.container {
+  @include container;
+}
+
+// Affixes footer to bottom
+.off-canvas-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: 100%;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
+// Simple CMS Pages
+.content-wsidebar {
+  @include breakpoint(large) {
+    @include collapse-gutters;
+
+    .sidebar {
+      order: 0;
+      @include xy-cell(4);
+    }
+
+    .content {
+      order: 1;
+      @include xy-cell(8);
+    }
+  }
+
+  &.sidebar-right {
+    @include breakpoint(large) {
+      .content {
+        order: 0;
+      }
+
+      .sidebar {
+        order: 1;
+      }
+    }
+  }
+}
+
+.subpage {
+  .site-main {
+    @include bottom-space(3);
+  }
+
+  // TODO: Move to hero file (?)
+  .subpage-hero {
+    @include bottom-space;
+
+    @include breakpoint(medium) {
+      @include bottom-space(4);
+    }
+  }
+}

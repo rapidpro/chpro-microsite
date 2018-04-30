@@ -19,11 +19,6 @@
   }
 }
 
-.container {
-  @include container;
-}
-
-
 // Long form content styles. Anywhere there is a WYSIWYG editor.
 .rich-text {
   h2 {
@@ -31,98 +26,35 @@
   }
 
   h3 {
-    color: #597C82; // TODO: Config
+    color: $color-navy-light;
+  }
+
+  a {
+    border-bottom: 3px solid $color-beige-dark;
+  }
+
+  a:hover {
+    border-bottom: none;
+  }
+
+  li {
+    margin-bottom: .5rem;
   }
 }
 
-.breadcrumb-back {
-  position: relative;
-  font-size: .9rem;
+.img {
+  margin-bottom: $global-margin;
 
-  @include reverse-link-effects;
-
-  &,
-  &:hover {
-    color: $black;
-  }
-
-  &:before {
-    position: relative;
-    top: .05em;
-    display: inline-block;
-    margin-right: .4rem;
-    width: 0;
-    height: 0;
-    border-top: .4em solid transparent;
-    border-right: .7em solid currentColor;
-    border-bottom: .4em solid transparent;
-    content: "";
-  }
-}
-
-.breadcrumb-parent {
-  text-transform: uppercase;
-}
-
-.icon {
-  fill: currentColor;
-}
-
-.taglist {
-  font-size: .9rem;
-}
-
-// Layout Helpers
-.content-wsidebar {
-  @include breakpoint(large) {
-    @include collapse-gutters;
-
-    .sidebar {
-      order: 0;
-      @include xy-cell(4);
-    }
-
-    .content {
-      order: 1;
-      @include xy-cell(8);
-    }
-  }
-
-  &.sidebar-right {
-    @include breakpoint(large) {
-      .content {
-        order: 0;
-      }
-
-      .sidebar {
-        order: 1;
-      }
-    }
-  }
-}
-
-.subpage {
-  .site-main {
-    @include bottom-space(3);
-  }
-
-  // TODO: Move to hero file (?)
-  .subpage-hero {
-    @include bottom-space;
-
-    @include breakpoint(medium) {
-      @include bottom-space(4);
-    }
-  }
-}
-
-.simple-content,
-.simple-content-wsidebar {
-  .subpage-hero {
-    padding-top: 12rem;
+  // Image inside of a link
+  .imglink & {
+    margin-bottom: 0;
   }
 }
 
 .site-main > .img-responsive {
   width: 100%;
+}
+
+.icon {
+  fill: currentColor;
 }

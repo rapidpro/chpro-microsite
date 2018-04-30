@@ -13,25 +13,24 @@ $breakpoints: (
   xlarge: 1024px,
 );
 
-
 $global-width: 64rem; // TODO: Verify with designs
 
 // Colors
 //
 // The palette used includes brand colors, as well as colors by Foundation.
-//
-
-//$light-gray
-//$medium-gray
 $color-black: #191919;
 $color-white: #FFFFFF;
 $color-dark-gray: #333333;
+$color-gray: #666666;
 
 $color-navy: #324955;
 $color-navy-light: #597C82;
+
 $color-red: #FF3333;
 $color-pink: #D44673;
+
 $color-teal: #53BDA6;
+$color-teal-dark: #4B9196;
 
 $color-beige:  #DCE4D7;
 $color-beige-dark: #9FB9B4;
@@ -70,6 +69,9 @@ $header-font-family: 'Titillium Web', sans-serif;
 $header-font-weight: $global-weight-bold;
 $header-margin-bottom: 1rem;
 
+$small-font-size: 0.875rem; // 14px
+
+
 // Determines header sizing
 // https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
 $header-styles: (
@@ -94,8 +96,10 @@ $header-styles: (
 // Layout
 $site-footer-color: $color-navy;
 
-$anchor-text-decoration: underline;
+$anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
+$anchor-color: $color-navy;
+$anchor-color-hover: $color-navy-light;
 
 $offcanvas-background: $brand-color-secondary;
 $offcanvas-shadow: none;
@@ -111,11 +115,12 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-radius: 3px;
 
 // Forms
+$input-font-family: $body-font-family;
 $input-border: 1px solid #B6C9C5;
 $input-border-focus: 1px solid $color-beige-dark;
 $input-background: #FAFBF9;
 $input-color: $color-navy;
-$input-font-size: 0.875rem;
+$input-font-size: $small-font-size;
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-placeholder-color: #B6C9C5;
@@ -128,14 +133,22 @@ $helptext-font-style: normal;
 $form-label-color: $color-navy-light;
 $form-label-font-size: 0.75rem;
 $form-label-line-height: 2.25;
-$input-font-family: $body-font-family;
+
+$select-background: $input-background;
+$select-triangle-color: $color-beige-dark;
 
 // Card styles
 $card-border: none;
 $card-padding: 1.5rem;
 
 // Blockquote styles
+$blockquote-color: $color-navy-light;
 $blockquote-padding: 1.7rem;
+$blockquote-border: none;
+
+$cite-pseudo-content: "";
+$cite-color: $color-navy;
+$cite-font-size: 0.9rem;
 
 // Steps
 $step-label-size: 140px;
@@ -149,26 +162,28 @@ $media-effect: 12px solid $body-background;
 $card-arrow-size: 1.5rem;
 
 @import 'foundation';
-
 @import 'utils';
 
 // ToC Imports
 @import 'base/global';
-@import 'base/typography';
 @import 'base/buttons';
 @import 'base/forms';
+@import 'base/typography';
 
 @import 'components/blockquote';
+@import 'components/breadcrumb';
 @import 'components/card';
 @import 'components/step';
 
 @import 'components/blocks/block';
-@import 'components/blocks/hero';
 @import 'components/blocks/card-grid';
+@import 'components/blocks/hero';
+@import 'components/blocks/subpage-hero';
 
-@import 'layout/featured-accordion';
 @import 'layout/case-studies';
 @import 'layout/case-study-detail';
 @import 'layout/case-study-filter';
+@import 'layout/featured-accordion';
+@import 'layout/helpers';
 @import 'layout/site-header';
 @import 'layout/site-footer';

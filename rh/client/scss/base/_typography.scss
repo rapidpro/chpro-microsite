@@ -23,3 +23,12 @@ h2 {
 h3 {
   font-size: 1.25rem;
 }
+
+
+.lead,
+.lead p {
+  font-family: $header-font-family;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: $color-navy-light;
+}

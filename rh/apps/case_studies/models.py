@@ -1,3 +1,4 @@
+import random
 from django.urls import reverse
 from django.db import models
 
@@ -15,7 +16,10 @@ def get_use_cases(request=None):
     Return an iterable of pages that are found in the first
     CardGridPlugin on the page with the slug "use-cases".
     """
-    obj = Title.objects.public().get(slug='use-cases').page
+    try:
+        obj = Title.objects.public().get(slug='use-cases').page
+    except Title.DoesNotExist:
+        return
     if request:
         filters = request.GET.getlist('filter')
     for child in obj.get_children():
@@ -94,14 +98,21 @@ class CaseStudy(models.Model):
         return '{}?edit'.format(self.get_absolute_url())
 
     def similar(self, count=4, only_published=True):
-        qs = CaseStudy.objects.exclude(pk=self.pk).order_by('?')
+        qs = CaseStudy.objects.exclude(pk=self.pk)
         if only_published:
             qs = qs.filter(published=True)
         qs = qs
         similar_cases = list(
-            qs.filter(use_cases__in=self.use_cases.all())[:count])
+            qs.filter(use_cases__in=self.use_cases.all()).order_by()
+            .distinct())
+        if len(similar_cases) > count:
+            similar_cases = random.sample(count)
+        else:
+            random.shuffle(similar_cases)
+        print(similar_cases)
         remaining = count - len(similar_cases)
         if remaining > 0:
             similar_cases.extend(list(
-                qs.exclude(pk__in=[case.pk for case in similar_cases])))
+                qs.exclude(pk__in=[case.pk for case in similar_cases])
+                .order_by('?')[:remaining]))
         return similar_cases

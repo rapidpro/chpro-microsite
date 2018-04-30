@@ -42,6 +42,9 @@ if 'AWS_ACCESS_KEY_ID' in os.environ:
     MEDIA_ROOT = '/'
     MEDIA_URL = '//s3.amazonaws.com/%s/'.format(AWS_STORAGE_BUCKET_NAME)
 
+if 'SENDGRID_API_KEY' in os.environ:
+    SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+    EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # MIDDLEWARE += [

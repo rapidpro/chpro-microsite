@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"e1839a8" = {path = ".", editable = true}
-django = "==1.11.7"
+rh = {path = ".", editable = true}
+django = "<1.12"
 "psycopg2" = "<2.8"
 django-model-utils = "==3.0.0"
 django-cms = "<3.5"
@@ -19,15 +19,19 @@ dj-database-url = "==0.4.2"
 django-storages = "==1.6.5"
 boto3 = "==1.6.16"
 whitenoise = "==3.3.1"
-uwsgi = "==2.0.16"
-djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
-coverage = "*"
+uwsgi = "<2.1"
 django-autoslug = "*"
 django-countries = "*"
+django-tagulous = {ref = "feature/django-1_11", git = "https://github.com/radiac/django-tagulous.git", editable = true}
+"django-sendgrid-v5" = "*"
 
 [dev-packages]
+djangocms-testing = {git = "https://github.com/nicolaslara/djangocms_testing.git", editable = true}
 django-debug-toolbar = "*"
 ipdb = "*"
+pytest-django = "*"
+pytest-cov = "*"
+model-mommy = "*"
 
 [requires]
 python_version = "3.6"

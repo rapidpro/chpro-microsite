@@ -46,3 +46,6 @@ INSTALLED_APPS += [
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+# Dump emails to the console.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

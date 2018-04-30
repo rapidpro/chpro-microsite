@@ -70,17 +70,22 @@
   }
 }
 
-.site-footer-aux .menu {
-  flex-direction: row;
+.site-footer-aux .menu li {
+  display: block;
 }
 
 .site-footer-aux .menu a {
   padding: 0.7rem;
 }
 
+.site-footer-aux .menu a:first-child {
+  padding-left: 0;
+}
+
 .site-footer-aux * {
   font-size: .8rem;
 }
+
 
 @include breakpoint(large) {
   .site-footer-primary,
@@ -121,6 +126,10 @@
     align-items: center;
   }
 
+  .site-footer-aux .menu li {
+    display: inline-block;
+  }
+
   // Re-add the padding to everything after the first child
   // or if we only have 1 of a type
   .site-footer .menu a:first-child ~ a,
@@ -140,6 +149,6 @@
   }
 
   .site-footer .menu a {
-    padding: 0.7rem 1rem;
+    padding: 0.7rem $global-padding;
   }
 }

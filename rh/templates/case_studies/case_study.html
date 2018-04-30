@@ -7,10 +7,10 @@
 
 {% block base_content %}
 <div
-  class="hero complex subpage-hero dark has-img"
+  class="subpage-hero has-img"
   role="banner">
   <div class="container">
-    <header class="hero-header">
+    <header class="subpage-hero-header">
       {# current_page is actually the parent page containing this apphook #}
       <a
         href="{{ current_page.get_absolute_url }}"
@@ -20,25 +20,27 @@
       <h1 class="hero-title">{{ object.heading }}</h1>
     </header>
 
-    <div class="hero-content">
-      <div class="hero-content-primary rich-text">
-        <p class="taglist">
-          {% for tag in object.use_cases.all %}
-          <span>{{ tag }}</span> {% if not forloop.last %}/{% endif %}
-          {% endfor %}
-        </p>
-
-        {% render_placeholder object.lead_content %}
-      </div>
-
+    <div class="subpage-hero-content">
       {% if object.featured_image %}
-      <aside class="hero-content-secondary">
-        <img
-          src="{% thumbnail object.featured_image 1000x750 crop %}"
-          alt="{{ object.featured_image.alt_text }}"
-          class="hero-img">
-      </aside>
+      <img
+        src="{% thumbnail object.featured_image 1000x750 crop %}"
+        alt="{{ object.featured_image.alt_text }}"
+        class="hero-img">
       {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container content-wsidebar">
+  <div class="content">
+    <p class="taglist">
+      {% for tag in object.use_cases.all %}
+      <span>{{ tag }}</span> {% if not forloop.last %}/{% endif %}
+      {% endfor %}
+    </p>
+
+    <div class="lead">
+      {% render_placeholder object.lead_content %}
     </div>
   </div>
 </div>
@@ -58,7 +60,6 @@
     </aside>
   </div>
 </div>
-
 
 {% if similar_case_studies %}
 <div class="case-study-similar-examples">

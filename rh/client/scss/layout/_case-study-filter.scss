@@ -34,7 +34,7 @@
 .case-study-search-item {
   display: flex;
   padding: 0.6rem 0;
-  font-size: 0.875rem;
+  font-size: $small-font-size;
   color: $color-navy;
   list-style-type: none;
 
@@ -95,7 +95,7 @@
   }
 
   .case-study-search-results {
-    @include xy-cell(9);
+    @include xy-cell($size: 9, $gutters: 1rem);
 
     .card-grid {
       padding-top: 0;

@@ -21,14 +21,14 @@
         {% for link in links %}
         {% if link.category == "tools" %}
           {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
-          {% include 'cms_plugins/steps/_step_link.html' %}
+          {% include 'cms_plugins/steps/includes/step_link.html' %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "tools" %}
           {% ifchanged section %}<h3 class="step-subtitle">Tools</h3>{% endifchanged %}
-          {% include 'cms_plugins/steps/_step_file.html' %}
+          {% include 'cms_plugins/steps/includes/step_file.html' %}
         {% endif %}
         {% endfor %}
 
@@ -39,14 +39,14 @@
         {% for link in links %}
         {% if link.category == "examples" %}
           {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
-          {% include 'cms_plugins/steps/_step_link.html' %}
+          {% include 'cms_plugins/steps/includes/step_link.html' %}
         {% endif %}
         {% endfor %}
 
         {% for file in files %}
         {% if file.category == "examples" %}
           {% ifchanged section %}<h3 class="step-subtitle">Examples</h3>{% endifchanged %}
-          {% include 'cms_plugins/steps/_step_file.html' %}
+          {% include 'cms_plugins/steps/includes/step_file.html' %}
         {% endif %}
         {% endfor %}
 
