@@ -23,7 +23,7 @@
   @include accordion-item;
 }
 
-.case-study-search-wrapper.is-active {
+.case-study-search-wrapper.is-active .case-study-search-list {
   display: block;
 }
 
@@ -72,6 +72,13 @@
 .case-study-search-clear {
   margin-top: $global-margin;
   width: 100%;
+}
+
+.case-study-search-results {
+  .pagination {
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
+  }
 }
 
 // Javascript specific styles
@@ -141,11 +148,6 @@
     .card-grid {
       padding-top: 0;
       padding-bottom: $global-padding * 2;
-    }
-
-    .pagination {
-      margin-right: 0.625rem;
-      margin-left: 0.625rem;
     }
   }
 

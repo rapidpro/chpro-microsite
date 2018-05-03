@@ -16,6 +16,12 @@
     flex-grow: 0;
   }
 
+  @include breakpoint(small down) {
+    .card {
+      width: 100%;
+    }
+  }
+
   @include breakpoint(medium) {
     @include xy-grid-layout(2, '.card');
     @include collapse-gutters;

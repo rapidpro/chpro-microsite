@@ -93,6 +93,7 @@
   .card-img {
     order: 0;
     margin-bottom: $global-margin;
+    width: 100%;
   }
 
   .card-content,
@@ -116,8 +117,8 @@
   }
 
   .card-content {
-    color: $color-navy;
     line-height: 1;
+    color: $color-navy;
   }
 
   .card-content span {
