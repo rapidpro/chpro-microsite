@@ -102,6 +102,7 @@
 
 @include breakpoint(large) {
   .case-study-search-list {
+    display: block;
     margin-bottom: $global-margin * 1.5;
     padding: 0;
     border: none;
@@ -109,6 +110,10 @@
 
   .case-study-search-filters {
     padding: 0;
+  }
+
+  :last-child > .case-study-search-list:last-child {
+    border-bottom: none;
   }
 
   .is-active > .case-study-search-heading,
@@ -135,6 +140,12 @@
 
     .card-grid {
       padding-top: 0;
+      padding-bottom: $global-padding * 2;
+    }
+
+    .pagination {
+      margin-right: 0.625rem;
+      margin-left: 0.625rem;
     }
   }
 

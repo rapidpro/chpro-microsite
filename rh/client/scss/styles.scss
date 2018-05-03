@@ -161,6 +161,16 @@ $media-effect: 12px solid $body-background;
 // Accordion
 $card-arrow-size: 1.5rem;
 
+// Pagination
+$pagination-arrows: false;
+$pagination-item-color: $color-navy;
+$pagination-item-color-current: $color-navy;
+$pagination-item-background-current: $color-yellow;
+$pagination-item-background-hover: $color-beige;
+$pagination-item-color-disabled: #BBBBBB;
+$pagination-radius: 3px;
+$pagination-spacing: 1.5rem;
+
 @import 'foundation';
 @import 'utils';
 
@@ -173,6 +183,7 @@ $card-arrow-size: 1.5rem;
 @import 'components/blockquote';
 @import 'components/breadcrumb';
 @import 'components/card';
+@import 'components/pagination';
 @import 'components/step';
 
 @import 'components/blocks/block';
