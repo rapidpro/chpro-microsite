@@ -1,8 +1,7 @@
-from django.db.models import Count, Q
+from django.db.models import Q
 from django.views.generic import DetailView, ListView
 
 from rh.apps.case_studies.models import CaseStudy, get_use_cases
-from rh.apps.content.models import IconCard
 
 
 class CurrentPageMixin:
@@ -76,8 +75,8 @@ class CaseStudyListView(CurrentPageMixin, ListView):
                 'url': qd.urlencode(),
                 'selected': selected,
             })
-        ctx['regions'] = regions
 
+        ctx['regions'] = regions
         ctx['use_cases_filtered'] = use_cases_filtered
         ctx['regions_filtered'] = regions_filtered
         ctx['is_filtered'] = use_cases_filtered or regions_filtered

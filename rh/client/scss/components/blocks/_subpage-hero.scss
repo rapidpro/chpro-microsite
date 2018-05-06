@@ -47,7 +47,6 @@ $subpage-hero-height: 16rem;
 
   .hero-title {
     align-self: flex-end;
-    font-size: 2.5rem;
   }
 
   .subtitle {
@@ -127,13 +126,5 @@ $subpage-hero-height: 16rem;
     position: relative;
     top: $subpage-position-offset;
     margin-top: $global-margin * 2;
-  }
-}
-
-@include breakpoint(large) {
-  .subpage-hero-header {
-    .hero-title {
-      font-size: 3.25rem;
-    }
   }
 }

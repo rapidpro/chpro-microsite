@@ -132,6 +132,8 @@
 
 {% block js %}
   <script src="{% static "all.js" %}"></script>
+  {# Enables support for SVG in IE 11#}
+  <script src="{% static "vendor/svgxuse.min.js" %}" defer></script>
 {% endblock js %}
 {% render_block 'js' %}
 </body>

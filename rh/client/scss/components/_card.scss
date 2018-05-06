@@ -27,6 +27,7 @@
 .card-header {
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .card-header .icon {
@@ -36,7 +37,13 @@
   height: 44px;
 }
 
+.card-header > a {
+  width: 100%;
+  overflow: hidden;
+}
+
 .card-title {
+  max-width: 100%;
   font-size: 1.3rem;
 }
 
@@ -45,6 +52,7 @@
 }
 
 .card-subtitle {
+  max-width: 100%;
   font-family: $header-font-family;
   text-transform: uppercase;
 }
@@ -56,6 +64,7 @@
 .card-content {
   margin-top: $global-margin;
   @include bottomless;
+  max-width: 100%;
   font-size: .9rem;
 }
 
@@ -84,6 +93,7 @@
   .card-img {
     order: 0;
     margin-bottom: $global-margin;
+    width: 100%;
   }
 
   .card-content,
@@ -107,6 +117,7 @@
   }
 
   .card-content {
+    line-height: 1;
     color: $color-navy;
   }
 

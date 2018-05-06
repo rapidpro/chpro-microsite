@@ -15,14 +15,26 @@
   margin-left: 0;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  border-top: none;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .case-study-search-wrapper {
   @include accordion-item;
 }
 
+.case-study-search-wrapper.is-active .case-study-search-list {
+  display: block;
+}
+
+.case-study-search-wrapper:first-child .case-study-search-list,
+.case-study-search-wrapper:not(.is-active):first-child > :first-child {
+  border-bottom: none;
+}
+
 .case-study-search-heading {
   @include accordion-title;
+  border-bottom: 1px solid #E6E6E6;
   font-family: $body-font-family;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -57,8 +69,47 @@
   line-height: 1.5;
 }
 
+.case-study-search-clear {
+  margin-top: $global-margin;
+  width: 100%;
+}
+
+.case-study-search-results {
+  .pagination {
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
+  }
+}
+
+// Javascript specific styles
+.case-study-search-filters.no-js-cs {
+  .case-study-search-list {
+    display: block !important;
+  }
+
+  .case-study-search-heading,
+  .case-study-search-list {
+    border: none;
+  }
+
+  .case-study-search-item label {
+    display: none;
+  }
+
+  .case-study-search-link {
+    margin-left: $global-margin / 2;
+  }
+}
+
+.case-study-search-filters.js-cs {
+  .case-study-search-link {
+    display: none;
+  }
+}
+
 @include breakpoint(large) {
   .case-study-search-list {
+    display: block;
     margin-bottom: $global-margin * 1.5;
     padding: 0;
     border: none;
@@ -66,6 +117,10 @@
 
   .case-study-search-filters {
     padding: 0;
+  }
+
+  :last-child > .case-study-search-list:last-child {
+    border-bottom: none;
   }
 
   .is-active > .case-study-search-heading,
@@ -83,13 +138,6 @@
     }
   }
 
-  :last-child:not(.is-active) > .case-study-search-heading,
-  :last-child > .case-study-search-list:last-child {
-    border-bottom: none;
-  }
-}
-
-@include breakpoint(large) {
   .case-study-search-filters {
     @include xy-cell(3);
   }
@@ -99,6 +147,11 @@
 
     .card-grid {
       padding-top: 0;
+      padding-bottom: $global-padding * 2;
     }
+  }
+
+  .case-study-search-clear {
+    width: auto;
   }
 }

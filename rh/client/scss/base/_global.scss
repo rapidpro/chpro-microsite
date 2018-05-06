@@ -29,12 +29,13 @@
     color: $color-navy-light;
   }
 
-  a {
-    border-bottom: 3px solid $color-beige-dark;
+  a:not(.button) {
+    box-shadow: 0 2px 0 $color-beige-dark;
+    transition: all 0.25s ease;
   }
 
-  a:hover {
-    border-bottom: none;
+  a:hover:not(.button) {
+    box-shadow: 0 6px 0 transparent;
   }
 
   li {

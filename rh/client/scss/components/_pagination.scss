@@ -1,0 +1,44 @@
+//
+// Pagintaion
+//
+// Markup: pagination.hbs
+//
+// Style guide: Components.pagination
+//
+
+.pagination {
+  font-family: $header-font-family;
+}
+
+.pagination > li {
+  position: relative;
+  display: inline-block;
+}
+
+.pagination .icon {
+  position: absolute;
+  top: $pagination-spacing / 3;
+  width: 1rem;
+  height: 1rem;
+}
+
+.pagination-previous {
+  a {
+    padding-left: $pagination-spacing;
+  }
+
+  .icon {
+    left: 0.25rem;
+    transform: scaleX(-1);
+  }
+}
+
+.pagination-next {
+  a {
+    padding-right: $pagination-spacing;
+  }
+
+  .icon {
+    right: 0.25rem;
+  }
+}

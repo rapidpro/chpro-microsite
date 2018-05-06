@@ -28,8 +28,10 @@
   </div>
 
   {% if instance.get_link %}
-  <div class="card-actions">
-    {% include 'includes/link.html' %}
+  <div class="card-footer">
+    <div class="card-actions">
+      {% include 'includes/link.html' %}
+    </div>
   </div>
   {% endif %}
 </section>
