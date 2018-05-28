@@ -167,6 +167,7 @@
 
     .hero-content-primary {
       @include xy-cell(auto);
+      @include collapse-gutters(margin);
       order: 1;
       margin-top: 0;
       padding-top: 5rem;
@@ -175,6 +176,7 @@
     .hero-content-secondary {
       @include xy-cell(6);
       order: 2;
+      margin-right: 0;
     }
   }
 
