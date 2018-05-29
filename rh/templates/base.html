@@ -98,29 +98,29 @@
     </main>
 
     <footer class="site-footer">
-      <nav class="site-footer-primary">
-        <img
-          src="{% static 'img/logo-white.svg' %}"
-          alt="RapidPro Health"
-          class="logo"
-          />
+      <div class="container">
+        <nav class="site-footer-primary">
+          <p>RapidPro Health provides rich data for entities all over the world.</p>
 
-        <ul class="menu">
-          {% show_menu 1 1 0 1 "navigation/menu.html" %}
-        </ul>
-      </nav>
+          <ul class="menu">
+            {% show_menu 1 1 0 1 "navigation/menu.html" %}
+          </ul>
+        </nav>
 
-      <div class="site-footer-content">
-        <p>RapidPro Health provides rich data for entities all over the world.</p>
-        <p><a href="mailto:info@rapidpro.com">info@rapidpro.com</a></p>
+        <div class="site-footer-content">
+          <h6 class="logo-label">Technical Support / Lead</h6>
+        </div>
+
+        <div class="site-footer-content">
+          <h6 class="logo-label">Collaborators</h6>
+        </div>
       </div>
 
       <div class="site-footer-aux">
         <nav>
           <ul class="menu">
-            <li><a href="/terms">Terms</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/support">Support</a></li>
+            <li><a href="/support">Contact Us</a></li>
+            <li><a href="mailto:info@rapidpro.com">info@rapidpro.com</a></li>
           </ul>
         </nav>
 

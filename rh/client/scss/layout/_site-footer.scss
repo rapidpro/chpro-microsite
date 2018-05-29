@@ -7,38 +7,9 @@
   background: $site-footer-color;
   color: $color-white;
 
-  .logo {
-    display: none;
-  }
-
   a {
     color: $color-white;
   }
-}
-
-.site-footer-primary a {
-  @extend %nav-item;
-}
-
-.site-footer-primary,
-.site-footer-content,
-.site-footer-aux {
-  @include container;
-}
-
-.site-footer-content {
-  // We don't need flexbox here
-  display: block;
-}
-
-.site-footer .menu,
-.site-footer-aux {
-  flex-direction: column;
-  width: 100%;
-}
-
-.site-footer .menu {
-  @include bottom-space;
 }
 
 .site-footer .menu a {
@@ -47,15 +18,46 @@
   font-weight: 400;
 }
 
-.site-footer-content,
+.site-footer-primary,
 .site-footer-aux {
   a {
     @include reverse-link-effects;
   }
 }
 
+.site-footer-primary .menu {
+  flex-direction: column;
+}
+
+.site-footer-primary p {
+  font-size: 0.85rem;
+}
+
+.site-footer-primary a {
+  @extend %nav-item;
+  padding-left: 0;
+}
+
+.site-footer-primary li {
+  display: block;
+  width: 100%;
+}
+
+.site-footer-primary,
+.site-footer-content {
+  @include bottom-space(2);
+  width: 100%;
+}
+
+.site-footer-content h6 {
+  font-weight: normal;
+}
+
 .site-footer-aux {
+  @include container;
   position: relative;
+  flex-direction: column;
+  width: 100%;
 
   &:before {
     @include bottom-space;
@@ -76,79 +78,45 @@
 
 .site-footer-aux .menu a {
   padding: 0.7rem;
+
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
-.site-footer-aux .menu a:first-child {
-  padding-left: 0;
-}
-
-.site-footer-aux * {
+.site-footer-aux small,
+.site-footer-aux a {
   font-size: .8rem;
 }
 
-
 @include breakpoint(large) {
-  .site-footer-primary,
-  .site-footer-content {
-    @include bottom-space(2);
-  }
-
-  .site-footer .logo {
-    display: block;
-    width: 180px;
-  }
-
-  .site-footer .menu {
-    margin-bottom: 0;
-  }
-
-  .site-footer .menu a {
-    padding: 0.7rem;
-  }
-
-  .site-footer .menu,
-  .site-footer-aux {
-    flex-direction: row;
+  .site-footer .container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
   }
 
   .site-footer-primary {
-    .menu {
-      flex: 1 1 auto;
-      justify-content: flex-end;
-      align-items: center;
-      margin-left: map-get($grid-margin-gutters, medium);
-      width: auto;
-    }
+    @include xy-cell(4);
+    @include collapse-gutters(margin);
+  }
+
+  .site-footer-content {
+    @include xy-cell(4);
+    @include collapse-gutters(margin);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
   }
 
   .site-footer-aux {
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
   .site-footer-aux .menu li {
     display: inline-block;
-  }
-
-  // Re-add the padding to everything after the first child
-  // or if we only have 1 of a type
-  .site-footer .menu a:first-child ~ a,
-  .site-footer .menu li:only-of-type a {
-    padding: $menu-simple-margin;
-  }
-
-  // Ensure alignment of the menus
-  .site-footer .menu li:last-child a {
-    padding-right: 0;
-  }
-}
-
-@include breakpoint(xlarge) {
-  .site-footer .logo {
-    width: 210px;
-  }
-
-  .site-footer .menu a {
-    padding: 0.7rem $global-padding;
   }
 }
