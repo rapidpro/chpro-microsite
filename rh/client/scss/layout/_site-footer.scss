@@ -30,7 +30,7 @@
 }
 
 .site-footer-primary p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .site-footer-primary a {
@@ -47,6 +47,19 @@
 .site-footer-content {
   @include bottom-space(2);
   width: 100%;
+}
+
+.site-footer-content {
+  .logo-container {
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    padding: 4%;
+    width: 45%;
+    opacity: 0.5;
+  }
 }
 
 .site-footer-content h6 {
