@@ -165,6 +165,12 @@ CMS_TEMPLATES = [
 ]
 
 CMS_PLACEHOLDER_CONF = {
+    'colaborator_logos': {
+        'plugins': ['FooterLogoPlugin'],
+    },
+    'technical_logos': {
+        'plugins': ['FooterLogoPlugin'],
+    },
 }
 
 THUMBNAIL_HIGH_RESOLUTION = True

@@ -89,6 +89,11 @@ class BlockQuote(AbstractText):
         return self.author
 
 
+class FooterLogo(CMSPlugin):
+    alt_text = models.CharField(max_length=100)
+    logo = FilerImageField()
+
+
 # ------------------------------------------------------------------------------
 # CMS Plugin/Admin
 # ------------------------------------------------------------------------------
@@ -231,6 +236,14 @@ class BlockQuotePlugin(BlockPlugin):
     render_template = "cms_plugins/content/blockquote.html"
 
 
+class FooterLogoPlugin(CMSPluginBase):
+    name = 'Footer Logo'
+    module = 'Footer'
+    model = FooterLogo
+
+    render_template = "includes/footer_logo.html"
+
+
 @plugin_pool.register_plugin
 class ContactFormPlugin(CMSPluginBase):
     model = CMSPlugin
@@ -252,3 +265,4 @@ plugin_pool.register_plugin(FeaturedAccordionPlugin)
 plugin_pool.register_plugin(AccordionCardPlugin)
 plugin_pool.register_plugin(RawHTMLPlugin)
 plugin_pool.register_plugin(BlockQuotePlugin)
+plugin_pool.register_plugin(FooterLogoPlugin)
