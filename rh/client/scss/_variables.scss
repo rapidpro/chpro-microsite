@@ -1,0 +1,185 @@
+//
+// Grids and Layout
+//
+
+// Enable Foundation's XY Grid:
+// https://foundation.zurb.com/sites/docs/xy-grid.html
+$xy-grid: true;
+
+// Media query config
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 760px,
+  xlarge: 1024px,
+);
+
+$global-width: 64rem;
+
+
+//
+// Colors
+//
+
+// The palette used includes brand colors, as well as colors by Foundation.
+$color-black: #191919;
+$color-white: #FFFFFF;
+$color-dark-gray: #333333;
+$color-gray: #666666;
+
+$color-navy: #324955;
+$color-navy-light: #597C82;
+
+$color-red: #FF3333;
+$color-pink: #D44673;
+
+$color-teal: #53BDA6;
+$color-teal-dark: #4B9196;
+
+$color-beige:  #DCE4D7;
+$color-beige-dark: #9FB9B4;
+$color-yellow: #EAF0E6;
+
+$body-background: $white;
+$brand-color-primary: #C45173;
+$brand-color-secondary: $color-navy;
+
+$foundation-palette: (
+  primary: $color-pink,
+  secondary: $color-navy,
+  success: $color-yellow,
+  warning: #FFAE00,
+  alert: #CC4B37,
+);
+
+$palette: (
+  default: $color-white,
+  light: $color-yellow,
+  dark: $color-beige,
+);
+
+$button-palette: map-merge($foundation-palette, (
+    yellow: $color-yellow
+));
+
+
+//
+// Typography
+//
+
+$body-font-family: 'Open Sans', sans-serif;
+$body-font-color: $color-navy;
+
+$global-weight-bold: 700;
+$global-weight-regular: 400;
+
+$header-font-family: 'Titillium Web', sans-serif;
+$header-font-weight: $global-weight-bold;
+$header-margin-bottom: 1rem;
+
+$small-font-size: 0.875rem; // 14px
+
+// Determines header sizing
+// https://foundation.zurb.com/sites/docs/typography-base.html#header-styles
+$header-styles: (
+  'small': (
+    'h1': ('font-size': 34),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 14),
+    'h6': ('font-size': 14)
+  ),
+  'medium': (
+    'h1': ('font-size': 52),
+    'h2': ('font-size': 28),
+    'h3': ('font-size': 20),
+    'h4': ('font-size': 14),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16)
+  ),
+);
+
+
+//
+// Components and Styles
+//
+
+// Anchors
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+$anchor-color: $color-navy;
+$anchor-color-hover: $color-navy-light;
+
+// Style primary and off-canvas navigation
+$offcanvas-background: $brand-color-secondary;
+$offcanvas-shadow: none;
+$navigation-font-family: $header-font-family;
+$navigation-font-weight: $global-weight-bold;
+
+// Buttons
+$button-font-family: $header-font-family;
+$button-background: $color-pink;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-radius: 3px;
+
+// Forms
+$input-font-family: $body-font-family;
+$input-border: 1px solid #B6C9C5;
+$input-border-focus: 1px solid $color-beige-dark;
+$input-background: #FAFBF9;
+$input-color: $color-navy;
+$input-font-size: $small-font-size;
+$input-shadow: none;
+$input-shadow-focus: none;
+$input-placeholder-color: #B6C9C5;
+$input-padding: 0.8rem 0.65rem;
+
+$helptext-color: $color-dark-gray;
+$helptext-font-size: 0.6875rem;
+$helptext-font-style: normal;
+
+$form-label-color: $color-navy-light;
+$form-label-font-size: 0.75rem;
+$form-label-line-height: 2.25;
+
+$select-background: $input-background;
+$select-triangle-color: $color-beige-dark;
+
+// Card styles
+$card-border: none;
+$card-padding: 1.5rem;
+
+// Blockquote styles
+$blockquote-color: $color-navy-light;
+$blockquote-padding: 1.7rem;
+$blockquote-border: none;
+$blockquote-image-size: 2.75rem;
+
+$cite-pseudo-content: "";
+$cite-color: $color-navy;
+$cite-font-size: 0.9rem;
+
+// Steps
+$step-label-size: 140px;
+$step-horizontal-offset: 80px;
+$step-vertical-offset: 25px;
+
+// Image border effect
+$media-effect: 12px solid $body-background;
+
+// Accordion
+$card-arrow-size: 1.5rem;
+
+// Pagination
+$pagination-arrows: false;
+$pagination-item-color: $color-navy;
+$pagination-item-color-current: $color-navy;
+$pagination-item-background-current: $color-yellow;
+$pagination-item-background-hover: $color-beige;
+$pagination-item-color-disabled: #BBBBBB;
+$pagination-radius: 3px;
+$pagination-spacing: 1.5rem;
+
+// Footer
+$site-footer-color: $color-navy;
