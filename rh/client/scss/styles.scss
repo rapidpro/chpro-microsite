@@ -13,10 +13,9 @@ $breakpoints: (
   xlarge: 1024px,
 );
 
-$global-width: 64rem; // TODO: Verify with designs
+$global-width: 64rem;
 
 // Colors
-//
 // The palette used includes brand colors, as well as colors by Foundation.
 $color-black: #191919;
 $color-white: #FFFFFF;
@@ -146,6 +145,7 @@ $card-padding: 1.5rem;
 $blockquote-color: $color-navy-light;
 $blockquote-padding: 1.7rem;
 $blockquote-border: none;
+$blockquote-image-size: 2.75rem;
 
 $cite-pseudo-content: "";
 $cite-color: $color-navy;

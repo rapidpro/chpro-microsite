@@ -3,11 +3,13 @@
 //
 // Markup: blockquote.hbs
 //
+// .has-img     - With author avatar
+//
 // Style guide: Components.blockquote
 //
 
 .blockquote {
-  margin: 0;
+  margin: $global-margin 0;
   padding: $blockquote-padding;
   padding-top: 3rem;
   border: $blockquote-border;
@@ -31,7 +33,6 @@
 
 .blockquote-author {
   font-style: normal;
-  line-height: 1.7;
 }
 
 .blockquote-author-name {
@@ -44,4 +45,27 @@
   display: block;
   margin: 0;
   font-size: 0.7rem;
+  font-weight: $global-weight-regular;
+}
+
+// Blockquote with author image
+.blockquote.has-img {
+  .blockquote-author {
+    display: flex;
+  }
+
+  .blockquote-author-image {
+    margin-right: $global-margin;
+    height: $blockquote-image-size;
+  }
+
+  .blockquote-author-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .blockquote-author-name {
+    margin-top: 0;
+  }
 }
