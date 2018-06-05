@@ -1,15 +1,32 @@
-<blockquote class="blockquote">
+{% load thumbnail %}
+
+<blockquote class="blockquote {% if instance.image %}has-img{% endif %}">
   <p class="blockquote-content">
     {{ instance.body|safe }}
   </p>
+
   <cite class="blockquote-author">
-    <span class="blockquote-author-name">
-      {{ instance.author }}
-    </span>
-    {% if instance.author_title %}
-    <span class="blockquote-author-title">
-      {{ instance.author_title }}
-    </span>
+    {% if instance.image %}
+      <img
+        src="{% thumbnail instance.image 100x100 %}"
+        alt="{{ instance.image.alt_text }}"
+        class="blockquote-author-image" />
+
+      <div class="blockquote-author-container">
+    {% endif %}
+
+      <span class="blockquote-author-name">
+        {{ instance.author }}
+      </span>
+
+      {% if instance.author_title %}
+        <span class="blockquote-author-title">
+          {{ instance.author_title }}
+        </span>
+      {% endif %}
+
+    {% if instance.image %}
+      </div>
     {% endif %}
   </cite>
 </blockquote>

@@ -84,6 +84,7 @@ class RawHTML(CMSPlugin):
 class BlockQuote(AbstractText):
     author = models.CharField(max_length=100)
     author_title = models.CharField(max_length=200, blank=True)
+    image = FilerImageField(blank=True, null=True)
 
     def __str__(self):
         return self.author
@@ -234,6 +235,9 @@ class BlockQuotePlugin(BlockPlugin):
     model = BlockQuote
 
     render_template = "cms_plugins/content/blockquote.html"
+    fieldsets = (
+        ('Content', {'fields': ('body', 'author', 'author_title', 'image')}),
+    )
 
 
 class FooterLogoPlugin(CMSPluginBase):
