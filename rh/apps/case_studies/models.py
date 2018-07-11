@@ -106,7 +106,7 @@ class CaseStudy(models.Model):
             qs.filter(use_cases__in=self.use_cases.all()).order_by()
             .distinct())
         if len(similar_cases) > count:
-            similar_cases = random.sample(count)
+            similar_cases = random.sample(similar_cases, count)
         else:
             random.shuffle(similar_cases)
         print(similar_cases)
