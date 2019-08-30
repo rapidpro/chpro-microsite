@@ -11,8 +11,8 @@ setup(
     author_email='nicolas@lincolnloop.com',
     url='https://github.com/rapidpro/rh/',
     packages=find_packages(),
-    scripts=[
-        'scripts/manage.py'
-    ],
+    entry_points={
+        "console_scripts": ["manage.py = rh.__main__:manage"],
+    },
     include_package_data=True,
 )
