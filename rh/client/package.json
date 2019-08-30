@@ -4,7 +4,7 @@
   "description": "RapidPro for Health site built with Django CMS",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "yarn run build",
+    "postinstall": "test -n \"$NOYARNBUILD\" || yarn run build",
     "parcel": "parcel",
     "build": "yarn run build_site",
     "watch": "yarn run watch_site",

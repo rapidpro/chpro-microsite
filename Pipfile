@@ -21,12 +21,12 @@ dj-database-url = "==0.4.2"
 django-storages = "==1.6.5"
 "boto3" = "==1.6.16"
 whitenoise = "==3.3.1"
-uwsgi = "<2.1"
+pyuwsgi = "*"
 django-autoslug = "*"
 django-countries = "*"
 django-tagulous = {ref = "feature/django-1_11", git = "https://github.com/radiac/django-tagulous.git", editable = true}
 "django-sendgrid-v5" = "*"
-"psycopg2-binary" = "<=2.8"
+"psycopg2" = "*"
 
 
 [dev-packages]
