@@ -29,7 +29,7 @@
     "autoprefixer": "^8.2.0",
     "postcss-modules": "^1.1.0",
     "svg-sprite": "^1.4.0",
-    "yarn": "^1.4.x"
+    "yarn": "^1.17.x"
   },
   "devDependencies": {
     "kss": "^3.0.0-beta.18"
