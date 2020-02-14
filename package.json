@@ -12,6 +12,6 @@
     "build_sprite": "svg-sprite rh/client/static/icons/*.svg -s --symbol-sprite=sprite.svg --symbol-dest=rh/client/static/img"
   },
   "dependencies": {
-    "yarn": "^1.5.1"
+    "yarn": "^1.22.0"
   }
 }
