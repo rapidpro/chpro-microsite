@@ -21,7 +21,7 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
     "foundation-sites": "^6.4.4-rc1",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.5.1",
     "post-load-plugins": "^0.0.16",
